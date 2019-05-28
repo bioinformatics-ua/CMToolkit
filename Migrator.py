@@ -25,21 +25,25 @@ class Migrator():
 		columns, dictOfMappingColumns = self.columnsMapping(table)
 		migration = None
 		if(table == "person"):
-			migration = Person(cohort 	   	= self.cohort.loc[:, columns],
-						       harmonizer  	= self.adHocHarmonization,
-						       columnMapper = dictOfMappingColumns)
+			migration = Person(cohort 	   		= self.cohort.loc[:, columns],
+						       harmonizerAdHoc  = self.adHocHarmonization,
+						       columnMapper 	= dictOfMappingColumns,
+						       contentMapping	= self.contentMapping)
 		elif(table == "observation"):
-			migration = Observation(cohort 	     = self.cohort.loc[:, columns],
-						       		harmonizer   = self.adHocHarmonization,
-						       		columnMapper = dictOfMappingColumns)
+			migration = Observation(cohort 	     	= self.cohort.loc[:, columns],
+						       		harmonizerAdHoc	= self.adHocHarmonization,
+						       		columnMapper 	= dictOfMappingColumns,
+						       	 	contentMapping	= self.contentMapping)
 		elif(table == "observation_period"):
-			migration = ObservationPeriod(cohort 	   = self.cohort.loc[:, columns],
-						       			  harmonizer   = self.adHocHarmonization,
-						       			  columnMapper = dictOfMappingColumns)
+			migration = ObservationPeriod(cohort 	      = self.cohort.loc[:, columns],
+						       			  harmonizerAdHoc = self.adHocHarmonization,
+						       			  columnMapper    = dictOfMappingColumns,
+						       			  contentMapping  = self.contentMapping)
 		elif(table == "visit_occurrence"):
-			migration = VisitOccurrence(cohort 	     = self.cohort.loc[:, columns],
-						       			harmonizer   = self.adHocHarmonization,
-						       			columnMapper = dictOfMappingColumns)
+			migration = VisitOccurrence(cohort 	     	= self.cohort.loc[:, columns],
+						       			harmonizerAdHoc	= self.adHocHarmonization,
+						       			columnMapper 	= dictOfMappingColumns,
+						       			contentMapping	= self.contentMapping)
 		else:
 			return None
 		return migration.getMapping()

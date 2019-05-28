@@ -5,7 +5,7 @@ class Person(BaseTable):
 
     Constructor arguments: See BaseTable
     '''
-    def __init__(self, cohort, harmonizer, columnMapper):
+    def __init__(self, cohort, harmonizerAdHoc, columnMapper, contentMapping):
         columns = [
             'person_id',
             'gender_concept_id',
@@ -27,24 +27,19 @@ class Person(BaseTable):
             'ethnicity_source_value',
             'ethnicity_source_concept_id'
         ]
-        size = self.__calculateTableSize(cohort       = cohort, 
-                                         columnMapper = columnMapper, 
-                                         id           = 'person_id')
-        super(Person, self).__init__(cohort         = cohort.drop_duplicates().reset_index(drop=True), 
-                                     harmonizer     = harmonizer, 
-                                     columnsDst     = columns, 
-                                     table          = "person",
-                                     columnMapper   = columnMapper,
-                                     size           = size)
+        cohortFiltered = self.__filterCohort(cohort, harmonizerAdHoc, "person")
+        super(Person, self).__init__(cohort          = cohortFiltered,
+                                     harmonizerAdHoc = harmonizerAdHoc, 
+                                     columnsDst      = columns, 
+                                     table           = "person",
+                                     columnMapper    = columnMapper,
+                                     size            = len(cohortFiltered),
+                                     contentMapping  = contentMapping)
 
-    def __calculateTableSize(self, cohort, columnMapper, id):
-        try:
-            if(len(cohort.drop_duplicates()) != len(cohort[columnMapper[id]].unique())):
-                raise Exception("Inconsistency in the Person ids!")
-
-            return len(cohort[columnMapper[id]].unique())
-        except:
-            raise Exception("Person id not found!")
+    def __filterCohort(self, cohort, harmonizerAdHoc, table):
+        return BaseTable.cohortFilter(cohort          = cohort.drop_duplicates().reset_index(drop=True), 
+                                      table           = table,
+                                      harmonizerAdHoc = harmonizerAdHoc)
 
     def getDataTypesForSQL():
         return {

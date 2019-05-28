@@ -6,19 +6,24 @@ class BaseTable(object):
     Constructor arguments:
     :param cohort:       the cohort sctruturd readed from CSV file
     :param size:         the number of entries in the table
-    :param harmonizer:   object with ad hoc methods to harmonize that types of fields
+    :param harmonizerAdHoc:   object with ad hoc methods to harmonize that types of fields
     :param columnsDst:   list of columns from the destination table
     :param columnMapper: ????
     :param table:        destination table name to identify the ad hoc methods following our syntax
-    			         - Sintax: set_<table name>_<field name>
+
+    Ad hoc methods:
+        - Sintax to deal with a field: set_<table name>_<field name>
+        - Sintax to pre process the cohort: filter_<table name>
     '''
-    def __init__(self, cohort, size, harmonizer, columnsDst, columnMapper, table):
-        self.columnsDst     = columnsDst
-        self.columnMapper   = columnMapper
-        self.cohort         = cohort
-        self.harmonizer     = harmonizer
-        self.table          = table
-        self.mapping        = pd.DataFrame(index=range(size), columns=columnsDst) 
+    def __init__(self, cohort, size, harmonizerAdHoc, columnsDst, columnMapper, table, contentMapping):
+        self.cohort          = cohort
+        self.columnsDst      = columnsDst
+        self.columnMapper    = columnMapper
+        self.harmonizerAdHoc = harmonizerAdHoc
+        self.table           = table
+        self.contentMapping  = contentMapping
+        self.mapping         = pd.DataFrame(index=range(size), columns=columnsDst)
+
         self.__populate()
 
     def __populate(self):
@@ -27,15 +32,29 @@ class BaseTable(object):
             if(element in self.columnMapper):
                 sourceField = self.columnMapper[element]
 
+            self.mapping[element] = None #Default value as None
             methodName = "set_" + self.table + "_" + element
-            if(hasattr(self.harmonizer, methodName)):
-                self.mapping[element] = getattr(self.harmonizer, methodName)(self.cohort[sourceField] if sourceField in self.cohort else None)
+
+            if(hasattr(self.harmonizerAdHoc, methodName)): #In case of exist an ad hoc method defined
+                self.mapping[element] = getattr(self.harmonizerAdHoc, methodName)(self.cohort[sourceField] if sourceField in self.cohort else None)
             else:
-                self.mapping[element] = self.cohort[sourceField] if sourceField in self.cohort else None
-        #print(self.mapping)
-        
+                if(sourceField in self.cohort): #Normal behavior
+                    optionsForSourceField = self.contentMapping[self.contentMapping['sourceCode'].str.contains(sourceField)]
+                    values = optionsForSourceField["targetConceptId"].values
+                    sourceFieldMap = pd.Series(values, index=optionsForSourceField['sourceName']).to_dict()
+                    self.mapping[element] = self.cohort[sourceField].map(sourceFieldMap)
+                    
     def getMapping(self):
         return self.mapping
+
+    #####################
+    ### Class methods ###
+    #####################
+    def cohortFilter(cohort, table, harmonizerAdHoc):
+        methodName = "filter_" + table
+        if(hasattr(harmonizerAdHoc, methodName)):
+            cohort = getattr(harmonizerAdHoc, methodName)(cohort)
+        return cohort
 
     def getDataTypesForSQL():
         return {}

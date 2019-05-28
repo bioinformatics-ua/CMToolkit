@@ -5,7 +5,7 @@ class VisitOccurrence(BaseTable):
 
     Constructor arguments: See BaseTable
     '''
-    def __init__(self, cohort, harmonizer, columnMapper):
+    def __init__(self, cohort, harmonizerAdHoc, columnMapper, contentMapping):
         columns = [
             'visit_occurrence_id',
             'person_id',
@@ -28,12 +28,13 @@ class VisitOccurrence(BaseTable):
         size = self.__calculateTableSize(cohort       = cohort, 
                                          columnMapper = columnMapper, 
                                          id           = 'visit_occurrence_id')
-        super(VisitOccurrence, self).__init__(cohort        = cohort, 
-                                              harmonizer    = harmonizer, 
-                                              columnsDst    = columns, 
-                                              table         = "visit_occurrence",
-                                              columnMapper  = columnMapper,
-                                              size          = size)
+        super(VisitOccurrence, self).__init__(cohort          = cohort, 
+                                              harmonizerAdHoc = harmonizerAdHoc, 
+                                              columnsDst      = columns, 
+                                              table           = "visit_occurrence",
+                                              columnMapper    = columnMapper,
+                                              size            = size,
+                                              contentMapping  = contentMapping)
 
     def __calculateTableSize(self, cohort, columnMapper, id):
         print ("Todo")

@@ -5,7 +5,7 @@ class ObservationPeriod(BaseTable):
 
     Constructor arguments: See BaseTable
     '''
-    def __init__(self, cohort, harmonizer, columnMapper):
+    def __init__(self, cohort, harmonizerAdHoc, columnMapper, contentMapping):
         columns = [
             'observation_period_id',         
             'person_id',                     
@@ -16,12 +16,13 @@ class ObservationPeriod(BaseTable):
         size = self.__calculateTableSize(cohort       = cohort, 
                                          columnMapper = columnMapper, 
                                          id           = 'observation_period_id')
-        super(ObservationPeriod, self).__init__(cohort       = cohort, 
-                                                harmonizer   = harmonizer, 
-                                                columnsDst   = columns, 
-                                                table        = "observation_period",
-                                                columnMapper = columnMapper,
-                                                size         = size)
+        super(ObservationPeriod, self).__init__(cohort          = cohort, 
+                                                harmonizerAdHoc = harmonizerAdHoc, 
+                                                columnsDst      = columns, 
+                                                table           = "observation_period",
+                                                columnMapper    = columnMapper,
+                                                size            = size,
+                                                contentMapping  = contentMapping)
 
     def __calculateTableSize(self, cohort, columnMapper, id):
         print ("Todo")

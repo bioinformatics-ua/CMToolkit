@@ -20,7 +20,7 @@ class FileManager():
 		return configuration
 
 	def __readUSAGIMapping(self, file, sep):
-		columnsToRead = ["sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
+		columnsToRead = ["sourceCode", "sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
 		fileContent = pd.read_csv(file, na_values='null', sep=sep)
 		try:
 			return fileContent.loc[:, columnsToRead]
@@ -41,7 +41,7 @@ class FileManager():
 		return fileredRows['sourceName'].tolist(), dictOfMappingColumns
 
 	def getContentMapping(self):
-		return self.contentMapping
+		return self.contentMapping[["sourceCode", "sourceName", "targetConceptId"]]
 
 	def getCohort(self):
 		return self.cohort
