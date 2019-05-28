@@ -22,20 +22,24 @@ class Migrator():
 		return result
 
 	def __migrateTable(self, table):
-		columns = self.columnsMapping(table)
+		columns, dictOfMappingColumns = self.columnsMapping(table)
 		migration = None
 		if(table == "person"):
-			migration = Person(cohort 	   = self.cohort.loc[:, columns],
-						       harmonizer  = self.adHocHarmonization)
+			migration = Person(cohort 	   	= self.cohort.loc[:, columns],
+						       harmonizer  	= self.adHocHarmonization,
+						       columnMapper = dictOfMappingColumns)
 		elif(table == "observation"):
-			migration = Observation(cohort 	    = self.cohort.loc[:, columns],
-						       		harmonizer  = self.adHocHarmonization)
+			migration = Observation(cohort 	     = self.cohort.loc[:, columns],
+						       		harmonizer   = self.adHocHarmonization,
+						       		columnMapper = dictOfMappingColumns)
 		elif(table == "observation_period"):
-			migration = ObservationPeriod(cohort 	    = self.cohort.loc[:, columns],
-						       			  harmonizer  = self.adHocHarmonization)
+			migration = ObservationPeriod(cohort 	   = self.cohort.loc[:, columns],
+						       			  harmonizer   = self.adHocHarmonization,
+						       			  columnMapper = dictOfMappingColumns)
 		elif(table == "visit_occurrence"):
-			migration = VisitOccurrence(cohort 	    = self.cohort.loc[:, columns],
-						       			harmonizer  = self.adHocHarmonization)
+			migration = VisitOccurrence(cohort 	     = self.cohort.loc[:, columns],
+						       			harmonizer   = self.adHocHarmonization,
+						       			columnMapper = dictOfMappingColumns)
 		else:
 			return None
 		return migration.getMapping()

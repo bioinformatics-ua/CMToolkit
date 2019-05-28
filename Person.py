@@ -5,7 +5,7 @@ class Person(BaseTable):
 
     Constructor arguments: See BaseTable
     '''
-    def __init__(self, cohort, harmonizer):
+    def __init__(self, cohort, harmonizer, columnMapper):
         columns = [
             'person_id',
             'gender_concept_id',
@@ -27,11 +27,24 @@ class Person(BaseTable):
             'ethnicity_source_value',
             'ethnicity_source_concept_id'
         ]
+        size = self.__calculateTableSize(cohort       = cohort, 
+                                         columnMapper = columnMapper, 
+                                         id           = 'person_id')
+        super(Person, self).__init__(cohort         = cohort.drop_duplicates().reset_index(drop=True), 
+                                     harmonizer     = harmonizer, 
+                                     columnsDst     = columns, 
+                                     table          = "person",
+                                     columnMapper   = columnMapper,
+                                     size           = size)
 
-        super(Person, self).__init__(cohort      = cohort, 
-                                     harmonizer  = harmonizer, 
-                                     columns     = columns, 
-                                     table       = "person")
+    def __calculateTableSize(self, cohort, columnMapper, id):
+        try:
+            if(len(cohort.drop_duplicates()) != len(cohort[columnMapper[id]].unique())):
+                raise Exception("Inconsistency in the Person ids!")
+
+            return len(cohort[columnMapper[id]].unique())
+        except:
+            raise Exception("Person id not found!")
 
     def getDataTypesForSQL():
         return {

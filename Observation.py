@@ -5,7 +5,7 @@ class Observation(BaseTable):
 
     Constructor arguments: See BaseTable
     '''
-    def __init__(self, cohort, harmonizer):
+    def __init__(self, cohort, harmonizer, columnMapper):
         columns = [
             'observation_id',
             'person_id',
@@ -25,11 +25,19 @@ class Observation(BaseTable):
             'unit_source_value',
             'qualifier_source_value'
         ]
+        size = self.__calculateTableSize(cohort       = cohort, 
+                                         columnMapper = columnMapper, 
+                                         id           = 'observation_id')
+        super(Observation, self).__init__(cohort       = cohort, 
+                                          harmonizer   = harmonizer, 
+                                          columnsDst   = columns, 
+                                          table        = "observation",
+                                          columnMapper = columnMapper,
+                                          size         = size)
 
-        super(Observation, self).__init__(cohort      = cohort, 
-                                          harmonizer  = harmonizer, 
-                                          columns     = columns, 
-                                          table       = "observation")
+    def __calculateTableSize(self, cohort, columnMapper, id):
+        print ("Todo")
+        return len(cohort) 
 
     def getDataTypesForSQL():
         return {

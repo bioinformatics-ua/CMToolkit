@@ -1,4 +1,5 @@
 import configparser
+import pathlib
 import pandas as pd
 
 class FileManager():
@@ -7,7 +8,9 @@ class FileManager():
 		self.columnsMapping 	= self.__readUSAGIMapping(args.columns, args.sep)
 		self.contentMapping 	= self.__readUSAGIMapping(args.measures, args.sep) if args.measures != "" else None
 		self.cohort 			= self.__readCohort(args.input, args.sep)
-		self.resulsDir			= args.results
+		self.resulsDir			= args.results[:-1] if args.results.endswith("/") else args.results
+		
+		pathlib.Path(self.resulsDir).mkdir(parents=True, exist_ok=True) 
 
 	def __readSettings(self, settingsFile):
 		configuration = configparser.ConfigParser()
@@ -32,8 +35,10 @@ class FileManager():
 		return self.settings
 
 	def getColumnsMappingByDomain(self, domain):
-		fileredRows = self.columnsMapping[self.columnsMapping['targetDomainId'].str.contains(domain)]
-		return fileredRows['sourceName'].tolist()
+		fileredRowsByDomain = self.columnsMapping[self.columnsMapping['targetDomainId'].str.contains(domain)]
+		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
+		dictOfMappingColumns = pd.Series(fileredRows["sourceName"].values, index=fileredRows['targetConceptName']).to_dict()
+		return fileredRows['sourceName'].tolist(), dictOfMappingColumns
 
 	def getContentMapping(self):
 		return self.contentMapping
@@ -42,7 +47,12 @@ class FileManager():
 		return self.cohort
 
 	def writeResults(self, results, configuration):
-		print ("TO DO - write results")
-		#persons.to_csv('results/{}person.csv'.format(write_path), index=False)
-		#persons.to_sql("person", engine, if_exists='append',index=False,schema='omopcdm',dtype=
+		for table in results:
+			#print(results[table])
+			results[table].to_csv('{}/{}.csv'.format(self.resulsDir, table), index=False)
+			
+			#table.to_sql(table, engine, if_exists='append',
+			#							index=False,
+			#							schema='sbcdm',
+			#							dtype=todo)
 		

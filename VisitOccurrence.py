@@ -5,7 +5,7 @@ class VisitOccurrence(BaseTable):
 
     Constructor arguments: See BaseTable
     '''
-    def __init__(self, cohort, harmonizer):
+    def __init__(self, cohort, harmonizer, columnMapper):
         columns = [
             'visit_occurrence_id',
             'person_id',
@@ -25,11 +25,19 @@ class VisitOccurrence(BaseTable):
             'discharge_to_source_value',
             'preceding_visit_occurrence_id'
         ]
+        size = self.__calculateTableSize(cohort       = cohort, 
+                                         columnMapper = columnMapper, 
+                                         id           = 'visit_occurrence_id')
+        super(VisitOccurrence, self).__init__(cohort        = cohort, 
+                                              harmonizer    = harmonizer, 
+                                              columnsDst    = columns, 
+                                              table         = "visit_occurrence",
+                                              columnMapper  = columnMapper,
+                                              size          = size)
 
-        super(VisitOccurrence, self).__init__(cohort      = cohort, 
-                                              harmonizer  = harmonizer, 
-                                              columns     = columns, 
-                                              table       = "visit_occurrence")
+    def __calculateTableSize(self, cohort, columnMapper, id):
+        print ("Todo")
+        return len(cohort) 
 
     def getDataTypesForSQL():
         return {
