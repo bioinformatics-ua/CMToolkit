@@ -1,26 +1,19 @@
-import configparser
 import pathlib
 import pandas as pd
 import os
 
 class FileManager():
 	def __init__(self, args):
-		self.settings 			= self.__readSettings(args.settings)
-		self.columnsMapping 	= self.__readUSAGIMapping(args.columns, args.sep)
-		self.contentMapping 	= self.__readUSAGIMapping(args.measures, args.sep) if args.measures != "" else None
-		self.cohort 			= self.__readCohort(args.input, args.sep)
+		self.columnsMapping 	= self.__readUSAGIMapping(args.columns, args.usagisep)
+		self.contentMapping 	= self.__readUSAGIMapping(args.measurements, args.usagisep) if args.measurements != None else None
+		self.cohort 			= self.__readCohort(args.cohort, args.cohortsep)
 		self.resulsDir			= args.results[:-1] if args.results.endswith("/") else args.results
 		
 		pathlib.Path(self.resulsDir).mkdir(parents=True, exist_ok=True) 
 
-	def __readSettings(self, settingsFile):
-		configuration = configparser.ConfigParser()
-		configuration.read(settingsFile)
-		if not configuration:
-			raise Exception("The settings file was not found!")
-		return configuration
 
 	def __readUSAGIMapping(self, file, sep):
+		sep = sep if sep != "\\t" else "\t"
 		columnsToRead = ["sourceCode", "sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
 		fileContent = pd.read_csv(file, na_values='null', sep=sep)
 		try:
@@ -29,11 +22,14 @@ class FileManager():
 			raise Exception("It was not possible allocate the columns to the file, " \
 				"maybe the select CSV column separator is wrong!")
 
-	def __readCohort(self, file, sep):
-		if os.path.isfile(file):
-			return pd.read_csv(file, na_values='null', sep=sep)
+	def __readCohort(self, inputCohort, sep):
+		sep = sep if sep != "\\t" else "\t"
+		if os.path.isfile(inputCohort):
+			return pd.read_csv(inputCohort, na_values='null', sep=sep)
 		else:
-			raise Exception("TO DO!")
+			for file in os.listdir(inputCohort):
+				print(file)
+
 
 	def writeResults(self, results, configuration):
 		for table in results:
@@ -48,9 +44,6 @@ class FileManager():
     ####################
     ### 	Gets 	 ###
     ####################
-	def getSystemSettings(self):
-		return self.settings
-
 	def getColumnsMappingByDomain(self, domain, sourceNameAsKey=False):
 		fileredRowsByDomain = self.columnsMapping[self.columnsMapping['targetDomainId'].str.contains(domain)]
 		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
