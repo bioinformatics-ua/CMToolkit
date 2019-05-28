@@ -35,9 +35,10 @@ class VisitOccurrence(BaseTable):
                                               columnMapper    = columnMapper,
                                               size            = size,
                                               contentMapping  = contentMapping)
+        print ("VisitirOccurence - ToDo")
 
     def __calculateTableSize(self, cohort, columnMapper, id):
-        print ("Todo")
+        print ("VisitirOccurence - ToDo")
         return len(cohort) 
 
     def getDataTypesForSQL():

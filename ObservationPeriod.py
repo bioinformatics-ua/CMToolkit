@@ -23,9 +23,10 @@ class ObservationPeriod(BaseTable):
                                                 columnMapper    = columnMapper,
                                                 size            = size,
                                                 contentMapping  = contentMapping)
+        print ("ObservationPeriod - ToDo")
 
     def __calculateTableSize(self, cohort, columnMapper, id):
-        print ("Todo")
+        print ("ObservationPeriod - ToDo")
         return len(cohort) 
 
     def getDataTypesForSQL():

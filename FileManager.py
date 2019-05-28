@@ -1,6 +1,7 @@
 import configparser
 import pathlib
 import pandas as pd
+import os
 
 class FileManager():
 	def __init__(self, args):
@@ -29,22 +30,10 @@ class FileManager():
 				"maybe the select CSV column separator is wrong!")
 
 	def __readCohort(self, file, sep):
-		return pd.read_csv(file, na_values='null', sep=sep)
-
-	def getSystemSettings(self):
-		return self.settings
-
-	def getColumnsMappingByDomain(self, domain):
-		fileredRowsByDomain = self.columnsMapping[self.columnsMapping['targetDomainId'].str.contains(domain)]
-		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
-		dictOfMappingColumns = pd.Series(fileredRows["sourceName"].values, index=fileredRows['targetConceptName']).to_dict()
-		return fileredRows['sourceName'].tolist(), dictOfMappingColumns
-
-	def getContentMapping(self):
-		return self.contentMapping[["sourceCode", "sourceName", "targetConceptId"]]
-
-	def getCohort(self):
-		return self.cohort
+		if os.path.isfile(file):
+			return pd.read_csv(file, na_values='null', sep=sep)
+		else:
+			raise Exception("TO DO!")
 
 	def writeResults(self, results, configuration):
 		for table in results:
@@ -55,4 +44,27 @@ class FileManager():
 			#							index=False,
 			#							schema='sbcdm',
 			#							dtype=todo)
-		
+
+    ####################
+    ### 	Gets 	 ###
+    ####################
+	def getSystemSettings(self):
+		return self.settings
+
+	def getColumnsMappingByDomain(self, domain, sourceNameAsKey=False):
+		fileredRowsByDomain = self.columnsMapping[self.columnsMapping['targetDomainId'].str.contains(domain)]
+		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
+		return self.__getDictOfMappingColumns(fileredRows, sourceNameAsKey)
+
+	def __getDictOfMappingColumns(self, fileredRows, sourceNameAsKey):
+		if(sourceNameAsKey):
+			dictOfMappingColumns = pd.Series(fileredRows["targetConceptName"].values, index=fileredRows['sourceName']).to_dict()
+		else:
+			dictOfMappingColumns = pd.Series(fileredRows["sourceName"].values, index=fileredRows['targetConceptName']).to_dict()
+		return fileredRows['sourceName'].tolist(), dictOfMappingColumns
+
+	def getContentMapping(self):
+		return self.contentMapping[["sourceCode", "sourceName", "targetConceptId"]]
+
+	def getCohort(self):
+		return self.cohort

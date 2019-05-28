@@ -25,20 +25,16 @@ class Observation(BaseTable):
             'unit_source_value',
             'qualifier_source_value'
         ]
-        size = self.__calculateTableSize(cohort       = cohort, 
-                                         columnMapper = columnMapper, 
-                                         id           = 'observation_id')
-        super(Observation, self).__init__(cohort          = cohort, 
+        cohortFiltered = BaseTable.cohortFilter(cohort          = cohort, 
+                                                table           = "observation",
+                                                harmonizerAdHoc = harmonizerAdHoc)
+        super(Observation, self).__init__(cohort          = cohortFiltered, 
                                           harmonizerAdHoc = harmonizerAdHoc, 
                                           columnsDst      = columns, 
                                           table           = "observation",
                                           columnMapper    = columnMapper,
-                                          size            = size,
+                                          size            = cohortFiltered.size,
                                           contentMapping  = contentMapping)
-
-    def __calculateTableSize(self, cohort, columnMapper, id):
-        print ("Todo")
-        return len(cohort) 
 
     def getDataTypesForSQL():
         return {

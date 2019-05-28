@@ -3,7 +3,17 @@ from Observation import Observation
 from ObservationPeriod import ObservationPeriod
 from VisitOccurrence import VisitOccurrence
 
-class Migrator():
+class Migrator():    
+	'''Class base to orchestrate the migration.
+
+    Constructor arguments:
+    :param cohort:         the cohort sctruturd readed from CSV file
+    :param columnsMapping: the method that returns the mapping from the defined table
+    :param contentMapping: the structure with all concepts mapped having the 
+    							- sourceCode: the cohort column 
+    							- sourceName: one of the entries in the cohort for the column defined
+    							- targetConceptId: the target concept mapped
+    '''
 	def __init__(self, cohort, columnsMapping, contentMapping):
 		self.adHocHarmonization = None
 		self.cohort 			= cohort
@@ -30,6 +40,7 @@ class Migrator():
 						       columnMapper 	= dictOfMappingColumns,
 						       contentMapping	= self.contentMapping)
 		elif(table == "observation"):
+			columns, dictOfMappingColumns = self.columnsMapping(table, sourceNameAsKey=True)
 			migration = Observation(cohort 	     	= self.cohort.loc[:, columns],
 						       		harmonizerAdHoc	= self.adHocHarmonization,
 						       		columnMapper 	= dictOfMappingColumns,

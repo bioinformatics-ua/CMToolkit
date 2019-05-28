@@ -5,8 +5,9 @@ from Migrator import Migrator
 def help():
     parser = argparse.ArgumentParser(description='Cohort mapper')
     parser.add_argument('-i', '--input-cohort', dest='input', \
-                        type=str, default="cohort.csv", \
-                        help='The input cohort file in CSV format (default: cohort.csv)')
+                        type=str, default="cohort/", \
+                        help='The input can be a cohort CSV file or a dir with all CSV files (default: cohort/)')
+
     parser.add_argument('-c', '--columns-mapping', dest='columns', \
                         type=str, default="USAGIcolumns.csv", \
                         help='The USAGI output file in CSV format with the column mapping (default: USAGIcolumns.csv)')
@@ -14,7 +15,7 @@ def help():
                         type=str, default="", \
                         help='The USAGI output file in CSV format with the cohort content harmonized')
 
-    parser.add_argument('-d', '--separator', dest='sep', \
+    parser.add_argument('-b', '--separator', dest='sep', \
                         type=str, default='\t', \
                         help='The separator used in the CSV file (default: tab -> \\t)')
 
