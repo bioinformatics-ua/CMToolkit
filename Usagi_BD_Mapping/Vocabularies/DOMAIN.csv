@@ -1,0 +1,6 @@
+domain_id	domain_name	domain_concept_id
+fact	Fact	2000000259
+person	person	520000001
+observation	observation	520000002
+observation_period	observation_period	520000003
+visit_occurrence	visit_occurrence	520000004

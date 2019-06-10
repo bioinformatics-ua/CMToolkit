@@ -1,0 +1,3 @@
+relationship_id	relationship_name	is_hierarchical	defines_ancestry	reverse_relationship_id	relationship_concept_id
+Defined by	Defined by (AD EMIF)	0	0	EDefines	2000000266
+Defines	Defines (AD EMIF)	0	0	Defined by	2000000267

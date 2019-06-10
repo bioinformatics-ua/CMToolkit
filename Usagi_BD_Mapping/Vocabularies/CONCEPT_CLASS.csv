@@ -1,0 +1,5 @@
+concept_class_id	concept_class_name	concept_class_concept_id
+person	person	2000000265
+observation	observation	2000000268
+observation_period	observation_period	2000000269
+visit_occurrence	visit_occurrence	2000000296
