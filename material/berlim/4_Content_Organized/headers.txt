@@ -1,0 +1,5 @@
+20190510 EMIF Patient Data.csv=Patient ID	Sex	Date of birth	Date of Admission	Years of Education
+20190510 EMIF Blood and CSF.csv=Patient ID	Date of puncture (Liquor)
+20190510 EMIF Diagnosis.csv=Patient ID	Number of Visit
+20190510 EMIF Neuropsychology.csv=Patient ID	Date of neuropsychological testing
+20190510 EMIF Sleep.csv=Patient ID	Date of 

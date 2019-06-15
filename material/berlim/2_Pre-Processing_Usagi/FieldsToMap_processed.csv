@@ -1,0 +1,110 @@
+Table,Value
+Diagnosis,10
+Diagnosis,5
+Diagnosis,81
+Diagnosis,1
+Diagnosis,8
+Diagnosis,6
+Diagnosis,3
+Diagnosis,7
+Diagnosis,2
+Etiology,9
+Etiology,1
+Etiology,2
+Etiology,3
+Etiology,5
+Etiology,8
+ICD-10 / DSM-V,F00.1
+ICD-10 / DSM-V,F00.2
+ICD-10 / DSM-V,F02.0
+ICD-10 / DSM-V,DSM-V: 331.83
+ICD-10 / DSM-V,F06.7
+ICD-10 / DSM-V,G20.0
+ICD-10 / DSM-V,G31.84
+ICD-10 / DSM-V,F00.0
+ICD-10 / DSM-V,F01.2
+20190510 EMIF Blood and CSF.csv,Date of puncture (Liquor)
+20190510 EMIF Blood and CSF.csv,CSF t-tau
+20190510 EMIF Blood and CSF.csv,CSF alpha Synuclein
+20190510 EMIF Blood and CSF.csv,CSF beta 42 inno
+20190510 EMIF Blood and CSF.csv,CSF beta 42 MSD
+20190510 EMIF Blood and CSF.csv,CSF beta 40
+20190510 EMIF Blood and CSF.csv,CSF beta 38
+20190510 EMIF Blood and CSF.csv,CSF p-tau
+20190510 EMIF Blood and CSF.csv,CSF Liquor - cell count
+20190510 EMIF Blood and CSF.csv,CSF Liquor - erythrocytes
+20190510 EMIF Blood and CSF.csv,CSF Liqour - protein
+20190510 EMIF Blood and CSF.csv,CSF Liqour - lactate
+20190510 EMIF Blood and CSF.csv,CSF Liqour - glucosis
+20190510 EMIF Blood and CSF.csv,CSF Liqour - haemoglobin
+20190510 EMIF Blood and CSF.csv,CSF_GesProt
+20190510 EMIF Blood and CSF.csv,CSF Albumin in Liquor
+20190510 EMIF Blood and CSF.csv,CSF IgG in Liquor
+20190510 EMIF Blood and CSF.csv,CSF IgA in Liquor 
+20190510 EMIF Blood and CSF.csv,CSF IgM in Liquor 
+20190510 EMIF Blood and CSF.csv,CSF Albumin in Serum
+20190510 EMIF Blood and CSF.csv,CSF IgG in Serum 
+20190510 EMIF Blood and CSF.csv,CSF IgA in Serum 
+20190510 EMIF Blood and CSF.csv,CSF IgM in Serum 
+20190510 EMIF Blood and CSF.csv,CSF Albumin ratio L/S
+20190510 EMIF Blood and CSF.csv,CSF IgG ratio L/S
+20190510 EMIF Blood and CSF.csv,CSF IgA ratio L/S
+20190510 EMIF Blood and CSF.csv,CSF IgM ratio L/S 
+20190510 EMIF Blood and CSF.csv,Apo-E
+20190510 EMIF Blood and CSF.csv,CRP
+20190510 EMIF Blood and CSF.csv,Hb1Ac
+20190510 EMIF Blood and CSF.csv,TSH
+20190510 EMIF Blood and CSF.csv,Vitamin B12
+20190510 EMIF Blood and CSF.csv,Cholesterin
+20190510 EMIF Blood and CSF.csv,Triglyceride
+20190510 EMIF Blood and CSF.csv,Folsäure
+20190510 EMIF Blood and CSF.csv,Date of blood sample
+20190510 EMIF Diagnosis.csv,Onset of Symptoms
+20190510 EMIF Diagnosis.csv,Diagnosis
+20190510 EMIF Diagnosis.csv,Etiology
+20190510 EMIF Diagnosis.csv,ICD-10 / DSM-V
+20190510 EMIF Diagnosis.csv,Height
+20190510 EMIF Diagnosis.csv,Weight
+20190510 EMIF Diagnosis.csv,Blood Pressure
+20190510 EMIF Diagnosis.csv,Heart Rate
+20190510 EMIF Diagnosis.csv,Date of Diagnosis
+20190510 EMIF Diagnosis.csv,Number of Visit
+20190510 EMIF Neuropsychology.csv,Date of neuropsychological testing
+20190510 EMIF Neuropsychology.csv,MMSE Total Score
+20190510 EMIF Neuropsychology.csv,MMSE Orientation Score
+20190510 EMIF Neuropsychology.csv,B-ADL
+20190510 EMIF Neuropsychology.csv,CDR
+20190510 EMIF Neuropsychology.csv,FBI
+20190510 EMIF Neuropsychology.csv,HDRS - 17
+20190510 EMIF Neuropsychology.csv,GDS - 30
+20190510 EMIF Neuropsychology.csv,Clock Drawing Test
+20190510 EMIF Neuropsychology.csv,Anmial Fluency 1 min
+20190510 EMIF Neuropsychology.csv,Boston Naming Test 
+20190510 EMIF Neuropsychology.csv,TMT Part A
+20190510 EMIF Neuropsychology.csv,TMT Part B
+20190510 EMIF Neuropsychology.csv,WMS-R Story A Immediate 
+20190510 EMIF Neuropsychology.csv,WMS-R Story A Delayed
+20190510 EMIF Neuropsychology.csv,WMS-R Story B Immediate
+20190510 EMIF Neuropsychology.csv,WMS-R Story B Delayed 
+20190510 EMIF Neuropsychology.csv,Cerad WL round 1
+20190510 EMIF Neuropsychology.csv,Cerad WL round 2
+20190510 EMIF Neuropsychology.csv,Cerad WL round 3
+20190510 EMIF Neuropsychology.csv,Cerad WL round 1 intrusions
+20190510 EMIF Neuropsychology.csv,Cerad WL round 2 intrusions 
+20190510 EMIF Neuropsychology.csv,Cerad WL round 3 intrusions
+20190510 EMIF Neuropsychology.csv,Cerad WL delayed 
+20190510 EMIF Neuropsychology.csv,Cerad WL delayed intrusions 
+20190510 EMIF Neuropsychology.csv,Cerad WL recognition yes
+20190510 EMIF Neuropsychology.csv,Cerad WL recognition no
+20190510 EMIF Neuropsychology.csv,Cerad Figures new
+20190510 EMIF Neuropsychology.csv,Cerad Figures delayed
+20190510 EMIF Patient Data.csv,Sex
+20190510 EMIF Patient Data.csv,Date of birth
+20190510 EMIF Patient Data.csv,Date of Admission
+20190510 EMIF Patient Data.csv,Years of Education
+20190510 EMIF Patient Data.csv,Family history Alzheimers 
+20190510 EMIF Patient Data.csv,Family history Dementia
+20190510 EMIF Sleep.csv,Date of 
+20190510 EMIF Sleep.csv,Insomnia Severity Index (ISI)
+20190510 EMIF Sleep.csv,Epworth Sleepiness Scale (ESS)
+20190510 EMIF Sleep.csv,RBDSQ total 
