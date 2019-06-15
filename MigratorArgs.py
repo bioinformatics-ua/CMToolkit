@@ -11,8 +11,9 @@ class MigratorArgs(object):
     '''
 	def __init__(self, args):
 		self.settings 		= self.__readSettings(args.settings)
-		self.cohort 		= self.__defineArg(args, "cohort")
+		self.cohortdir 		= self.__defineArg(args, "cohortdir")
 		self.patientcsv 	= self.__defineArg(args, "patientcsv")
+		self.obscsv 		= self.__defineArg(args, "obscsv")
 		self.columns 		= self.__defineArg(args, "columns")
 		self.measurements 	= self.__defineArg(args, "measurements")
 		self.cohortsep 		= self.__defineArg(args, "cohortsep")
@@ -33,16 +34,18 @@ class MigratorArgs(object):
 		if not configuration:
 			raise Exception("The settings file was not found!")
 		return configuration
-		
+
 	def getDBConfigs(self):
 		return self.settings["database"]
 	
 	def help():
 	    parser = argparse.ArgumentParser(description='Cohort mapper')
-	    parser.add_argument('-i', '--input', dest='cohort', type=str, \
-	                        help='The input can be a cohort CSV file or a dir with all CSV files')
+	    parser.add_argument('-i', '--cohortdir', dest='cohortdir', type=str, \
+	                        help='The dir with all CSV files related to the cohort')
 	    parser.add_argument('-p', '--patientcsv', dest='patientcsv', type=str, \
-	                        help='The CSV file with the patient information. Used only in cohorts splitted by several files.')
+	                        help='The CSV file with the patient information.')
+	    parser.add_argument('-o', '--obscsv', dest='obscsv', type=str, \
+	                        help='The CSV file with the observations.')
 
 	    parser.add_argument('-c', '--columns', dest='columns', type=str, \
 	                        help='The USAGI output file in CSV format with the column mapping')

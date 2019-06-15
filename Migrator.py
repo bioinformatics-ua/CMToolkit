@@ -17,7 +17,7 @@ class Migrator():
 	def __init__(self, cohort, columnsMapping, contentMapping):
 		self.adHocHarmonization = None
 		self.cohort 			= cohort
-		self.columnsMapping 	= columnsMapping
+		self.getColumnsMapping 	= columnsMapping
 		self.contentMapping 	= contentMapping
 
 	def setAdHocMethods(self, adHocMethod):
@@ -32,16 +32,18 @@ class Migrator():
 		return result
 
 	def __migrateTable(self, table):
-		columns, dictOfMappingColumns = self.columnsMapping(table)
-		migration = None
 		if(table == "person"):
-			migration = Person(cohort 	   		= self.cohort.loc[:, columns],
+			columns, dictOfMappingColumns = self.getColumnsMapping(table)
+			cohortData = self.cohort[table].loc[:, columns]
+			migration = Person(cohort 	   		= cohortData,
 						       harmonizerAdHoc  = self.adHocHarmonization,
 						       columnMapper 	= dictOfMappingColumns,
 						       contentMapping	= self.contentMapping)
+
 		elif(table == "observation"):
-			columns, dictOfMappingColumns = self.columnsMapping(table, sourceNameAsKey=True)
-			migration = Observation(cohort 	     	= self.cohort.loc[:, columns],
+			columns, dictOfMappingColumns = self.getColumnsMapping(table, sourceNameAsKey=True)
+			cohortData = self.cohort[table].loc[:, columns]
+			migration = Observation(cohort 	     	= cohortData,
 						       		harmonizerAdHoc	= self.adHocHarmonization,
 						       		columnMapper 	= dictOfMappingColumns,
 						       	 	contentMapping	= self.contentMapping)

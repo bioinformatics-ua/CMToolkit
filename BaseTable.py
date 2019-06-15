@@ -39,10 +39,16 @@ class BaseTable(object):
                 self.mapping[element] = getattr(self.harmonizerAdHoc, methodName)(self.cohort[sourceField] if sourceField in self.cohort else None)
             else:
                 if(sourceField in self.cohort): #Normal behavior
+                    #todo
+                    #caso exista mapeamento de conteudo
+                    #caso seja direto
                     optionsForSourceField = self.contentMapping[self.contentMapping['sourceCode'].str.contains(sourceField)]
-                    values = optionsForSourceField["targetConceptId"].values
-                    sourceFieldMap = pd.Series(values, index=optionsForSourceField['sourceName']).to_dict()
-                    self.mapping[element] = self.cohort[sourceField].map(sourceFieldMap)
+                    if(not optionsForSourceField.empty): #There is a mapping in the measruements file
+                        values = optionsForSourceField["targetConceptId"].values
+                        sourceFieldMap = pd.Series(values, index=optionsForSourceField['sourceName']).to_dict()
+                        self.mapping[element] = self.cohort[sourceField].map(sourceFieldMap)
+                    else:
+                        self.mapping[element] = self.cohort[sourceField]
                     
     def getMapping(self):
         return self.mapping

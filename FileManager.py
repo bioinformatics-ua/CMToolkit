@@ -2,13 +2,21 @@ import pathlib
 import pandas as pd
 import os
 
-class FileManager():
+class FileManager():    
+	'''Class to manage the read/write files
+
+    Constructor arguments:
+    TODO
+
+    Cohort needs to have at least 2 files
+    - The patient data file
+    - The observations/measurements
+    '''
 	def __init__(self, args):
 		self.columnsMapping 	= self.__readUSAGIMapping(args.columns, args.usagisep)
-		self.contentMapping 	= self.__readUSAGIMapping(args.measurements, args.usagisep) if args.measurements != None else None
-		self.cohort 			= self.__readCohort(args.cohort, args.cohortsep)
+		self.contentMapping 	= self.__readUSAGIMapping(args.measurements, args.usagisep) if args.measurements != None else pd.DataFrame()
+		self.cohort 			= self.__readCohort(args)
 		self.resulsDir			= args.results[:-1] if args.results.endswith("/") else args.results
-		
 		pathlib.Path(self.resulsDir).mkdir(parents=True, exist_ok=True) 
 
 
@@ -22,13 +30,13 @@ class FileManager():
 			raise Exception("It was not possible allocate the columns to the file, " \
 				"maybe the select CSV column separator is wrong!")
 
-	def __readCohort(self, inputCohort, sep):
-		sep = sep if sep != "\\t" else "\t"
-		if os.path.isfile(inputCohort):
-			return pd.read_csv(inputCohort, na_values='null', sep=sep)
-		else:
-			for file in os.listdir(inputCohort):
-				print(file)
+	def __readCohort(self, args):
+		sep = args.cohortsep if args.cohortsep != "\\t" else "\t"
+		cohortDir = args.cohortdir[:-1] if args.cohortdir.endswith("/") else args.cohortdir
+		cohort = {}
+		cohort["person"] = pd.read_csv('{}/{}'.format(cohortDir, args.patientcsv), na_values='null', sep=sep)
+		cohort["observation"] = pd.read_csv('{}/{}'.format(cohortDir, args.obscsv), na_values='null', sep=sep)
+		return cohort
 
 
 	def writeResults(self, results, configuration):
@@ -54,10 +62,13 @@ class FileManager():
 			dictOfMappingColumns = pd.Series(fileredRows["targetConceptName"].values, index=fileredRows['sourceName']).to_dict()
 		else:
 			dictOfMappingColumns = pd.Series(fileredRows["sourceName"].values, index=fileredRows['targetConceptName']).to_dict()
-		return fileredRows['sourceName'].tolist(), dictOfMappingColumns
+		columns = fileredRows['sourceName'].drop_duplicates().reset_index(drop=True).tolist()
+		return columns, dictOfMappingColumns
 
 	def getContentMapping(self):
-		return self.contentMapping[["sourceCode", "sourceName", "targetConceptId"]]
+		if(not self.contentMapping.empty):
+			return self.contentMapping[["sourceCode", "sourceName", "targetConceptId"]]
+		return None
 
 	def getCohort(self):
 		return self.cohort
