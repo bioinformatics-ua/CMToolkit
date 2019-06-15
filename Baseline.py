@@ -6,7 +6,7 @@ from CSVTransformer import CSVTransformer
 def main(adHoc=None):
     argsParsed = MigratorArgs.help()
     args = MigratorArgs(argsParsed)
-    
+
     if not args.transformcsv and not args.migrate:
         print("Nothing to do, please select the execution mode")
         MigratorArgs.help(show=True)
@@ -20,6 +20,13 @@ def main(adHoc=None):
         csvTransformer.transform()
 
     if args.migrate:
+        #preciso do csv com os patients
+        #e depois preciso de todos os csvs de observations
+
+
+
+
+
         #TO FIX
         fm = FileManager(args)
         etl = Migrator(cohort         = fm.getCohort(), 

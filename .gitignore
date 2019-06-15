@@ -123,5 +123,9 @@ dmypy.json
 .pyre/
 
 #Cohorts
-material
+material/**/*.csv
+!material/**/*_processed.csv
+material/**/*.xlsx
+!material/**/*Report.xlsx
+
 results
