@@ -31,13 +31,14 @@ class MigratorArgs(object, metaclass=Singleton):
 		self.headers		= self.__defineArg(args, "headers")
 		self.measures 		= self.__defineArg(args, "measures")
 		self.cohortdest 	= self.__argAsDir(self.__defineArg(args, "cohortdest"))
-		sep 				= self.__defineArg(args, "cohortsep")
-		self.cohortsep 		= '\t' if sep == "\\t" else sep
 		self.patientcsv 	= self.__defineArg(args, "patientcsv")
 		self.obsdir 		= self.__argAsDir(self.__defineArg(args, "obsdir"))
 		self.columnsmapping = self.__defineArg(args, "columnsmapping")
 		self.results 		= self.__argAsDir(self.__defineArg(args, "results"))
-		self.usagisep 		= self.__defineArg(args, "usagisep")
+		sep 				= self.__defineArg(args, "cohortsep")
+		self.cohortsep 		= '\t' if sep == "\\t" else sep
+		sep 				= self.__defineArg(args, "usagisep")
+		self.usagisep 		= '\t' if sep == "\\t" else sep
 
 		#DB
 		self.db 			= self.settings["database"]

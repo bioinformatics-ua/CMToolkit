@@ -17,15 +17,12 @@ class FileManager():
     - The observations/measurements
     '''
 	def __init__(self, args):
-		#self.columnsMapping 	= self.__readUSAGIMapping(args.columns, args.usagisep)
-		#self.contentMapping 	= self.__readUSAGIMapping(args.measurements, args.usagisep) if args.measurements != None else pd.DataFrame()
 		self.args 			= args
 		self.columnsMapping = self.__readUSAGIMapping(args.columnsmapping, args.usagisep)
 		pathlib.Path(args.results).mkdir(parents=True, exist_ok=True) 
 
 	def readCohort(self, fileName):
-		sep = self.args.cohortsep if self.args.cohortsep != "\\t" else "\t"
-		return pd.read_csv('{}{}'.format(self.args.cohortdest, fileName), na_values='null', sep=sep)
+		return pd.read_csv('{}{}'.format(self.args.cohortdest, fileName), na_values='null', sep=self.args.cohortsep)
 
 	def getColumnsMappingBySourceCode(self, sourceCode, sourceNameAsKey=False):
 		#Split by mark, because the file name used in the Usagi was the original and here is the transformed
@@ -36,9 +33,8 @@ class FileManager():
 		return self.__getDictOfMappingColumns(fileredRows, sourceNameAsKey)
 
 	def __readUSAGIMapping(self, file, sep):
-		sep = sep if sep != "\\t" else "\t"
 		columnsToRead = ["sourceCode", "sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
-		fileContent = pd.read_csv(file, na_values='null', sep=sep)
+		fileContent = pd.read_csv(file, na_values='null', sep=self.args.usagisep)
 		try:
 			return fileContent.loc[:, columnsToRead]
 		except:
@@ -88,6 +84,3 @@ class FileManager():
 		if(not self.contentMapping.empty):
 			return self.contentMapping[["sourceCode", "sourceName", "targetConceptId"]]
 		return None
-
-	def getCohort(self):
-		return self.cohort
