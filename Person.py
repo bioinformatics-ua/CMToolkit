@@ -7,6 +7,8 @@ class Person(BaseTable):
 
     Constructor arguments: See BaseTable
     '''
+    pesondIdDict = {}
+
     def __init__(self, cohort, harmonizerAdHoc, columnMapper, contentMapping):
         columns = [
             'person_id',
@@ -30,7 +32,6 @@ class Person(BaseTable):
             'ethnicity_source_concept_id'
         ]
         cohortFiltered = self.__filterCohort(cohort, harmonizerAdHoc, "person")
-        commonHarmonizerMethods = Person.CommonHarmonizerMethods()
         super(Person, self).__init__(cohort                  = cohortFiltered,
                                      harmonizerAdHoc         = harmonizerAdHoc, 
                                      columnsDst              = columns, 
@@ -38,7 +39,7 @@ class Person(BaseTable):
                                      columnMapper            = columnMapper,
                                      size                    = len(cohortFiltered),
                                      contentMapping          = contentMapping,
-                                     commonHarmonizerMethods = commonHarmonizerMethods)
+                                     commonHarmonizerMethods = Person.CommonHarmonizerMethods())
 
     def __filterCohort(self, cohort, harmonizerAdHoc, table):
         return BaseTable.cohortFilter(cohort          = cohort.drop_duplicates().reset_index(drop=True), 
@@ -76,6 +77,7 @@ class Person(BaseTable):
         def set_person_person_id(self, value):
             person_dict = value.to_dict()
             person_dict = {i[1]:i[0] for i in person_dict.items()}
+            Person.pesondIdDict = person_dict
             return value.map(person_dict)
 
         def set_person_year_of_birth(self, value):

@@ -22,14 +22,16 @@ def main(adHoc=None):
         csvTransformer.transform()
 
     if args.migrate:
-        etl = Migrator(cohortDir     = args.cohortdest,
-                       person        = args.patientcsv,
-                       observations  = args.obsdir, #maybe not
-                       columnMapping = args.columnsmapping,
-                       fileManager   = fm)
+        etl = Migrator(cohortDir        = args.cohortdest,
+                       person           = args.patientcsv,
+                       observations     = args.obsdir,
+                       columnMapping    = args.columnsmapping,
+                       contentMapping   = args.contentmapping,
+                       fileManager      = fm)
         if (adHoc):
             etl.setAdHocMethods(adHoc)
         etl.migrate("person")
+        etl.migrate("observation")
 
         results = etl.getMigrationResults()
         dbConfig = args.getDBConfigs()

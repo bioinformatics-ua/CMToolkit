@@ -1,9 +1,13 @@
 from BaseTable import BaseTable
+from Person import Person
 import sqlalchemy as sa
 
-class Observation():#BaseTable):
+class Observation(BaseTable):
     '''Class to build the Observation table mapping.
-
+    '''
+    ObservationID = 0
+    ObservationIDSet = []
+    '''
     Constructor arguments: See BaseTable
     '''
     def __init__(self, cohort, harmonizerAdHoc, columnMapper, contentMapping):
@@ -29,13 +33,19 @@ class Observation():#BaseTable):
         cohortFiltered = BaseTable.cohortFilter(cohort          = cohort, 
                                                 table           = "observation",
                                                 harmonizerAdHoc = harmonizerAdHoc)
-        super(Observation, self).__init__(cohort          = cohortFiltered, 
-                                          harmonizerAdHoc = harmonizerAdHoc, 
-                                          columnsDst      = columns, 
-                                          table           = "observation",
-                                          columnMapper    = columnMapper,
-                                          size            = cohortFiltered.size,
-                                          contentMapping  = contentMapping)
+        self.__updateObservationIDs(cohortFiltered)
+        super(Observation, self).__init__(cohort                  = cohortFiltered, 
+                                          harmonizerAdHoc         = harmonizerAdHoc, 
+                                          columnsDst              = columns, 
+                                          table                   = "observation",
+                                          columnMapper            = columnMapper,
+                                          size                    = len(cohortFiltered),
+                                          contentMapping          = contentMapping,
+                                          commonHarmonizerMethods = Observation.CommonHarmonizerMethods())
+
+    def __updateObservationIDs(self, cohortFiltered):
+        Observation.ObservationIDSet = range(Observation.ObservationID, Observation.ObservationID + len(cohortFiltered))
+        Observation.ObservationID += len(cohortFiltered)
 
     def getDataTypesForSQL():
         return {
@@ -57,4 +67,14 @@ class Observation():#BaseTable):
             'unit_source_value':                sa.types.String,
             'qualifier_source_value':           sa.types.String
         }
-   
+
+    class CommonHarmonizerMethods(object):
+        '''Class with the most common harmonized methods.
+        This class follow the same rules as all the hamonized classes in the method name definition.
+        See more: TO DO docs
+        '''
+        def set_observation_observation_id(self, value):
+            return Observation.ObservationIDSet
+
+        def set_observation_person_id(self, value):
+            return value.map(Person.pesondIdDict)

@@ -24,11 +24,11 @@ class FileManager():
 	def readCohort(self, fileName):
 		return pd.read_csv('{}{}'.format(self.args.cohortdest, fileName), na_values='null', sep=self.args.cohortsep)
 
-	def getColumnsMappingBySourceCode(self, sourceCode, sourceNameAsKey=False):
+	def getColumnsMappingBySourceCodeAndDomain(self, sourceCode, domain, sourceNameAsKey=False):
 		#Split by mark, because the file name used in the Usagi was the original and here is the transformed
 		conceptToSearch = sourceCode.split(CSVTransformer.MARK)[1] 
-		fileredRowsByDomain = self.columnsMapping[self.columnsMapping['sourceCode'].str.contains(conceptToSearch)]
-		print(fileredRowsByDomain)
+		fileredRowsBySourceCode = self.columnsMapping[self.columnsMapping['sourceCode'].str.contains(conceptToSearch)]
+		fileredRowsByDomain = fileredRowsBySourceCode[fileredRowsBySourceCode['targetDomainId'].str.contains(domain)]
 		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
 		return self.__getDictOfMappingColumns(fileredRows, sourceNameAsKey)
 
@@ -36,7 +36,7 @@ class FileManager():
 		columnsToRead = ["sourceCode", "sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
 		fileContent = pd.read_csv(file, na_values='null', sep=self.args.usagisep)
 		try:
-			return fileContent.loc[:, columnsToRead]
+			return fileContent.reindex(columns=columnsToRead)
 		except:
 			raise Exception("It was not possible allocate the columns to the file, "
 				"maybe the select CSV column separator is wrong!")

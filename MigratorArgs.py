@@ -34,6 +34,7 @@ class MigratorArgs(object, metaclass=Singleton):
 		self.patientcsv 	= self.__defineArg(args, "patientcsv")
 		self.obsdir 		= self.__argAsDir(self.__defineArg(args, "obsdir"))
 		self.columnsmapping = self.__defineArg(args, "columnsmapping")
+		self.contentmapping = self.__defineArg(args, "contentmapping")
 		self.results 		= self.__argAsDir(self.__defineArg(args, "results"))
 		sep 				= self.__defineArg(args, "cohortsep")
 		self.cohortsep 		= '\t' if sep == "\\t" else sep
