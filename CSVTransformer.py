@@ -7,6 +7,11 @@ class CSVTransformer(object):
     '''Class design to transform the cohort CSV files into a strcuture where 
     each line will be added in the DB.
 
+    :constant MARK: the mark used in the files to indenfy which are the ones that have been transformed
+    '''
+    MARK       = "T_"
+    
+    '''
     Constructor arguments:
     :param todo
     '''
@@ -16,7 +21,7 @@ class CSVTransformer(object):
         self.measures   = measures
         self.cohortdest = cohortdest
         self.cohortsep  = cohortsep 
-        self.mark       = "T_"
+        
 
     def transform(self):
         fixedColumns = self.__readColumnMapper(self.headers)
@@ -32,7 +37,7 @@ class CSVTransformer(object):
         dfMeasures = dfRead.reindex(columns=measurementsColumns)  
 
         #Duplicate static columns considering the numebr of measurements by row
-        dfProcessed = pd.DataFrame(np.repeat(dfHeaders.values,len(dfMeasures),axis=0))
+        dfProcessed = pd.DataFrame(np.repeat(dfHeaders.values, len(measurementsColumns),axis=0))
         dfProcessed.columns = dfHeaders.columns
 
         #Convert the matrix into a key:value dataframe

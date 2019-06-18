@@ -1,4 +1,5 @@
 from BaseTable import BaseTable
+import sqlalchemy as sa
 
 class ObservationPeriod(BaseTable):
     '''Class to build the Observation Period table mapping.

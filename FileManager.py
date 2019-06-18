@@ -1,6 +1,9 @@
 import pathlib
 import pandas as pd
 import os
+from CSVTransformer import CSVTransformer
+from BaseTable import BaseTable
+from sqlalchemy import create_engine
 
 class FileManager():    
 	'''Class to manage the read/write files
@@ -13,12 +16,23 @@ class FileManager():
     - The observations/measurements
     '''
 	def __init__(self, args):
-		self.columnsMapping 	= self.__readUSAGIMapping(args.columns, args.usagisep)
-		self.contentMapping 	= self.__readUSAGIMapping(args.measurements, args.usagisep) if args.measurements != None else pd.DataFrame()
-		self.cohort 			= self.__readCohort(args)
-		self.resulsDir			= args.results[:-1] if args.results.endswith("/") else args.results
-		pathlib.Path(self.resulsDir).mkdir(parents=True, exist_ok=True) 
+		#self.columnsMapping 	= self.__readUSAGIMapping(args.columns, args.usagisep)
+		#self.contentMapping 	= self.__readUSAGIMapping(args.measurements, args.usagisep) if args.measurements != None else pd.DataFrame()
+		self.args 			= args
+		self.columnsMapping = self.__readUSAGIMapping(args.columnsmapping, args.usagisep)
+		pathlib.Path(args.results).mkdir(parents=True, exist_ok=True) 
 
+	def readCohort(self, fileName):
+		sep = self.args.cohortsep if self.args.cohortsep != "\\t" else "\t"
+		return pd.read_csv('{}{}'.format(self.args.cohortdest, fileName), na_values='null', sep=sep)
+
+	def getColumnsMappingBySourceCode(self, sourceCode, sourceNameAsKey=False):
+		#Split by mark, because the file name used in the Usagi was the original and here is the transformed
+		conceptToSearch = sourceCode.split(CSVTransformer.MARK)[1] 
+		fileredRowsByDomain = self.columnsMapping[self.columnsMapping['sourceCode'].str.contains(conceptToSearch)]
+		print(fileredRowsByDomain)
+		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
+		return self.__getDictOfMappingColumns(fileredRows, sourceNameAsKey)
 
 	def __readUSAGIMapping(self, file, sep):
 		sep = sep if sep != "\\t" else "\t"
@@ -27,27 +41,20 @@ class FileManager():
 		try:
 			return fileContent.loc[:, columnsToRead]
 		except:
-			raise Exception("It was not possible allocate the columns to the file, " \
+			raise Exception("It was not possible allocate the columns to the file, "
 				"maybe the select CSV column separator is wrong!")
-
-	def __readCohort(self, args):
-		sep = args.cohortsep if args.cohortsep != "\\t" else "\t"
-		cohortDir = args.cohortdir[:-1] if args.cohortdir.endswith("/") else args.cohortdir
-		cohort = {}
-		cohort["person"] = pd.read_csv('{}/{}'.format(cohortDir, args.patientcsv), na_values='null', sep=sep)
-		cohort["observation"] = pd.read_csv('{}/{}'.format(cohortDir, args.obscsv), na_values='null', sep=sep)
-		return cohort
-
 
 	def writeResults(self, results, configuration):
 		for table in results:
-			#print(results[table])
-			results[table].to_csv('{}/{}.csv'.format(self.resulsDir, table), index=False)
-			
-			#table.to_sql(table, engine, if_exists='append',
-			#							index=False,
-			#							schema='sbcdm',
-			#							dtype=todo)
+			results[table].to_csv('{}{}.csv'.format(self.args.results, table), index=False)
+
+		if self.args.writeindb:
+			engine = create_engine(self.args.db["datatype"]+"://"+self.args.db["user"]+":"+self.args.db["password"]+"@"+self.args.db["server"]+":"+self.args.db["port"]+"/"+self.args.db["database"])
+			for table in results:
+				results[table].to_sql(table, engine, if_exists 	= 'append',
+													 index 		= False,
+													 schema 	= self.args.db["schema"],
+													 dtype 		= BaseTable.getDataTypesForSQL(table))
 
     ####################
     ### 	Gets 	 ###

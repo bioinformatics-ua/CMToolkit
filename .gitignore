@@ -125,7 +125,18 @@ dmypy.json
 #Cohorts
 material/**/*.csv
 !material/**/*_processed.csv
+!material/**/Usagi*.csv
 material/**/*.xlsx
 !material/**/*Report.xlsx
 
 results
+
+#Usagi for DB Mapping
+UsagiBDMapping/*
+!UsagiBDMapping/Vocabularies/*
+!UsagiBDMapping/Usagi_v1.2.7.jar
+
+#Usagi for Concept Mapping
+UsagiConceptMapping/*
+!UsagiConceptMapping/Vocabularies/*
+!UsagiConceptMapping/Usagi_v1.2.7.jar

@@ -1,33 +1,45 @@
 import configparser
 import argparse
 
-class MigratorArgs(object):
+class Singleton(type):
+    _instances = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
+        return cls._instances[cls]
+
+class MigratorArgs(object, metaclass=Singleton):
 	'''Class design to deal with the args and the settings file
 	Note: When added a new arg in the help function, it is necessary add a new 
 	entry in the constructor
+	Note2: This is a singleton so I can easly access any of these variables in the code
 
     Constructor arguments:
     :param args: The args received from the args_parse
     '''
 	def __init__(self, args):
 		self.settings 		= self.__readSettings(args.settings)
+		#Flags
 		self.transformcsv   = args.transform
 		self.migrate   		= args.migrate
-		self.cohortdir		= self.__defineArg(args, "cohortdir")
+		self.adhocmethods	= args.adhoc
+		self.writeindb	 	= args.writeindb
+
+		#Args
+		self.cohortdir		= self.__argAsDir(self.__defineArg(args, "cohortdir"))
 		self.headers		= self.__defineArg(args, "headers")
 		self.measures 		= self.__defineArg(args, "measures")
-		self.cohortdest 	= self.__defineArg(args, "cohortdest")
+		self.cohortdest 	= self.__argAsDir(self.__defineArg(args, "cohortdest"))
 		sep 				= self.__defineArg(args, "cohortsep")
 		self.cohortsep 		= '\t' if sep == "\\t" else sep
-
-		self.cohortdir 		= self.__defineArg(args, "cohortdir")
 		self.patientcsv 	= self.__defineArg(args, "patientcsv")
-		self.obscsv 		= self.__defineArg(args, "obscsv")
-		self.columns 		= self.__defineArg(args, "columns")
-		self.measurements 	= self.__defineArg(args, "measurements")
+		self.obsdir 		= self.__argAsDir(self.__defineArg(args, "obsdir"))
+		self.columnsmapping = self.__defineArg(args, "columnsmapping")
+		self.results 		= self.__argAsDir(self.__defineArg(args, "results"))
 		self.usagisep 		= self.__defineArg(args, "usagisep")
-		self.results 		= self.__defineArg(args, "results")
 
+		#DB
+		self.db 			= self.settings["database"]
 
 	def __defineArg(self, args, arg):
 		if (hasattr(args, arg)):
@@ -38,6 +50,9 @@ class MigratorArgs(object):
 		if (arg in self.settings["cohorttransformation"]):
 			return self.settings["cohorttransformation"][arg]
 		return None
+
+	def __argAsDir(self, arg):
+		return arg if arg.endswith("/") else arg + "/"
 	
 	def __readSettings(self, settingsFile):
 		configuration = configparser.ConfigParser()
@@ -82,6 +97,13 @@ class MigratorArgs(object):
 	                        help='Setting this true to transform the cohort, step 4 (default: False)')
 	    executionMode.add_argument('-m', '--migrate', default=False, action='store_true', \
 	                        help='Setting this true to migrate the cohort. First transform the csv (step 4) (default: False)')
+	    
+	    executionSettings = parser.add_argument_group('Execution Settings', 'Flags to setup some execution settings. This kind of flags are not available in the settings file!')
+	    executionSettings.add_argument('-a', '--adhoc', default=False, action='store_true', \
+	                        help='Active the standard ad hoc methods. Some tables have their own ad hoc tables used in several cohorts. Setting this true to use these methods. (default: False)')
+	    executionSettings.add_argument('-w', '--writeindb', default=False, action='store_true', \
+	                        help='Setting this true to write the cohort in the defined database. (default: False)')
+	    
 	    if show:
 	    	parser.print_help()
 	    return parser.parse_args()

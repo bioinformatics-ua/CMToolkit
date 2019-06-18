@@ -1,4 +1,6 @@
 from BaseTable import BaseTable
+import pandas as pd
+import sqlalchemy as sa
 
 class Person(BaseTable):
     '''Class to build the Person table mapping.
@@ -28,13 +30,15 @@ class Person(BaseTable):
             'ethnicity_source_concept_id'
         ]
         cohortFiltered = self.__filterCohort(cohort, harmonizerAdHoc, "person")
-        super(Person, self).__init__(cohort          = cohortFiltered,
-                                     harmonizerAdHoc = harmonizerAdHoc, 
-                                     columnsDst      = columns, 
-                                     table           = "person",
-                                     columnMapper    = columnMapper,
-                                     size            = len(cohortFiltered),
-                                     contentMapping  = contentMapping)
+        commonHarmonizerMethods = Person.CommonHarmonizerMethods()
+        super(Person, self).__init__(cohort                  = cohortFiltered,
+                                     harmonizerAdHoc         = harmonizerAdHoc, 
+                                     columnsDst              = columns, 
+                                     table                   = "person",
+                                     columnMapper            = columnMapper,
+                                     size                    = len(cohortFiltered),
+                                     contentMapping          = contentMapping,
+                                     commonHarmonizerMethods = commonHarmonizerMethods)
 
     def __filterCohort(self, cohort, harmonizerAdHoc, table):
         return BaseTable.cohortFilter(cohort          = cohort.drop_duplicates().reset_index(drop=True), 
@@ -63,4 +67,22 @@ class Person(BaseTable):
             'ethnicity_source_value':       sa.types.String,
             'ethnicity_source_concept_id':  sa.types.BigInteger 
         }
-   
+
+    class CommonHarmonizerMethods(object):
+        '''Class with the most common harmonized methods.
+        This class follow the same rules as all the hamonized classes in the method name definition.
+        See more: TO DO docs
+        '''
+        def set_person_person_id(self, value):
+            person_dict = value.to_dict()
+            person_dict = {i[1]:i[0] for i in person_dict.items()}
+            return value.map(person_dict)
+
+        def set_person_year_of_birth(self, value):
+            return pd.DatetimeIndex(value).year
+
+        def set_person_month_of_birth(self, value):
+            return pd.DatetimeIndex(value).month
+
+        def set_person_day_of_birth(self, value):
+            return pd.DatetimeIndex(value).day

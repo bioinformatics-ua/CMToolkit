@@ -11,6 +11,8 @@ def main(adHoc=None):
         print("Nothing to do, please select the execution mode")
         MigratorArgs.help(show=True)
 
+    fm = FileManager(args)
+
     if args.transformcsv:
         csvTransformer = CSVTransformer(headers     = args.headers, 
                                         measures    = args.measures, 
@@ -20,24 +22,18 @@ def main(adHoc=None):
         csvTransformer.transform()
 
     if args.migrate:
-        #preciso do csv com os patients
-        #e depois preciso de todos os csvs de observations
-
-
-
-
-
-        #TO FIX
-        fm = FileManager(args)
-        etl = Migrator(cohort         = fm.getCohort(), 
-                       columnsMapping = fm.getColumnsMappingByDomain, 
-                       contentMapping = fm.getContentMapping())
+        etl = Migrator(cohortDir     = args.cohortdest,
+                       person        = args.patientcsv,
+                       observations  = args.obsdir, #maybe not
+                       columnMapping = args.columnsmapping,
+                       fileManager   = fm)
         if (adHoc):
             etl.setAdHocMethods(adHoc)
-        results = etl.migrate()
-        
+        etl.migrate("person")
+
+        results = etl.getMigrationResults()
         dbConfig = args.getDBConfigs()
         fm.writeResults(results, dbConfig)
-    
+        
 if __name__ == "__main__":
     main()
