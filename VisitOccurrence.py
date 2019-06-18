@@ -1,7 +1,7 @@
 from BaseTable import BaseTable
 import sqlalchemy as sa
 
-class VisitOccurrence(BaseTable):
+class VisitOccurrence():#BaseTable):
     '''Class to build the VisitOccurrence table mapping.
 
     Constructor arguments: See BaseTable

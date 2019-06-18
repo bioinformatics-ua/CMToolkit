@@ -1,6 +1,7 @@
 import pathlib
 import pandas as pd
 import os
+import re
 from CSVTransformer import CSVTransformer
 from BaseTable import BaseTable
 from sqlalchemy import create_engine
@@ -48,8 +49,19 @@ class FileManager():
 		for table in results:
 			results[table].to_csv('{}{}.csv'.format(self.args.results, table), index=False)
 
-		if self.args.writeindb:
+		if self.args.writeindb or self.args.appendindb:
 			engine = create_engine(self.args.db["datatype"]+"://"+self.args.db["user"]+":"+self.args.db["password"]+"@"+self.args.db["server"]+":"+self.args.db["port"]+"/"+self.args.db["database"])
+			
+			if not self.args.appendindb:
+				try:
+					sqlCmd = ""
+					for cls in BaseTable.__subclasses__():
+						tableName = re.sub( '(?<!^)(?=[A-Z])', '_', cls.__name__ ).lower()
+						sqlCmd += "TRUNCATE TABLE " + self.args.db["schema"] + "." + tableName + "; "
+					engine.execute(sqlCmd)
+				except:
+				    raise Exception("The switchbox database connection credentials are not found or incorrect")
+
 			for table in results:
 				results[table].to_sql(table, engine, if_exists 	= 'append',
 													 index 		= False,

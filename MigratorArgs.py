@@ -24,6 +24,7 @@ class MigratorArgs(object, metaclass=Singleton):
 		self.migrate   		= args.migrate
 		self.adhocmethods	= args.adhoc
 		self.writeindb	 	= args.writeindb
+		self.appendindb		= args.appendindb
 
 		#Args
 		self.cohortdir		= self.__argAsDir(self.__defineArg(args, "cohortdir"))
@@ -103,6 +104,8 @@ class MigratorArgs(object, metaclass=Singleton):
 	                        help='Active the standard ad hoc methods. Some tables have their own ad hoc tables used in several cohorts. Setting this true to use these methods. (default: False)')
 	    executionSettings.add_argument('-w', '--writeindb', default=False, action='store_true', \
 	                        help='Setting this true to write the cohort in the defined database. (default: False)')
+	    executionSettings.add_argument('-w+', '--appendindb', default=False, action='store_true', \
+	                        help='Setting this true to append the cohort in the defined database. (default: False)')
 	    
 	    if show:
 	    	parser.print_help()
