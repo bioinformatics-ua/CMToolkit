@@ -46,7 +46,7 @@ class CSVTransformer(object):
         
         #Merge the shit
         dfOutput = pd.merge(dfProcessed, dfKVMeasures, left_index=True, right_index=True)
-        dfOutput.to_csv('{}{}{}'.format(self.cohortdest, self.mark, csv), sep=self.cohortsep, index=False)
+        dfOutput.to_csv('{}{}{}'.format(self.cohortdest, CSVTransformer.MARK, csv), sep=self.cohortsep, index=False)
     
     def __readColumnMapper(self, file):
         '''
