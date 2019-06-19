@@ -16,13 +16,11 @@ class Migrator():
     							- sourceName: one of the entries in the cohort for the column defined
     							- targetConceptId: the target concept mapped
     '''
-	def __init__(self, cohortDir, person, observations, columnMapping, contentMapping, fileManager):
+	def __init__(self, cohortDir, person, observations, fileManager):
 		self.adHocHarmonization = None
 		self.cohortDir 			= cohortDir
 		self.person 			= person
 		self.observations 		= observations
-		self.columnMapping 		= columnMapping
-		self.contentMapping		= contentMapping
 		self.fileManager		= fileManager
 		self.result 			= {}
 
@@ -48,12 +46,18 @@ class Migrator():
 				columns += ["Variable", "Measure", "Concept"]
 				dictOfMappingColumns["observation_source_value"] =  "Variable"
 				dictOfMappingColumns["qualifier_source_value"] =  "Measure"
-				dictOfMappingColumns["observation_concept_id"] = "Concept" #doing
+				#doing down
+				dictOfMappingColumns["observation_concept_id"] = "Variable Concept" 
+				dictOfMappingColumns["value_as_concept_id"] = "Measure Concept"
+				dictOfMappingColumns["value_as_string"] = "Measure" #Temporary, change this to verifiy the typr
 				cohortData = cohortData.reindex(columns=columns)
 				migration = Observation(cohort 	     	= cohortData,
 						       			harmonizerAdHoc	= self.adHocHarmonization,
 						       			columnMapper 	= dictOfMappingColumns,
-						       	 		contentMapping	= self.contentMapping)
+						       	 		contentMapping	= None)#self.contentMapping)#PAREI AQUI
+				#PORQUE QUE PAREI? BEM TENHO DE VER O QUE MAPEAR
+				#SE csv -> column
+				#Ou column -> resposta
 				observationResult += [migration.getMapping()]
 			self.result[table] = pd.concat(observationResult)
 			return None

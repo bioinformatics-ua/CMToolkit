@@ -19,6 +19,7 @@ class FileManager():
 	def __init__(self, args):
 		self.args 			= args
 		self.columnsMapping = self.__readUSAGIMapping(args.columnsmapping, args.usagisep)
+		self.contentMapping = self.__readUSAGIMapping(args.contentmapping, args.usagisep)
 		pathlib.Path(args.results).mkdir(parents=True, exist_ok=True) 
 
 	def readCohort(self, fileName):
@@ -31,6 +32,13 @@ class FileManager():
 		fileredRowsByDomain = fileredRowsBySourceCode[fileredRowsBySourceCode['targetDomainId'].str.contains(domain)]
 		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
 		return self.__getDictOfMappingColumns(fileredRows, sourceNameAsKey)
+	
+	def getContentMappingBySourceCode(self, sourceCode):
+		if(not self.contentMapping.empty):
+			conceptToSearch = sourceCode.split(CSVTransformer.MARK)[1] 
+			fileredRowsBySourceCode = self.contentMapping[self.contentMapping['sourceCode'].str.contains(conceptToSearch)]
+			return fileredRowsBySourceCode[["sourceCode", "sourceName", "targetConceptId"]]
+		return None
 
 	def __readUSAGIMapping(self, file, sep):
 		columnsToRead = ["sourceCode", "sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
@@ -79,8 +87,3 @@ class FileManager():
 			dictOfMappingColumns = pd.Series(fileredRows["sourceName"].values, index=fileredRows['targetConceptName']).to_dict()
 		columns = fileredRows['sourceName'].drop_duplicates().reset_index(drop=True).tolist()
 		return columns, dictOfMappingColumns
-
-	def getContentMapping(self):
-		if(not self.contentMapping.empty):
-			return self.contentMapping[["sourceCode", "sourceName", "targetConceptId"]]
-		return None

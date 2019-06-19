@@ -25,8 +25,6 @@ def main(adHoc=None):
         etl = Migrator(cohortDir        = args.cohortdest,
                        person           = args.patientcsv,
                        observations     = args.obsdir,
-                       columnMapping    = args.columnsmapping,
-                       contentMapping   = args.contentmapping,
                        fileManager      = fm)
         if (adHoc):
             etl.setAdHocMethods(adHoc)
@@ -39,3 +37,9 @@ def main(adHoc=None):
         
 if __name__ == "__main__":
     main()
+#todo
+#acabar a harmonizaçao ou seja, ler do usagi o mapeamento e fazer coisas
+#existe 2 tipos de mapeamentos escritos no migrator
+#nao meter tudo como string, ver se é data ou numero e meter no tipo certo
+#criterios de exclusao
+#visit e observation period
