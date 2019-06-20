@@ -25,12 +25,14 @@ class MigratorArgs(object, metaclass=Singleton):
 		self.adhocmethods	= args.adhoc
 		self.writeindb	 	= args.writeindb
 		self.appendindb		= args.appendindb
+		self.harmonize 		= args.harmonize
 
 		#Args
 		self.cohortdir		= self.__argAsDir(self.__defineArg(args, "cohortdir"))
 		self.headers		= self.__defineArg(args, "headers")
 		self.measures 		= self.__defineArg(args, "measures")
 		self.cohortdest 	= self.__argAsDir(self.__defineArg(args, "cohortdest"))
+		self.harmonizedest 	= self.__argAsDir(self.__defineArg(args, "cohortharmonizeddest"))
 		self.patientcsv 	= self.__defineArg(args, "patientcsv")
 		self.obsdir 		= self.__argAsDir(self.__defineArg(args, "obsdir"))
 		self.columnsmapping = self.__defineArg(args, "columnsmapping")
@@ -52,6 +54,8 @@ class MigratorArgs(object, metaclass=Singleton):
 			return self.settings["cohortinfo"][arg]
 		if (arg in self.settings["cohorttransformation"]):
 			return self.settings["cohorttransformation"][arg]
+		if (arg in self.settings["cohortharmonization"]):
+			return self.settings["cohortharmonization"][arg]
 		return None
 
 	def __argAsDir(self, arg):
@@ -98,8 +102,10 @@ class MigratorArgs(object, metaclass=Singleton):
 	    executionMode = parser.add_argument_group('Execution Mode', 'Flags to select the execution mode!')
 	    executionMode.add_argument('-t', '--transform', default=False, action='store_true', \
 	                        help='Setting this true to transform the cohort, step 4 (default: False)')
+	    executionMode.add_argument('-H', '--harmonize', default=False, action='store_true', \
+	                        help='Setting this true to harmonize the transformed csv files, step 5 (default: False)')
 	    executionMode.add_argument('-m', '--migrate', default=False, action='store_true', \
-	                        help='Setting this true to migrate the cohort. First transform the csv (step 4) (default: False)')
+	                        help='Setting this true to migrate the cohort. First transform and harmonize the csv (step 4 and 5) (default: False)')
 	    
 	    executionSettings = parser.add_argument_group('Execution Settings', 'Flags to setup some execution settings. This kind of flags are not available in the settings file!')
 	    executionSettings.add_argument('-a', '--adhoc', default=False, action='store_true', \

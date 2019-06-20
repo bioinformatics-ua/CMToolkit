@@ -7,7 +7,7 @@ from BaseTable import BaseTable
 from sqlalchemy import create_engine
 
 class FileManager():    
-	'''Class to manage the read/write files
+	'''Class to read/write the files related with the cohort
 
     Constructor arguments:
     TODO
@@ -26,28 +26,24 @@ class FileManager():
 		return pd.read_csv('{}{}'.format(self.args.cohortdest, fileName), na_values='null', sep=self.args.cohortsep)
 
 	def getColumnsMappingBySourceCodeAndDomain(self, sourceCode, domain, sourceNameAsKey=False):
-		#Split by mark, because the file name used in the Usagi was the original and here is the transformed
-		conceptToSearch = sourceCode.split(CSVTransformer.MARK)[1] 
-		fileredRowsBySourceCode = self.columnsMapping[self.columnsMapping['sourceCode'].str.contains(conceptToSearch)]
+		fileredRowsBySourceCode = self.columnsMapping[self.columnsMapping['sourceCode'].str.contains(sourceCode)]
 		fileredRowsByDomain = fileredRowsBySourceCode[fileredRowsBySourceCode['targetDomainId'].str.contains(domain)]
 		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
 		return self.__getDictOfMappingColumns(fileredRows, sourceNameAsKey)
 	
 	def getContentMappingBySourceCode(self, sourceCode):
 		if(not self.contentMapping.empty):
-			conceptToSearch = sourceCode.split(CSVTransformer.MARK)[1] 
-			fileredRowsBySourceCode = self.contentMapping[self.contentMapping['sourceCode'].str.contains(conceptToSearch)]
+			fileredRowsBySourceCode = self.contentMapping[self.contentMapping['sourceCode'].str.contains(sourceCode)]
 			return fileredRowsBySourceCode[["sourceCode", "sourceName", "targetConceptId"]]
-		return None
+		return None	
 
-	def __readUSAGIMapping(self, file, sep):
-		columnsToRead = ["sourceCode", "sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
-		fileContent = pd.read_csv(file, na_values='null', sep=self.args.usagisep)
-		try:
-			return fileContent.reindex(columns=columnsToRead)
-		except:
-			raise Exception("It was not possible allocate the columns to the file, "
-				"maybe the select CSV column separator is wrong!")
+	def getContentMapping(self, sourceCodeToIgnore):
+		if(not self.contentMapping.empty):
+			filteredRows = self.contentMapping
+			for term in sourceCodeToIgnore:
+				filteredRows = filteredRows[~filteredRows['sourceCode'].str.contains(term)]
+			return filteredRows[["sourceCode", "sourceName", "targetConceptId"]]
+		return None
 
 	def writeResults(self, results, configuration):
 		for table in results:
@@ -72,14 +68,6 @@ class FileManager():
 													 schema 	= self.args.db["schema"],
 													 dtype 		= BaseTable.getDataTypesForSQL(table))
 
-    ####################
-    ### 	Gets 	 ###
-    ####################
-	def getColumnsMappingByDomain(self, domain, sourceNameAsKey=False):
-		fileredRowsByDomain = self.columnsMapping[self.columnsMapping['targetDomainId'].str.contains(domain)]
-		fileredRows = fileredRowsByDomain[['sourceName','targetConceptName']]
-		return self.__getDictOfMappingColumns(fileredRows, sourceNameAsKey)
-
 	def __getDictOfMappingColumns(self, fileredRows, sourceNameAsKey):
 		if(sourceNameAsKey):
 			dictOfMappingColumns = pd.Series(fileredRows["targetConceptName"].values, index=fileredRows['sourceName']).to_dict()
@@ -87,3 +75,12 @@ class FileManager():
 			dictOfMappingColumns = pd.Series(fileredRows["sourceName"].values, index=fileredRows['targetConceptName']).to_dict()
 		columns = fileredRows['sourceName'].drop_duplicates().reset_index(drop=True).tolist()
 		return columns, dictOfMappingColumns
+
+	def __readUSAGIMapping(self, file, sep):
+		columnsToRead = ["sourceCode", "sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
+		fileContent = pd.read_csv(file, na_values='null', sep=self.args.usagisep)
+		try:
+			return fileContent.reindex(columns=columnsToRead)
+		except:
+			raise Exception("It was not possible allocate the columns to the file, "
+				"maybe the select CSV column separator is wrong!")

@@ -4,6 +4,7 @@ from Person import Person
 from Observation import Observation
 from ObservationPeriod import ObservationPeriod
 from VisitOccurrence import VisitOccurrence
+from Harmonizer import Harmonizer
 
 class Migrator():    
 	'''Class base to orchestrate the migration.
@@ -30,7 +31,8 @@ class Migrator():
 	def migrate(self, table=None):
 		if(table == "person"):
 			cohortData = self.fileManager.readCohort(self.person)
-			columns, dictOfMappingColumns = self.fileManager.getColumnsMappingBySourceCodeAndDomain(self.person, table)
+			conceptToSearch = self.person.split(Harmonizer.MARK)[1] 
+			columns, dictOfMappingColumns = self.fileManager.getColumnsMappingBySourceCodeAndDomain(conceptToSearch, table)
 			cohortData = cohortData.reindex(columns=columns)
 			migration = Person(cohort 	   		= cohortData,
 						       harmonizerAdHoc  = self.adHocHarmonization,
@@ -42,22 +44,20 @@ class Migrator():
 			observationResult = []
 			for obs in result:
 				cohortData = self.fileManager.readCohort(obs)
-				columns, dictOfMappingColumns = self.fileManager.getColumnsMappingBySourceCodeAndDomain(obs, table)
-				columns += ["Variable", "Measure", "Concept"]
+				conceptToSearch = obs.split(Harmonizer.MARK)[1] 
+				columns, dictOfMappingColumns = self.fileManager.getColumnsMappingBySourceCodeAndDomain(conceptToSearch, table)
+				columns += ["Variable", "Measure", "VariableConcept", "MeasureConcept"]
 				dictOfMappingColumns["observation_source_value"] =  "Variable"
 				dictOfMappingColumns["qualifier_source_value"] =  "Measure"
-				#doing down
-				dictOfMappingColumns["observation_concept_id"] = "Variable Concept" 
-				dictOfMappingColumns["value_as_concept_id"] = "Measure Concept"
-				dictOfMappingColumns["value_as_string"] = "Measure" #Temporary, change this to verifiy the typr
+				dictOfMappingColumns["observation_concept_id"] = "VariableConcept" 
+				dictOfMappingColumns["value_as_concept_id"] = "MeasureConcept"
+				#dictOfMappingColumns["value_as_string"] = "Measure" #Temporary, change this to verifiy the typr
+
 				cohortData = cohortData.reindex(columns=columns)
 				migration = Observation(cohort 	     	= cohortData,
 						       			harmonizerAdHoc	= self.adHocHarmonization,
 						       			columnMapper 	= dictOfMappingColumns,
-						       	 		contentMapping	= None)#self.contentMapping)#PAREI AQUI
-				#PORQUE QUE PAREI? BEM TENHO DE VER O QUE MAPEAR
-				#SE csv -> column
-				#Ou column -> resposta
+						       	 		contentMapping	= None)
 				observationResult += [migration.getMapping()]
 			self.result[table] = pd.concat(observationResult)
 			return None

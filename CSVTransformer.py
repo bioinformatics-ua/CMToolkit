@@ -32,7 +32,7 @@ class CSVTransformer(object):
             self.__transform(csv, fixedColumns[csv], measurementsColumns[csv])
 
     def __transform(self, csv, fixedColumns, measurementsColumns):
-        dfRead = pd.read_csv('{}{}'.format(self.cohortdir, csv), na_values='null', sep=self.cohortsep)
+        dfRead = pd.read_csv('{}{}'.format(self.cohortdir, csv), na_values='null', sep=self.cohortsep, dtype=str)
         dfHeaders = dfRead.reindex(columns=fixedColumns)
         dfMeasures = dfRead.reindex(columns=measurementsColumns)  
 

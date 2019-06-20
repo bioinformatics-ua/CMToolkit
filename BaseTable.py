@@ -45,14 +45,9 @@ class BaseTable(object):
                 self.mapping[element] = self.__standardAdHocMethod(commonHarmonizerMethods, methodName, self.cohort, sourceField)
             else:
                 if(sourceField in self.cohort): #Normal behavior
-                    #I am thinking in remove this and do this harmonization before
-                    '''optionsForSourceField = self.contentMapping[self.contentMapping['sourceCode'].str.contains(sourceField)]
-                    if(not optionsForSourceField.empty): #There is a mapping in the measruements file
-                        values = optionsForSourceField["targetConceptId"].values
-                        sourceFieldMap = pd.Series(values, index=optionsForSourceField['sourceName']).to_dict()
-                        self.mapping[element] = self.cohort[sourceField].map(sourceFieldMap)
-                    else:'''
                     self.mapping[element] = self.cohort[sourceField]
+
+
 
     def __standardAdHocMethod(self, commonHarmonizerMethods, methodName, cohort, sourceField):
         try:

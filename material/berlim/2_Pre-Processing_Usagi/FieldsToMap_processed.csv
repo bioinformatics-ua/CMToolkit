@@ -1,19 +1,25 @@
 Table,Value
-Diagnosis,10
-Diagnosis,5
-Diagnosis,81
-Diagnosis,1
-Diagnosis,8
-Diagnosis,6
-Diagnosis,3
-Diagnosis,7
-Diagnosis,2
-Etiology,9
-Etiology,1
-Etiology,2
-Etiology,3
-Etiology,5
-Etiology,8
+Diagnosis,Subjective Memory Complaints
+Diagnosis,Misuse of Substances 
+Diagnosis,Others
+Diagnosis,Unclear
+Diagnosis,mild dementia
+Diagnosis,moderate dementia
+Diagnosis,severe dementia 
+Diagnosis,depression with cognitive deficits
+Diagnosis,depression without cognitive deficits
+Diagnosis,cognitive impairment due to schizophrenia
+Diagnosis,mild cognitive impairment
+Etiology,Alzheimer
+Etiology,Mixed type
+Etiology,vascular
+Etiology,Lewy Body
+Etiology,FTD
+Etiology,Parkinson
+Etiology,NPH
+Etiology,Other neurodegenerative diseases
+Etiology,unclear
+Etiology,SHT
 ICD-10 / DSM-V,F00.1
 ICD-10 / DSM-V,F00.2
 ICD-10 / DSM-V,F02.0
