@@ -21,6 +21,7 @@ def main(adHoc=None):
                                         cohortdest  = args.cohortdest, 
                                         cohortsep   = args.cohortsep)
         csvTransformer.transform()
+        print("Csv transformation completed!")
 
     if args.harmonize:
         harmonizer = Harmonizer(cohortOrigin = args.cohortdest, 
@@ -29,6 +30,7 @@ def main(adHoc=None):
                                 cohortSep    = args.cohortsep,
                                 fileManager  = fm)
         harmonizer.harmonize()
+        print("Csv harmonization completed!")
 
     if args.migrate:
         etl = Migrator(cohortDir        = args.cohortdest,
@@ -43,11 +45,9 @@ def main(adHoc=None):
         results = etl.getMigrationResults()
         dbConfig = args.getDBConfigs()
         fm.writeResults(results, dbConfig)
+        print("Migration completed!")
         
 if __name__ == "__main__":
     main()
 #todo
-#corrigir o bug da harmonização, seguir o print 
-#nao meter tudo como string. existem 3 tipos de dados: value_as_number,value_as_string,value_as_concept_id
-#criterios de exclusao
 #visit e observation period

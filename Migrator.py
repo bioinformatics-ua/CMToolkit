@@ -1,5 +1,6 @@
 import glob
 import pandas as pd
+import numpy as np
 from Person import Person
 from Observation import Observation
 from ObservationPeriod import ObservationPeriod
@@ -46,12 +47,13 @@ class Migrator():
 				cohortData = self.fileManager.readCohort(obs)
 				conceptToSearch = obs.split(Harmonizer.MARK)[1] 
 				columns, dictOfMappingColumns = self.fileManager.getColumnsMappingBySourceCodeAndDomain(conceptToSearch, table)
-				columns += ["Variable", "Measure", "VariableConcept", "MeasureConcept"]
+				columns += ["Variable", "Measure", "VariableConcept", "MeasureConcept", "MeasureString"]
 				dictOfMappingColumns["observation_source_value"] =  "Variable"
 				dictOfMappingColumns["qualifier_source_value"] =  "Measure"
 				dictOfMappingColumns["observation_concept_id"] = "VariableConcept" 
 				dictOfMappingColumns["value_as_concept_id"] = "MeasureConcept"
-				#dictOfMappingColumns["value_as_string"] = "Measure" #Temporary, change this to verifiy the typr
+				dictOfMappingColumns["value_as_string"] = "MeasureString" 
+				#dictOfMappingColumns["value_as_number"] = "MeasureNumber" 
 
 				cohortData = cohortData.reindex(columns=columns)
 				migration = Observation(cohort 	     	= cohortData,

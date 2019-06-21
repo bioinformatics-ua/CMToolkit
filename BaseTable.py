@@ -47,8 +47,6 @@ class BaseTable(object):
                 if(sourceField in self.cohort): #Normal behavior
                     self.mapping[element] = self.cohort[sourceField]
 
-
-
     def __standardAdHocMethod(self, commonHarmonizerMethods, methodName, cohort, sourceField):
         try:
             return getattr(commonHarmonizerMethods, methodName)(cohort[sourceField] if sourceField in cohort else None) 

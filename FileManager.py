@@ -60,7 +60,7 @@ class FileManager():
 						sqlCmd += "TRUNCATE TABLE " + self.args.db["schema"] + "." + tableName + "; "
 					engine.execute(sqlCmd)
 				except:
-				    raise Exception("The switchbox database connection credentials are not found or incorrect")
+				    pass
 
 			for table in results:
 				results[table].to_sql(table, engine, if_exists 	= 'append',
@@ -80,7 +80,7 @@ class FileManager():
 		columnsToRead = ["sourceCode", "sourceName", "targetConceptId", "targetConceptName", "targetDomainId"]
 		fileContent = pd.read_csv(file, na_values='null', sep=self.args.usagisep)
 		try:
-			return fileContent.reindex(columns=columnsToRead)
+			return fileContent.astype(str).reindex(columns=columnsToRead)
 		except:
 			raise Exception("It was not possible allocate the columns to the file, "
 				"maybe the select CSV column separator is wrong!")

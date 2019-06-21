@@ -16,6 +16,6 @@ class Harmonizer(object):
 
 	#Observation
 	def set_observation_observation_type_concept_id(self, value):
-		return pd.Series(2000000260, index=Observation.ObservationIDSet)
+		return pd.Series("2000000260", index=Observation.ObservationIDSet)
 
 Baseline.main(Harmonizer)
