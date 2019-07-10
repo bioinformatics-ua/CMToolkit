@@ -140,3 +140,6 @@ UsagiBDMapping/*
 UsagiConceptMapping/*
 !UsagiConceptMapping/Vocabularies/*
 !UsagiConceptMapping/Usagi_v1.2.7.jar
+
+ignore
+.~*
