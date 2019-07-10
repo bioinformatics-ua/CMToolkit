@@ -120,9 +120,12 @@ def get_objects(graph):
     #To load the conceptCodes (ex: 200000512)
     for subject, predicate, label in graph.triples((None, rdflib.URIRef("http://www.w3.org/2000/01/rdf-schema#conceptCode"), None)):
         if subject in object_diction:
+            #print(subject)
+            if "http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#Langu" in subject:
+                print(subject)
             object_diction[subject].vocCode = label.value
         else:
-            print("Some concept code without object in list")
+            print("\nSome concept code without object in list\n")
         
     return object_diction.values()
 
@@ -238,7 +241,8 @@ def main(arguments):
                 extra_top_nodes.append(rdf_object)
         demographics = RDFObject(
             rdflib.URIRef("http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#Demographics"),
-            "Demographics") 
+            "Demographics",
+            "2000000548") 
         demographics.method = "manual"
         extra_top_nodes.append(demographics)
 
