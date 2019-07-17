@@ -5,13 +5,15 @@ class TranSMARTMap():
 	def __init__(self, args):
 		self.args 						= args
 		self.engine						= create_engine(args.db["datatype"]+"://"+args.db["user"]+":"+args.db["password"]+"@"+args.db["server"]+":"+args.db["port"]+"/"+args.db["database"])
-		self.observationsDict 			= {} 
-		self.baseIdForObservationsDict 	= 1
+		self.observationsDict 			= set()
+		#self.baseIdForObservationsDict 	= 1
 
 	def createCSV(self):
 		structure = self.__createStructure()
 		tmStructure = self.__buildStructureForTM(structure)
-		self.__writeCSV(tmStructure)
+		harmonizedStructure = self.__harmonizeStructureForRM(tmStructure)
+		self.observationsDict = sorted(list(self.observationsDict))
+		self.__writeCSV(harmonizedStructure)
 		print(self.args.transmartcohortfile + " created")
 
 	def __createStructure(self):
@@ -45,8 +47,7 @@ class TranSMARTMap():
 
 	def __fulfillObsDict(self, observation_concept_id):
 		if observation_concept_id not in self.observationsDict:
-			self.baseIdForObservationsDict += 1
-			self.observationsDict[observation_concept_id] = self.baseIdForObservationsDict
+			self.observationsDict.add(observation_concept_id)
 
 	def __buildStructureForTM(self, structure):
 		filledCohort = {}
@@ -65,7 +66,7 @@ class TranSMARTMap():
 			foutput.write("\t" + str(colunmn))
 		foutput.write("\n")
 
-		for row in sorted(tmStructure):
+		for row in sorted(tmStructure):#sort by patient id (not very important)
 			rowData = sorted(tmStructure[row])
 			foutput.write(str(row))
 			for obsID in rowData:
@@ -79,13 +80,18 @@ class TranSMARTMap():
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "colunmn_map.txt"), "w")
 		foutput.write("Filename\tCategory_Code (tranSMART)\tColumn\tDataLabel\tdata_label_src\tControlVocab_cd\tData_type\n")
 		foutput.write(self.args.transmartcohortfile + "\t\t1\tSUBJ_ID\t\t\t\n")
+		
+		protegeOutput = {}
 		with open(self.args.protegeoutput) as fp:
 			for line in fp:
 				row = line.strip().split("\t")
 				if int(row[2]) in self.observationsDict:
-					#['Weight (kg)', 'Clinical_Information+Vital_Signs', '2000000462']
-					foutput.write(self.args.transmartcohortfile + "\t" + row[1] + "\t" + \
-						str(self.observationsDict[int(row[2])]) + "\t" + row[0] + "\t\t\t\n")
+					protegeOutput[int(row[2])] = row
+		for line in sorted(protegeOutput):
+			row = protegeOutput[line]
+			#['Weight (kg)', 'Clinical_Information+Vital_Signs', '2000000462']
+			foutput.write(self.args.transmartcohortfile + "\t" + row[1] + "\t" + \
+				str(self.observationsDict.index(int(row[2]))+2) + "\t" + row[0] + "\t\t\t\n")
 		fp.close()
 		foutput.close()
 		self.__createDefaultFiles()
@@ -100,6 +106,17 @@ class TranSMARTMap():
 		foutput.write("SECURITY_REQUIRED=Y\n")
 		foutput.write("TOP_NODE=\\Private Studies\\"+self.args.cohortname+"\n")
 		foutput.close()
+
+	def __harmonizeStructureForRM(self, tmStructure):
+		#Write here the concepts that need to change due to the TranSMART restrictions
+		#For instance the weight cannot have decimal values 78,4 must be 74
+		harmonizedStructure = {}
+		for row in tmStructure:
+			harmonizedStructure[row] = tmStructure[row]
+			if 2000000462 in tmStructure[row]: #Weight
+				harmonizedStructure[row][2000000462] = int(float(tmStructure[row][2000000462].replace(',',''))) if tmStructure[row][2000000462] != '' else ''
+
+		return harmonizedStructure
 
 def main():
 	argsParsed = MigratorArgs.help()
