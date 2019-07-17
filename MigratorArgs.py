@@ -18,33 +18,34 @@ class MigratorArgs(object, metaclass=Singleton):
     :param args: The args received from the args_parse
     '''
 	def __init__(self, args):
-		self.settings 		= self.__readSettings(args.settings)
+		self.settings 			= self.__readSettings(args.settings)
 		#Flags
-		self.transformcsv   = args.transform
-		self.migrate   		= args.migrate
-		self.adhocmethods	= args.adhoc
-		self.writeindb	 	= args.writeindb
-		self.appendindb		= args.appendindb
-		self.harmonize 		= args.harmonize
+		self.transformcsv   	= args.transform
+		self.migrate   			= args.migrate
+		self.adhocmethods		= args.adhoc
+		self.writeindb	 		= args.writeindb
+		self.appendindb			= args.appendindb
+		self.harmonize 			= args.harmonize
 
 		#Args
-		self.cohortdir		= self.__argAsDir(self.__defineArg(args, "cohortdir"))
-		self.headers		= self.__defineArg(args, "headers")
-		self.measures 		= self.__defineArg(args, "measures")
-		self.cohortdest 	= self.__argAsDir(self.__defineArg(args, "cohortdest"))
-		self.harmonizedest 	= self.__argAsDir(self.__defineArg(args, "cohortharmonizeddest"))
-		self.patientcsv 	= self.__defineArg(args, "patientcsv")
-		self.obsdir 		= self.__argAsDir(self.__defineArg(args, "obsdir"))
-		self.columnsmapping = self.__defineArg(args, "columnsmapping")
-		self.contentmapping = self.__defineArg(args, "contentmapping")
-		self.results 		= self.__argAsDir(self.__defineArg(args, "results"))
-		sep 				= self.__defineArg(args, "cohortsep")
-		self.cohortsep 		= '\t' if sep == "\\t" else sep
-		sep 				= self.__defineArg(args, "usagisep")
-		self.usagisep 		= '\t' if sep == "\\t" else sep
+		self.cohortdir			= self.__argAsDir(self.__defineArg(args, "cohortdir"))
+		self.headers			= self.__defineArg(args, "headers")
+		self.measures 			= self.__defineArg(args, "measures")
+		self.cohortdest 		= self.__argAsDir(self.__defineArg(args, "cohortdest"))
+		self.harmonizedest 		= self.__argAsDir(self.__defineArg(args, "cohortharmonizeddest"))
+		self.patientcsv 		= self.__defineArg(args, "patientcsv")
+		self.obsdir 			= self.__argAsDir(self.__defineArg(args, "obsdir"))
+		self.columnsmapping 	= self.__defineArg(args, "columnsmapping")
+		self.contentmapping 	= self.__defineArg(args, "contentmapping")
+		self.results 			= self.__argAsDir(self.__defineArg(args, "results"))
+		sep 					= self.__defineArg(args, "cohortsep")
+		self.cohortsep 			= '\t' if sep == "\\t" else sep
+		sep 					= self.__defineArg(args, "usagisep")
+		self.usagisep 			= '\t' if sep == "\\t" else sep
+		self.vocabulariesdir	= self.__argAsDir(self.__defineArg(args, "vocabulariesdir"))
 
 		#DB
-		self.db 			= self.settings["database"]
+		self.db 				= self.settings["database"]
 
 	def __defineArg(self, args, arg):
 		if (hasattr(args, arg)):

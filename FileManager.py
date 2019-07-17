@@ -2,6 +2,7 @@ import pathlib
 import pandas as pd
 import os
 import re
+import glob
 from CSVTransformer import CSVTransformer
 from BaseTable import BaseTable
 from sqlalchemy import create_engine
@@ -66,6 +67,17 @@ class FileManager():
 													 index 		= False,
 													 schema 	= self.args.db["schema"],
 													 dtype 		= BaseTable.getDataTypesForSQL(table))
+			self.__insertVocabularies(engine)
+
+	def __insertVocabularies(self, engine):
+		vocabulariesFiles = glob.glob('{}*.{}'.format(self.args.vocabulariesdir, "csv"))
+		for file in vocabulariesFiles:
+			table = file.split("/")[-1].split(".")[0].lower()
+			fileContent = pd.read_csv(file, na_values='null', sep="\t")
+			fileContent.to_sql(table, engine, if_exists 	= 'replace',
+												 index 		= False,
+												 schema 	= self.args.db["schema"],
+												 dtype 		= BaseTable.getDataTypesForSQL(table))
 
 	def __getDictOfMappingColumns(self, fileredRows, sourceNameAsKey):
 		if(sourceNameAsKey):
