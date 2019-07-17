@@ -15,7 +15,7 @@ Acetylcholine Esterase Inhibitors	Clinical_Information+Medication_Use+Dementia_M
 Age	Demographics	2000000488
 Alcohol	Clinical_Information+Alcohol_Use	2000000323
 Alcohol Amount	Clinical_Information+Alcohol_Use	2000000324
-Alcohol Use	Clinical_Information	2000000323
+Alcohol Use	Clinical_Information	2000000635
 Alzheimer's Disease Assessment Scale Cognitive Subscale	Neuropsychological_Examination+Test_Batteries	2000000489
 Amyloid Beta 1-38 (pg/mL)	Laboratory_Test_Results+CSF+CSF_Measures	2000000068
 Amyloid Beta 1-40 (pg/mL)	Laboratory_Test_Results+CSF+CSF_Measures	2000000069
@@ -79,7 +79,7 @@ Blood	Laboratory_Test_Results	2000000504
 Blood Assay	Laboratory_Test_Results+Blood+Blood_Protocol	2000000505
 Blood Assay Company	Laboratory_Test_Results+Blood+Blood_Protocol	2000000506
 Blood Centrifugation	Laboratory_Test_Results+Blood+Blood_Protocol	2000000507
-Blood Dates	Laboratory_Test_Results+Blood	2000000480
+Blood Dates	Laboratory_Test_Results+Blood	2000000651
 Blood Freeze Thaw Cycles	Laboratory_Test_Results+Blood+Blood_Protocol	2000000294
 Blood Freezing Temperature	Laboratory_Test_Results+Blood+Blood_Protocol	2000000303
 Blood Protocol	Laboratory_Test_Results+Blood	2000000508
@@ -125,7 +125,7 @@ CSF	Laboratory_Test_Results	2000000529
 CSF 1000 Study Volume	Laboratory_Test_Results+CSF+1000_Study_CSF	2000000287
 CSF Assay	Laboratory_Test_Results+CSF+CSF_Protocol	2000000293
 CSF Assay Company	Laboratory_Test_Results+CSF+CSF_Protocol	2000000295
-CSF Dates	Laboratory_Test_Results+CSF	2000000482
+CSF Dates	Laboratory_Test_Results+CSF	2000000652
 CSF Freeze Thaw Cycles	Laboratory_Test_Results+CSF+CSF_Protocol	2000000530
 CSF Freezing Temperature	Laboratory_Test_Results+CSF+CSF_Protocol	2000000531
 CSF Measures	Laboratory_Test_Results+CSF	2000000532
@@ -150,16 +150,16 @@ CVLT Short Delay Free	Neuropsychological_Examination+Memory+Word_List+California
 CVLT Short Delay Free Z-score	Neuropsychological_Examination+Memory+Word_List+California_Verbal_Learning_Test	2000000355
 Calcium Antagonists	Clinical_Information+Medication_Use+Cardiovascular_Drugs+Anti-Hypertensive_Drugs	2000000356
 California Verbal Learning Test	Neuropsychological_Examination+Memory+Word_List	2000000510
-Cardiovascular Disorders	Clinical_Information+Comorbidity	2000000400
-Cardiovascular Drugs	Clinical_Information+Medication_Use	2000000401
-Cardiovascular Risk Factors	Clinical_Information+Comorbidity	2000000402
+Cardiovascular Disorders	Clinical_Information+Comorbidity	2000000637
+Cardiovascular Drugs	Clinical_Information+Medication_Use	2000000645
+Cardiovascular Risk Factors	Clinical_Information+Comorbidity	2000000638
 Carotid Stenosis	Clinical_Information+Comorbidity+Cardiovascular_Disorders	2000000357
 Category Fluency	Neuropsychological_Examination+Language+Fluency	2000000032
 Category Fluency Sum of 3	Neuropsychological_Examination+Language+Fluency+Category_Fluency	2000000033
 Center	Study_Information	2000000511
 Center for Epidemiologic Studies Depression Scale	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales	2000000512
 Central targeted proteomics	Laboratory_Test_Results+CSF	2000000513
-Cerebrovascular Disorders	Clinical_Information+Comorbidity	2000000403
+Cerebrovascular Disorders	Clinical_Information+Comorbidity	2000000639
 Cholesterol	Clinical_Information+Vital_Signs	2000000358
 Cholesterol-lowering Drugs	Clinical_Information+Medication_Use+Cardiovascular_Drugs	2000000359
 Clinical Dementia Rating	Rating_Scales+Dementia_Rating_Scales	2000000036
@@ -196,8 +196,8 @@ Date PET	Imaging+PET+Amyloid_PET+Amyloid_PET_Dates	2000000542
 Date of Neuropsychological Examination	Neuropsychological_Examination+Dates_Neuropsychological_Examination	2000000477
 Date of Rating Scales Assessment	Rating_Scales+Dates_Rating_Scales	2000000478
 Dates Depression Rating Scales	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales	2000000543
-Dates Neuropsychological Examination	Neuropsychological_Examination	2000000477
-Dates Rating Scales	Rating_Scales	2000000478
+Dates Neuropsychological Examination	Neuropsychological_Examination	2000000653
+Dates Rating Scales	Rating_Scales	2000000658
 Delirium	Clinical_Information+Comorbidity+Psychiatric_Disorders	2000000469
 Dementia Father	Clinical_Information+Family_History_of_Dementia	2000000079
 Dementia Medication	Clinical_Information+Medication_Use	2000000545
@@ -227,8 +227,8 @@ Ecog Self	Rating_Scales+Subjective_Cognitive_Impairment+Ecog	2000000093
 Education Category	Subject_Characteristics	2000000094
 Education Level (yr)	Subject_Characteristics	2000000554
 Employment Status	Subject_Characteristics	2000000096
-Endocrine Disorders	Clinical_Information+Comorbidity	2000000405
-Entorhinal Cortex	Imaging+MRI+MRI_Measures	2000000299
+Endocrine Disorders	Clinical_Information+Comorbidity	2000000640
+Entorhinal Cortex	Imaging+MRI+MRI_Measures	2000000650
 Entorhinal Cortex Left	Imaging+MRI+MRI_Measures+Entorhinal_Cortex	2000000097
 Entorhinal Cortex Method	Imaging+MRI+MRI_Measures+Entorhinal_Cortex	2000000299
 Entorhinal Cortex Right	Imaging+MRI+MRI_Measures+Entorhinal_Cortex	2000000098
@@ -288,14 +288,14 @@ HVLT Delayed	Neuropsychological_Examination+Memory+Word_List+Hopkins_Verbal_Lear
 HVLT Delayed Z-score	Neuropsychological_Examination+Memory+Word_List+Hopkins_Verbal_Learning_Test	2000000135
 HVLT Immediate	Neuropsychological_Examination+Memory+Word_List+Hopkins_Verbal_Learning_Test	2000000136
 HVLT Immediate Z-score	Neuropsychological_Examination+Memory+Word_List+Hopkins_Verbal_Learning_Test	2000000137
-Hachinski Ischaemic Score	Rating_Scales+Somatic_Rating_Scales	2000000133
-Hamilton Depression Scale	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales	2000000121
+Hachinski Ischaemic Score	Rating_Scales+Somatic_Rating_Scales	2000000664
+Hamilton Depression Scale	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales	2000000662
 Head Trauma	Clinical_Information+Comorbidity+Neurological_Disorders	2000000378
 Heart Failure	Clinical_Information+Comorbidity+Other_Cardiac_Diseases	2000000379
 High-Dose Vitamin E	Clinical_Information+Medication_Use+Other_Medication	2000000380
 Hippocampal Volume	Imaging+MRI+MRI_Measures	2000000567
 Hopkins Verbal Learning Test	Neuropsychological_Examination+Memory+Word_List	2000000568
-Hormonal Therapy	Clinical_Information+Medication_Use	2000000406
+Hormonal Therapy	Clinical_Information+Medication_Use	2000000646
 Hospital Anxiety and Depression Scale	Rating_Scales+Neuropsychiatric_Scales	2000000569
 Hypercholesterolemia	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors	2000000381
 Hyperlipedemia	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors	2000000382
@@ -311,7 +311,7 @@ IQCODE Total	Rating_Scales+Dementia_Rating_Scales+Informant_Questionnaire_on_Cog
 Imaging		2000000570
 In 1000 Cohort	Study_Information	2000000571
 Informant Questionnaire on Cognitive Decline	Rating_Scales+Dementia_Rating_Scales	2000000572
-Instrumental Activities of Daily Living	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale	2000000138
+Instrumental Activities of Daily Living	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale	2000000660
 Insulin	Clinical_Information+Medication_Use+Hormonal_Therapy	2000000386
 Intelligence	Neuropsychological_Examination	2000000573
 Intracranial Volume	Imaging+MRI+MRI_Measures	2000000574
@@ -344,7 +344,7 @@ MMSE Memory Z-score	Neuropsychological_Examination+Memory+Word_List+MMSE_Memory_
 MMSE Total Score	Cognitive_Screening_Tests+Mini_Mental_State_Exam	2000000166
 MRI	Imaging	2000000167
 MRI 1000 Study Available	Imaging+MRI+1000_Study_MRI	2000000587
-MRI Dates	Imaging+MRI	2000000481
+MRI Dates	Imaging+MRI	2000000649
 MRI Field Strength	Imaging+MRI+MRI_Protocol	2000000309
 MRI Manufacturer	Imaging+MRI+MRI_Protocol	2000000307
 MRI Measures	Imaging+MRI	2000000588
@@ -355,7 +355,7 @@ MTA Bilateral Abnormal Cut-off	Imaging+MRI+MRI_Measures+Medial_Temporal_Lobe_Atr
 MTA Left	Imaging+MRI+MRI_Measures+Medial_Temporal_Lobe_Atrophy	2000000170
 MTA Right	Imaging+MRI+MRI_Measures+Medial_Temporal_Lobe_Atrophy	2000000171
 Marital Status	Subject_Characteristics	2000000160
-Mattis Dementia Rating Scale	Rating_Scales+Dementia_Rating_Scales	2000000162
+Mattis Dementia Rating Scale	Rating_Scales+Dementia_Rating_Scales	2000000659
 Medial Temporal Lobe Atrophy	Imaging+MRI+MRI_Measures	2000000580
 Medication	Clinical_Information+Medication_Use	2000000581
 Medication Use	Clinical_Information	2000000582
@@ -363,16 +363,16 @@ Memory	Neuropsychological_Examination	2000000583
 Memory Alteration Test	Cognitive_Screening_Tests	2000000584
 Mini Mental State Exam	Cognitive_Screening_Tests	2000000585
 MoCA	Cognitive_Screening_Tests+Montreal_Cognitive_Assessment	2000000389
-Montgomery-Asberg Depression Rating Scale	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales	2000000158
-Montreal Cognitive Assessment	Cognitive_Screening_Tests	2000000389
+Montgomery-Asberg Depression Rating Scale	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales	2000000663
+Montreal Cognitive Assessment	Cognitive_Screening_Tests	2000000648
 Myocardial Infarction	Clinical_Information+Comorbidity+Cardiovascular_Disorders	2000000390
 NART Total	Neuropsychological_Examination+Intelligence+National_Adult_Reading_Test	2000000172
 NPI Total	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory	2000000173
 NPI-Q Total	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory	2000000174
 NSAID	Clinical_Information+Medication_Use+Other_Medication	2000000391
 National Adult Reading Test	Neuropsychological_Examination+Intelligence	2000000590
-Neurological Disorders	Clinical_Information+Comorbidity	2000000408
-Neuropsychiatric Inventory	Rating_Scales+Neuropsychiatric_Scales	2000000173
+Neurological Disorders	Clinical_Information+Comorbidity	2000000641
+Neuropsychiatric Inventory	Rating_Scales+Neuropsychiatric_Scales	2000000661
 Neuropsychiatric Scales	Rating_Scales	2000000591
 Neuropsychological Examination		2000000592
 Nitrate-Derivates	Clinical_Information+Medication_Use+Cardiovascular_Drugs	2000000392
@@ -388,7 +388,7 @@ Other Cardiovascular Disorders	Clinical_Information+Comorbidity+Cardiovascular_D
 Other Cardiovascular Drugs	Clinical_Information+Medication_Use+Cardiovascular_Drugs	2000000401
 Other Cardiovascular Risk Factors	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors	2000000402
 Other Cerebrovascular Disorders	Clinical_Information+Comorbidity+Cerebrovascular_Disorders	2000000403
-Other Dementia Diagnosis	Clinical_Information+Diagnoses	2000000404
+Other Dementia Diagnosis	Clinical_Information+Diagnoses	2000000644
 Other Dementia Drugs	Clinical_Information+Medication_Use+Dementia_Medication	2000000404
 Other Endocrine Disorders	Clinical_Information+Comorbidity+Endocrine_Disorders	2000000405
 Other Hormonal Therapy	Clinical_Information+Medication_Use+Hormonal_Therapy	2000000406
@@ -434,10 +434,10 @@ Priority Memory Test	Neuropsychological_Examination+Memory	2000000601
 Priority Memory Type	Neuropsychological_Examination+Memory+Priority_Memory_Test	2000000285
 Priority Visuoconstruction	Neuropsychological_Examination+Visuoconstruction+Priority_Visuoconstruction_Test	2000000419
 Priority Visuoconstruction Test	Neuropsychological_Examination+Visuoconstruction	2000000286
-Priority Visuoconstruction Type	Neuropsychological_Examination+Visuoconstruction+Priority_Visuoconstruction_Test	2000000419
+Priority Visuoconstruction Type	Neuropsychological_Examination+Visuoconstruction+Priority_Visuoconstruction_Test	2000000657
 Priority Visuoconstruction Z-score	Neuropsychological_Examination+Visuoconstruction+Priority_Visuoconstruction_Test	2000000420
-Psychiatric Disorders	Clinical_Information+Comorbidity	2000000410
-Psychopharmaca	Clinical_Information+Medication_Use	2000000411
+Psychiatric Disorders	Clinical_Information+Comorbidity	2000000642
+Psychopharmaca	Clinical_Information+Medication_Use	2000000647
 Pulse Rate	Clinical_Information+Vital_Signs	2000000421
 Quality of Life	Rating_Scales	2000000602
 RI-48 Cued Recall Test	Neuropsychological_Examination+Memory+Visual_Memory	2000000606
@@ -479,8 +479,8 @@ Sex	Demographics	2000000609
 Sleep Disorders	Clinical_Information+Comorbidity+Neurological_Disorders	2000000434
 Smoking	Clinical_Information+Smoking_Habits	2000000435
 Smoking Amount	Clinical_Information+Smoking_Habits	2000000436
-Smoking Habits	Clinical_Information	2000000435
-Somatic Disorders	Clinical_Information+Comorbidity	2000000412
+Smoking Habits	Clinical_Information	2000000636
+Somatic Disorders	Clinical_Information+Comorbidity	2000000643
 Somatic Rating Scales	Rating_Scales	2000000610
 State-Trate Anxiety Inventory	Rating_Scales+Neuropsychiatric_Scales+Anxiety_Rating_Scales	2000000615
 Statines	Clinical_Information+Medication_Use+Cardiovascular_Drugs	2000000437
@@ -492,7 +492,7 @@ Story Recall	Neuropsychological_Examination+Memory	2000000616
 Story Recall Test	Neuropsychological_Examination+Memory+Story_Recall	2000000617
 Stroke	Clinical_Information+Comorbidity+Cerebrovascular_Disorders	2000000438
 Stroop Interference	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test	2000000439
-Stroop Interference Z-score	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test	2000000439
+Stroop Interference Z-score	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test	2000000654
 Stroop Part 1	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test	2000000276
 Stroop Part 1 Z-score	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test	2000000277
 Stroop Part 2	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test	2000000278
@@ -535,7 +535,7 @@ VOSP Total Z-score	Neuropsychological_Examination+Visuoconstruction+Visual_Objec
 Ventricle Volumes	Imaging+MRI+MRI_Measures	2000000627
 Visual Association Test	Neuropsychological_Examination+Memory+Visual_Memory	2000000628
 Visual Memory	Neuropsychological_Examination+Memory	2000000629
-Visual Object and Space Perception	Neuropsychological_Examination+Visuoconstruction	2000000452
+Visual Object and Space Perception	Neuropsychological_Examination+Visuoconstruction	2000000655
 Visuoconstruction	Neuropsychological_Examination	2000000630
 Vital Signs	Clinical_Information	2000000631
 Volume Fourth Ventricle	Imaging+MRI+MRI_Measures+Ventricle_Volumes	2000000217
@@ -545,7 +545,7 @@ Volume Lateral Ventricle Left	Imaging+MRI+MRI_Measures+Ventricle_Volumes	2000000
 Volume Lateral Ventricle Right	Imaging+MRI+MRI_Measures+Ventricle_Volumes	2000000221
 Volume Third Ventricle	Imaging+MRI+MRI_Measures+Ventricle_Volumes	2000000222
 WAIS Block Design	Neuropsychological_Examination+Visuoconstruction+WAIS_Block_Design_Test	2000000459
-WAIS Block Design Test	Neuropsychological_Examination+Visuoconstruction	2000000459
+WAIS Block Design Test	Neuropsychological_Examination+Visuoconstruction	2000000656
 WAIS Block Design Z-score	Neuropsychological_Examination+Visuoconstruction+WAIS_Block_Design_Test	2000000460
 WAIS Similarities	Neuropsychological_Examination+Intelligence+Wechsler_Adult_Intelligence_Scale_(WAIS_IV)	2000000223
 WAIS Similarities Z-score	Neuropsychological_Examination+Intelligence+Wechsler_Adult_Intelligence_Scale_(WAIS_IV)	2000000472

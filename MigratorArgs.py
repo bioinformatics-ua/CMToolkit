@@ -44,6 +44,12 @@ class MigratorArgs(object, metaclass=Singleton):
 		self.usagisep 			= '\t' if sep == "\\t" else sep
 		self.vocabulariesdir	= self.__argAsDir(self.__defineArg(args, "vocabulariesdir"))
 
+		#TranSMART maybe change this todo
+		self.transmartcohortfile= self.__defineArg(args, "transmartcohortfile")
+		self.transmartdstdir	= self.__argAsDir(self.__defineArg(args, "transmartdstdir"))
+		self.protegeoutput		= self.__defineArg(args, "protegeoutput")		
+		self.cohortname			= self.__defineArg(args, "cohortname")
+
 		#DB
 		self.db 				= self.settings["database"]
 

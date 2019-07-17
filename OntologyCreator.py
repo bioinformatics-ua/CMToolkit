@@ -119,10 +119,8 @@ def get_objects(graph):
 
     #To load the conceptCodes (ex: 200000512)
     for subject, predicate, label in graph.triples((None, rdflib.URIRef("http://www.w3.org/2000/01/rdf-schema#conceptCode"), None)):
+    #for subject, predicate, label in graph.triples((None, rdflib.URIRef("http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#Range_or_Possible_Values"), None)):
         if subject in object_diction:
-            #print(subject)
-            if "http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#Langu" in subject:
-                print(subject)
             object_diction[subject].vocCode = label.value
         else:
             print("\nSome concept code without object in list\n")
