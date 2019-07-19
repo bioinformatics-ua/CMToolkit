@@ -1,0 +1,119 @@
+sourceCode,sourceName,sourceFrequency,sourceAutoAssignedConceptIds,matchScore,mappingStatus,conceptId,comment
+20190510 EMIF Diagnosis.csv,Heart Rate,-1,,0.4609059691429138,APPROVED,2000000421,
+20190510 EMIF Blood and CSF.csv,Apo-E,-1,,0.1962198168039322,APPROVED,2000000013,not the same
+Diagnosis,Subjective Memory Complaints,-1,,0.0,APPROVED,2000000256,seems like something went wrong
+20190510 EMIF Blood and CSF.csv,Date of puncture (Liquor),-1,,0.21656611561775208,APPROVED,2000000482,
+20190510 EMIF Blood and CSF.csv,CSF t-tau,-1,,0.44166815280914307,APPROVED,2000000075,
+20190510 EMIF Blood and CSF.csv,CSF beta 38,-1,,0.40373101830482483,APPROVED,2000000068,
+20190510 EMIF Blood and CSF.csv,CSF p-tau,-1,,0.2953321635723114,APPROVED,2000000073,
+20190510 EMIF Blood and CSF.csv,TSH,-1,,1.0,UNCHECKED,0,
+20190510 EMIF Blood and CSF.csv,Vitamin B12,-1,,1.0,UNCHECKED,2000000458,
+20190510 EMIF Blood and CSF.csv,Date of blood sample,-1,,0.46410590410232544,APPROVED,2000000480,
+20190510 EMIF Blood and CSF.csv,Cholesterin,-1,,0.7518925070762634,APPROVED,2000000358,
+20190510 EMIF Blood and CSF.csv,CSF beta 40,-1,,0.4235958456993103,APPROVED,2000000069,
+20190510 EMIF Diagnosis.csv,Diagnosis,-1,,0.6275454759597778,APPROVED,2000000551,
+20190510 EMIF Diagnosis.csv,Weight,-1,,1.0,APPROVED,2000000462,
+20190510 EMIF Neuropsychology.csv,Date of neuropsychological testing,-1,,0.7957629561424255,APPROVED,2000000477,
+20190510 EMIF Neuropsychology.csv,Clock Drawing Test,-1,,0.7277217507362366,APPROVED,2000000061,
+20190510 EMIF Neuropsychology.csv,MMSE Total Score,-1,,0.40407755970954895,APPROVED,2000000166,
+20190510 EMIF Neuropsychology.csv,Anmial Fluency 1 min,-1,,0.6468623280525208,APPROVED,2000000009,
+20190510 EMIF Neuropsychology.csv,Cerad WL recognition no,-1,,0.5786232352256775,APPROVED,2000000051,No answers
+20190510 EMIF Neuropsychology.csv,Cerad Figures new,-1,,0.7442576885223389,APPROVED,2000000045,
+20190510 EMIF Neuropsychology.csv,WMS-R Story A Delayed,-1,,0.5224083662033081,APPROVED,2000000206,
+20190510 EMIF Neuropsychology.csv,Cerad WL delayed ,-1,,0.5581316351890564,APPROVED,2000000047,
+20190510 EMIF Neuropsychology.csv,WMS-R Story B Immediate,-1,,0.5290101766586304,APPROVED,2000000208,
+20190510 EMIF Neuropsychology.csv,WMS-R Story B Delayed ,-1,,0.49420833587646484,APPROVED,2000000206,
+20190510 EMIF Neuropsychology.csv,TMT Part A,-1,,0.37575069069862366,APPROVED,2000000210,
+20190510 EMIF Neuropsychology.csv,TMT Part B,-1,,0.40318724513053894,APPROVED,2000000212,
+20190510 EMIF Neuropsychology.csv,WMS-R Story A Immediate ,-1,,0.5484875440597534,APPROVED,2000000208,
+20190510 EMIF Patient Data.csv,Family history Dementia,-1,,0.8934478163719177,APPROVED,2000000468,
+Diagnosis,depression with cognitive deficits,-1,,0.0,APPROVED,2000000470,
+Diagnosis,depression without cognitive deficits,-1,,0.0,APPROVED,2000000470,
+Diagnosis,cognitive impairment due to schizophrenia,-1,,0.0,APPROVED,2000000410,
+Diagnosis,mild cognitive impairment,-1,,0.0,APPROVED,2000000254,
+Etiology,Alzheimer,-1,,0.0,APPROVED,2000000255,
+Etiology,Mixed type,-1,,0.0,APPROVED,2000000255,
+ICD-10 / DSM-V,F00.2,-1,,0.05481768772006035,APPROVED,2000000255,
+ICD-10 / DSM-V,DSM-V: 331.83,-1,,0.06224498152732849,APPROVED,2000000254,
+ICD-10 / DSM-V,F06.7,-1,,0.0,APPROVED,2000000254,
+ICD-10 / DSM-V,G20.0,-1,,0.0,APPROVED,2000000416,
+ICD-10 / DSM-V,G31.84,-1,,0.0,APPROVED,2000000254,
+ICD-10 / DSM-V,F00.0,-1,,0.056708939373493195,APPROVED,2000000255,
+ICD-10 / DSM-V,F00.1,-1,,0.05368034541606903,APPROVED,2000000255,
+20190510 EMIF Patient Data.csv,Family history Alzheimers ,-1,,0.5447186231613159,UNCHECKED,2000000468,check whether its family history specific to alzheimers or dementia
+20190510 EMIF Neuropsychology.csv,CDR,-1,,0.6340862512588501,UNCHECKED,2000000675,check whether its global or sum of boxes
+20190510 EMIF Neuropsychology.csv,Boston Naming Test ,-1,,0.7024139761924744,UNCHECKED,2000000509,"could be 15, 30 or 60 item version"
+20190510 EMIF Neuropsychology.csv,B-ADL,-1,,0.4387640655040741,UNCHECKED,2000000019,different scales
+20190510 EMIF Blood and CSF.csv,CSF Liquor - erythrocytes,-1,,0.08824317902326584,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF Liqour - protein,-1,,0.11858782172203064,APPROVED,2000000075,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF Liqour - lactate,-1,,0.18862341344356537,APPROVED,2000000259,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF_GesProt,-1,,0.12165453284978867,APPROVED,2000000193,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF alpha Synuclein,-1,,0.15595713257789612,APPROVED,2000000175,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF Albumin in Liquor,-1,,0.6053526997566223,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF Liqour - glucosis,-1,,0.44293686747550964,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF Liqour - haemoglobin,-1,,0.15912115573883057,APPROVED,2000000342,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF Albumin ratio L/S,-1,,0.5887771844863892,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,Folsäure,-1,,0.07427090406417847,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF Liquor - cell count,-1,,0.21758511662483215,APPROVED,2000000065,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgG ratio L/S,-1,,0.12188543379306793,APPROVED,2000000482,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgA ratio L/S,-1,,0.18358401954174042,APPROVED,2000000036,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF Albumin in Serum,-1,,0.6450435519218445,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CRP,-1,,0.1197088211774826,APPROVED,2000000140,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgM ratio L/S ,-1,,0.1147027537226677,APPROVED,2000000482,does not need to be included
+20190510 EMIF Blood and CSF.csv,Hb1Ac,-1,,0.10538627952337265,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgG in Serum ,-1,,0.4903160631656647,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgG in Liquor,-1,,0.13996800780296326,APPROVED,2000000092,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgA in Serum ,-1,,0.4871639907360077,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgM in Serum ,-1,,0.4905182123184204,APPROVED,0,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgA in Liquor ,-1,,0.11695706844329834,APPROVED,2000000075,does not need to be included
+20190510 EMIF Blood and CSF.csv,CSF IgM in Liquor ,-1,,0.11561983823776245,APPROVED,2000000075,does not need to be included
+20190510 EMIF Diagnosis.csv,Onset of Symptoms,-1,,0.10281103104352951,APPROVED,0,does not need to be included
+20190510 EMIF Patient Data.csv,Date of Admission,-1,,0.30038440227508545,APPROVED,0,does not need to be included
+Etiology,Other neurodegenerative diseases,-1,,0.0,APPROVED,0,does not need to be included
+20190510 EMIF Patient Data.csv,Date of birth,-1,,0.3551342785358429,UNCHECKED,2000000503,http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#BirthYear
+20190510 EMIF Patient Data.csv,Sex,-1,,0.09304331988096237,APPROVED,2000000609,http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#Sex
+20190510 EMIF Diagnosis.csv,Date of Diagnosis,-1,,0.5333418846130371,UNCHECKED,2000000540,http://www.semanticweb.org/emif/ontologies/2015/AD/DateDiagnosisAtBaseline
+20190510 EMIF Patient Data.csv,Years of Education,-1,,0.43192264437675476,UNCHECKED,2000000554,http://www.semanticweb.org/emif/ontologies/2015/AD/RfMs86bCs0kY3adJD71rwj
+Diagnosis,mild dementia,-1,,0.0,UNCHECKED,2000000680,if etiology is AD should be mapped to AD 2000000255; if nonAD should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+Diagnosis,moderate dementia,-1,,0.0,UNCHECKED,2000000681,if etiology is AD should be mapped to AD 2000000255; if nonAD should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+Diagnosis,severe dementia ,-1,,0.0,UNCHECKED,2000000682,if etiology is AD should be mapped to AD 2000000255; if nonAD should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+20190510 EMIF Blood and CSF.csv,Triglyceride,-1,,0.7981294989585876,UNCHECKED,2000000371,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,Cerad Figures delayed,-1,,0.8045194745063782,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,GDS - 30,-1,,0.26410967111587524,UNCHECKED,2000000113,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,MMSE Orientation Score,-1,,0.41649070382118225,UNCHECKED,2000000166,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,HDRS - 17,-1,,0.13286998867988586,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,Cerad WL round 2,-1,,0.2510806620121002,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,Cerad WL round 3,-1,,0.2520360052585602,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,Cerad WL round 1 intrusions,-1,,0.3102797567844391,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,Cerad WL round 2 intrusions ,-1,,0.302534282207489,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,Cerad WL delayed intrusions ,-1,,0.3871861398220062,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,Cerad WL round 3 intrusions,-1,,0.30394867062568665,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Neuropsychology.csv,Cerad WL round 1,-1,,0.2534133791923523,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Sleep.csv,Insomnia Severity Index (ISI),-1,,0.2063816338777542,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Sleep.csv,RBDSQ total ,-1,,0.29860055446624756,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Diagnosis.csv,ICD-10 / DSM-V,-1,,0.07045142352581024,UNCHECKED,0,seems like something went wrong
+20190510 EMIF Neuropsychology.csv,FBI,-1,,0.06361310184001923,UNCHECKED,0,seems like something went wrong
+20190510 EMIF Sleep.csv,Date of ,-1,,0.6190086007118225,UNCHECKED,0,seems like something went wrong
+Diagnosis,Misuse of Substances ,-1,,0.0,UNCHECKED,0,seems like something went wrong
+Diagnosis,Others,-1,,0.0,UNCHECKED,0,seems like something went wrong
+Diagnosis,Unclear,-1,,0.0,UNCHECKED,0,seems like something went wrong
+Etiology,unclear,-1,,0.0,UNCHECKED,0,seems like something went wrong
+Etiology,SHT,-1,,0.0,UNCHECKED,0,seems like something went wrong
+20190510 EMIF Diagnosis.csv,Height,-1,,0.7169285416603088,UNCHECKED,2000000388,should be Height instead of Weight: http://www.semanticweb.org/emif/ontologies/2015/AD/BodyLength(cm)
+20190510 EMIF Diagnosis.csv,Number of Visit,-1,,0.45569565892219543,UNCHECKED,2000000541,should be linked to date of follow up http://www.semanticweb.org/emif/ontologies/2015/AD/DateFollow-up and follow-up time http://www.semanticweb.org/emif/ontologies/2015/AD/RtGaQbZDipTC19m6Ml3Xmg
+20190510 EMIF Diagnosis.csv,Number of Visit,-1,,0.45569565892219543,UNCHECKED,2000000517,should be linked to date of follow up http://www.semanticweb.org/emif/ontologies/2015/AD/DateFollow-up and follow-up time http://www.semanticweb.org/emif/ontologies/2015/AD/RtGaQbZDipTC19m6Ml3Xmg
+20190510 EMIF Blood and CSF.csv,CSF beta 42 inno,-1,,0.3469340205192566,UNCHECKED,2000000070,should be mapped to CSF amyloid beta 1-42 + new concept for CSF innogenetics assay used http://www.semanticweb.org/emif/ontologies/2015/AD/RC2lO4uS7xxP6cq5cyw3A6D
+20190510 EMIF Blood and CSF.csv,CSF beta 42 inno,-1,,0.3469340205192566,UNCHECKED,2000000293,should be mapped to CSF amyloid beta 1-42 + new concept for CSF innogenetics assay used http://www.semanticweb.org/emif/ontologies/2015/AD/RC2lO4uS7xxP6cq5cyw3A6D
+20190510 EMIF Blood and CSF.csv,CSF beta 42 MSD,-1,,0.33798521757125854,UNCHECKED,2000000070,should be mapped to CSF amyloid beta 1-42 + new concept for CSF MSD assay used http://www.semanticweb.org/emif/ontologies/2015/AD/RC2lO4uS7xxP6cq5cyw3A6D
+20190510 EMIF Blood and CSF.csv,CSF beta 42 MSD,-1,,0.33798521757125854,UNCHECKED,2000000293,should be mapped to CSF amyloid beta 1-42 + new concept for CSF MSD assay used http://www.semanticweb.org/emif/ontologies/2015/AD/RC2lO4uS7xxP6cq5cyw3A6D
+Etiology,vascular,-1,,0.0,UNCHECKED,2000000667,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+Etiology,Lewy Body,-1,,0.0,UNCHECKED,2000000666,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+Etiology,FTD,-1,,0.0,UNCHECKED,2000000665,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+Etiology,Parkinson,-1,,0.0,UNCHECKED,2000000684,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+Etiology,NPH,-1,,0.0,UNCHECKED,0,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+ICD-10 / DSM-V,F01.2,-1,,0.0,UNCHECKED,0,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+ICD-10 / DSM-V,F02.0,-1,,0.0,UNCHECKED,0,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+20190510 EMIF Diagnosis.csv,Etiology,-1,,0.18408915400505066,APPROVED,2000000551,should be merged with diagnosis
+20190510 EMIF Sleep.csv,Epworth Sleepiness Scale (ESS),-1,,0.21321836113929749,UNCHECKED,2000000434,"sleep disorders seems to general, this is a specific scale"
+20190510 EMIF Diagnosis.csv,Blood Pressure,-1,,0.7119652628898621,UNCHECKED,0,"the variable should be split in two variables, one for systolic and one for diastolic (values are separated by a / in the datafile) first value = systolic 2000000440, second value = diastolic 2000000364"
+20190510 EMIF Neuropsychology.csv,Cerad WL recognition yes,-1,,0.5170210599899292,UNCHECKED,2000000051,yes answers

@@ -1,0 +1,27 @@
+Filename	Category_Code (tranSMART)	Column	DataLabel	data_label_src	ControlVocab_cd	Data_type
+Transmart.tsv		1	SUBJ_ID			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency	2	Animals Fluency 1 min			
+Transmart.tsv	Pharmacogenetics_Findings	3	ApoE Genotype			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales	4	Clinical Dementia Rating			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test	5	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List	6	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test	7	Clock Drawing-On Command			
+Transmart.tsv	Demographics	8	Country			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures	9	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures	10	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures	11	Total Tau (pg/mL)			
+Transmart.tsv	Rating_Scales+Subjective_Cognitive_Impairment+Ecog	12	Ecog Informant			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Intracranial_Volume	13	ICV			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam	14	MMSE Total Score			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test	15	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test	16	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test	17	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test	18	TMT-B			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Clinical_Dementia_Rating	20	CDR Global Score			
+Transmart.tsv	Clinical_Information+Vital_Signs	21	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs	22	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs	23	Weight (kg)			
+Transmart.tsv	Clinical_Information	24	Family History of Dementia			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates	25	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates	26	Date CSF Collection			
+Transmart.tsv	Clinical_Information+Diagnoses	27	Diagnosis			
