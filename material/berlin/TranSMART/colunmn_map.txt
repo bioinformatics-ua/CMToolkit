@@ -24,4 +24,8 @@ Transmart.tsv	Clinical_Information+Vital_Signs	23	Weight (kg)
 Transmart.tsv	Clinical_Information	24	Family History of Dementia			
 Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates	25	Date Blood Collection			
 Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates	26	Date CSF Collection			
-Transmart.tsv	Clinical_Information+Diagnoses	27	Diagnosis			
+Transmart.tsv	Demographics	27	Birth Year			
+Transmart.tsv	Clinical_Information+Diagnoses	28	Diagnosis			
+Transmart.tsv	Demographics	29	Ethnic Group			
+Transmart.tsv	Demographics	30	Race			
+Transmart.tsv	Demographics	31	Sex			

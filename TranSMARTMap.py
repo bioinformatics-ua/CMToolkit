@@ -2,11 +2,33 @@ from MigratorArgs import MigratorArgs
 from sqlalchemy import create_engine
 
 class TranSMARTMap():
+	#Demographic mappings
+	DemographicSex 			= 2000000609
+	DemographicRace 		= 2000000603
+	DemographicEthnic 		= 2000000555
+	DemographicBirthYear 	= 2000000503
+	#DemographicCounty 		= 2000000065
+	#DemographicAge 		= 2000000488
+
+	#Person query index
+	PersonPersonIdIndex       		= 0
+	PersonGenderNameIndex       	= 2
+	PersonRaceNameIndex       		= 4
+	PersonEthnicNameIndex       	= 6
+	PersonBirthYearIndex       		= 7
+
+	#Observation query index
+	ObservationPersonIdIndex       		= 1
+	ObservationObsvationConceptIdIndex	= 2
+	ObservationValuesAsNumberIndex		= 6
+	ObservationValuesAsStringIndex		= 7
+	ObservationValuesAsConceptIdIndex	= 8
+	ObservationValuesAsConceptNameIndex	= 9
+
 	def __init__(self, args):
 		self.args 						= args
 		self.engine						= create_engine(args.db["datatype"]+"://"+args.db["user"]+":"+args.db["password"]+"@"+args.db["server"]+":"+args.db["port"]+"/"+args.db["database"])
-		self.observationsDict 			= set()
-		#self.baseIdForObservationsDict 	= 1
+		self.observationsDict 			= set([TranSMARTMap.DemographicSex, TranSMARTMap.DemographicRace, TranSMARTMap.DemographicEthnic, TranSMARTMap.DemographicBirthYear])
 
 	def createCSV(self):
 		structure = self.__createStructure()
@@ -17,16 +39,21 @@ class TranSMARTMap():
 		print(self.args.transmartcohortfile + " created")
 
 	def __createStructure(self):
-		result_set = self.engine.execute("\
+		newStructure = self.__loadObservations()
+		newStructure = self.__loadPatientData(newStructure)
+		return newStructure
+	
+	def __loadObservations(self):
+		observationSet = self.engine.execute("\
 			SELECT observation_id, person_id, observation_concept_id, concept.concept_name, observation_date, \
        			observation_type_concept_id, value_as_number, value_as_string, value_as_concept_id, valueConcept.concept_name \
-  			FROM omopcdm.observation \
-  			INNER JOIN omopcdm.concept as concept on omopcdm.observation.observation_concept_id=concept.concept_id \
-  			LEFT JOIN omopcdm.concept as valueConcept  on omopcdm.observation.value_as_concept_id=valueConcept.concept_id;")  
+  			FROM "+self.args.db["schema"]+".observation \
+  			INNER JOIN "+self.args.db["schema"]+".concept as concept on "+self.args.db["schema"]+".observation.observation_concept_id=concept.concept_id \
+  			LEFT JOIN "+self.args.db["schema"]+".concept as valueConcept  on "+self.args.db["schema"]+".observation.value_as_concept_id=valueConcept.concept_id;")  
 		newStructure = {}
-		for row in result_set:  
-			person_id = row[1]
-			observation_concept_id = row[2]
+		for row in observationSet:  
+			person_id = row[TranSMARTMap.ObservationPersonIdIndex]
+			observation_concept_id = row[TranSMARTMap.ObservationObsvationConceptIdIndex]
 
 			if person_id in newStructure:
 				newStructure[person_id][observation_concept_id] = self.__getObservation(row)
@@ -36,14 +63,39 @@ class TranSMARTMap():
 			self.__fulfillObsDict(observation_concept_id)
 		return newStructure
 
+	def __loadPatientData(self, newStructure):
+		personSet = self.engine.execute("\
+			SELECT person_id, gender_concept_id, genderConcept.concept_name as gender_concept_name,\
+       			race_concept_id, raceConcept.concept_name as race_concept_name,\
+			    ethnicity_concept_id, ethnicityConcept.concept_name as race_concept_name,\
+			    year_of_birth, month_of_birth, day_of_birth, birth_datetime, death_datetime\
+			FROM "+self.args.db["schema"]+".person\
+			LEFT JOIN "+self.args.db["schema"]+".concept as genderConcept on "+self.args.db["schema"]+".person.gender_concept_id = genderConcept.concept_id\
+			LEFT JOIN "+self.args.db["schema"]+".concept as raceConcept on "+self.args.db["schema"]+".person.race_concept_id = genderConcept.concept_id\
+			LEFT JOIN "+self.args.db["schema"]+".concept as ethnicityConcept on "+self.args.db["schema"]+".person.ethnicity_concept_id = ethnicityConcept.concept_id;")
+		for row in personSet:  
+			person_id = row[TranSMARTMap.PersonPersonIdIndex]
+			if person_id not in newStructure:
+				newStructure[person_id] = {}
+			newStructure[person_id][TranSMARTMap.DemographicSex] 		= self.__convertNoneToEmptyString(row[TranSMARTMap.PersonGenderNameIndex])
+			newStructure[person_id][TranSMARTMap.DemographicRace] 		= self.__convertNoneToEmptyString(row[TranSMARTMap.PersonRaceNameIndex])
+			newStructure[person_id][TranSMARTMap.DemographicEthnic] 	= self.__convertNoneToEmptyString(row[TranSMARTMap.PersonEthnicNameIndex])
+			newStructure[person_id][TranSMARTMap.DemographicBirthYear] 	= self.__convertNoneToEmptyString(row[TranSMARTMap.PersonBirthYearIndex])
+		return newStructure
+
+	def __convertNoneToEmptyString(self, value):
+		if value:
+			return value
+		return ""
+
 	def __getObservation(self, row):
 		#value_as_number, value_as_string, value_as_concept_id, valueConcept.concept_name \
 		#		6				7					8						9
-		if row[9] != None:
-			return row[9]
-		if row[6] != None:
-			return row[6]
-		return row[7]
+		if row[TranSMARTMap.ObservationValuesAsConceptNameIndex] != None:
+			return row[TranSMARTMap.ObservationValuesAsConceptNameIndex]
+		if row[TranSMARTMap.ObservationValuesAsNumberIndex] != None:
+			return row[TranSMARTMap.ObservationValuesAsNumberIndex]
+		return row[TranSMARTMap.ObservationValuesAsStringIndex]
 
 	def __fulfillObsDict(self, observation_concept_id):
 		if observation_concept_id not in self.observationsDict:
