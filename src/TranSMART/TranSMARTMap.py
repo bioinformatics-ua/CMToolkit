@@ -1,4 +1,4 @@
-from MigratorArgs import MigratorArgs
+from TranSMARTArgs import TranSMARTArgs
 from sqlalchemy import create_engine
 
 class TranSMARTMap():

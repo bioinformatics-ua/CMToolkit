@@ -1,5 +1,9 @@
 import sys
-sys.path.insert(0, '../../../src')
+#GREAT SHIT
+sys.path.insert(0, '../../../src/Migrator')
+sys.path.insert(0, '../../../src/Tables')
+sys.path.insert(0, '../../../src/Utils')
+sys.path.insert(0, '../../../src/Vocabularies')
 
 import Baseline
 from Observation import Observation
