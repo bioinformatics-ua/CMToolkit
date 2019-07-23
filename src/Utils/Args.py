@@ -1,12 +1,6 @@
 import configparser
 import argparse
-
-class Singleton(type):
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
+from Singleton import Singleton
 
 class Args(object, metaclass=Singleton):
 	'''Class design to be the base of the classes which will deal with the args
@@ -35,3 +29,11 @@ class Args(object, metaclass=Singleton):
 	def getDBConfigs(self):
 		return self.settings["database"]
 	
+	def help(description, globalSettingsDescription):
+		parser = argparse.ArgumentParser(description = description)
+		configs = parser.add_argument_group('Global settings', globalSettingsDescription)
+		configs.add_argument('-s', '--settings', dest='settings', \
+	                        type=str, default="settings.ini", \
+	                        help='The system settings file (default: settings.ini)')
+		return parser, configs
+	    

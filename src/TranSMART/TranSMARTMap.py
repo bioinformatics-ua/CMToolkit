@@ -1,34 +1,13 @@
 from TranSMARTArgs import TranSMARTArgs
 from sqlalchemy import create_engine
+from TranSMARTConstants import TranSMARTConstants
+import pathlib
 
 class TranSMARTMap():
-	#Demographic mappings
-	DemographicSex 			= 2000000609
-	DemographicRace 		= 2000000603
-	DemographicEthnic 		= 2000000555
-	DemographicBirthYear 	= 2000000503
-	#DemographicCounty 		= 2000000065
-	#DemographicAge 		= 2000000488
-
-	#Person query index
-	PersonPersonIdIndex       		= 0
-	PersonGenderNameIndex       	= 2
-	PersonRaceNameIndex       		= 4
-	PersonEthnicNameIndex       	= 6
-	PersonBirthYearIndex       		= 7
-
-	#Observation query index
-	ObservationPersonIdIndex       		= 1
-	ObservationObsvationConceptIdIndex	= 2
-	ObservationValuesAsNumberIndex		= 6
-	ObservationValuesAsStringIndex		= 7
-	ObservationValuesAsConceptIdIndex	= 8
-	ObservationValuesAsConceptNameIndex	= 9
-
 	def __init__(self, args):
 		self.args 						= args
 		self.engine						= create_engine(args.db["datatype"]+"://"+args.db["user"]+":"+args.db["password"]+"@"+args.db["server"]+":"+args.db["port"]+"/"+args.db["database"])
-		self.observationsDict 			= set([TranSMARTMap.DemographicSex, TranSMARTMap.DemographicRace, TranSMARTMap.DemographicEthnic, TranSMARTMap.DemographicBirthYear])
+		self.observationsDict 			= set([TranSMARTConstants.DemographicSex, TranSMARTConstants.DemographicRace, TranSMARTConstants.DemographicEthnic, TranSMARTConstants.DemographicBirthYear])
 
 	def createCSV(self):
 		structure = self.__createStructure()
@@ -36,7 +15,7 @@ class TranSMARTMap():
 		harmonizedStructure = self.__harmonizeStructureForRM(tmStructure)
 		self.observationsDict = sorted(list(self.observationsDict))
 		self.__writeCSV(harmonizedStructure)
-		print(self.args.transmartcohortfile + " created")
+		print(self.args.cohortoutputfile + " created")
 
 	def __createStructure(self):
 		newStructure = self.__loadObservations()
@@ -44,16 +23,11 @@ class TranSMARTMap():
 		return newStructure
 	
 	def __loadObservations(self):
-		observationSet = self.engine.execute("\
-			SELECT observation_id, person_id, observation_concept_id, concept.concept_name, observation_date, \
-       			observation_type_concept_id, value_as_number, value_as_string, value_as_concept_id, valueConcept.concept_name \
-  			FROM "+self.args.db["schema"]+".observation \
-  			INNER JOIN "+self.args.db["schema"]+".concept as concept on "+self.args.db["schema"]+".observation.observation_concept_id=concept.concept_id \
-  			LEFT JOIN "+self.args.db["schema"]+".concept as valueConcept  on "+self.args.db["schema"]+".observation.value_as_concept_id=valueConcept.concept_id;")  
+		observationSet = self.engine.execute(TranSMARTConstants.observationQuery(self.args.db["schema"]))  
 		newStructure = {}
 		for row in observationSet:  
-			person_id = row[TranSMARTMap.ObservationPersonIdIndex]
-			observation_concept_id = row[TranSMARTMap.ObservationObsvationConceptIdIndex]
+			person_id = row[TranSMARTConstants.ObservationPersonIdIndex]
+			observation_concept_id = row[TranSMARTConstants.ObservationObsvationConceptIdIndex]
 
 			if person_id in newStructure:
 				newStructure[person_id][observation_concept_id] = self.__getObservation(row)
@@ -64,23 +38,15 @@ class TranSMARTMap():
 		return newStructure
 
 	def __loadPatientData(self, newStructure):
-		personSet = self.engine.execute("\
-			SELECT person_id, gender_concept_id, genderConcept.concept_name as gender_concept_name,\
-       			race_concept_id, raceConcept.concept_name as race_concept_name,\
-			    ethnicity_concept_id, ethnicityConcept.concept_name as race_concept_name,\
-			    year_of_birth, month_of_birth, day_of_birth, birth_datetime, death_datetime\
-			FROM "+self.args.db["schema"]+".person\
-			LEFT JOIN "+self.args.db["schema"]+".concept as genderConcept on "+self.args.db["schema"]+".person.gender_concept_id = genderConcept.concept_id\
-			LEFT JOIN "+self.args.db["schema"]+".concept as raceConcept on "+self.args.db["schema"]+".person.race_concept_id = genderConcept.concept_id\
-			LEFT JOIN "+self.args.db["schema"]+".concept as ethnicityConcept on "+self.args.db["schema"]+".person.ethnicity_concept_id = ethnicityConcept.concept_id;")
+		personSet = self.engine.execute(TranSMARTConstants.personQuery(self.args.db["schema"]))
 		for row in personSet:  
-			person_id = row[TranSMARTMap.PersonPersonIdIndex]
+			person_id = row[TranSMARTConstants.PersonPersonIdIndex]
 			if person_id not in newStructure:
 				newStructure[person_id] = {}
-			newStructure[person_id][TranSMARTMap.DemographicSex] 		= self.__convertNoneToEmptyString(row[TranSMARTMap.PersonGenderNameIndex])
-			newStructure[person_id][TranSMARTMap.DemographicRace] 		= self.__convertNoneToEmptyString(row[TranSMARTMap.PersonRaceNameIndex])
-			newStructure[person_id][TranSMARTMap.DemographicEthnic] 	= self.__convertNoneToEmptyString(row[TranSMARTMap.PersonEthnicNameIndex])
-			newStructure[person_id][TranSMARTMap.DemographicBirthYear] 	= self.__convertNoneToEmptyString(row[TranSMARTMap.PersonBirthYearIndex])
+			newStructure[person_id][TranSMARTConstants.DemographicSex] 		= self.__convertNoneToEmptyString(row[TranSMARTConstants.PersonGenderNameIndex])
+			newStructure[person_id][TranSMARTConstants.DemographicRace] 	= self.__convertNoneToEmptyString(row[TranSMARTConstants.PersonRaceNameIndex])
+			newStructure[person_id][TranSMARTConstants.DemographicEthnic] 	= self.__convertNoneToEmptyString(row[TranSMARTConstants.PersonEthnicNameIndex])
+			newStructure[person_id][TranSMARTConstants.DemographicBirthYear]= self.__convertNoneToEmptyString(row[TranSMARTConstants.PersonBirthYearIndex])
 		return newStructure
 
 	def __convertNoneToEmptyString(self, value):
@@ -89,13 +55,11 @@ class TranSMARTMap():
 		return ""
 
 	def __getObservation(self, row):
-		#value_as_number, value_as_string, value_as_concept_id, valueConcept.concept_name \
-		#		6				7					8						9
-		if row[TranSMARTMap.ObservationValuesAsConceptNameIndex] != None:
-			return row[TranSMARTMap.ObservationValuesAsConceptNameIndex]
-		if row[TranSMARTMap.ObservationValuesAsNumberIndex] != None:
-			return row[TranSMARTMap.ObservationValuesAsNumberIndex]
-		return row[TranSMARTMap.ObservationValuesAsStringIndex]
+		if row[TranSMARTConstants.ObservationValuesAsConceptNameIndex] != None:
+			return row[TranSMARTConstants.ObservationValuesAsConceptNameIndex]
+		if row[TranSMARTConstants.ObservationValuesAsNumberIndex] != None:
+			return row[TranSMARTConstants.ObservationValuesAsNumberIndex]
+		return row[TranSMARTConstants.ObservationValuesAsStringIndex]
 
 	def __fulfillObsDict(self, observation_concept_id):
 		if observation_concept_id not in self.observationsDict:
@@ -112,7 +76,8 @@ class TranSMARTMap():
 
 	def __writeCSV(self, tmStructure):
 		header = sorted(tmStructure[0])
-		foutput = open('{}{}'.format(self.args.transmartdstdir, self.args.transmartcohortfile), "w")
+		pathlib.Path(self.args.transmartdstdir).mkdir(parents=True, exist_ok=True) 
+		foutput = open('{}{}'.format(self.args.transmartdstdir, self.args.cohortoutputfile), "w")
 		foutput.write("Subject_ID")
 		for colunmn in header:
 			foutput.write("\t" + str(colunmn))
@@ -131,7 +96,7 @@ class TranSMARTMap():
 		transmartMapping = {}
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "colunmn_map.txt"), "w")
 		foutput.write("Filename\tCategory_Code (tranSMART)\tColumn\tDataLabel\tdata_label_src\tControlVocab_cd\tData_type\n")
-		foutput.write(self.args.transmartcohortfile + "\t\t1\tSUBJ_ID\t\t\t\n")
+		foutput.write(self.args.cohortoutputfile + "\t\t1\tSUBJ_ID\t\t\t\n")
 		
 		protegeOutput = {}
 		with open(self.args.protegeoutput) as fp:
@@ -142,7 +107,7 @@ class TranSMARTMap():
 		for line in sorted(protegeOutput):
 			row = protegeOutput[line]
 			#['Weight (kg)', 'Clinical_Information+Vital_Signs', '2000000462']
-			foutput.write(self.args.transmartcohortfile + "\t" + row[1] + "\t" + \
+			foutput.write(self.args.cohortoutputfile + "\t" + row[1] + "\t" + \
 				str(self.observationsDict.index(int(row[2]))+2) + "\t" + row[0] + "\t\t\t\n")
 		fp.close()
 		foutput.close()
@@ -171,10 +136,11 @@ class TranSMARTMap():
 		return harmonizedStructure
 
 def main():
-	argsParsed = MigratorArgs.help()
-	args = MigratorArgs(argsParsed)
+	argsParsed = TranSMARTArgs.help()
+	args = TranSMARTArgs(argsParsed)
 	tm = TranSMARTMap(args = args)
 	tm.createCSV()
 	tm.createTMMap()
 
-main()
+if __name__ == '__main__':
+	main()

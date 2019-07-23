@@ -3,11 +3,11 @@ import pandas as pd
 import os
 import re
 import glob
-from CSVTransformer import CSVTransformer
 from BaseTable import BaseTable
 from sqlalchemy import create_engine
+from Singleton import Singleton
 
-class FileManager():    
+class FileManager(object, metaclass=Singleton):
 	'''Class to read/write the files related with the cohort
 
     Constructor arguments:
@@ -45,6 +45,10 @@ class FileManager():
 				filteredRows = filteredRows[~filteredRows['sourceCode'].str.contains(term)]
 			return filteredRows[["sourceCode", "sourceName", "targetConceptId"]]
 		return None
+
+	def toCsv(self, dataframe, destDir, destFile, sep):
+		pathlib.Path(destDir).mkdir(parents=True, exist_ok=True) 
+		dataframe.to_csv('{}{}'.format(destDir, destFile), sep=sep, index=False)
 
 	def writeResults(self, results, configuration):
 		for table in results:

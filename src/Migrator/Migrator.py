@@ -6,6 +6,7 @@ from Observation import Observation
 from ObservationPeriod import ObservationPeriod
 from VisitOccurrence import VisitOccurrence
 from Harmonizer import Harmonizer
+from FileManager import FileManager
 
 class Migrator():    
 	'''Class base to orchestrate the migration.
@@ -18,12 +19,12 @@ class Migrator():
     							- sourceName: one of the entries in the cohort for the column defined
     							- targetConceptId: the target concept mapped
     '''
-	def __init__(self, cohortDir, person, observations, fileManager):
+	def __init__(self, cohortDir, person, observations):
 		self.adHocHarmonization = None
 		self.cohortDir 			= cohortDir
 		self.person 			= person
 		self.observations 		= observations
-		self.fileManager		= fileManager
+		self.fileManager    	= FileManager()
 		self.result 			= {}
 
 	def setAdHocMethods(self, adHocMethod):

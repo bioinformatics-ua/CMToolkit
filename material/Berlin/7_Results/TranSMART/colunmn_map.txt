@@ -1,0 +1,31 @@
+Filename	Category_Code (tranSMART)	Column	DataLabel	data_label_src	ControlVocab_cd	Data_type
+Transmart.tsv		1	SUBJ_ID			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency	2	Animals Fluency 1 min			
+Transmart.tsv	Pharmacogenetics_Findings	3	ApoE Genotype			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale	4	BADL			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test	5	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List	6	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test	7	Clock Drawing-On Command			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures	8	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures	9	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures	10	Total Tau (pg/mL)			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Geriatric_Depression_Scale	11	GDS-30			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam	12	MMSE Total Score			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test	13	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test	14	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test	15	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test	16	TMT-B			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol	17	CSF Assay			
+Transmart.tsv	Clinical_Information+Vital_Signs	18	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs	20	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs	21	Pulse Rate			
+Transmart.tsv	Clinical_Information+Comorbidity+Neurological_Disorders	22	Sleep Disorders			
+Transmart.tsv	Clinical_Information+Vital_Signs	24	Weight (kg)			
+Transmart.tsv	Clinical_Information	25	Family History of Dementia			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates	26	Date Blood Collection			
+Transmart.tsv	Demographics	27	Birth Year			
+Transmart.tsv	Clinical_Information+Diagnoses	28	Date Diagnosis			
+Transmart.tsv	Subject_Characteristics	30	Education Level (yr)			
+Transmart.tsv	Demographics	31	Ethnic Group			
+Transmart.tsv	Demographics	32	Race			
+Transmart.tsv	Demographics	33	Sex			

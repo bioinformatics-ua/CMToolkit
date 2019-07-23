@@ -1,6 +1,7 @@
 import glob
 import pandas as pd
 from CSVTransformer import CSVTransformer
+from FileManager import FileManager
 
 class Harmonizer(object):
     '''Class design to harmonize the transformed CSV cohort files.
@@ -13,12 +14,12 @@ class Harmonizer(object):
     Constructor arguments:
     :param todo
     '''
-    def __init__(self, cohortOrigin, cohortDest, mapping, cohortSep, fileManager):
+    def __init__(self, cohortOrigin, cohortDest, mapping, cohortSep):
         self.cohortOrigin   = cohortOrigin 
         self.cohortDest     = cohortDest 
         self.mapping        = mapping
         self.cohortSep      = cohortSep
-        self.fileManager    = fileManager
+        self.fileManager    = FileManager()
         self.contentMapping = self.__loadContentMapping()
 
     def harmonize(self):
@@ -34,8 +35,11 @@ class Harmonizer(object):
         dfRead = self.__harmonizeMeasureConcept(dfRead)
         dfRead = self.__harmonizeMeasureString(dfRead)
         dfRead = self.__harmonizeMeasureAll(dfRead)
-        dfRead.to_csv('{}{}{}'.format(self.cohortDest, Harmonizer.MARK, sourceCode), sep=self.cohortSep, index=False)
-    
+        self.fileManager.toCsv(dataframe = dfRead, 
+                               destDir   = self.cohortDest, 
+                               destFile  = '{}{}'.format(Harmonizer.MARK, sourceCode), 
+                               sep       = self.cohortSep)
+       
     def __filter(self, dfRead):
         return dfRead[pd.notnull(dfRead["Measure"])]
 

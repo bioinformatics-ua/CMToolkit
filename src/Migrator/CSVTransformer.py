@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 import numpy as np
 import argparse
+from FileManager import FileManager
 
 class CSVTransformer(object):
     '''Class design to transform the cohort CSV files into a strcuture where 
@@ -16,11 +17,12 @@ class CSVTransformer(object):
     :param todo
     '''
     def __init__(self, headers, measures, cohortdir, cohortdest, cohortsep):
-        self.cohortdir  = cohortdir
-        self.headers    = headers
-        self.measures   = measures
-        self.cohortdest = cohortdest
-        self.cohortsep  = cohortsep 
+        self.cohortdir      = cohortdir
+        self.headers        = headers
+        self.measures       = measures
+        self.cohortdest     = cohortdest
+        self.cohortsep      = cohortsep 
+        self.fileManager    = FileManager()
         
 
     def transform(self):
@@ -46,7 +48,10 @@ class CSVTransformer(object):
         
         #Merge the shit
         dfOutput = pd.merge(dfProcessed, dfKVMeasures, left_index=True, right_index=True)
-        dfOutput.to_csv('{}{}{}'.format(self.cohortdest, CSVTransformer.MARK, csv), sep=self.cohortsep, index=False)
+        self.fileManager.toCsv(dataframe    = dfOutput, 
+                               destDir      = self.cohortdest, 
+                               destFile     = '{}{}'.format(CSVTransformer.MARK, csv), 
+                               sep          = self.cohortsep)
     
     def __readColumnMapper(self, file):
         '''

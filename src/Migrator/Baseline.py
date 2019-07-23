@@ -27,16 +27,14 @@ def main(adHoc=None):
         harmonizer = Harmonizer(cohortOrigin = args.cohortdest, 
                                 cohortDest   = args.harmonizedest, 
                                 mapping      = args.contentmapping,
-                                cohortSep    = args.cohortsep,
-                                fileManager  = fm)
+                                cohortSep    = args.cohortsep)
         harmonizer.harmonize()
         print("Csv harmonization completed!")
 
     if args.migrate:
         etl = Migrator(cohortDir        = args.cohortdest,
                        person           = args.patientcsv,
-                       observations     = args.obsdir,
-                       fileManager      = fm)
+                       observations     = args.obsdir)
         if (adHoc):
             etl.setAdHocMethods(adHoc)
         etl.migrate("person")
