@@ -5,6 +5,7 @@ import pathlib
 
 class TranSMARTMap():
 	def __init__(self, args):
+		self.adHocHarmonization = None
 		self.args 				= args
 		self.engine				= create_engine(args.db["datatype"]+"://"+args.db["user"]+":"+args.db["password"]+"@"+args.db["server"]+":"+args.db["port"]+"/"+args.db["database"])
 		self.observationsDict 	= set([TranSMARTConstants.DemographicSex, TranSMARTConstants.DemographicRace, TranSMARTConstants.DemographicEthnic, TranSMARTConstants.DemographicBirthYear])
@@ -16,6 +17,9 @@ class TranSMARTMap():
 			for line in fp:
 				visitIndependent += [line.split("\t")[0]]
 		return visitIndependent
+
+	def setAdHocMethods(self, adHocMethod):
+		self.adHocHarmonization = adHocMethod()
 
 	def createCSV(self):
 		structure = self.__createStructure()
@@ -99,12 +103,17 @@ class TranSMARTMap():
 			foutput.write("\n")
 		foutput.close()
 
-	def createTMMap(self):
+	def createTMMap(self, wordMaps=None):
 		#loadProtege_output.txt
 		transmartMapping = {}
 		protegeOutput = self.__loadRowsToMap()
 		self.__writeColumnMap(protegeOutput)
-		self.__createDefaultFiles()
+		if wordMaps:
+			self.__createDefaultFiles(defineWordMaps = True)
+		else:
+			self.__createDefaultFiles()
+		if wordMaps:
+			self.__createCreateWordMapFile(wordMaps=wordMaps)
 		print("TranSMART load files created")
 
 	def __loadRowsToMap(self):
@@ -118,7 +127,7 @@ class TranSMARTMap():
 		return protegeOutput
 
 	def __writeColumnMap(self, protegeOutput):
-		foutput = open('{}{}'.format(self.args.transmartdstdir, "colunmn_map.txt"), "w")
+		foutput = open('{}{}'.format(self.args.transmartdstdir, "column_map.txt"), "w")
 		foutput.write("Filename\tCategory_Code (tranSMART)\tColumn\tDataLabel\tdata_label_src\tControlVocab_cd\tData_type\n")
 		foutput.write(self.args.cohortoutputfile + "\t\t1\tSUBJ_ID\t\t\t\n")
 		for line in sorted(protegeOutput):
@@ -132,15 +141,28 @@ class TranSMARTMap():
 			foutput.write(rowToWrite)
 		foutput.close()
 
-	def __createDefaultFiles(self):
+	def __createDefaultFiles(self, defineWordMaps=False):
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "clinical.params"), "w")
-		foutput.write("COLUMN_MAP_FILE=column_map.txt\nRECORD_EXCLUSION_FILE=x")
+		foutput.write("COLUMN_MAP_FILE=column_map.txt\nRECORD_EXCLUSION_FILE=x\n")
+		if defineWordMaps:
+			foutput.write("WORD_MAP_FILE=word_map.txt")
 		foutput.close()
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "study.params"), "w")
 		foutput.write("STUDY_ID="+self.args.cohortname+"\n")
 		foutput.write("SECURITY_REQUIRED=Y\n")
 		foutput.write("TOP_NODE=\\Private Studies\\"+self.args.cohortname+"\n")
 		foutput.close()
+
+	def __createCreateWordMapFile(self, wordMaps):
+		foutput = open('{}{}'.format(self.args.transmartdstdir, "word_map.txt"), "w")
+		foutput.write("Filename\tColumn	Old Value\tNew Value\n")
+		for word in wordMaps:
+			row = word.split("\t")
+			code = row[0]
+			foutput.write(self.args.cohortoutputfile+"\t"+str(self.observationsDict.index(int(code))+2)+\
+				"\t"+row[1]+"\t"+row[2]+"\n")
+		foutput.close()
+
 
 	def __harmonizeStructureForRM(self, tmStructure):
 		#Write here the concepts that need to change due to the TranSMART restrictions
@@ -149,16 +171,37 @@ class TranSMARTMap():
 		for row in tmStructure:
 			harmonizedStructure[row] = tmStructure[row]
 			if 2000000462 in tmStructure[row]: #Weight
-				harmonizedStructure[row][2000000462] = int(float(tmStructure[row][2000000462].replace(',',''))) if tmStructure[row][2000000462] != '' else ''
+				harmonizedStructure[row][2000000462] = int(float(tmStructure[row][2000000462])) if tmStructure[row][2000000462] != '' else ''
+			#if 2000000480 in tmStructure[row]: #2000000540 in : #Date Diagnosis
+			#	harmonizedStructure[row][2000000480] = 
+
+			if(self.adHocHarmonization != None):
+				harmonizedStructure[row] = self.__adHocMethods(harmonizedStructure[row])
 
 		return harmonizedStructure
 
-def main():
+	def __adHocMethods(self, preharmonizedStructure):
+		'''
+		todo: document
+		set_codenumber
+		ex: set_2000000462
+		'''
+		harmonizedStructure = preharmonizedStructure
+		for code in preharmonizedStructure:
+			methodName = "set_" + str(code)
+			if(hasattr(self.adHocHarmonization, methodName)): 
+				harmonizedStructure[code] = getattr(self.adHocHarmonization, methodName)(preharmonizedStructure[code])
+		return harmonizedStructure
+
+
+def main(adHoc=None, wordMaps=None):
 	argsParsed = TranSMARTArgs.help()
 	args = TranSMARTArgs(argsParsed)
 	tm = TranSMARTMap(args = args)
+	if (adHoc):
+		tm.setAdHocMethods(adHoc)
 	tm.createCSV()
-	tm.createTMMap()
+	tm.createTMMap(wordMaps=wordMaps)
 
 if __name__ == '__main__':
 	main()

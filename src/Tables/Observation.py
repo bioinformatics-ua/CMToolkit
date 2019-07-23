@@ -47,8 +47,6 @@ class Observation(BaseTable):
         cohortFiltered = BaseTable.cohortFilter(cohort          = cohort, 
                                                 table           = table,
                                                 harmonizerAdHoc = harmonizerAdHoc)
-        
-
         return cohortFiltered[pd.notnull(cohortFiltered["Patient ID"].map(Person.pesondIdDict))].reset_index(drop=True)
 
     def __updateObservationIDs(self, cohortFiltered):

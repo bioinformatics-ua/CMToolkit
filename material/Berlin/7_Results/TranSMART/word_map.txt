@@ -1,0 +1,6 @@
+Filename	Column	Old Value	New Value
+Transmart.tsv	3	33	Non-carrier
+Transmart.tsv	3	34	Heterozygote
+Transmart.tsv	3	44	Homozygote
+Transmart.tsv	3	23	Non-carrier
+Transmart.tsv	3	24	Heterozygote

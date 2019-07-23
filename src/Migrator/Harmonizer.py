@@ -33,6 +33,7 @@ class Harmonizer(object):
         dfRead = self.__filter(dfRead)
         dfRead = self.__harmonizeVariableConcept(sourceCode, dfRead)
         dfRead = self.__harmonizeMeasureConcept(dfRead)
+        dfRead = self.__harmonizeMeasureNumber(dfRead)
         dfRead = self.__harmonizeMeasureString(dfRead)
         dfRead = self.__harmonizeMeasureAll(dfRead)
         self.fileManager.toCsv(dataframe = dfRead, 
@@ -56,9 +57,34 @@ class Harmonizer(object):
         dfRead["MeasureConcept"] = dfRead[["Variable", "Measure"]].apply(tuple, axis=1).map(self.contentMapping)
         return dfRead
 
+    def __harmonizeMeasureNumber(self, dfRead):
+        dfRead["MeasureNumber"] = dfRead["Measure"]
+        dfRead["MeasureNumber"] = dfRead["MeasureNumber"].astype(str).str.replace(",", ".")
+        dfRead["MeasureNumber"] = dfRead["MeasureNumber"].astype(str).apply(lambda x: self.__convertFractionsToFloat(x))
+        dfRead["MeasureNumber"] = pd.to_numeric(dfRead["MeasureNumber"], errors='coerce')
+        dfRead["MeasureNumber"] = dfRead["MeasureNumber"][dfRead["MeasureConcept"].isnull()]
+        return dfRead
+
+    def __convertFractionsToFloat(self, fracStr):
+        try:
+            return float(fracStr)
+        except ValueError:
+            try:
+                num, denom = fracStr.split('/')
+                try:
+                    leading, num = num.split(' ')
+                    whole = float(leading)
+                except ValueError:
+                    whole = 0
+                frac = float(num) / float(denom)
+                return whole - frac if whole < 0 else whole + frac
+            except:
+                return fracStr
+
     def __harmonizeMeasureString(self, dfRead):
         dfRead["MeasureString"] = dfRead["Measure"]
         dfRead["MeasureString"] = dfRead["MeasureString"][dfRead["MeasureConcept"].isnull()]
+        dfRead["MeasureString"] = dfRead["MeasureString"][dfRead["MeasureNumber"].isnull()]
         return dfRead
 
     def __loadContentMapping(self):

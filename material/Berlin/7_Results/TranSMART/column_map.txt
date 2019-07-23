@@ -22,9 +22,7 @@ Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	21	Pulse Rate
 Transmart.tsv	Clinical_Information+Comorbidity+Neurological_Disorders+Baseline	22	Sleep Disorders			
 Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	24	Weight (kg)			
 Transmart.tsv	Clinical_Information	25	Family History of Dementia			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Baseline	26	Date Blood Collection			
 Transmart.tsv	Demographics	27	Birth Year			
-Transmart.tsv	Clinical_Information+Diagnoses+Baseline	28	Date Diagnosis			
 Transmart.tsv	Subject_Characteristics	30	Education Level (yr)			
 Transmart.tsv	Demographics	31	Ethnic Group			
 Transmart.tsv	Demographics	32	Race			

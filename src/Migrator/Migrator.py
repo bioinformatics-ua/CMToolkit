@@ -47,13 +47,13 @@ class Migrator():
 				cohortData = self.fileManager.readCohort(obs)
 				conceptToSearch = obs.split(Harmonizer.MARK)[1] 
 				columns, dictOfMappingColumns = self.fileManager.getColumnsMappingBySourceCodeAndDomain(conceptToSearch, table)
-				columns += ["Variable", "Measure", "VariableConcept", "MeasureConcept", "MeasureString"]
+				columns += ["Variable", "Measure", "VariableConcept", "MeasureConcept", "MeasureString", "MeasureNumber"]
 				dictOfMappingColumns["observation_source_value"] =  "Variable"
 				dictOfMappingColumns["qualifier_source_value"] =  "Measure"
 				dictOfMappingColumns["observation_concept_id"] = "VariableConcept" 
 				dictOfMappingColumns["value_as_concept_id"] = "MeasureConcept"
 				dictOfMappingColumns["value_as_string"] = "MeasureString" 
-				#dictOfMappingColumns["value_as_number"] = "MeasureNumber" 
+				dictOfMappingColumns["value_as_number"] = "MeasureNumber" 
 
 				cohortData = cohortData.reindex(columns=columns)
 				migration = Observation(cohort 	     	= cohortData,
