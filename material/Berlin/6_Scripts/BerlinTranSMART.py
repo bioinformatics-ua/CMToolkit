@@ -10,16 +10,12 @@ import TranSMARTMap
 
 class Harmonizer(object):
 	def set_2000000013(self, value):
-		if value == 3/3:
-			return 33
-		if value == 2/3 or value == 0.666666666666667:
-			return 23
-		if value == 3/4:
-			return 34
-		if value == 2/4:
-			return 24
+		if value == 3/3 or value == 2/3 or value == 0.666666666666667:
+			return "Non-carrier"
+		if value == 3/4 or value == 2/4:
+			return "Heterozygote"
 		if value == 4/4:
-			return 44
+			return "Homozygote"
 		return value
 
 	def set_2000000434(self, value):
@@ -27,12 +23,4 @@ class Harmonizer(object):
 			return ""
 		return value
 
-
-def generateWordMap():
-	return ["2000000013\t33\tNon-carrier",
-			"2000000013\t34\tHeterozygote",
-			"2000000013\t44\tHomozygote",
-			"2000000013\t23\tNon-carrier",
-			"2000000013\t24\tHeterozygote"]
-
-TranSMARTMap.main(adHoc=Harmonizer, wordMaps=generateWordMap())
+TranSMARTMap.main(adHoc=Harmonizer)

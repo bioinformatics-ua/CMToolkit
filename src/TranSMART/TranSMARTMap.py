@@ -103,17 +103,12 @@ class TranSMARTMap():
 			foutput.write("\n")
 		foutput.close()
 
-	def createTMMap(self, wordMaps=None):
+	def createTMMap(self):
 		#loadProtege_output.txt
 		transmartMapping = {}
 		protegeOutput = self.__loadRowsToMap()
 		self.__writeColumnMap(protegeOutput)
-		if wordMaps:
-			self.__createDefaultFiles(defineWordMaps = True)
-		else:
-			self.__createDefaultFiles()
-		if wordMaps:
-			self.__createCreateWordMapFile(wordMaps=wordMaps)
+		self.__createDefaultFiles()
 		print("TranSMART load files created")
 
 	def __loadRowsToMap(self):
@@ -141,28 +136,15 @@ class TranSMARTMap():
 			foutput.write(rowToWrite)
 		foutput.close()
 
-	def __createDefaultFiles(self, defineWordMaps=False):
+	def __createDefaultFiles(self):
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "clinical.params"), "w")
 		foutput.write("COLUMN_MAP_FILE=column_map.txt\nRECORD_EXCLUSION_FILE=x\n")
-		if defineWordMaps:
-			foutput.write("WORD_MAP_FILE=word_map.txt")
 		foutput.close()
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "study.params"), "w")
 		foutput.write("STUDY_ID="+self.args.cohortname+"\n")
 		foutput.write("SECURITY_REQUIRED=Y\n")
 		foutput.write("TOP_NODE=\\Private Studies\\"+self.args.cohortname+"\n")
 		foutput.close()
-
-	def __createCreateWordMapFile(self, wordMaps):
-		foutput = open('{}{}'.format(self.args.transmartdstdir, "word_map.txt"), "w")
-		foutput.write("Filename\tColumn	Old Value\tNew Value\n")
-		for word in wordMaps:
-			row = word.split("\t")
-			code = row[0]
-			foutput.write(self.args.cohortoutputfile+"\t"+str(self.observationsDict.index(int(code))+2)+\
-				"\t"+row[1]+"\t"+row[2]+"\n")
-		foutput.close()
-
 
 	def __harmonizeStructureForRM(self, tmStructure):
 		#Write here the concepts that need to change due to the TranSMART restrictions
@@ -194,14 +176,14 @@ class TranSMARTMap():
 		return harmonizedStructure
 
 
-def main(adHoc=None, wordMaps=None):
+def main(adHoc=None):
 	argsParsed = TranSMARTArgs.help()
 	args = TranSMARTArgs(argsParsed)
 	tm = TranSMARTMap(args = args)
 	if (adHoc):
 		tm.setAdHocMethods(adHoc)
 	tm.createCSV()
-	tm.createTMMap(wordMaps=wordMaps)
+	tm.createTMMap()
 
 if __name__ == '__main__':
 	main()

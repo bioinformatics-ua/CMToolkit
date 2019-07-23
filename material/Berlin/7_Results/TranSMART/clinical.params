@@ -1,3 +1,2 @@
 COLUMN_MAP_FILE=column_map.txt
 RECORD_EXCLUSION_FILE=x
-WORD_MAP_FILE=word_map.txt
