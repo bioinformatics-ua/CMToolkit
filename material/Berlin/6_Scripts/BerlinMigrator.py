@@ -5,14 +5,14 @@ sys.path.insert(0, '../../../src/Tables')
 sys.path.insert(0, '../../../src/Utils')
 sys.path.insert(0, '../../../src/Vocabularies')
 
-
 import Baseline
 from Observation import Observation
 import pandas as pd
 
 class Harmonizer(object):
-	#def filter_person(self, cohort):
-		#return cohort.loc[cohort["GenderFM"]!='69'].reset_index(drop=True)
+	def filter_person(self, cohort):
+		cohort = cohort[pd.notnull(cohort['Sex'])]
+		return cohort.reset_index(drop=True)
 
 	#Person
 	def set_person_gender_concept_id(self, value):

@@ -5,9 +5,17 @@ import pathlib
 
 class TranSMARTMap():
 	def __init__(self, args):
-		self.args 						= args
-		self.engine						= create_engine(args.db["datatype"]+"://"+args.db["user"]+":"+args.db["password"]+"@"+args.db["server"]+":"+args.db["port"]+"/"+args.db["database"])
-		self.observationsDict 			= set([TranSMARTConstants.DemographicSex, TranSMARTConstants.DemographicRace, TranSMARTConstants.DemographicEthnic, TranSMARTConstants.DemographicBirthYear])
+		self.args 				= args
+		self.engine				= create_engine(args.db["datatype"]+"://"+args.db["user"]+":"+args.db["password"]+"@"+args.db["server"]+":"+args.db["port"]+"/"+args.db["database"])
+		self.observationsDict 	= set([TranSMARTConstants.DemographicSex, TranSMARTConstants.DemographicRace, TranSMARTConstants.DemographicEthnic, TranSMARTConstants.DemographicBirthYear])
+		self.visitIndependent	= self.__readVisitIndependent()
+
+	def __readVisitIndependent(self):
+		visitIndependent = []
+		with open(self.args.vioutput) as fp:
+			for line in fp:
+				visitIndependent += [line.split("\t")[0]]
+		return visitIndependent
 
 	def createCSV(self):
 		structure = self.__createStructure()
@@ -94,25 +102,35 @@ class TranSMARTMap():
 	def createTMMap(self):
 		#loadProtege_output.txt
 		transmartMapping = {}
-		foutput = open('{}{}'.format(self.args.transmartdstdir, "colunmn_map.txt"), "w")
-		foutput.write("Filename\tCategory_Code (tranSMART)\tColumn\tDataLabel\tdata_label_src\tControlVocab_cd\tData_type\n")
-		foutput.write(self.args.cohortoutputfile + "\t\t1\tSUBJ_ID\t\t\t\n")
-		
+		protegeOutput = self.__loadRowsToMap()
+		self.__writeColumnMap(protegeOutput)
+		self.__createDefaultFiles()
+		print("TranSMART load files created")
+
+	def __loadRowsToMap(self):
 		protegeOutput = {}
 		with open(self.args.protegeoutput) as fp:
 			for line in fp:
 				row = line.strip().split("\t")
 				if int(row[2]) in self.observationsDict:
 					protegeOutput[int(row[2])] = row
-		for line in sorted(protegeOutput):
-			row = protegeOutput[line]
-			#['Weight (kg)', 'Clinical_Information+Vital_Signs', '2000000462']
-			foutput.write(self.args.cohortoutputfile + "\t" + row[1] + "\t" + \
-				str(self.observationsDict.index(int(row[2]))+2) + "\t" + row[0] + "\t\t\t\n")
 		fp.close()
+		return protegeOutput
+
+	def __writeColumnMap(self, protegeOutput):
+		foutput = open('{}{}'.format(self.args.transmartdstdir, "colunmn_map.txt"), "w")
+		foutput.write("Filename\tCategory_Code (tranSMART)\tColumn\tDataLabel\tdata_label_src\tControlVocab_cd\tData_type\n")
+		foutput.write(self.args.cohortoutputfile + "\t\t1\tSUBJ_ID\t\t\t\n")
+		for line in sorted(protegeOutput):
+			row = protegeOutput[line] #['Weight (kg)', 'Clinical_Information+Vital_Signs', '2000000462']
+			columnIndex = str(self.observationsDict.index(int(row[2]))+2)
+			path = row[1]
+			variableName = row[0]
+			if variableName not in self.visitIndependent:
+				path += "+Baseline"#Change this when I have more than one visit
+			rowToWrite  = self.args.cohortoutputfile + "\t" + path + "\t" + columnIndex + "\t" + variableName + "\t\t\t\n"
+			foutput.write(rowToWrite)
 		foutput.close()
-		self.__createDefaultFiles()
-		print("TranSMART load files created")
 
 	def __createDefaultFiles(self):
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "clinical.params"), "w")

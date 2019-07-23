@@ -1,6 +1,7 @@
 from BaseTable import BaseTable
 from Person import Person
 import sqlalchemy as sa
+import pandas as pd
 
 class Observation(BaseTable):
     '''Class to build the Observation table mapping.
@@ -30,9 +31,9 @@ class Observation(BaseTable):
             'unit_source_value',
             'qualifier_source_value'
         ]
-        cohortFiltered = BaseTable.cohortFilter(cohort          = cohort, 
-                                                table           = "observation",
-                                                harmonizerAdHoc = harmonizerAdHoc)
+        cohortFiltered = self.__filterCohort(cohort          = cohort, 
+                                             table           = "observation",
+                                             harmonizerAdHoc = harmonizerAdHoc)
         self.__updateObservationIDs(cohortFiltered)
         super(Observation, self).__init__(cohort                  = cohortFiltered, 
                                           harmonizerAdHoc         = harmonizerAdHoc, 
@@ -41,6 +42,14 @@ class Observation(BaseTable):
                                           columnMapper            = columnMapper,
                                           size                    = len(cohortFiltered),
                                           commonHarmonizerMethods = Observation.CommonHarmonizerMethods())
+
+    def __filterCohort(self, cohort, harmonizerAdHoc, table):
+        cohortFiltered = BaseTable.cohortFilter(cohort          = cohort, 
+                                                table           = table,
+                                                harmonizerAdHoc = harmonizerAdHoc)
+        
+
+        return cohortFiltered[pd.notnull(cohortFiltered["Patient ID"].map(Person.pesondIdDict))].reset_index(drop=True)
 
     def __updateObservationIDs(self, cohortFiltered):
         Observation.ObservationIDSet = range(Observation.ObservationID, Observation.ObservationID + len(cohortFiltered))
