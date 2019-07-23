@@ -9,7 +9,7 @@ class Person(BaseTable):
     '''
     pesondIdDict = {}
 
-    def __init__(self, cohort, harmonizerAdHoc, columnMapper, contentMapping):
+    def __init__(self, cohort, harmonizerAdHoc, columnMapper):
         columns = [
             'person_id',
             'gender_concept_id',
@@ -38,7 +38,6 @@ class Person(BaseTable):
                                      table                   = "person",
                                      columnMapper            = columnMapper,
                                      size                    = len(cohortFiltered),
-                                     contentMapping          = contentMapping,
                                      commonHarmonizerMethods = Person.CommonHarmonizerMethods())
 
     def __filterCohort(self, cohort, harmonizerAdHoc, table):

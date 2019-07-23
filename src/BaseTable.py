@@ -16,13 +16,12 @@ class BaseTable(object):
         - Sintax to deal with a field: set_<table name>_<field name>
         - Sintax to pre process the cohort: filter_<table name>
     '''
-    def __init__(self, cohort, size, harmonizerAdHoc, columnsDst, columnMapper, table, contentMapping, commonHarmonizerMethods):
+    def __init__(self, cohort, size, harmonizerAdHoc, columnsDst, columnMapper, table, commonHarmonizerMethods):
         self.cohort          = cohort
         self.columnsDst      = columnsDst
         self.columnMapper    = columnMapper
         self.harmonizerAdHoc = harmonizerAdHoc
         self.table           = table
-        self.contentMapping  = contentMapping
         self.mapping         = pd.DataFrame(index=range(size), columns=columnsDst)
 
         args = MigratorArgs()

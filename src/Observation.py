@@ -10,7 +10,7 @@ class Observation(BaseTable):
     '''
     Constructor arguments: See BaseTable
     '''
-    def __init__(self, cohort, harmonizerAdHoc, columnMapper, contentMapping):
+    def __init__(self, cohort, harmonizerAdHoc, columnMapper):
         columns = [
             'observation_id',
             'person_id',
@@ -40,7 +40,6 @@ class Observation(BaseTable):
                                           table                   = "observation",
                                           columnMapper            = columnMapper,
                                           size                    = len(cohortFiltered),
-                                          contentMapping          = contentMapping,
                                           commonHarmonizerMethods = Observation.CommonHarmonizerMethods())
 
     def __updateObservationIDs(self, cohortFiltered):

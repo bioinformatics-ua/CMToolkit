@@ -33,6 +33,7 @@ class Harmonizer(object):
         dfRead = self.__harmonizeVariableConcept(sourceCode, dfRead)
         dfRead = self.__harmonizeMeasureConcept(dfRead)
         dfRead = self.__harmonizeMeasureString(dfRead)
+        dfRead = self.__harmonizeMeasureAll(dfRead)
         dfRead.to_csv('{}{}{}'.format(self.cohortDest, Harmonizer.MARK, sourceCode), sep=self.cohortSep, index=False)
     
     def __filter(self, dfRead):
@@ -67,3 +68,10 @@ class Harmonizer(object):
         keyMapping = keyMapping.rename(columns={0: 'source'})
 
         return keyMapping.set_index("source")["targetConceptId"].to_dict()
+    
+    def __harmonizeMeasureAll(self, dfRead):
+        #pdOuput = 
+        #for row in dfRead:
+        #    pdOuput.add(Harmonizer.harmonizer(row))
+        #return pdOutput
+        return dfRead

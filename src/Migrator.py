@@ -37,8 +37,7 @@ class Migrator():
 			cohortData = cohortData.reindex(columns=columns)
 			migration = Person(cohort 	   		= cohortData,
 						       harmonizerAdHoc  = self.adHocHarmonization,
-						       columnMapper 	= dictOfMappingColumns,
-						       contentMapping	= None)#self.contentMapping)
+						       columnMapper 	= dictOfMappingColumns)
 
 		elif(table == "observation"):
 			result = glob.glob('{}*.{}'.format(self.observations, "csv"))
@@ -58,8 +57,7 @@ class Migrator():
 				cohortData = cohortData.reindex(columns=columns)
 				migration = Observation(cohort 	     	= cohortData,
 						       			harmonizerAdHoc	= self.adHocHarmonization,
-						       			columnMapper 	= dictOfMappingColumns,
-						       	 		contentMapping	= None)
+						       			columnMapper 	= dictOfMappingColumns)
 				observationResult += [migration.getMapping()]
 			self.result[table] = pd.concat(observationResult)
 			return None

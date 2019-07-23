@@ -1,24 +1,15 @@
 import configparser
 import argparse
+from Args import Args
 
-class Singleton(type):
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
-
-class MigratorArgs(object, metaclass=Singleton):
-	'''Class design to deal with the args and the settings file
-	Note: When added a new arg in the help function, it is necessary add a new 
-	entry in the constructor
-	Note2: This is a singleton so I can easly access any of these variables in the code
+class MigratorArgs(Args):
+	'''Class design to deal with the args for the Migrator
 
     Constructor arguments:
     :param args: The args received from the args_parse
     '''
 	def __init__(self, args):
-		self.settings 			= self.__readSettings(args.settings)
+		super(MigratorArgs, self).__init__(args = args) 
 		#Flags
 		self.transformcsv   	= args.transform
 		self.migrate   			= args.migrate
@@ -28,57 +19,37 @@ class MigratorArgs(object, metaclass=Singleton):
 		self.harmonize 			= args.harmonize
 
 		#Args
-		self.cohortdir			= self.__argAsDir(self.__defineArg(args, "cohortdir"))
+		self.cohortdir			= super().argAsDir(self.__defineArg(args, "cohortdir"))
 		self.headers			= self.__defineArg(args, "headers")
 		self.measures 			= self.__defineArg(args, "measures")
-		self.cohortdest 		= self.__argAsDir(self.__defineArg(args, "cohortdest"))
-		self.harmonizedest 		= self.__argAsDir(self.__defineArg(args, "cohortharmonizeddest"))
+		self.cohortdest 		= super().argAsDir(self.__defineArg(args, "cohortdest"))
+		self.harmonizedest 		= super().argAsDir(self.__defineArg(args, "cohortharmonizeddest"))
 		self.patientcsv 		= self.__defineArg(args, "patientcsv")
-		self.obsdir 			= self.__argAsDir(self.__defineArg(args, "obsdir"))
+		self.obsdir 			= super().argAsDir(self.__defineArg(args, "obsdir"))
 		self.columnsmapping 	= self.__defineArg(args, "columnsmapping")
 		self.contentmapping 	= self.__defineArg(args, "contentmapping")
-		self.results 			= self.__argAsDir(self.__defineArg(args, "results"))
+		self.results 			= super().argAsDir(self.__defineArg(args, "results"))
 		sep 					= self.__defineArg(args, "cohortsep")
 		self.cohortsep 			= '\t' if sep == "\\t" else sep
 		sep 					= self.__defineArg(args, "usagisep")
 		self.usagisep 			= '\t' if sep == "\\t" else sep
-		self.vocabulariesdir	= self.__argAsDir(self.__defineArg(args, "vocabulariesdir"))
-
-		#TranSMART maybe change this todo
-		self.transmartcohortfile= self.__defineArg(args, "transmartcohortfile")
-		self.transmartdstdir	= self.__argAsDir(self.__defineArg(args, "transmartdstdir"))
-		self.protegeoutput		= self.__defineArg(args, "protegeoutput")		
-		self.cohortname			= self.__defineArg(args, "cohortname")
-
-		#DB
-		self.db 				= self.settings["database"]
+		self.vocabulariesdir	= super().argAsDir(self.__defineArg(args, "vocabulariesdir"))
 
 	def __defineArg(self, args, arg):
 		if (hasattr(args, arg)):
 			if(getattr(args, arg)):
 				return getattr(args, arg)
-		if (arg in self.settings["cohortinfo"]):
-			return self.settings["cohortinfo"][arg]
-		if (arg in self.settings["cohorttransformation"]):
-			return self.settings["cohorttransformation"][arg]
-		if (arg in self.settings["cohortharmonization"]):
-			return self.settings["cohortharmonization"][arg]
+		if (arg in self.settings["cohort_info"]):
+			return self.settings["cohort_info"][arg]
+		if (arg in self.settings["cohort_mappings"]):
+			return self.settings["cohort_mappings"][arg]
+		if (arg in self.settings["cohort_transformation"]):
+			return self.settings["cohort_transformation"][arg]
+		if (arg in self.settings["cohort_harmonization"]):
+			return self.settings["cohort_harmonization"][arg]
 		return None
-
-	def __argAsDir(self, arg):
-		return arg if arg.endswith("/") else arg + "/"
 	
-	def __readSettings(self, settingsFile):
-		configuration = configparser.ConfigParser()
-		configuration.read(settingsFile)
-		if not configuration:
-			raise Exception("The settings file was not found!")
-		return configuration
-
-	def getDBConfigs(self):
-		return self.settings["database"]
-	
-	def help(show=False):
+	def help(show=False): #TODO
 	    parser = argparse.ArgumentParser(description='Cohort mapper arguments')
 	    configs = parser.add_argument_group('Global settings', 'Some of the global settings. More settings in the settings file')
 	    configs.add_argument('-i', '--cohortdir', dest='cohortdir', type=str, \
