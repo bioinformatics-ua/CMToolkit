@@ -27,8 +27,8 @@ class Migrator():
 		self.fileManager    	= FileManager()
 		self.result 			= {}
 
-	def setAdHocMethods(self, adHocMethod):
-		self.adHocHarmonization = adHocMethod()
+	def setAdHocClass(self, adHocClass):
+		self.adHocHarmonization = adHocClass()
 
 	def migrate(self, table=None):
 		if(table == "person"):

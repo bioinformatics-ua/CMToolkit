@@ -15,12 +15,16 @@ class Harmonizer(object):
     :param todo
     '''
     def __init__(self, cohortOrigin, cohortDest, mapping, cohortSep):
-        self.cohortOrigin   = cohortOrigin 
-        self.cohortDest     = cohortDest 
-        self.mapping        = mapping
-        self.cohortSep      = cohortSep
-        self.fileManager    = FileManager()
-        self.contentMapping = self.__loadContentMapping()
+        self.cohortOrigin       = cohortOrigin 
+        self.cohortDest         = cohortDest 
+        self.mapping            = mapping
+        self.cohortSep          = cohortSep
+        self.fileManager        = FileManager()
+        self.contentMapping     = self.__loadContentMapping()
+        self.adHocHarmonization = None
+
+    def setAdHocClass(self, adHocClass):
+        self.adHocHarmonization = adHocClass()
 
     def harmonize(self):
         cohorts = glob.glob('{}*.{}'.format(self.cohortOrigin, "csv"))
@@ -35,7 +39,7 @@ class Harmonizer(object):
         dfRead = self.__harmonizeMeasureConcept(dfRead)
         dfRead = self.__harmonizeMeasureNumber(dfRead)
         dfRead = self.__harmonizeMeasureString(dfRead)
-        dfRead = self.__harmonizeMeasureAll(dfRead)
+        dfRead = self.__harmonizeMeasureAdHoc(dfRead)
         self.fileManager.toCsv(dataframe = dfRead, 
                                destDir   = self.cohortDest, 
                                destFile  = '{}{}'.format(Harmonizer.MARK, sourceCode), 
@@ -60,7 +64,7 @@ class Harmonizer(object):
     def __harmonizeMeasureNumber(self, dfRead):
         dfRead["MeasureNumber"] = dfRead["Measure"]
         dfRead["MeasureNumber"] = dfRead["MeasureNumber"].astype(str).str.replace(",", ".")
-        dfRead["MeasureNumber"] = dfRead["MeasureNumber"].astype(str).apply(lambda x: self.__convertFractionsToFloat(x))
+        #dfRead["MeasureNumber"] = dfRead["MeasureNumber"].astype(str).apply(lambda x: self.__convertFractionsToFloat(x))
         dfRead["MeasureNumber"] = pd.to_numeric(dfRead["MeasureNumber"], errors='coerce')
         dfRead["MeasureNumber"] = dfRead["MeasureNumber"][dfRead["MeasureConcept"].isnull()]
         return dfRead
@@ -99,9 +103,18 @@ class Harmonizer(object):
 
         return keyMapping.set_index("source")["targetConceptId"].to_dict()
     
-    def __harmonizeMeasureAll(self, dfRead):
-        #pdOuput = 
-        #for row in dfRead:
-        #    pdOuput.add(Harmonizer.harmonizer(row))
-        #return pdOutput
-        return dfRead
+    def __harmonizeMeasureAdHoc(self, dfRead):
+        dataDict = dfRead.to_dict(orient='records')
+        if self.adHocHarmonization != None:
+            outputDataDict = []
+            for row in dataDict:
+                harmonizedData = self.adHocHarmonization.harmonizer(row)
+                if isinstance(harmonizedData, list):
+                    outputDataDict += harmonizedData
+                else:
+                    outputDataDict += [harmonizedData]
+            if hasattr(self.adHocHarmonization, "addMissingRows"): 
+                outputDataDict += self.adHocHarmonization.addMissingRows()
+        else:
+            outputDataDict = dataDict
+        return pd.DataFrame(outputDataDict, columns = dfRead.columns.values)

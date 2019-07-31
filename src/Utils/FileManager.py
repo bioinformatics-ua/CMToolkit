@@ -24,7 +24,9 @@ class FileManager(object, metaclass=Singleton):
 		pathlib.Path(args.results).mkdir(parents=True, exist_ok=True) 
 
 	def readCohort(self, fileName):
-		return pd.read_csv('{}{}'.format(self.args.cohortdest, fileName), na_values='null', sep=self.args.cohortsep)#,  thousands='.', decimal=',')
+		return pd.read_csv('{}{}'.format(self.args.cohortdest, fileName), 
+						   na_values='null', 
+						   sep=self.args.cohortsep)#,  thousands='.', decimal=',')
 
 	def getColumnsMappingBySourceCodeAndDomain(self, sourceCode, domain, sourceNameAsKey=False):
 		fileredRowsBySourceCode = self.columnsMapping[self.columnsMapping['sourceCode'].str.contains(sourceCode)]

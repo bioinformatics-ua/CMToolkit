@@ -28,6 +28,8 @@ def main(adHoc=None):
                                 cohortDest   = args.harmonizedest, 
                                 mapping      = args.contentmapping,
                                 cohortSep    = args.cohortsep)
+        if (adHoc):
+            harmonizer.setAdHocClass(adHoc)
         harmonizer.harmonize()
         print("Csv harmonization completed!")
 
@@ -36,7 +38,7 @@ def main(adHoc=None):
                        person           = args.patientcsv,
                        observations     = args.obsdir)
         if (adHoc):
-            etl.setAdHocMethods(adHoc)
+            etl.setAdHocClass(adHoc)
         etl.migrate("person")
         etl.migrate("observation")
 
