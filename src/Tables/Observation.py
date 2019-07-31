@@ -47,7 +47,11 @@ class Observation(BaseTable):
         cohortFiltered = BaseTable.cohortFilter(cohort          = cohort, 
                                                 table           = table,
                                                 harmonizerAdHoc = harmonizerAdHoc)
+        cohortFiltered = self.__removeUnmappedConcepts(cohortFiltered)
         return cohortFiltered[pd.notnull(cohortFiltered["Patient ID"].map(Person.pesondIdDict))].reset_index(drop=True)
+
+    def __removeUnmappedConcepts(self, cohortFiltered):
+        return cohortFiltered[pd.notnull(cohortFiltered["VariableConcept"])]
 
     def __updateObservationIDs(self, cohortFiltered):
         Observation.ObservationIDSet = range(Observation.ObservationID, Observation.ObservationID + len(cohortFiltered))
