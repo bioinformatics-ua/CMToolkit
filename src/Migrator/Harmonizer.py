@@ -2,6 +2,8 @@ import glob
 import pandas as pd
 from CSVTransformer import CSVTransformer
 from FileManager import FileManager
+from MigratorArgs import MigratorArgs
+from StandardAdHoc import StandardAdHoc
 
 class Harmonizer(object):
     '''Class design to harmonize the transformed CSV cohort files.
@@ -22,14 +24,33 @@ class Harmonizer(object):
         self.fileManager        = FileManager()
         self.contentMapping     = self.__loadContentMapping()
         self.adHocHarmonization = None
+        self.args               = MigratorArgs()
+
+    def __loadContentMapping(self):
+        cohorts = []
+        for file in glob.glob('{}*.{}'.format(self.cohortOrigin, "csv")):
+            cohorts += [file.split(CSVTransformer.MARK)[1]]
+        dfMapping = self.fileManager.getContentMapping(cohorts)
+
+        keyMappingSeries = dfMapping[["sourceCode", "sourceName"]].apply(tuple, axis=1)
+        keyMapping = pd.concat([keyMappingSeries, dfMapping["targetConceptId"]], axis=1)
+        keyMapping = keyMapping.rename(columns={0: 'source'})
+
+        return keyMapping.set_index("source")["targetConceptId"].to_dict()
+
 
     def setAdHocClass(self, adHocClass):
         self.adHocHarmonization = adHocClass()
 
+
     def harmonize(self):
         cohorts = glob.glob('{}*.{}'.format(self.cohortOrigin, "csv"))
+        preHarmonized = {}
         for file in cohorts:
-            self.__harmonize(file)
+            preHarmonized[file] = self.__harmonize(file)
+
+        for file in preHarmonized:
+            self.__finalStage(preHarmonized[file], file)
 
     def __harmonize(self, file):
         sourceCode = file.split(CSVTransformer.MARK)[1]
@@ -40,11 +61,20 @@ class Harmonizer(object):
         dfRead = self.__harmonizeMeasureNumber(dfRead)
         dfRead = self.__harmonizeMeasureString(dfRead)
         dfRead = self.__harmonizeMeasureAdHoc(dfRead)
+
+        patientIDLabel = self.__getPatientIDLabel(file)
+        self.__loadNewMeasures(dfRead, patientIDLabel)
+        return dfRead
+
+    def __finalStage(self, dfRead, file):
+        sourceCode = file.split(CSVTransformer.MARK)[1]
+        patientIDLabel = self.__getPatientIDLabel(file)
+        dfRead = self.__calculateNewMeasures(dfRead, patientIDLabel)
         self.fileManager.toCsv(dataframe = dfRead, 
                                destDir   = self.cohortDest, 
                                destFile  = '{}{}'.format(Harmonizer.MARK, sourceCode), 
                                sep       = self.cohortSep)
-       
+
     def __filter(self, dfRead):
         return dfRead[pd.notnull(dfRead["Measure"])]
 
@@ -64,44 +94,15 @@ class Harmonizer(object):
     def __harmonizeMeasureNumber(self, dfRead):
         dfRead["MeasureNumber"] = dfRead["Measure"]
         dfRead["MeasureNumber"] = dfRead["MeasureNumber"].astype(str).str.replace(",", ".")
-        #dfRead["MeasureNumber"] = dfRead["MeasureNumber"].astype(str).apply(lambda x: self.__convertFractionsToFloat(x))
         dfRead["MeasureNumber"] = pd.to_numeric(dfRead["MeasureNumber"], errors='coerce')
         dfRead["MeasureNumber"] = dfRead["MeasureNumber"][dfRead["MeasureConcept"].isnull()]
         return dfRead
-
-    def __convertFractionsToFloat(self, fracStr):
-        try:
-            return float(fracStr)
-        except ValueError:
-            try:
-                num, denom = fracStr.split('/')
-                try:
-                    leading, num = num.split(' ')
-                    whole = float(leading)
-                except ValueError:
-                    whole = 0
-                frac = float(num) / float(denom)
-                return whole - frac if whole < 0 else whole + frac
-            except:
-                return fracStr
 
     def __harmonizeMeasureString(self, dfRead):
         dfRead["MeasureString"] = dfRead["Measure"]
         dfRead["MeasureString"] = dfRead["MeasureString"][dfRead["MeasureConcept"].isnull()]
         dfRead["MeasureString"] = dfRead["MeasureString"][dfRead["MeasureNumber"].isnull()]
         return dfRead
-
-    def __loadContentMapping(self):
-        cohorts = []
-        for file in glob.glob('{}*.{}'.format(self.cohortOrigin, "csv")):
-            cohorts += [file.split(CSVTransformer.MARK)[1]]
-        dfMapping = self.fileManager.getContentMapping(cohorts)
-
-        keyMappingSeries = dfMapping[["sourceCode", "sourceName"]].apply(tuple, axis=1)
-        keyMapping = pd.concat([keyMappingSeries, dfMapping["targetConceptId"]], axis=1)
-        keyMapping = keyMapping.rename(columns={0: 'source'})
-
-        return keyMapping.set_index("source")["targetConceptId"].to_dict()
     
     def __harmonizeMeasureAdHoc(self, dfRead):
         dataDict = dfRead.to_dict(orient='records')
@@ -118,3 +119,27 @@ class Harmonizer(object):
         else:
             outputDataDict = dataDict
         return pd.DataFrame(outputDataDict, columns = dfRead.columns.values)
+
+    def __loadNewMeasures(self, dfRead, patientIDLabel):
+        dataDict = dfRead.to_dict(orient='records')
+        if self.args.adhocmethods:
+            sah = StandardAdHoc()
+            sah.definePatientIDLabel(patientIDLabel)
+            sah.processLoadingStage(dataDict)
+
+
+    def __calculateNewMeasures(self, dfRead, patientIDLabel):
+        dataDict = dfRead.to_dict(orient='records')
+
+        if self.args.adhocmethods:
+            sah = StandardAdHoc()
+            sah.definePatientIDLabel(patientIDLabel)
+            outputDataDict = sah.processCalculationAndAppendingStage(dataDict)
+        else:
+            outputDataDict = dataDict
+        return pd.DataFrame(outputDataDict, columns = dfRead.columns.values)
+
+    def __getPatientIDLabel(self, file):
+        fileName = file.split(CSVTransformer.MARK)[1].replace(" ", "_")
+        patientIDLabel = self.args.settings["patient_ids"][fileName]
+        return patientIDLabel.lstrip('\"').rstrip('\"')

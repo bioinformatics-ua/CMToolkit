@@ -10,7 +10,7 @@ import TranSMARTMap
 
 class Harmonizer(object):
 	def set_2000000013(self, value):
-		if value == "3/3" or value == "2/3":
+		if value == "2/2" or value == "2/3" or value == "3/3":
 			return "Non-carrier"
 		if value == "3/4" or value == "2/4":
 			return "Heterozygote"
