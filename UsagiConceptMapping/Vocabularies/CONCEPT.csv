@@ -302,9 +302,12 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2000000366	Diuretics	Clinical Information	Concept Class	Concept Class	S	2000000366	2019-01-01	2099-12-31	
 2000000367	Dotter/stent Placement	Clinical Information	Concept Class	Concept Class	S	2000000367	2019-01-01	2099-12-31	
 2000000368	FDG PET Abnormal	Imaging	Concept Class	Concept Class	S	2000000368	2019-01-01	2099-12-31	
+2000000370	Fasting Insulin	Blood Measures	Concept Class	Concept Class	S	2000000370	2019-01-01	2099-12-31	
+2000000371	Fasting Triglycerides	Blood Measures	Concept Class	Concept Class	S	2000000371	2019-01-01	2099-12-31	
 2000000373	Gingko	Clinical Information	Concept Class	Concept Class	S	2000000373	2019-01-01	2099-12-31	
 2000000375	HADS Total Abnormal	Rating Scales	Concept Class	Concept Class	S	2000000375	2019-01-01	2099-12-31	
 2000000376	HCV Manual Bi Abnormal	Imaging	Concept Class	Concept Class	S	2000000376	2019-01-01	2099-12-31	
+2000000377	HDL Cholesterol	Blood Measures	Concept Class	Concept Class	S	2000000377	2019-01-01	2099-12-31	
 2000000378	Head Trauma	Clinical Information	Concept Class	Concept Class	S	2000000378	2019-01-01	2099-12-31	
 2000000379	Heart Failure	Clinical Information	Concept Class	Concept Class	S	2000000379	2019-01-01	2099-12-31	
 2000000380	High-Dose Vitamin E	Clinical Information	Concept Class	Concept Class	S	2000000380	2019-01-01	2099-12-31	
@@ -314,6 +317,7 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2000000384	Hyperthyroid Function	Clinical Information	Concept Class	Concept Class	S	2000000384	2019-01-01	2099-12-31	
 2000000385	Hypothyroid Function	Clinical Information	Concept Class	Concept Class	S	2000000385	2019-01-01	2099-12-31	
 2000000386	Insulin	Clinical Information	Concept Class	Concept Class	S	2000000386	2019-01-01	2099-12-31	
+2000000387	LDL Cholesterol	Blood Measures	Concept Class	Concept Class	S	2000000387	2019-01-01	2099-12-31	
 2000000388	Body Length (cm)	Clinical Information	Concept Class	Concept Class	S	2000000388	2019-01-01	2099-12-31	
 2000000389	MoCA	Cognitive Screening Tests	Concept Class	Concept Class	S	2000000389	2019-01-01	2099-12-31	
 2000000390	Myocardial Infarction	Clinical Information	Concept Class	Concept Class	S	2000000390	2019-01-01	2099-12-31	
@@ -343,6 +347,7 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2000000415	Pacemaker	Clinical Information	Concept Class	Concept Class	S	2000000415	2019-01-01	2099-12-31	
 2000000416	Parkinsons Disease	Clinical Information	Concept Class	Concept Class	S	2000000416	2019-01-01	2099-12-31	
 2000000417	Physical activity	Clinical Information	Concept Class	Concept Class	S	2000000417	2019-01-01	2099-12-31	
+2000000418	Postprandial Glucose	Blood Measures	Concept Class	Concept Class	S	2000000418	2019-01-01	2099-12-31	
 2000000419	Priority Visuoconstruction	Neuropsychological Examination	Concept Class	Concept Class	S	2000000419	2019-01-01	2099-12-31	
 2000000420	Priority Visuoconstruction Z-score	Neuropsychological Examination	Concept Class	Concept Class	S	2000000420	2019-01-01	2099-12-31	
 2000000421	Pulse Rate	Clinical Information	Concept Class	Concept Class	S	2000000421	2019-01-01	2099-12-31	
@@ -367,7 +372,9 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2000000443	Temporal Parietal Cortex Right	Imaging	Concept Class	Concept Class	S	2000000443	2019-01-01	2099-12-31	
 2000000444	Thyroid Agonists	Clinical Information	Concept Class	Concept Class	S	2000000444	2019-01-01	2099-12-31	
 2000000445	Thyroid Antagonists	Clinical Information	Concept Class	Concept Class	S	2000000445	2019-01-01	2099-12-31	
+2000000446	Thyroid Hormone	Blood Measures	Concept Class	Concept Class	S	2000000446	2019-01-01	2099-12-31	
 2000000448	Token Test	Neuropsychological Examination	Concept Class	Concept Class	S	2000000448	2019-01-01	2099-12-31	
+2000000449	Total Cholesterol	Blood Measures	Concept Class	Concept Class	S	2000000449	2019-01-01	2099-12-31	
 2000000450	VOSP Letters	Neuropsychological Examination	Concept Class	Concept Class	S	2000000450	2019-01-01	2099-12-31	
 2000000451	VOSP Number	Neuropsychological Examination	Concept Class	Concept Class	S	2000000451	2019-01-01	2099-12-31	
 2000000452	VOSP Object	Neuropsychological Examination	Concept Class	Concept Class	S	2000000452	2019-01-01	2099-12-31	
@@ -376,6 +383,7 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2000000455	VOSP Silhouettes Z-score	Neuropsychological Examination	Concept Class	Concept Class	S	2000000455	2019-01-01	2099-12-31	
 2000000456	VOSP Total	Neuropsychological Examination	Concept Class	Concept Class	S	2000000456	2019-01-01	2099-12-31	
 2000000457	VOSP Total Z-score	Neuropsychological Examination	Concept Class	Concept Class	S	2000000457	2019-01-01	2099-12-31	
+2000000458	Vitamin B12	Blood Measures	Concept Class	Concept Class	S	2000000458	2019-01-01	2099-12-31	
 2000000459	WAIS Block Design	Neuropsychological Examination	Concept Class	Concept Class	S	2000000459	2019-01-01	2099-12-31	
 2000000460	WAIS Block Design Z-score	Neuropsychological Examination	Concept Class	Concept Class	S	2000000460	2019-01-01	2099-12-31	
 2000000461	WAIS Total	Neuropsychological Examination	Concept Class	Concept Class	S	2000000461	2019-01-01	2099-12-31	
@@ -603,12 +611,9 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2000000691	LEAP	_Concepts	Concept Class	Concept Class	S	2000000691	2019-01-01	2099-12-31	
 2000000692	CERAD Wordlist	_Concepts	Concept Class	Concept Class	S	2000000692	2019-01-01	2099-12-31	
 2000000693	MCBP	_Concepts	Concept Class	Concept Class	S	2000000693	2019-01-01	2099-12-31	
-2000000449	Total Cholesterol	Blood Measures	Concept Class	Concept Class	S	2000000449	2019-01-01	2099-12-31	
-2000000458	Vitamin B12	Blood Measures	Concept Class	Concept Class	S	2000000458	2019-01-01	2099-12-31	
-2000000446	Thyroid Hormone	Blood Measures	Concept Class	Concept Class	S	2000000446	2019-01-01	2099-12-31	
-2000000387	LDL Cholesterol	Blood Measures	Concept Class	Concept Class	S	2000000387	2019-01-01	2099-12-31	
-2000000377	HDL Cholesterol	Blood Measures	Concept Class	Concept Class	S	2000000377	2019-01-01	2099-12-31	
-2000000371	Fasting Triglycerides	Blood Measures	Concept Class	Concept Class	S	2000000371	2019-01-01	2099-12-31	
-2000000370	Fasting Insulin	Blood Measures	Concept Class	Concept Class	S	2000000370	2019-01-01	2099-12-31	
-2000000418	Postprandial Glucose	Blood Measures	Concept Class	Concept Class	S	2000000418	2019-01-01	2099-12-31	
-2000000694	Thyroid-stimulating Hormone								
+2000000694	Thyroid-stimulating Hormone	Blood Measures	Concept Class	Concept Class	S	2000000694	2019-01-01	2099-12-31	
+2000000695	CERAD Figures Delayed	Neuropsychological Examination	Concept Class	Concept Class	S	2000000695	2019-01-01	2099-12-31	
+2000000696	Insomnia Severity Index	Rating Scales	Concept Class	Concept Class	S	2000000696	2019-01-01	2099-12-31	
+2000000697	Sleep Rating Scales	Rating Scales	Concept Class	Concept Class	S	2000000697	2019-01-01	2099-12-31	
+2000000698	Substance misuse	_Concepts	Concept Class	Concept Class	S	2000000698	2019-01-01	2099-12-31	
+2000000699	Other dementia	_Concepts	Concept Class	Concept Class	S	2000000699	2019-01-01	2099-12-31	

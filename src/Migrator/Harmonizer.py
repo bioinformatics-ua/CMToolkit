@@ -81,11 +81,22 @@ class Harmonizer(object):
     def __harmonizeVariableConcept(self, sourceCode, dfRead):
         dfMapping = self.fileManager.getContentMappingBySourceCode(sourceCode)
         dfMapping = dfMapping.reindex(columns=["sourceName", "targetConceptId"])
-        mapping = dfMapping.set_index("sourceName")["targetConceptId"].to_dict()
-        
-        variableSeries = dfRead["Variable"]
-        dfRead["VariableConcept"] = pd.Series(variableSeries.map(mapping), index=dfRead.index)
-        return dfRead
+        listOfMappings = dfMapping.to_dict('records')
+        dataDict = dfRead.to_dict(orient='records')
+        outputDataDict = []
+        for row in dataDict:
+            added = False
+            for mapping in listOfMappings:
+                if mapping['sourceName'] == row['Variable']:
+                    tempRow = row.copy()
+                    tempRow["VariableConcept"] = mapping['targetConceptId']
+                    if mapping['targetConceptId'] != '0':
+                        outputDataDict += [tempRow] 
+                    added = True
+            if not added:
+                outputDataDict += [row] 
+        return pd.DataFrame(outputDataDict, columns = dfRead.columns.to_list()+["VariableConcept"])
+
 
     def __harmonizeMeasureConcept(self, dfRead):
         dfRead["MeasureConcept"] = dfRead[["Variable", "Measure"]].apply(tuple, axis=1).map(self.contentMapping)
@@ -123,7 +134,10 @@ class Harmonizer(object):
     def __loadNewMeasures(self, dfRead, patientIDLabel):
         dataDict = dfRead.to_dict(orient='records')
         if self.args.adhocmethods:
-            sah = StandardAdHoc()
+            if self.adHocHarmonization != None:
+                sah = StandardAdHoc(self.adHocHarmonization.cutOff)
+            else:
+                sah = StandardAdHoc()
             sah.definePatientIDLabel(patientIDLabel)
             sah.processLoadingStage(dataDict)
 
@@ -132,7 +146,10 @@ class Harmonizer(object):
         dataDict = dfRead.to_dict(orient='records')
 
         if self.args.adhocmethods:
-            sah = StandardAdHoc()
+            if self.adHocHarmonization != None:
+                sah = StandardAdHoc(self.adHocHarmonization.cutOff)
+            else:
+                sah = StandardAdHoc()
             sah.definePatientIDLabel(patientIDLabel)
             outputDataDict = sah.processCalculationAndAppendingStage(dataDict)
         else:

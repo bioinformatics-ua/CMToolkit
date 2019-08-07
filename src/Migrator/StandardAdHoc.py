@@ -1,16 +1,29 @@
 from Singleton import Singleton
 from ZcoreCalculator import ZcoreCalculator
+from AbnormalCalculator import AbnormalCalculator
+from CutOffCalculator import CutOffCalculator
 from SAHGlobalVariables import SAHGlobalVariables
 from datetime import date
 import datetime
 
 class StandardAdHoc(object, metaclass=Singleton):
-	def __init__(self):
-		self.patientIDLabel = None
-		self.zcoreCalculator = ZcoreCalculator()
+	def __init__(self, cutOffs):
+		self.patientIDLabel 	= None
+		self.zcoreCalculator 	= ZcoreCalculator()
+		self.abnormalCalculator = None
+		self.cutOffsCalculator	= None
+		if cutOffs != None:
+			self.abnormalCalculator = AbnormalCalculator(cutOffs)
+			self.cutOffsCalculator	= CutOffCalculator(cutOffs)
 		
+		#Base variables
+		self.bodyLength = {}
+		self.weight = {}
+
+
 		#Temporary variables calculated based on other variables
 		self.ageMeasurement = [] 
+		self.bodyMass		= []
 	
 	def definePatientIDLabel(self, patientIDLabel):
 		self.patientIDLabel = patientIDLabel
@@ -30,8 +43,16 @@ class StandardAdHoc(object, metaclass=Singleton):
 			else:
 				outputDataDict += [data]
 
-			zcore = self.zcoreCalculator.calculateZscore(row, self.patientIDLabel, variableConcept)
+			zcore = self.zcoreCalculator.calculate(row, self.patientIDLabel, variableConcept)
 			outputDataDict += [zcore]
+
+			if self.abnormalCalculator != None:
+				abnormal = self.abnormalCalculator.calculate(row, self.patientIDLabel, variableConcept)
+				outputDataDict += [abnormal]
+
+			if self.cutOffsCalculator != None:
+				cutOff = self.cutOffsCalculator.calculate(row, self.patientIDLabel, variableConcept)
+				outputDataDict += [cutOff]
 		
 		outputDataDict += self.__addNewMeasurements()
 
@@ -49,6 +70,10 @@ class StandardAdHoc(object, metaclass=Singleton):
 			self.__loadBirthdayDate(row, patientID)
 		if "2000000609" in variableConcept:
 			self.__loadGender(row, patientID)
+		if "2000000388" in variableConcept:
+			self.__loadBodyLength(row, patientID)
+		if "2000000462" in variableConcept:
+			self.__loadWeight(row, patientID)
 
 	def __loadDateOfDiagnosis(self, row, patientID):
 		if row['Measure'] != "":
@@ -68,7 +93,19 @@ class StandardAdHoc(object, metaclass=Singleton):
 
 	def __loadGender(self, row, patientID):
 		if row['MeasureConcept'] != "":
-			SAHGlobalVariables.gender[patientID] = row['MeasureConcept']
+			SAHGlobalVariables.gender[patientID] = row['MeasureConcept']	
+
+	def __loadBodyLength(self, row, patientID):
+		if row['Measure'] != "":
+			self.bodyLength[patientID] = row['MeasureNumber']
+		if len(self.weight) > 0:
+			self.__calculateBodyMassIndex(patientID)
+
+	def __loadWeight(self, row, patientID):
+		if row['Measure'] != "":
+			self.weight[patientID] = row['MeasureNumber']
+		if len(self.bodyLength) > 0:
+			self.__calculateBodyMassIndex(patientID)
 
 	def __calculateAge(self, patientID):
 		try:
@@ -89,6 +126,21 @@ class StandardAdHoc(object, metaclass=Singleton):
 		except:
 			pass
 
+	def __calculateBodyMassIndex(self, patientID):
+		try:
+			bmi = self.weight[patientID]/((self.bodyLength[patientID]/100)*(self.bodyLength[patientID]/100))
+			self.bodyMass += [{
+				self.patientIDLabel:patientID,
+				#add observation date to do
+				'Body Mass Index':bmi,
+				'Variable': 'Calculated bmi', 
+				'Measure': "",
+				'MeasureNumber': bmi, 
+				'VariableConcept': '2000000339', 
+				'MeasureConcept': None
+			}]
+		except:
+			pass
 	#########################
 	#	Processing stage 	#
 	#########################
@@ -122,6 +174,8 @@ class StandardAdHoc(object, metaclass=Singleton):
 	def __cleaner(self, row, variableConcept, patientID):
 		if "2000000488" in variableConcept:
 			return []
+		if "2000000540" in variableConcept:
+			return []
 		return row
 
 	#############################################
@@ -132,7 +186,8 @@ class StandardAdHoc(object, metaclass=Singleton):
 	def __addNewMeasurements(self):
 		newMeasurements = []
 		newMeasurements += self.__addMeasurement(self.ageMeasurement)
-		#missingRows += self.__process...
+		newMeasurements += self.__addMeasurement(self.bodyMass)
+		#missingRows += self.__addMeasurement...
 		#....
 		return newMeasurements
 

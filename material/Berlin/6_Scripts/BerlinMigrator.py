@@ -15,6 +15,12 @@ class Harmonizer(object):
 	def __init__(self):
 		#Variables calculated based on other variables
 		self.ceradWLRounds = []
+		self.ceradWLRecognition = []
+		self.cutOff = {
+			#"2000000297":??? #Amyloid Beta 1-42 Cut-off
+			#"2000000298":??? #Total Tau Cut-off
+			#"2000000463":??? #Phosphorylated Tau Cut-off
+			}
 
 	###################################################
 	#	Public methods in the harmonization stage	  #
@@ -23,6 +29,9 @@ class Harmonizer(object):
 		variableConcept = str(row["VariableConcept"])
 		if "2000000049" in variableConcept:
 			return self.__readCeradWLRounds(row)
+		if "2000000051" in variableConcept:
+			return self.__readCeradWLRecognition(row)
+
 		if "2000000468" in variableConcept:
 			return self.__dealWithFamilyHistoryDementia(row)
 		if "2000000434" in variableConcept:
@@ -34,6 +43,7 @@ class Harmonizer(object):
 	def addMissingRows(self):
 		missingRows = []
 		missingRows += self.__processCeradWLRounds()
+		missingRows += self.__processCeralWLRecognition()
 		#missingRows += self.__process...
 		#....
 		return missingRows
@@ -43,8 +53,11 @@ class Harmonizer(object):
 	###############
 	def __readCeradWLRounds(self, row):
 		self.ceradWLRounds += [row]
-		row['VariableConcept'] = None
-		return row
+		return []
+
+	def __readCeradWLRecognition(self, row):
+		self.ceradWLRecognition += [row]
+		return []
 
 	def __dealWithFamilyHistoryDementia(self, row):
 		#convert 0 = no or 1 = yes
@@ -93,6 +106,32 @@ class Harmonizer(object):
 					'MeasureConcept': None
 				}]
 		self.ceradWLRounds = []
+		return results
+		
+	def __processCeralWLRecognition(self):
+		results = []
+		if len(self.ceradWLRecognition) > 0:
+			#key will be (patient, date)
+			measureDict = {}
+			sumOfMeasuresDict = {} 
+			for entry in self.ceradWLRecognition:
+				if (entry["Patient ID"], entry["Date of neuropsychological testing"]) in sumOfMeasuresDict:
+					sumOfMeasuresDict[(entry["Patient ID"], entry["Date of neuropsychological testing"])] += int(entry["Measure"])
+					measureDict[(entry["Patient ID"], entry["Date of neuropsychological testing"])] += "," + str(entry["Measure"])
+				else:
+					sumOfMeasuresDict[(entry["Patient ID"], entry["Date of neuropsychological testing"])] = int(entry["Measure"])
+					measureDict[(entry["Patient ID"], entry["Date of neuropsychological testing"])] = str(entry["Measure"])
+			for entry in sumOfMeasuresDict:
+				results += [{
+					'Patient ID':entry[0],
+					'Date of neuropsychological testing':entry[1],
+					'Variable': '[Cerad WL recognition no, Cerad WL recognition yes]', 
+					'Measure': measureDict[entry],
+					'MeasureNumber': (sumOfMeasuresDict[entry] - 10), 
+					'VariableConcept': '2000000051', 
+					'MeasureConcept': None
+				}]
+		self.ceradWLRecognition = []
 		return results
 		
 	#######################################

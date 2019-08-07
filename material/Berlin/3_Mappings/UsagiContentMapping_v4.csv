@@ -29,24 +29,24 @@ Etiology,Other neurodegenerative diseases,-1,,0.0,APPROVED,0,does not need to be
 20190510 EMIF Neuropsychology.csv,Boston Naming Test ,-1,,0.7024139761924744,INVALID_TARGET,0,"could be 15, 30 or 60 item version"
 20190510 EMIF Patient Data.csv,Date of birth,-1,,0.3551342785358429,APPROVED,0,http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#BirthYear
 20190510 EMIF Diagnosis.csv,Number of Visit,-1,,0.45569565892219543,INVALID_TARGET,0,should be linked to date of follow up http://www.semanticweb.org/emif/ontologies/2015/AD/DateFollow-up and follow-up time http://www.semanticweb.org/emif/ontologies/2015/AD/RtGaQbZDipTC19m6Ml3Xmg
-20190510 EMIF Blood and CSF.csv,TSH,-1,,1.0,UNCHECKED,0,
-20190510 EMIF Neuropsychology.csv,Cerad Figures delayed,-1,,0.8045194745063782,UNCHECKED,0,incorrect; no good option available
+20190510 EMIF Blood and CSF.csv,TSH,-1,,1.0,UNCHECKED,2000000694,
+20190510 EMIF Neuropsychology.csv,Cerad Figures delayed,-1,,0.8045194745063782,APPROVED,2000000695,incorrect; no good option available
 20190510 EMIF Neuropsychology.csv,Cerad WL round 1 intrusions,-1,,0.3102797567844391,UNCHECKED,0,incorrect; no good option available
 20190510 EMIF Neuropsychology.csv,Cerad WL round 2 intrusions ,-1,,0.302534282207489,UNCHECKED,0,incorrect; no good option available
 20190510 EMIF Neuropsychology.csv,Cerad WL delayed intrusions ,-1,,0.3871861398220062,UNCHECKED,0,incorrect; no good option available
 20190510 EMIF Neuropsychology.csv,Cerad WL round 3 intrusions,-1,,0.30394867062568665,UNCHECKED,0,incorrect; no good option available
-20190510 EMIF Sleep.csv,Insomnia Severity Index (ISI),-1,,0.2063816338777542,UNCHECKED,0,I created a new concept in the ontology under Rating Scales -> Sleep Rating Scales -> Insomnia Severity Index http://webprotege.stanford.edu/RJGKHLxUn81J6fCCFfpDIo
+20190510 EMIF Sleep.csv,Insomnia Severity Index (ISI),-1,,0.2063816338777542,APPROVED,2000000696,I created a new concept in the ontology under Rating Scales -> Sleep Rating Scales -> Insomnia Severity Index http://webprotege.stanford.edu/RJGKHLxUn81J6fCCFfpDIo
 20190510 EMIF Sleep.csv,RBDSQ total ,-1,,0.29860055446624756,UNCHECKED,0,incorrect; no good option available
 20190510 EMIF Diagnosis.csv,ICD-10 / DSM-V,-1,,0.07045142352581024,UNCHECKED,0,seems like something went wrong
 20190510 EMIF Neuropsychology.csv,FBI,-1,,0.06361310184001923,UNCHECKED,0,seems like something went wrong
 20190510 EMIF Sleep.csv,Date of ,-1,,0.6190086007118225,UNCHECKED,0,seems like something went wrong
-Diagnosis,Misuse of Substances ,-1,,0.0,UNCHECKED,0,"I created a new concept for this, we need this information to exclude participants with a mususe of substances diagnosis http://webprotege.stanford.edu/RighnoSVzRXhNBMVdgxb67"
+Diagnosis,Misuse of Substances ,-1,,0.0,APPROVED,2000000698,"I created a new concept for this, we need this information to exclude participants with a mususe of substances diagnosis http://webprotege.stanford.edu/RighnoSVzRXhNBMVdgxb67"
 Diagnosis,Others,-1,,0.0,UNCHECKED,0,seems like something went wrong
 Diagnosis,Unclear,-1,,0.0,UNCHECKED,0,seems like something went wrong
 Etiology,unclear,-1,,0.0,UNCHECKED,0,seems like something went wrong
-Etiology,NPH,-1,,0.0,UNCHECKED,0,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
-ICD-10 / DSM-V,F01.2,-1,,0.0,UNCHECKED,0,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
-ICD-10 / DSM-V,F02.0,-1,,0.0,UNCHECKED,0,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+Etiology,NPH,-1,,0.0,APPROVED,2000000699,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+ICD-10 / DSM-V,F01.2,-1,,0.0,APPROVED,2000000699,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
+ICD-10 / DSM-V,F02.0,-1,,0.0,APPROVED,2000000699,should be mapped to new fact_value for Other dementia http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr
 20190510 EMIF Diagnosis.csv,Blood Pressure,-1,,0.7119652628898621,UNCHECKED,0,"the variable should be split in two variables, one for systolic and one for diastolic (values are separated by a / in the datafile) first value = systolic 2000000440, second value = diastolic 2000000364"
 20190510 EMIF Neuropsychology.csv,Anmial Fluency 1 min,-1,,0.6468623280525208,APPROVED,2000000009,
 20190510 EMIF Blood and CSF.csv,Apo-E,-1,,0.1962198168039322,APPROVED,2000000013,not the same

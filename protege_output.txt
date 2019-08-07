@@ -101,6 +101,7 @@ CDR Personal Care	Rating_Scales+Dementia_Rating_Scales+Clinical_Dementia_Rating	
 CDR Sum of Boxes	Rating_Scales+Dementia_Rating_Scales+Clinical_Dementia_Rating	2000000043
 CDR Total	Rating_Scales+Dementia_Rating_Scales+Clinical_Dementia_Rating	2000000044
 CERAD Figures	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test	2000000045
+CERAD Figures Delayed	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test	2000000695
 CERAD Figures Test	Neuropsychological_Examination+Visuoconstruction	2000000514
 CERAD Figures Z-score	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test	2000000046
 CERAD WL Delayed	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List	2000000047
@@ -311,6 +312,7 @@ IQCODE Total	Rating_Scales+Dementia_Rating_Scales+Informant_Questionnaire_on_Cog
 Imaging		2000000570
 In 1000 Cohort	Study_Information	2000000571
 Informant Questionnaire on Cognitive Decline	Rating_Scales+Dementia_Rating_Scales	2000000572
+Insomnia Severity Index	Rating_Scales+Sleep_Rating_Scales	2000000696
 Instrumental Activities of Daily Living	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale	2000000660
 Insulin	Clinical_Information+Medication_Use+Hormonal_Therapy	2000000386
 Intelligence	Neuropsychological_Examination	2000000573
@@ -477,6 +479,7 @@ Severe Kidney Disorder	Clinical_Information+Comorbidity+Somatic_Disorders	200000
 Severe Liver Disorder	Clinical_Information+Comorbidity+Somatic_Disorders	2000000433
 Sex	Demographics	2000000609
 Sleep Disorders	Clinical_Information+Comorbidity+Neurological_Disorders	2000000434
+Sleep Rating Scales	Rating_Scales	2000000697
 Smoking	Clinical_Information+Smoking_Habits	2000000435
 Smoking Amount	Clinical_Information+Smoking_Habits	2000000436
 Smoking Habits	Clinical_Information	2000000636

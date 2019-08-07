@@ -2,21 +2,22 @@
 <rdf:RDF xmlns="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#"
      xml:base="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18"
      xmlns:AD="http://www.semanticweb.org/emif/ontologies/2015/AD/"
-     xmlns:webprotege="http://protege.stanford.edu/webprotege/"
+     xmlns:webprotege="http://webprotege.stanford.edu/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:webprotege1="http://protege.stanford.edu/webprotege/"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:untitled-ontology-18="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18">
-        <webprotege:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</webprotege:revision>
-        <webprotege:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3268</webprotege:revision>
-        <webprotege:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</webprotege:revision>
-        <webprotege:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</webprotege:revision>
-        <webprotege:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</webprotege:revision>
+        <webprotege1:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</webprotege1:revision>
+        <webprotege1:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3268</webprotege1:revision>
+        <webprotege1:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</webprotege1:revision>
+        <webprotege1:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</webprotege1:revision>
+        <webprotege1:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</webprotege1:revision>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alvaro Cortes</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andyhyve</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Geert</dc:creator>
@@ -60,9 +61,35 @@
     
 
 
+    <!-- http://protege.stanford.edu/webprotege/revision -->
+
+    <owl:AnnotationProperty rdf:about="http://protege.stanford.edu/webprotege/revision"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCSARMnvYt59XVUn85BlaYu -->
+
+    <owl:AnnotationProperty rdf:about="http://webprotege.stanford.edu/RCSARMnvYt59XVUn85BlaYu">
+        <rdfs:label>pyMethod</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
@@ -517,6 +544,16 @@
     
 
 
+    <!-- http://webprotege.stanford.edu/R9LZTENs3yGfpJD446zrAcS -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9LZTENs3yGfpJD446zrAcS">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000699</rdfs:conceptCode>
+        <rdfs:label>Other dementia</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/R9oJpmW5R0Y42aSCAGB3K2D -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R9oJpmW5R0Y42aSCAGB3K2D">
@@ -689,6 +726,16 @@
     
 
 
+    <!-- http://webprotege.stanford.edu/RJGKHLxUn81J6fCCFfpDIo -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RJGKHLxUn81J6fCCFfpDIo">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RrM13gm9TPZlXvCMvNvxDB"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000696</rdfs:conceptCode>
+        <rdfs:label>Insomnia Severity Index</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/RKy8Zf1oRWbGy9WlhO23Iy -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RKy8Zf1oRWbGy9WlhO23Iy">
@@ -699,12 +746,12 @@
     
 
 
-    <!-- http://webprotege.stanford.edu/RQudwVmWbMPDsplOwtNNeP -->
+    <!-- http://webprotege.stanford.edu/RighnoSVzRXhNBMVdgxb67 -->
 
-    <owl:Class rdf:about="http://webprotege.stanford.edu/RQudwVmWbMPDsplOwtNNeP">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">xxx</rdfs:conceptCode>
-        <rdfs:label>VariableOptions</rdfs:label>
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RighnoSVzRXhNBMVdgxb67">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000698</rdfs:conceptCode>
+        <rdfs:label>Substance misuse</rdfs:label>
     </owl:Class>
     
 
@@ -719,12 +766,32 @@
     
 
 
+    <!-- http://webprotege.stanford.edu/RrM13gm9TPZlXvCMvNvxDB -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RrM13gm9TPZlXvCMvNvxDB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#RatingScales"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000697</rdfs:conceptCode>
+        <rdfs:label>Sleep Rating Scales</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/Ru4FZQ2ufZYTBoQhOGXQzy -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/Ru4FZQ2ufZYTBoQhOGXQzy">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8532</rdfs:conceptCode>
         <rdfs:label>Female</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RwLKHdX8mx5y7WtXbArI9C -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RwLKHdX8mx5y7WtXbArI9C">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/CERADFiguresTest"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000695</rdfs:conceptCode>
+        <rdfs:label>CERAD Figures Delayed</rdfs:label>
     </owl:Class>
     
 
@@ -2127,6 +2194,18 @@ if Education_Level_(yr) &gt;12 eduhigh=1.</rdfs:Description>
 
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/ApoEGenotype">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#PharmacogeneticsFindings"/>
+        <webprotege:RCSARMnvYt59XVUn85BlaYu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">#Copy and past from web protege
+def set_2000000013(self, value):
+	if value == &quot;2/2&quot; or value == &quot;2/3&quot; or value == &quot;3/3&quot;:
+		return &quot;Non-carrier&quot;
+	if value == &quot;3/4&quot; or value == &quot;2/4&quot;:
+		return &quot;Heterozygote&quot;
+	if value == &quot;4/4&quot;:
+		return &quot;Homozygote&quot;
+	return value</webprotege:RCSARMnvYt59XVUn85BlaYu>
+        <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-carrier = 2/2, 2/3, 3/3 
+Heterozygote = 2/4, 3/4
+Homozygote = 4/4</Range_or_Possible_Values>
         <AD:isVisitIndependent rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</AD:isVisitIndependent>
         <rdfs:conceptCode>2000000013</rdfs:conceptCode>
         <rdfs:label>ApoE Genotype</rdfs:label>
@@ -5203,7 +5282,6 @@ if gender=Male and eduy gt 12 and age gt 79.99 then TMTB z=(124.6-TMTB)/34.2</rd
     <!-- http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/RBUlmdQwMDweAduwOqrSPUr">
-        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RQudwVmWbMPDsplOwtNNeP"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/Diagnoses"/>
         <Range_or_Possible_Values>NL; MCI; SCI; AD; Other dementia (PD, LBD, VAD,..)</Range_or_Possible_Values>
         <rdfs:conceptCode>2000000551</rdfs:conceptCode>
