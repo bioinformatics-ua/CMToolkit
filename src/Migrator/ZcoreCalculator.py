@@ -20,7 +20,7 @@ class ZcoreCalculator():
 		if "2000000009" in variableConcept: 
 			res = self.__calculateZCoreAnimalsFluency1Min(patientID, row['MeasureNumber'])
 			row['Variable'] 		= "Animals Fluency 1 min Z-score"
-			row['VariableConcept'] 	= "2000000008"
+			row['VariableConcept'] 	= "2000000010"
 		if "2000000045" in variableConcept:
 			res = self.__calculateZCoreCERADFigures(patientID, row['MeasureNumber'])
 			row['Variable'] 		= "CERAD Figures Z-score"

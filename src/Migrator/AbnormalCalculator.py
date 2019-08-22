@@ -46,6 +46,7 @@ class AbnormalCalculator():
 		return [] 
 
 	def __compareWithCutOff(self, baseNumber, cutOffValue):
+		print("Calma que falta acabar uma coisinha nos CUT OFFS")
 		if baseNumber < cutOffValue:
 			return YES
 		return NO

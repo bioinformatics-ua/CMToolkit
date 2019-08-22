@@ -24,7 +24,8 @@ class TranSMARTMap():
 	def createCSV(self):
 		structure = self.__createStructure()
 		tmStructure = self.__buildStructureForTM(structure)
-		harmonizedStructure = self.__harmonizeStructureForRM(tmStructure)
+		preHarmonizedStructure = self.__harmonizeStructureForRM(tmStructure)
+		harmonizedStructure = self.__addAdHocFields(preHarmonizedStructure)
 		self.observationsDict = sorted(list(self.observationsDict))
 		self.__writeCSV(harmonizedStructure)
 		print(self.args.cohortoutputfile + " created")
@@ -154,9 +155,7 @@ class TranSMARTMap():
 			harmonizedStructure[row] = tmStructure[row]
 			if 2000000462 in tmStructure[row]: #Weight
 				harmonizedStructure[row][2000000462] = int(float(tmStructure[row][2000000462])) if tmStructure[row][2000000462] != '' else ''
-			#if 2000000480 in tmStructure[row]: #2000000540 in : #Date Diagnosis
-			#	harmonizedStructure[row][2000000480] = 
-
+			#...
 			if(self.adHocHarmonization != None):
 				harmonizedStructure[row] = self.__adHocMethods(harmonizedStructure[row])
 
@@ -173,6 +172,16 @@ class TranSMARTMap():
 			methodName = "set_" + str(code)
 			if(hasattr(self.adHocHarmonization, methodName)): 
 				harmonizedStructure[code] = getattr(self.adHocHarmonization, methodName)(preharmonizedStructure[code])
+		return harmonizedStructure
+
+	def __addAdHocFields(self, preHarmonizedStructure):
+		harmonizedStructure = preHarmonizedStructure
+		for method in dir(self.adHocHarmonization):
+			if method.startswith("add_"):
+				code = int(method.split("_")[1])
+				self.observationsDict.add(code)
+				for row in preHarmonizedStructure:
+					harmonizedStructure[row][code] = getattr(self.adHocHarmonization, method)()
 		return harmonizedStructure
 
 

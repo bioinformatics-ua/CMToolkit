@@ -1,0 +1,35 @@
+study_prefix	xtrial_prefix
+\Neuropsychological Examination\Language\Fluency\Category Fluency\Baseline\Animals Fluency 1 min	\Neuropsychological Examination\Language\Fluency\Category Fluency\Baseline\Animals Fluency 1 min
+\Pharmacogenetics Findings\ApoE Genotype	\Pharmacogenetics Findings\ApoE Genotype
+\Rating Scales\Dementia Rating Scales\Functional Impairment Scale\Bayer Activities of Daily Living Scale\Baseline\BADL	\Rating Scales\Dementia Rating Scales\Functional Impairment Scale\Bayer Activities of Daily Living Scale\Baseline\BADL
+\Neuropsychological Examination\Visuoconstruction\CERAD Figures Test\Baseline\CERAD Figures	\Neuropsychological Examination\Visuoconstruction\CERAD Figures Test\Baseline\CERAD Figures
+\Neuropsychological Examination\Visuoconstruction\CERAD Figures Test\Baseline\CERAD Figures Z-score	\Neuropsychological Examination\Visuoconstruction\CERAD Figures Test\Baseline\CERAD Figures Z-score
+\Neuropsychological Examination\Memory\Word List\CERAD Word List\Baseline\CERAD WL Immediate	\Neuropsychological Examination\Memory\Word List\CERAD Word List\Baseline\CERAD WL Immediate
+\Neuropsychological Examination\Memory\Word List\CERAD Word List\Baseline\CERAD WL Recognition	\Neuropsychological Examination\Memory\Word List\CERAD Word List\Baseline\CERAD WL Recognition
+\Neuropsychological Examination\Visuoconstruction\Clock Drawing Test\Baseline\Clock Drawing-On Command	\Neuropsychological Examination\Visuoconstruction\Clock Drawing Test\Baseline\Clock Drawing-On Command
+\Laboratory Test Results\CSF\CSF Measures\Baseline\Amyloid Beta 1-40 (pg/mL)	\Laboratory Test Results\CSF\CSF Measures\Baseline\Amyloid Beta 1-40 (pg/mL)
+\Laboratory Test Results\CSF\CSF Measures\Baseline\Amyloid Beta 1-42 (pg/mL)	\Laboratory Test Results\CSF\CSF Measures\Baseline\Amyloid Beta 1-42 (pg/mL)
+\Laboratory Test Results\CSF\CSF Measures\Baseline\Phosphorylated Tau (pg/mL)	\Laboratory Test Results\CSF\CSF Measures\Baseline\Phosphorylated Tau (pg/mL)
+\Laboratory Test Results\CSF\CSF Measures\Baseline\Total Tau (pg/mL)	\Laboratory Test Results\CSF\CSF Measures\Baseline\Total Tau (pg/mL)
+\Rating Scales\Neuropsychiatric Scales\Depression Rating Scales\Hamilton Depression Scale\Baseline\HDS	\Rating Scales\Neuropsychiatric Scales\Depression Rating Scales\Hamilton Depression Scale\Baseline\HDS
+\Cognitive Screening Tests\Mini Mental State Exam\Baseline\MMSE Total Score	\Cognitive Screening Tests\Mini Mental State Exam\Baseline\MMSE Total Score
+\Neuropsychological Examination\Memory\Word List\Selective Reminding Test\Baseline\Story Delayed	\Neuropsychological Examination\Memory\Word List\Selective Reminding Test\Baseline\Story Delayed
+\Neuropsychological Examination\Memory\Word List\Selective Reminding Test\Baseline\Story Immediate	\Neuropsychological Examination\Memory\Word List\Selective Reminding Test\Baseline\Story Immediate
+\Neuropsychological Examination\Attention and Executive Function\Trail Making Test\Baseline\TMT-A	\Neuropsychological Examination\Attention and Executive Function\Trail Making Test\Baseline\TMT-A
+\Neuropsychological Examination\Attention and Executive Function\Trail Making Test\Baseline\TMT-A Z-score	\Neuropsychological Examination\Attention and Executive Function\Trail Making Test\Baseline\TMT-A Z-score
+\Neuropsychological Examination\Attention and Executive Function\Trail Making Test\Baseline\TMT-B	\Neuropsychological Examination\Attention and Executive Function\Trail Making Test\Baseline\TMT-B
+\Neuropsychological Examination\Attention and Executive Function\Trail Making Test\Baseline\TMT-B Z-score	\Neuropsychological Examination\Attention and Executive Function\Trail Making Test\Baseline\TMT-B Z-score
+\Laboratory Test Results\CSF\CSF Protocol\Baseline\CSF Assay	\Laboratory Test Results\CSF\CSF Protocol\Baseline\CSF Assay
+\Clinical Information\Vital Signs\Baseline\Cholesterol	\Clinical Information\Vital Signs\Baseline\Cholesterol
+\Clinical Information\Vital Signs\Baseline\Body Length (cm)	\Clinical Information\Vital Signs\Baseline\Body Length (cm)
+\Clinical Information\Vital Signs\Baseline\Pulse Rate	\Clinical Information\Vital Signs\Baseline\Pulse Rate
+\Clinical Information\Vital Signs\Baseline\Weight (kg)	\Clinical Information\Vital Signs\Baseline\Weight (kg)
+\Clinical Information\Family History of Dementia	\Clinical Information\Family History of Dementia
+\Laboratory Test Results\Blood\Blood Dates\Baseline\Date Blood Collection	\Laboratory Test Results\Blood\Blood Dates\Baseline\Date Blood Collection
+\Demographics\Baseline\Age	\Demographics\Baseline\Age
+\Demographics\Birth Year	\Demographics\Birth Year
+\Clinical Information\Diagnoses\Baseline\Diagnosis	\Clinical Information\Diagnoses\Baseline\Diagnosis
+\Subject Characteristics\Education Level (yr)	\Subject Characteristics\Education Level (yr)
+\Demographics\Ethnic Group	\Demographics\Ethnic Group
+\Demographics\Race	\Demographics\Race
+\Demographics\Sex	\Demographics\Sex

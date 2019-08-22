@@ -147,9 +147,19 @@ class StandardAdHoc(object, metaclass=Singleton):
 	def __processRow(self, row, patientID, variableConcept):
 		if "2000000480" in variableConcept:
 			return self.__dealWithDateOfBloodCollection(row, patientID)
+		if "2000000479" in variableConcept:
+			return self.__dealWithDateMMSE(row, patientID)
+		if "2000000482" in variableConcept:
+			return self.__dealWithDateCSFCollection(row, patientID)
 		return self.__cleaner(row, variableConcept, patientID)
 
 	def __dealWithDateOfBloodCollection(self, row, patientID):
+		return self.__dealWithDatesDifferencesInDays(row, patientID)
+
+	def __dealWithDateMMSE(self, row, patientID):
+		return self.__dealWithDatesDifferencesInDays(row, patientID)
+
+	def __dealWithDateCSFCollection(self, row, patientID):
 		return self.__dealWithDatesDifferencesInDays(row, patientID)
 
 	def __dealWithDatesDifferencesInDays(self, row, patientID):

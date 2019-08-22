@@ -18,10 +18,10 @@ class Harmonizer(object):
 			return "Homozygote"
 		return value
 
-	#Maybe this can be removed
-	def set_2000000434(self, value):
-		if value == "n.b.":
-			return ""
-		return value
+	def add_2000000620(self):#Study name
+		return "Berlin"
+
+	def add_2000000571(self):#Study name
+		return "No"
 
 TranSMARTMap.main(adHoc=Harmonizer)
