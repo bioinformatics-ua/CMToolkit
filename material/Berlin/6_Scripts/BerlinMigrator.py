@@ -16,6 +16,8 @@ class Harmonizer(object):
 		#Variables calculated based on other variables
 		self.ceradWLRounds = []
 		self.ceradWLRecognition = []
+		self.diagnosis = {}
+		self.etiology = {}
 		self.cutOff = {
 			#"2000000297":??? #Amyloid Beta 1-42 Cut-off
 			#"2000000298":??? #Total Tau Cut-off
@@ -31,6 +33,8 @@ class Harmonizer(object):
 			return self.__readCeradWLRounds(row)
 		if "2000000051" in variableConcept:
 			return self.__readCeradWLRecognition(row)
+		if "2000000551" in variableConcept:
+			self.__readDiagnosisAndEtiology(row)
 
 		if "2000000468" in variableConcept:
 			return self.__dealWithFamilyHistoryDementia(row)
@@ -44,6 +48,7 @@ class Harmonizer(object):
 		missingRows = []
 		missingRows += self.__processCeradWLRounds()
 		missingRows += self.__processCeralWLRecognition()
+		missingRows += self.__processDiagnosisAndEtiology()
 		#missingRows += self.__process...
 		#....
 		return missingRows
@@ -57,6 +62,13 @@ class Harmonizer(object):
 
 	def __readCeradWLRecognition(self, row):
 		self.ceradWLRecognition += [row]
+		return []
+
+	def __readDiagnosisAndEtiology(self, row):
+		if row["Variable"] == "Diagnosis":
+			self.diagnosis[row["Patient ID"]] = row
+		if row["Variable"] == "Etiology":
+			self.etiology[row["Patient ID"]] = row
 		return []
 
 	def __dealWithFamilyHistoryDementia(self, row):
@@ -133,6 +145,59 @@ class Harmonizer(object):
 				}]
 		self.ceradWLRecognition = []
 		return results
+
+	def __processDiagnosisAndEtiology(self):
+		''' Isabelle email (3/9/2019)         
+			If the column “Diagnosis” in the Berlin dataset =10, Diagnosis on transmart should be “MCI”, 
+				independent of the collum “Etiology” in the Berlin dataset. This applies to n=60 patients
+			If “Diagnosis” is 1, Diagnosis on transmart should be “SCI”. This applies to n=25 patients. 
+			If Diagnosis is 81 or 8, Diagnosis on transmart should be “Depression”. This applies to n=81 patients
+			If Diagnosis is 2 or 3, Diagnosis should be “Other" 
+			If Diagnosis is 5,6 or 7 we need the category “Etiology” to define the type of dementia. 
+				If (Diagnosis =>5 and <8) and Etiology=1 Diagnosis =AD
+				If (Diagnosis =>5 and <8) and Etiology=2 Diagnosis =Mixed dementia
+				If (Diagnosis =>5 and <8) and Etiology=3 Diagnosis =VAD
+				If (Diagnosis =>5 and <8) and Etiology=5 Diagnosis =FTD
+				If (Diagnosis =>5 and <8) and Etiology=8 Diagnosis =Other Dementia
+		'''
+		results = []
+		for patient in self.diagnosis:
+			row = self.diagnosis[patient]
+			concept = None
+			if str(row['Measure']) == "10":
+				concept = "2000000254" #MCI
+			elif str(row['Measure']) == "1":
+				concept = "2000000256" #SCI
+			elif str(row['Measure']) == "81" or str(row['Measure']) == "8":
+				concept = "2000000470" #Depression
+			elif str(row['Measure']) == "2" or str(row['Measure']) == "3":
+				concept = "2000000700" #Other
+			elif str(row['Measure']) == "5" or str(row['Measure']) == "6" or str(row['Measure']) == "7":
+				if patient in self.etiology:
+					if str(self.etiology[patient]['Measure']) == "1":
+						concept = "2000000255" #AD
+					elif str(self.etiology[patient]['Measure']) == "2":
+						concept = "2000000701" #Mixed dementia
+					elif str(self.etiology[patient]['Measure']) == "3":
+						concept = "2000000685" #VAD
+					elif str(self.etiology[patient]['Measure']) == "5":
+						concept = "2000000665" #FTD
+					elif str(self.etiology[patient]['Measure']) == "8":
+						concept = "2000000699" #Other Dementia
+
+			results += [{
+				'Patient ID': patient,
+				'Number of Visit': row['Number of Visit'],
+				'Date of Diagnosis': row['Date of Diagnosis'],
+				'Variable': row['Variable'],
+				'Measure': row['Measure'],
+				'VariableConcept': '2000000551',
+				'MeasureConcept': concept,
+				'MeasureNumber': None,
+				'MeasureString': None
+				}]
+		return results
+
 		
 	#######################################
 	#	Harmonizer during the migration	  #

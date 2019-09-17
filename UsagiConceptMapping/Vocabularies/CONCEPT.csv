@@ -617,3 +617,5 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2000000697	Sleep Rating Scales	Rating Scales	Concept Class	Concept Class	S	2000000697	2019-01-01	2099-12-31	
 2000000698	Substance misuse	_Concepts	Concept Class	Concept Class	S	2000000698	2019-01-01	2099-12-31	
 2000000699	Other dementia	_Concepts	Concept Class	Concept Class	S	2000000699	2019-01-01	2099-12-31	
+2000000700	Other	_Concepts	Concept Class	Concept Class	S	2000000700	2019-01-01	2099-12-31	
+2000000701	Mixed dementia	_Concepts	Concept Class	Concept Class	S	2000000701	2019-01-01	2099-12-31	
