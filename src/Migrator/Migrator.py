@@ -8,6 +8,8 @@ from VisitOccurrence import VisitOccurrence
 from Harmonizer import Harmonizer
 from FileManager import FileManager
 
+from MigratorArgs import MigratorArgs
+
 class Migrator():    
 	'''Class base to orchestrate the migration.
 

@@ -88,7 +88,7 @@ class TranSMARTMap():
 		return filledCohort
 
 	def __writeCSV(self, tmStructure):
-		header = sorted(tmStructure[0])
+		header = sorted(list(tmStructure.values())[0])
 		pathlib.Path(self.args.transmartdstdir).mkdir(parents=True, exist_ok=True) 
 		foutput = open('{}{}'.format(self.args.transmartdstdir, self.args.cohortoutputfile), "w")
 		foutput.write("Subject_ID")
@@ -96,9 +96,10 @@ class TranSMARTMap():
 			foutput.write("\t" + str(colunmn))
 		foutput.write("\n")
 
-		for row in sorted(tmStructure):#sort by patient id (not very important)
+		for row in tmStructure:
 			rowData = sorted(tmStructure[row])
-			foutput.write(str(row))
+			patientId = self.__patientIdAdHocMethod(row)
+			foutput.write(str(patientId))
 			for obsID in rowData:
 				foutput.write("\t" + str(tmStructure[row][obsID]))
 			foutput.write("\n")
@@ -183,6 +184,12 @@ class TranSMARTMap():
 				for row in preHarmonizedStructure:
 					harmonizedStructure[row][code] = getattr(self.adHocHarmonization, method)()
 		return harmonizedStructure
+
+	def __patientIdAdHocMethod(self, patientId):
+		for method in dir(self.adHocHarmonization):
+			if method == "patient_id":
+				return getattr(self.adHocHarmonization, method)(patientId)
+		return patientId
 
 
 def main(adHoc=None):
