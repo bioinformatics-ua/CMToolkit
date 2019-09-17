@@ -159,9 +159,12 @@ class StandardAdHoc(object, metaclass=Singleton):
 		try:
 			delta = self.__compareDates(SAHGlobalVariables.dateOfDiagnosis[patientID], row["Measure"], '%d-%M-%Y')
 			if delta:
-				row["MeasureNumber"] = round(delta.days/365, 5)
-				row["MeasureString"] = None
-				return row
+				if round(delta.days/365, 5) > -10 and round(delta.days/365, 5) < 10:
+					row["MeasureNumber"] = round(delta.days/365, 5)
+					row["MeasureString"] = None
+					return row
+				else:
+					print("The difference of dates on the patient", str(patientID), "is incorrect! Value:", str(round(delta.days/365, 5)))
 		except Exception as e:
 			pass
 		return []
