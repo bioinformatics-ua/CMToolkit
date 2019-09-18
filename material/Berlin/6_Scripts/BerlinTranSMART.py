@@ -26,6 +26,7 @@ class Harmonizer(object):
 	def set_2000000696(self, value):
 		if value == "n.a.":
 			return ""
+		return value
 
 	##Add fields
 	def add_2000000620(self):#Study name

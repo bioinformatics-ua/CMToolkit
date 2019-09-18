@@ -64,6 +64,7 @@ class Harmonizer(object):
 
         patientIDLabel = self.__getPatientIDLabel(file)
         self.__loadNewMeasures(dfRead, patientIDLabel)
+        dfRead = self.__cleanEmptyMeasure(dfRead)
         return dfRead
 
     def __finalStage(self, dfRead, file):
@@ -141,6 +142,8 @@ class Harmonizer(object):
             sah.definePatientIDLabel(patientIDLabel)
             sah.processLoadingStage(dataDict)
 
+    def __cleanEmptyMeasure(self, dfRead):
+        return dfRead.dropna(how='all', subset=["MeasureConcept", "MeasureNumber", "MeasureString"])
 
     def __calculateNewMeasures(self, dfRead, patientIDLabel):
         dataDict = dfRead.to_dict(orient='records')

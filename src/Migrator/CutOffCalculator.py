@@ -41,6 +41,7 @@ class CutOffCalculator():
 		row['Variable'] 		= Relation[variableConcept]["cutOffName"]
 		row['VariableConcept'] 	= Relation[variableConcept]["cutOff"]
 		row['Measure'] 			= "Calculated automatically"
+		row['MeasureNumber'] 	= None
 		row['MeasureString'] 	= operator + str(value)
 		return row
 
@@ -49,6 +50,7 @@ class CutOffCalculator():
 		row['Variable'] 		= Relation[variableConcept]["abnormalName"]
 		row['VariableConcept'] 	= Relation[variableConcept]["abnormal"]
 		row['Measure'] 			= "Calculated automatically"
+		row['MeasureNumber'] 	= None
 		if operator == ">":
 			row['MeasureConcept'] = YES if float(value) > float(cutOffValue) else NO
 		elif operator == "<":
