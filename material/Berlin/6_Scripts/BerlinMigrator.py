@@ -16,13 +16,58 @@ class Harmonizer(object):
 		#Variables calculated based on other variables
 		self.ceradWLRounds = []
 		self.ceradWLRecognition = []
+		self.apoE = []
 		self.diagnosis = {}
 		self.etiology = {}
+		self.adHocCutOff = {}
+		'''
+		cutOffs = "cutOffId":{"value":xxxx, "operator": "<" or >"}
+		or
+		cutOffs = "cutOffId":{"conditionalMethod": method()}
+		'''
 		self.cutOff = {
-			#"2000000297":??? #Amyloid Beta 1-42 Cut-off
-			#"2000000298":??? #Total Tau Cut-off
-			#"2000000463":??? #Phosphorylated Tau Cut-off
+			"2000000297":{"conditionalMethod": self.__calculateCutOffValues}, #Amyloid Beta 1-42 Cut-off
+			"2000000298":{"conditionalMethod": self.__calculateCutOffValues}, #Total Tau Cut-off
+			"2000000463":{"conditionalMethod": self.__calculateCutOffValues}  #Phosphorylated Tau Cut-off
 			}
+
+	def __calculateCutOffValues(self, row):
+		'''
+		    CSF date before 03.12.2014:
+		        Cutoffs not available
+		    CSF date between 03.12.2014 and 31.12.2016:
+		        Cutoff: amyloid <600, cutoff t-tau >300, cutoff p-tau >60
+		    CSF date between 31.12.2016 and 28.11.2018:
+		        Cutoff amyloid <1000, cutoff t-tau >400, cutoff p-tau >62
+		    CSF date after 28.11.2018:
+		        Cutoff amyloid <680, cutoff t-tau >400, cutoff p-tau >62.
+		'''
+		date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
+		if date < datetime.datetime(2014, 12, 3):
+			return None, None
+		elif date < datetime.datetime(2016, 12, 31):
+			if "2000000070" in row["VariableConcept"]:
+				return "<", 600
+			if "2000000073" in row["VariableConcept"]:
+				return ">", 60
+			if "2000000075" in row["VariableConcept"]:
+				return ">", 300
+		elif date < datetime.datetime(2018, 11, 28):
+			if "2000000070" in row["VariableConcept"]:
+				return "<", 1000
+			if "2000000073" in row["VariableConcept"]:
+				return ">", 62
+			if "2000000075" in row["VariableConcept"]:
+				return ">", 400
+		else:
+			if "2000000070" in row["VariableConcept"]:
+				return "<", 680
+			if "2000000073" in row["VariableConcept"]:
+				return ">", 62
+			if "2000000075" in row["VariableConcept"]:
+				return ">", 400
+		return None, None
+
 
 	###################################################
 	#	Public methods in the harmonization stage	  #
@@ -34,7 +79,9 @@ class Harmonizer(object):
 		if "2000000051" in variableConcept:
 			return self.__readCeradWLRecognition(row)
 		if "2000000551" in variableConcept:
-			self.__readDiagnosisAndEtiology(row)
+			return self.__readDiagnosisAndEtiology(row)
+		if "2000000013" in variableConcept:
+			self.__readApoE(row)
 
 		if "2000000468" in variableConcept:
 			return self.__dealWithFamilyHistoryDementia(row)
@@ -42,6 +89,10 @@ class Harmonizer(object):
 			return self.__dealWithSleepDisordersClinicalInformation(row)
 		if "2000000609" in variableConcept:
 			return self.__dealWithGender(row)
+		if "2000000293" in variableConcept:
+			return self.__dealWithCSFAssay(row)
+
+
 		return row	
 
 	def addMissingRows(self):
@@ -49,6 +100,7 @@ class Harmonizer(object):
 		missingRows += self.__processCeradWLRounds()
 		missingRows += self.__processCeralWLRecognition()
 		missingRows += self.__processDiagnosisAndEtiology()
+		missingRows += self.__processApoE()
 		#missingRows += self.__process...
 		#....
 		return missingRows
@@ -63,6 +115,9 @@ class Harmonizer(object):
 	def __readCeradWLRecognition(self, row):
 		self.ceradWLRecognition += [row]
 		return []
+
+	def __readApoE(self, row):
+		self.apoE += [row]
 
 	def __readDiagnosisAndEtiology(self, row):
 		if row["Variable"] == "Diagnosis":
@@ -93,6 +148,26 @@ class Harmonizer(object):
 		if row["Measure"] == '1':
 			row["MeasureConcept"] = 8507
 		return row
+
+	def __dealWithCSFAssay(self, row):
+		'''
+		CSF date before 03.12.2014:
+		    Assay: Innotest
+		CSF date between 03.12.2014 and 31.12.2016:
+		    Assay: MSD
+		CSF date after 31.12.2016:
+		    Assay: Luminex
+		'''
+		date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
+		if date < datetime.datetime(2014, 12, 3):
+			row["MeasureString"] = "Innotest"
+		elif date < datetime.datetime(2016, 12, 31):
+			row["MeasureString"] = "MSD"
+		else:
+			row["MeasureString"] = "Luminex"
+		row["MeasureNumber"] = None
+		return row
+
 
 	def __processCeradWLRounds(self):
 		results = []
@@ -196,6 +271,42 @@ class Harmonizer(object):
 				'MeasureNumber': None,
 				'MeasureString': None
 				}]
+		return results
+
+	def __processApoE(self):
+		results = []
+		if len(self.apoE) > 0:
+			for row in self.apoE:
+				measures = row['Measure'].split("/")
+				if len(measures) == 2:
+					results += [{
+						'Patient ID': row['Patient ID'],
+						'Date of puncture (Liquor)': row['Date of puncture (Liquor)'],
+						'Variable': row['Variable'],
+						'Measure': row['Measure'],
+						'VariableConcept': '2000000320', #ApoE Allele 1
+						'MeasureConcept': None,
+						'MeasureNumber': None,
+						'MeasureString': measures[0]
+						},{
+						'Patient ID': row['Patient ID'],
+						'Date of puncture (Liquor)': row['Date of puncture (Liquor)'],
+						'Variable': row['Variable'],
+						'Measure': row['Measure'],
+						'VariableConcept': '2000000321', #ApoE Allele 2
+						'MeasureConcept': None,
+						'MeasureNumber': None,
+						'MeasureString': measures[1]
+						},{
+						'Patient ID': row['Patient ID'],
+						'Date of puncture (Liquor)': row['Date of puncture (Liquor)'],
+						'Variable': row['Variable'],
+						'Measure': row['Measure'],
+						'VariableConcept': '2000000014', #ApoE4 Carrier
+						'MeasureConcept': None,
+						'MeasureNumber': None,
+						'MeasureString': "Yes" if measures[0] == "4" or measures[1] == "4" else "No"
+						}]
 		return results
 
 		

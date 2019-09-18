@@ -87,7 +87,7 @@ class Harmonizer(object):
         for row in dataDict:
             added = False
             for mapping in listOfMappings:
-                if mapping['sourceName'] == row['Variable']:
+                if mapping['sourceName'].strip() == row['Variable'].strip():
                     tempRow = row.copy()
                     tempRow["VariableConcept"] = mapping['targetConceptId']
                     if mapping['targetConceptId'] != '0':

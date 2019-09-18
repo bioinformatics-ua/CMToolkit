@@ -1,6 +1,5 @@
 from Singleton import Singleton
 from ZcoreCalculator import ZcoreCalculator
-from AbnormalCalculator import AbnormalCalculator
 from CutOffCalculator import CutOffCalculator
 from SAHGlobalVariables import SAHGlobalVariables
 from datetime import date
@@ -10,16 +9,13 @@ class StandardAdHoc(object, metaclass=Singleton):
 	def __init__(self, cutOffs):
 		self.patientIDLabel 	= None
 		self.zcoreCalculator 	= ZcoreCalculator()
-		self.abnormalCalculator = None
 		self.cutOffsCalculator	= None
 		if cutOffs != None:
-			self.abnormalCalculator = AbnormalCalculator(cutOffs)
 			self.cutOffsCalculator	= CutOffCalculator(cutOffs)
 		
 		#Base variables
 		self.bodyLength = {}
 		self.weight = {}
-
 
 		#Temporary variables calculated based on other variables
 		self.ageMeasurement = [] 
@@ -46,13 +42,9 @@ class StandardAdHoc(object, metaclass=Singleton):
 			zcore = self.zcoreCalculator.calculate(row, self.patientIDLabel, variableConcept)
 			outputDataDict += [zcore]
 
-			if self.abnormalCalculator != None:
-				abnormal = self.abnormalCalculator.calculate(row, self.patientIDLabel, variableConcept)
-				outputDataDict += [abnormal]
-
 			if self.cutOffsCalculator != None:
-				cutOff = self.cutOffsCalculator.calculate(row, self.patientIDLabel, variableConcept)
-				outputDataDict += [cutOff]
+				cutOff = self.cutOffsCalculator.calculate(row, variableConcept)
+				outputDataDict += cutOff
 		
 		outputDataDict += self.__addNewMeasurements()
 

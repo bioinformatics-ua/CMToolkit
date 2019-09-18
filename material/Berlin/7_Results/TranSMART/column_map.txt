@@ -3,43 +3,45 @@ Transmart.tsv		1	SUBJ_ID
 Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Baseline	2	Animals Fluency 1 min			
 Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Baseline	3	Animals Fluency 1 min Z-score			
 Transmart.tsv	Pharmacogenetics_Findings	4	ApoE Genotype			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Baseline	5	BADL			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	6	CERAD Figures			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	7	CERAD Figures Z-score			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	8	CERAD WL Immediate			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	9	CERAD WL Recognition			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Baseline	10	Clock Drawing-On Command			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	11	Amyloid Beta 1-40 (pg/mL)			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	12	Amyloid Beta 1-42 (pg/mL)			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	13	Phosphorylated Tau (pg/mL)			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	14	Total Tau (pg/mL)			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Baseline	15	HDS			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	16	MMSE Total Score			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	17	Story Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	18	Story Immediate			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	19	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	20	TMT-A Z-score			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	21	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	22	TMT-B Z-score			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Baseline	23	CSF Assay			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	24	Body Mass Index			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	25	Cholesterol			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	26	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	27	Pulse Rate			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	28	Weight (kg)			
-Transmart.tsv	Clinical_Information	29	Family History of Dementia			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Baseline	30	Date of Neuropsychological Examination			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	31	Date MMSE			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Baseline	32	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Baseline	33	Date CSF Collection			
-Transmart.tsv	Demographics+Baseline	34	Age			
-Transmart.tsv	Demographics	35	Birth Year			
-Transmart.tsv	Clinical_Information+Diagnoses+Baseline	36	Diagnosis			
-Transmart.tsv	Subject_Characteristics	37	Education Level (yr)			
-Transmart.tsv	Demographics	38	Ethnic Group			
-Transmart.tsv	Study_Information	39	In 1000 Cohort			
-Transmart.tsv	Demographics	40	Race			
-Transmart.tsv	Demographics	41	Sex			
-Transmart.tsv	Study_Information	42	Study Name			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	43	CERAD Figures Delayed			
-Transmart.tsv	Rating_Scales+Sleep_Rating_Scales+Baseline	44	Insomnia Severity Index			
+Transmart.tsv	Pharmacogenetics_Findings	5	ApoE4 Carrier			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Baseline	6	BADL			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	7	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	8	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	9	CERAD WL Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	10	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	11	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Baseline	12	Clock Drawing-On Command			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	13	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	14	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	15	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	16	Total Tau (pg/mL)			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Baseline	17	HDS			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	18	MMSE Total Score			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	19	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	20	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	21	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	22	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	23	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	24	TMT-B Z-score			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Baseline	25	CSF Assay			
+Transmart.tsv	Pharmacogenetics_Findings	26	ApoE Allele 1			
+Transmart.tsv	Pharmacogenetics_Findings	27	ApoE Allele 2			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	28	Body Mass Index			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	29	Cholesterol			
+Transmart.tsv	Clinical_Information	30	Family History of Dementia			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Baseline	31	Date of Neuropsychological Examination			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	32	Date MMSE			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Baseline	33	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Baseline	34	Date CSF Collection			
+Transmart.tsv	Demographics+Baseline	35	Age			
+Transmart.tsv	Demographics	36	Birth Year			
+Transmart.tsv	Neuropsychological_Examination+Language+Baseline	37	Boston Naming Test			
+Transmart.tsv	Clinical_Information+Diagnoses+Baseline	38	Diagnosis			
+Transmart.tsv	Subject_Characteristics	39	Education Level (yr)			
+Transmart.tsv	Demographics	40	Ethnic Group			
+Transmart.tsv	Study_Information	41	In 1000 Cohort			
+Transmart.tsv	Demographics	42	Race			
+Transmart.tsv	Demographics	43	Sex			
+Transmart.tsv	Study_Information	44	Study Name			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	45	CERAD Figures Delayed			
+Transmart.tsv	Rating_Scales+Sleep_Rating_Scales+Baseline	46	Insomnia Severity Index			
