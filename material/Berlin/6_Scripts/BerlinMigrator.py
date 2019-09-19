@@ -42,7 +42,12 @@ class Harmonizer(object):
 		    CSF date after 28.11.2018:
 		        Cutoff amyloid <680, cutoff t-tau >400, cutoff p-tau >62.
 		'''
-		date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
+		try:
+			date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
+		except:
+			print("No date defined for the cutOffs, which is necessary in this cohort:", row)
+			return None, None
+
 		if date < datetime.datetime(2014, 12, 3):
 			return None, None
 		elif date < datetime.datetime(2016, 12, 31):
@@ -158,7 +163,11 @@ class Harmonizer(object):
 		CSF date after 31.12.2016:
 		    Assay: Luminex
 		'''
-		date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
+		try:
+			date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
+		except:
+			print("No date defined in CSF Assay:", row)
+			return []
 		if date < datetime.datetime(2014, 12, 3):
 			row["MeasureString"] = "Innotest"
 		elif date < datetime.datetime(2016, 12, 31):

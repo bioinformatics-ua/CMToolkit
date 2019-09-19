@@ -40,12 +40,15 @@ class StandardAdHoc(object, metaclass=Singleton):
 				outputDataDict += [data]
 
 			zcore = self.zcoreCalculator.calculate(row, self.patientIDLabel, variableConcept)
-			outputDataDict += [zcore]
+			if isinstance(zcore, list):
+				outputDataDict += zcore
+			else:
+				outputDataDict += [zcore]
 
 			if self.cutOffsCalculator != None:
 				cutOff = self.cutOffsCalculator.calculate(row, variableConcept)
 				outputDataDict += cutOff
-		
+
 		outputDataDict += self.__addNewMeasurements()
 
 		return outputDataDict
@@ -151,7 +154,7 @@ class StandardAdHoc(object, metaclass=Singleton):
 		try:
 			delta = self.__compareDates(SAHGlobalVariables.dateOfDiagnosis[patientID], row["Measure"], '%d-%M-%Y')
 			if delta:
-				if round(delta.days/365, 5) > -10 and round(delta.days/365, 5) < 10:
+				if round(delta.days/365, 5) > -15 and round(delta.days/365, 5) < 15:
 					row["MeasureNumber"] = round(delta.days/365, 5)
 					row["MeasureString"] = None
 					return row
