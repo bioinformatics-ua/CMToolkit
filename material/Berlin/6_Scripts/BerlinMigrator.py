@@ -108,6 +108,8 @@ class Harmonizer(object):
 			return self.__dealWithCholesterol(row)
 		if "2000000532" in variableConcept:
 			return self.__dealWithCSFMeasure(row)
+		if "2000000068" in variableConcept:
+			return self.__dealWithAmyloidBeta138(row)
 
 		return row	
 
@@ -214,6 +216,11 @@ class Harmonizer(object):
 
 	def __dealWithCSFMeasure(self, row):
 		if isinstance(row["Measure"], float):
+			return row
+		return []
+
+	def __dealWithAmyloidBeta138(self, row):
+		if row["Measure"].isdigit():
 			return row
 		return []
 
