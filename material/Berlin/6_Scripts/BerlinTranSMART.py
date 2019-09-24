@@ -21,10 +21,10 @@ class Harmonizer(object):
 			return "Heterozygote"
 		if value == "4/4":
 			return "Homozygote"
-		return value
+		return ""#value
 
 	def set_2000000696(self, value):
-		if value == "n.a.":
+		if value == "n.a." or value == "n.a":
 			return ""
 		return value
 

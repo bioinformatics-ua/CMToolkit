@@ -143,6 +143,7 @@ class Harmonizer(object):
             sah.processLoadingStage(dataDict)
 
     def __cleanEmptyMeasure(self, dfRead):
+        dfRead = dfRead[dfRead["MeasureString"] != "n.a."]
         return dfRead.dropna(how='all', subset=["MeasureConcept", "MeasureNumber", "MeasureString"])
 
     def __calculateNewMeasures(self, dfRead, patientIDLabel):

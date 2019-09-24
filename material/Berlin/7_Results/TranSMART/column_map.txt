@@ -1,53 +1,483 @@
 Filename	Category_Code (tranSMART)	Column	DataLabel	data_label_src	ControlVocab_cd	Data_type
 Transmart.tsv		1	SUBJ_ID			
 Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Baseline	2	Animals Fluency 1 min			
-Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Baseline	3	Animals Fluency 1 min Z-score			
-Transmart.tsv	Pharmacogenetics_Findings	4	ApoE Genotype			
-Transmart.tsv	Pharmacogenetics_Findings	5	ApoE4 Carrier			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Baseline	6	BADL			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	7	CERAD Figures			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	8	CERAD Figures Z-score			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	9	CERAD WL Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	10	CERAD WL Immediate			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	11	CERAD WL Recognition			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Baseline	12	Clock Drawing-On Command			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	13	Amyloid Beta 1-40 (pg/mL)			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	14	Amyloid Beta 1-42 (pg/mL)			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	15	Amyloid Beta 1-42 Abnormal			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	16	Phosphorylated Tau (pg/mL)			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	17	Phosphorylated Tau Abnormal			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	18	Total Tau (pg/mL)			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	19	Total Tau Abnormal			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Baseline	20	HDS			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	21	MMSE Total Score			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	22	Story Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	23	Story Immediate			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	24	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	25	TMT-A Z-score			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	26	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	27	TMT-B Z-score			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Baseline	28	CSF Assay			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	29	Amyloid Beta 1-42 Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	30	Total Tau Cut-off			
-Transmart.tsv	Pharmacogenetics_Findings	31	ApoE Allele 1			
-Transmart.tsv	Pharmacogenetics_Findings	32	ApoE Allele 2			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	33	Body Mass Index			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	34	Cholesterol			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	35	Phosphorylated Tau Cut-off			
-Transmart.tsv	Clinical_Information	36	Family History of Dementia			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Baseline	37	Date of Neuropsychological Examination			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	38	Date MMSE			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Baseline	39	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Baseline	40	Date CSF Collection			
-Transmart.tsv	Demographics+Baseline	41	Age			
-Transmart.tsv	Demographics	42	Birth Year			
-Transmart.tsv	Neuropsychological_Examination+Language+Baseline	43	Boston Naming Test			
-Transmart.tsv	Clinical_Information+Diagnoses+Baseline	44	Diagnosis			
-Transmart.tsv	Subject_Characteristics	45	Education Level (yr)			
-Transmart.tsv	Demographics	46	Ethnic Group			
-Transmart.tsv	Study_Information	47	In 1000 Cohort			
-Transmart.tsv	Demographics	48	Race			
-Transmart.tsv	Demographics	49	Sex			
-Transmart.tsv	Study_Information	50	Study Name			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	51	CERAD Figures Delayed			
-Transmart.tsv	Rating_Scales+Sleep_Rating_Scales+Baseline	52	Insomnia Severity Index			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_12	3	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_24	4	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_36	5	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_48	6	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_60	7	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_72	8	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_84	9	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_96	10	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_108	11	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_120	12	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_132	13	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_144	14	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_156	15	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_168	16	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Baseline	17	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_12	18	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_24	19	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_36	20	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_48	21	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_60	22	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_72	23	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_84	24	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_96	25	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_108	26	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_120	27	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_132	28	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_144	29	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_156	30	Animals Fluency 1 min Z-score			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Month_168	31	Animals Fluency 1 min Z-score			
+Transmart.tsv	Pharmacogenetics_Findings	32	ApoE Genotype			
+Transmart.tsv	Pharmacogenetics_Findings	33	ApoE4 Carrier			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Baseline	34	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_12	35	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_24	36	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_36	37	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_48	38	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_60	39	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_72	40	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_84	41	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_96	42	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_108	43	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_120	44	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_132	45	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_144	46	BADL			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Month_168	47	BADL			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	48	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_12	49	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_24	50	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_36	51	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_48	52	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_60	53	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_72	54	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_84	55	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_96	56	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_108	57	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_120	58	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_132	59	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_144	60	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_156	61	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_168	62	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	63	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_12	64	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_24	65	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_36	66	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_48	67	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_60	68	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_72	69	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_84	70	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_96	71	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_108	72	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_120	73	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_132	74	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_144	75	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_156	76	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_168	77	CERAD Figures Z-score			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	78	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_12	79	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_24	80	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_36	81	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_48	82	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_60	83	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_72	84	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_84	85	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_96	86	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_108	87	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_120	88	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_132	89	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_144	90	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_156	91	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_168	92	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	93	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_12	94	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_24	95	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_36	96	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_48	97	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_60	98	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_72	99	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_84	100	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_96	101	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_108	102	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_120	103	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_132	104	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_144	105	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_156	106	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Month_168	107	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Baseline	108	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_12	109	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_24	110	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_36	111	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_48	112	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_60	113	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_72	114	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_84	115	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_96	116	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_108	117	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_120	118	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_132	119	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_144	120	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_156	121	Clock Drawing-On Command			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Month_168	122	Clock Drawing-On Command			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	123	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	124	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	125	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	126	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	127	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	128	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	129	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	130	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	131	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	132	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	133	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	134	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	135	Amyloid Beta 1-38 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	136	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	137	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	138	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	139	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	140	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	141	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	142	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	143	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	144	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	145	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	146	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	147	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	148	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	149	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	150	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	151	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	152	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	153	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	154	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	155	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	156	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	157	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	158	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	159	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	160	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	161	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	162	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	163	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	164	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	165	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	166	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	167	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	168	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	169	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	170	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	171	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	172	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	173	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	174	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	175	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	176	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	177	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	178	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	179	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	180	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	181	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	182	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	183	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	184	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	185	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	186	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	187	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	188	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	189	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	190	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	191	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	192	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	193	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	194	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	195	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	196	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	197	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	198	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	199	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	200	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	201	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	202	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	203	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	204	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	205	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	206	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	207	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	208	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	209	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	210	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	211	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	212	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	213	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	214	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	215	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	216	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	217	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	218	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	219	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	220	Total Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	221	Total Tau Abnormal			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Baseline	222	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_12	223	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_24	224	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_36	225	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_48	226	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_60	227	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_72	228	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_84	229	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_96	230	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_108	231	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_120	232	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_132	233	HDS			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_156	234	HDS			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	235	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_12	236	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_24	237	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_36	238	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_48	239	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_60	240	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_72	241	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_84	242	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_96	243	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_108	244	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_120	245	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_132	246	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_144	247	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_156	248	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_168	249	MMSE Total Score			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	250	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_12	251	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_24	252	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_36	253	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_48	254	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_60	255	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_72	256	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_84	257	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_96	258	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_108	259	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_120	260	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_132	261	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_144	262	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_156	263	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	264	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_12	265	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_24	266	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_36	267	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_48	268	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_60	269	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_72	270	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_84	271	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_96	272	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_108	273	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_120	274	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_132	275	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_144	276	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_156	277	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	278	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_12	279	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_24	280	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_36	281	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_48	282	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_60	283	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_72	284	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_84	285	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_96	286	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_108	287	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_120	288	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_132	289	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_144	290	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_156	291	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_168	292	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	293	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_12	294	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_24	295	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_36	296	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_48	297	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_60	298	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_72	299	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_84	300	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_96	301	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_108	302	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_120	303	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_132	304	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_144	305	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_156	306	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_168	307	TMT-A Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	308	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_12	309	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_24	310	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_36	311	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_48	312	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_60	313	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_72	314	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_84	315	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_96	316	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_108	317	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_120	318	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_132	319	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_144	320	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_156	321	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_168	322	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	323	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_12	324	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_24	325	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_36	326	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_48	327	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_60	328	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_72	329	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_84	330	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_96	331	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_108	332	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_120	333	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_132	334	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_144	335	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_156	336	TMT-B Z-score			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_168	337	TMT-B Z-score			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Baseline	338	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_12	339	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_24	340	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_36	341	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_48	342	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_60	343	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_72	344	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_84	345	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_96	346	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_108	347	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_120	348	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_144	349	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Month_168	350	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	351	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	352	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	353	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	354	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	355	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	356	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	357	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	358	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	359	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	360	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	361	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	362	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	363	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	364	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	365	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	366	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	367	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	368	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	369	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	370	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	371	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	372	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_108	373	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	374	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	375	Total Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	376	Total Tau Cut-off			
+Transmart.tsv	Pharmacogenetics_Findings	377	ApoE Allele 1			
+Transmart.tsv	Pharmacogenetics_Findings	378	ApoE Allele 2			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	379	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	380	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	381	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	382	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	383	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	384	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	385	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	386	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	387	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	388	Phosphorylated Tau Cut-off			
+Transmart.tsv	Clinical_Information	389	Family History of Dementia			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Baseline	390	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_12	391	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_24	392	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_36	393	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_48	394	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_60	395	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_72	396	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_84	397	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_96	398	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_108	399	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_120	400	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_132	401	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_144	402	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_156	403	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_168	404	Date of Neuropsychological Examination			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	405	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_12	406	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_24	407	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_36	408	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_48	409	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_60	410	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_72	411	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_84	412	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_96	413	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_108	414	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_120	415	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_132	416	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_144	417	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_156	418	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_168	419	Date MMSE			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Baseline	420	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_12	421	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_24	422	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_36	423	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_48	424	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_60	425	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_72	426	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_96	427	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_108	428	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_120	429	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Baseline	430	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_12	431	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_24	432	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_36	433	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_48	434	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_60	435	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_72	436	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_84	437	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_96	438	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_108	439	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_120	440	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_144	441	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_168	442	Date CSF Collection			
+Transmart.tsv	Demographics+Baseline	443	Age			
+Transmart.tsv	Demographics	444	Birth Year			
+Transmart.tsv	Clinical_Information+Diagnoses+Baseline	445	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_12	446	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_24	447	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_36	448	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_48	449	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_60	450	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_72	451	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_84	452	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_96	453	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_108	454	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_120	455	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_132	456	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_144	457	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_168	458	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_180	459	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_192	460	Diagnosis			
+Transmart.tsv	Subject_Characteristics	461	Education Level (yr)			
+Transmart.tsv	Demographics	462	Ethnic Group			
+Transmart.tsv	Study_Information	463	In 1000 Cohort			
+Transmart.tsv	Demographics	464	Race			
+Transmart.tsv	Demographics	465	Sex			
+Transmart.tsv	Study_Information	466	Study Name			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	467	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_12	468	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_24	469	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_36	470	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_48	471	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_60	472	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_72	473	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_84	474	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_96	475	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_108	476	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_120	477	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_132	478	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_144	479	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_156	480	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_168	481	CERAD Figures Delayed			
+Transmart.tsv	Rating_Scales+Sleep_Rating_Scales+Baseline	482	Insomnia Severity Index			

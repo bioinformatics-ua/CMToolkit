@@ -5,18 +5,29 @@ import pathlib
 
 class TranSMARTMap():
 	def __init__(self, args):
-		self.adHocHarmonization = None
-		self.args 				= args
-		self.engine				= create_engine(args.db["datatype"]+"://"+args.db["user"]+":"+args.db["password"]+"@"+args.db["server"]+":"+args.db["port"]+"/"+args.db["database"])
-		self.observationsDict 	= set([TranSMARTConstants.DemographicSex, TranSMARTConstants.DemographicRace, TranSMARTConstants.DemographicEthnic, TranSMARTConstants.DemographicBirthYear])
-		self.visitIndependent	= self.__readVisitIndependent()
+		self.adHocHarmonization 	= None
+		self.args 					= args
+		self.engine					= create_engine(args.db["datatype"]+"://"+args.db["user"]+":"+args.db["password"]+"@"+args.db["server"]+":"+args.db["port"]+"/"+args.db["database"])
+		self.observationsDict 		= set([TranSMARTConstants.DemographicSex, TranSMARTConstants.DemographicRace, TranSMARTConstants.DemographicEthnic, TranSMARTConstants.DemographicBirthYear])
+		self.visitIndependentCodes 	= []
+		self.visitIndependent		= self.__readVisitIndependent()
 
 	def __readVisitIndependent(self):
 		visitIndependent = []
+		protegeOutputCodes = self.__loadProtegeOutputFileCodes()
 		with open(self.args.vioutput) as fp:
 			for line in fp:
 				visitIndependent += [line.split("\t")[0]]
+				self.visitIndependentCodes += [protegeOutputCodes[line.split("\t")[0]]]
 		return visitIndependent
+
+	def __loadProtegeOutputFileCodes(self):
+		protegeOutput = {}
+		with open(self.args.protegeoutput) as fp:
+			for line in fp:
+				row = line.strip().split("\t")  #['Weight (kg)', 'Clinical_Information+Vital_Signs', '2000000462']
+				protegeOutput[row[0]] = row[2]
+		return protegeOutput
 
 	def setAdHocMethods(self, adHocMethod):
 		self.adHocHarmonization = adHocMethod()
@@ -38,16 +49,21 @@ class TranSMARTMap():
 	def __loadObservations(self):
 		observationSet = self.engine.execute(TranSMARTConstants.observationQuery(self.args.db["schema"]))  
 		newStructure = {}
-		for row in observationSet:  
+		for row in observationSet:
 			person_id = row[TranSMARTConstants.ObservationPersonIdIndex]
-			observation_concept_id = row[TranSMARTConstants.ObservationObsvationConceptIdIndex]
+			observation_concept_id = row[TranSMARTConstants.ObservationObservationConceptIdIndex]
+			observation_type_concept_id = row[TranSMARTConstants.ObservationObservationTypeConIdIndex]
+			if str(observation_concept_id) not in self.visitIndependentCodes:
+				obs_id = str(observation_concept_id) + "+" + str(observation_type_concept_id)
+			else:
+				obs_id = str(observation_concept_id)
 
 			if person_id in newStructure:
-				newStructure[person_id][observation_concept_id] = self.__getObservation(row)
+				newStructure[person_id][obs_id] = self.__getObservation(row)
 			else:
 				newStructure[person_id] = {}
-				newStructure[person_id][observation_concept_id] = self.__getObservation(row)
-			self.__fulfillObsDict(observation_concept_id)
+				newStructure[person_id][obs_id] = self.__getObservation(row)
+			self.__fulfillObsDict(obs_id)
 		return newStructure
 
 	def __loadPatientData(self, newStructure):
@@ -76,7 +92,7 @@ class TranSMARTMap():
 
 	def __fulfillObsDict(self, observation_concept_id):
 		if observation_concept_id not in self.observationsDict:
-			self.observationsDict.add(observation_concept_id)
+			self.observationsDict.add(str(observation_concept_id))
 
 	def __buildStructureForTM(self, structure):
 		filledCohort = {}
@@ -117,9 +133,24 @@ class TranSMARTMap():
 		protegeOutput = {}
 		with open(self.args.protegeoutput) as fp:
 			for line in fp:
-				row = line.strip().split("\t")
-				if int(row[2]) in self.observationsDict:
-					protegeOutput[int(row[2])] = row
+				row = line.strip().split("\t")  #['Weight (kg)', 'Clinical_Information+Vital_Signs', '2000000462']
+				code = row[2]
+				path = row[1]
+				variableName = row[0]
+				if variableName in self.visitIndependent:
+					for column in self.observationsDict:
+						if code == column:
+							print(code)
+							protegeOutput[code] = (variableName, path)
+				else: #With Baseline or months 
+					for column in self.observationsDict:
+						col = column.split("+")
+						if len(col) == 2:
+							if code == col[0]:
+								protegeOutput[column] = (variableName, path+"+"+TranSMARTConstants.Months[col[1]])
+						else:
+							if code == column:
+								protegeOutput[code] = (variableName, path+"+Baseline")
 		fp.close()
 		return protegeOutput
 
@@ -129,11 +160,9 @@ class TranSMARTMap():
 		foutput.write(self.args.cohortoutputfile + "\t\t1\tSUBJ_ID\t\t\t\n")
 		for line in sorted(protegeOutput):
 			row = protegeOutput[line] #['Weight (kg)', 'Clinical_Information+Vital_Signs', '2000000462']
-			columnIndex = str(self.observationsDict.index(int(row[2]))+2)
+			columnIndex = str(self.observationsDict.index(line)+2)
 			path = row[1]
 			variableName = row[0]
-			if variableName not in self.visitIndependent:
-				path += "+Baseline"#Change this when I have more than one visit
 			rowToWrite  = self.args.cohortoutputfile + "\t" + path + "\t" + columnIndex + "\t" + variableName + "\t\t\t\n"
 			foutput.write(rowToWrite)
 		foutput.close()
@@ -154,8 +183,8 @@ class TranSMARTMap():
 		harmonizedStructure = {}
 		for row in tmStructure:
 			harmonizedStructure[row] = tmStructure[row]
-			if 2000000462 in tmStructure[row]: #Weight
-				harmonizedStructure[row][2000000462] = int(float(tmStructure[row][2000000462])) if tmStructure[row][2000000462] != '' else ''
+			if "2000000462" in tmStructure[row]: #Weight
+				harmonizedStructure[row]["2000000462"] = int(float(tmStructure[row]["2000000462"])) if tmStructure[row]["2000000462"] != '' else ''
 			#...
 			if(self.adHocHarmonization != None):
 				harmonizedStructure[row] = self.__adHocMethods(harmonizedStructure[row])
@@ -170,16 +199,18 @@ class TranSMARTMap():
 		'''
 		harmonizedStructure = preharmonizedStructure
 		for code in preharmonizedStructure:
-			methodName = "set_" + str(code)
-			if(hasattr(self.adHocHarmonization, methodName)): 
-				harmonizedStructure[code] = getattr(self.adHocHarmonization, methodName)(preharmonizedStructure[code])
+			method = "set_" + str(code)
+			for methodName in dir(self.adHocHarmonization):
+				if methodName in method:
+					if(hasattr(self.adHocHarmonization, methodName)): 
+						harmonizedStructure[code] = getattr(self.adHocHarmonization, methodName)(preharmonizedStructure[code])
 		return harmonizedStructure
 
 	def __addAdHocFields(self, preHarmonizedStructure):
 		harmonizedStructure = preHarmonizedStructure
 		for method in dir(self.adHocHarmonization):
 			if method.startswith("add_"):
-				code = int(method.split("_")[1])
+				code = method.split("_")[1]
 				self.observationsDict.add(code)
 				for row in preHarmonizedStructure:
 					harmonizedStructure[row][code] = getattr(self.adHocHarmonization, method)()

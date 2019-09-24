@@ -97,6 +97,17 @@ class Harmonizer(object):
 		if "2000000293" in variableConcept:
 			return self.__dealWithCSFAssay(row)
 
+		#Deal with the errors in the cohort
+		if "2000000462" in variableConcept:
+			return self.__dealWithWeight(row)
+		if "2000000388" in variableConcept:
+			return self.__dealWithHeight(row)
+		if "2000000421" in variableConcept:
+			return self.__dealWithPulseRate(row)
+		if "2000000358" in variableConcept:
+			return self.__dealWithCholesterol(row)
+		if "2000000532" in variableConcept:
+			return self.__dealWithCSFMeasure(row)
 
 		return row	
 
@@ -177,6 +188,34 @@ class Harmonizer(object):
 		row["MeasureNumber"] = None
 		return row
 
+	def __dealWithWeight(self, row):
+		if isinstance(row["Measure"], float):
+			if row["Measure"] < 0 or row["Measure"] > 150:# remove invalid weights
+				return []
+			return row
+		return []
+
+	def __dealWithHeight(self, row):
+		if isinstance(row["Measure"], float):
+			if row["Measure"] < 100 or row["Measure"] > 230:# remove invalid heights
+				return []
+			return row
+		return []
+
+	def __dealWithPulseRate(self, row):
+		if isinstance(row["Measure"], float):
+			return row
+		return []
+
+	def __dealWithCholesterol(self, row):
+		if isinstance(row["Measure"], float):
+			return row
+		return []
+
+	def __dealWithCSFMeasure(self, row):
+		if isinstance(row["Measure"], float):
+			return row
+		return []
 
 	def __processCeradWLRounds(self):
 		results = []
@@ -280,6 +319,7 @@ class Harmonizer(object):
 				'MeasureNumber': None,
 				'MeasureString': None
 				}]
+		self.diagnosis = {}
 		return results
 
 	def __processApoE(self):
@@ -316,6 +356,7 @@ class Harmonizer(object):
 						'MeasureNumber': None,
 						'MeasureString': "Yes" if measures[0] == "4" or measures[1] == "4" else "No"
 						}]
+		self.apoE = []
 		return results
 
 		
@@ -332,7 +373,7 @@ class Harmonizer(object):
 		return value.map(gender_map)
 
 	#Observation
-	def set_observation_observation_type_concept_id(self, value):
-		return pd.Series("2000000260", index=Observation.ObservationIDSet)
+	#def set_observation_observation_type_concept_id(self, value):
+	#	return pd.Series("2000000260", index=Observation.ObservationIDSet)
 
 Baseline.main(Harmonizer)

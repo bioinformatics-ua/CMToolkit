@@ -1,6 +1,9 @@
 import glob
 import pandas as pd
 import numpy as np
+import datetime
+import math
+from dateutil import relativedelta
 from Person import Person
 from Observation import Observation
 from ObservationPeriod import ObservationPeriod
@@ -49,14 +52,16 @@ class Migrator():
 				cohortData = self.fileManager.readCohort(obs)
 				conceptToSearch = obs.split(Harmonizer.MARK)[1] 
 				columns, dictOfMappingColumns = self.fileManager.getColumnsMappingBySourceCodeAndDomain(conceptToSearch, table)
-				columns	+= ["Variable", "Measure", "VariableConcept", "MeasureConcept", "MeasureString", "MeasureNumber"]
+				columns	+= ["Variable", "Measure", "VariableConcept", "MeasureConcept", "MeasureString", "MeasureNumber", "VisitConcept"]
 				dictOfMappingColumns["observation_source_value"] =  "Variable"
 				dictOfMappingColumns["qualifier_source_value"] =  "Measure"
 				dictOfMappingColumns["observation_concept_id"] = "VariableConcept" 
 				dictOfMappingColumns["value_as_concept_id"] = "MeasureConcept"
 				dictOfMappingColumns["value_as_string"] = "MeasureString" 
 				dictOfMappingColumns["value_as_number"] = "MeasureNumber" 
+				dictOfMappingColumns["observation_type_concept_id"] = "VisitConcept"
 
+				cohortData = self.__calculateVisitConcepts(cohortData, dictOfMappingColumns)
 				cohortData = cohortData.reindex(columns=columns)
 				migration = Observation(cohort 	     	= cohortData,
 						       			harmonizerAdHoc	= self.adHocHarmonization,
@@ -67,6 +72,51 @@ class Migrator():
 		else:
 			return None
 		self.result[table] = migration.getMapping()
+
+	def __calculateVisitConcepts(self, cohortData, mappings):
+		cohortData["VisitConcept"] = pd.Series("2100000000")
+		patientIDLabel = mappings["person_id"].strip()
+		observationDateLabel = mappings["observation_date"].strip()
+		dataDict = cohortData.to_dict(orient='records')
+		patientVisits = {}
+		outputDataDict = []
+		#Get the older observation date for the patient
+		for row in dataDict:
+			patientID = row[patientIDLabel]
+			date = row[observationDateLabel]
+			if isinstance(date, float):
+				if math.isnan(date):
+					continue
+			if patientID in patientVisits:
+				d0 = datetime.datetime.strptime(patientVisits[patientID], '%d-%M-%Y')
+				d1 = datetime.datetime.strptime(date, '%d-%M-%Y')
+				r = relativedelta.relativedelta(d1, d0)
+				if (((r.years*12) + r.months)) < 0:
+					patientVisits[patientID] = date
+			else:
+				patientVisits[patientID] = date
+		#Calculate the months interval
+		for row in dataDict:
+			patientID = row[patientIDLabel]
+			date = row[observationDateLabel]
+			if isinstance(date, float):
+				if math.isnan(date):
+					row["VisitConcept"] = "2100000000" #Baseline
+					outputDataDict += [row]
+					continue
+			d0 = datetime.datetime.strptime(patientVisits[patientID], '%d-%M-%Y')
+			d1 = datetime.datetime.strptime(date, '%d-%M-%Y')
+			r = relativedelta.relativedelta(d1, d0)
+			months = round((((r.years*12) + r.months))/6)
+
+			if months >= 0 and months <= 40:
+				row["VisitConcept"] = "21000000" + str(months).zfill(2)
+			else:
+				print("Patient", patientID, "Difference of months superior to 90! Months (rounded) from this records:", months*6)
+				continue
+			outputDataDict += [row]
+		return pd.DataFrame(outputDataDict, columns = cohortData.columns.values)
+
 
 	def getMigrationResults(self):
 		return self.result
