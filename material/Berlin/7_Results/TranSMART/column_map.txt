@@ -377,107 +377,156 @@ Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_144	375	Total Tau C
 Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_168	376	Total Tau Cut-off			
 Transmart.tsv	Pharmacogenetics_Findings	377	ApoE Allele 1			
 Transmart.tsv	Pharmacogenetics_Findings	378	ApoE Allele 2			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	379	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	380	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	381	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	382	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	383	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	384	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	385	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	386	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	387	Phosphorylated Tau Cut-off			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	388	Phosphorylated Tau Cut-off			
-Transmart.tsv	Clinical_Information	389	Family History of Dementia			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Baseline	390	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_12	391	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_24	392	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_36	393	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_48	394	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_60	395	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_72	396	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_84	397	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_96	398	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_108	399	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_120	400	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_132	401	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_144	402	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_156	403	Date of Neuropsychological Examination			
-Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_168	404	Date of Neuropsychological Examination			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	405	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_12	406	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_24	407	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_36	408	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_48	409	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_60	410	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_72	411	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_84	412	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_96	413	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_108	414	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_120	415	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_132	416	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_144	417	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_156	418	Date MMSE			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_168	419	Date MMSE			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Baseline	420	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_12	421	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_24	422	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_36	423	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_48	424	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_60	425	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_72	426	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_96	427	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_108	428	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_120	429	Date Blood Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Baseline	430	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_12	431	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_24	432	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_36	433	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_48	434	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_60	435	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_72	436	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_84	437	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_96	438	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_108	439	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_120	440	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_144	441	Date CSF Collection			
-Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_168	442	Date CSF Collection			
-Transmart.tsv	Demographics+Baseline	443	Age			
-Transmart.tsv	Demographics	444	Birth Year			
-Transmart.tsv	Clinical_Information+Diagnoses+Baseline	445	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_12	446	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_24	447	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_36	448	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_48	449	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_60	450	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_72	451	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_84	452	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_96	453	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_108	454	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_120	455	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_132	456	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_144	457	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_168	458	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_180	459	Diagnosis			
-Transmart.tsv	Clinical_Information+Diagnoses+Month_192	460	Diagnosis			
-Transmart.tsv	Subject_Characteristics	461	Education Level (yr)			
-Transmart.tsv	Demographics	462	Ethnic Group			
-Transmart.tsv	Study_Information	463	In 1000 Cohort			
-Transmart.tsv	Demographics	464	Race			
-Transmart.tsv	Demographics	465	Sex			
-Transmart.tsv	Study_Information	466	Study Name			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	467	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_12	468	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_24	469	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_36	470	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_48	471	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_60	472	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_72	473	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_84	474	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_96	475	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_108	476	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_120	477	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_132	478	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_144	479	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_156	480	CERAD Figures Delayed			
-Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_168	481	CERAD Figures Delayed			
-Transmart.tsv	Rating_Scales+Sleep_Rating_Scales+Baseline	482	Insomnia Severity Index			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	379	Body Mass Index			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	380	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	381	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	382	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	383	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	384	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	385	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	386	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	387	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	388	Cholesterol			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	389	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	390	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	391	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	392	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	393	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	394	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	395	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	396	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	397	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	398	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	399	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	400	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_156	401	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	402	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	403	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	404	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	405	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	406	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	407	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	408	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	409	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	410	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	411	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	412	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	413	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	414	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_156	415	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	416	Pulse Rate			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	417	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	418	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	419	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	420	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	421	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	422	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	423	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	424	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	425	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	426	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	427	Weight (kg)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	428	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_12	429	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_24	430	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_36	431	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_48	432	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_60	433	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_72	434	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_84	435	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_96	436	Phosphorylated Tau Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Month_120	437	Phosphorylated Tau Cut-off			
+Transmart.tsv	Clinical_Information	438	Family History of Dementia			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Baseline	439	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_12	440	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_24	441	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_36	442	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_48	443	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_60	444	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_72	445	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_84	446	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_96	447	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_108	448	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_120	449	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_132	450	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_144	451	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_156	452	Date of Neuropsychological Examination			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Month_168	453	Date of Neuropsychological Examination			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	454	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_12	455	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_24	456	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_36	457	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_48	458	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_60	459	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_72	460	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_84	461	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_96	462	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_108	463	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_120	464	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_132	465	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_144	466	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_156	467	Date MMSE			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_168	468	Date MMSE			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Baseline	469	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_12	470	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_24	471	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_36	472	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_48	473	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_60	474	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_72	475	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_96	476	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_108	477	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Month_120	478	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Baseline	479	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_12	480	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_24	481	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_36	482	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_48	483	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_60	484	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_72	485	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_84	486	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_96	487	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_108	488	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_120	489	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_144	490	Date CSF Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Month_168	491	Date CSF Collection			
+Transmart.tsv	Demographics+Baseline	492	Age			
+Transmart.tsv	Demographics	493	Birth Year			
+Transmart.tsv	Clinical_Information+Diagnoses+Baseline	494	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_12	495	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_24	496	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_36	497	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_48	498	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_60	499	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_72	500	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_84	501	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_96	502	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_108	503	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_120	504	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_132	505	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_144	506	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_168	507	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_180	508	Diagnosis			
+Transmart.tsv	Clinical_Information+Diagnoses+Month_192	509	Diagnosis			
+Transmart.tsv	Subject_Characteristics	510	Education Level (yr)			
+Transmart.tsv	Demographics	511	Ethnic Group			
+Transmart.tsv	Study_Information	512	In 1000 Cohort			
+Transmart.tsv	Demographics	513	Race			
+Transmart.tsv	Demographics	514	Sex			
+Transmart.tsv	Study_Information	515	Study Name			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	516	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_12	517	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_24	518	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_36	519	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_48	520	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_60	521	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_72	522	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_84	523	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_96	524	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_108	525	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_120	526	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_132	527	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_144	528	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_156	529	CERAD Figures Delayed			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Month_168	530	CERAD Figures Delayed			
+Transmart.tsv	Rating_Scales+Sleep_Rating_Scales+Baseline	531	Insomnia Severity Index			

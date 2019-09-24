@@ -191,31 +191,31 @@ class Harmonizer(object):
 		return row
 
 	def __dealWithWeight(self, row):
-		if isinstance(row["Measure"], float):
-			if row["Measure"] < 0 or row["Measure"] > 150:# remove invalid weights
+		if row["Measure"].isdigit():
+			if float(row["Measure"]) < 0 or float(row["Measure"]) > 150:# remove invalid weights
 				return []
 			return row
 		return []
 
 	def __dealWithHeight(self, row):
-		if isinstance(row["Measure"], float):
-			if row["Measure"] < 100 or row["Measure"] > 230:# remove invalid heights
+		if row["Measure"].isdigit():
+			if float(row["Measure"]) < 100 or float(row["Measure"]) > 230:# remove invalid heights
 				return []
 			return row
 		return []
 
 	def __dealWithPulseRate(self, row):
-		if isinstance(row["Measure"], float):
+		if row["Measure"].isdigit():
 			return row
 		return []
 
 	def __dealWithCholesterol(self, row):
-		if isinstance(row["Measure"], float):
+		if row["Measure"].isdigit():
 			return row
 		return []
 
 	def __dealWithCSFMeasure(self, row):
-		if isinstance(row["Measure"], float):
+		if row["Measure"].isdigit():
 			return row
 		return []
 

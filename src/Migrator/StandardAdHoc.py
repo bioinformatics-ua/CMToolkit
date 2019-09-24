@@ -134,8 +134,8 @@ class StandardAdHoc(object, metaclass=Singleton):
 				'VariableConcept': '2000000339', 
 				'MeasureConcept': None
 			}]
-		except:
-			pass
+		except Exception as ex:
+			print(ex)
 	#########################
 	#	Processing stage 	#
 	#########################
