@@ -45,7 +45,7 @@ class Harmonizer(object):
 		try:
 			date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
 		except:
-			print("No date defined for the cutOffs, which is necessary in this cohort:", row)
+			print("No date defined for the cutOffs, which is necessary in this cohort:\t", row)
 			return None, None
 
 		if date < datetime.datetime(2014, 12, 3):
@@ -179,7 +179,7 @@ class Harmonizer(object):
 		try:
 			date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
 		except:
-			print("No date defined in CSF Assay:", row)
+			print("No date defined in CSF Assay:\t", row)
 			return []
 		if date < datetime.datetime(2014, 12, 3):
 			row["MeasureString"] = "Innotest"

@@ -159,7 +159,8 @@ class StandardAdHoc(object, metaclass=Singleton):
 					row["MeasureString"] = None
 					return row
 				else:
-					print("The difference of dates on the patient", str(patientID), "is incorrect! Value:", str(round(delta.days/365, 5)))
+					print("The difference of dates on the patient", str(patientID), "is incorrect! Value:", str(round(delta.days/365, 5)),\
+						"Diagnosis date:", SAHGlobalVariables.dateOfDiagnosis[patientID], row["Measure"], "\t", row)
 		except Exception as e:
 			pass
 		return []
