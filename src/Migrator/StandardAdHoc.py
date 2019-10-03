@@ -135,7 +135,7 @@ class StandardAdHoc(object, metaclass=Singleton):
 				'MeasureConcept': None
 			}]
 		except Exception as ex:
-			print(ex)
+			print('Body Mass Index not calculated for user id:', ex)
 	#########################
 	#	Processing stage 	#
 	#########################
