@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import re
 import glob
+import chardet
 from BaseTable import BaseTable
 from sqlalchemy import create_engine
 from Singleton import Singleton
@@ -24,9 +25,12 @@ class FileManager(object, metaclass=Singleton):
 		pathlib.Path(args.results).mkdir(parents=True, exist_ok=True) 
 
 	def readCohort(self, fileName):
+		with open('{}{}'.format(self.args.cohortdest, fileName), 'rb') as f:
+			result = chardet.detect(f.read())
 		return pd.read_csv('{}{}'.format(self.args.cohortdest, fileName), 
 						   na_values='null', 
-						   sep=self.args.cohortsep)#,  thousands='.', decimal=',')
+						   sep=self.args.cohortsep, 
+						   encoding=result['encoding'])#,  thousands='.', decimal=',')
 
 	def getColumnsMappingBySourceCodeAndDomain(self, sourceCode, domain, sourceNameAsKey=False):
 		fileredRowsBySourceCode = self.columnsMapping[self.columnsMapping['sourceCode'].str.contains(sourceCode)]

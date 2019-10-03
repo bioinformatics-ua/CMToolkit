@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 import numpy as np
 import argparse
+import chardet
 from FileManager import FileManager
 
 class CSVTransformer(object):
@@ -34,7 +35,10 @@ class CSVTransformer(object):
             self.__transform(csv, fixedColumns[csv], measurementsColumns[csv])
 
     def __transform(self, csv, fixedColumns, measurementsColumns):
-        dfRead = pd.read_csv('{}{}'.format(self.cohortdir, csv), na_values='null', sep=self.cohortsep, dtype=str)
+        with open('{}{}'.format(self.cohortdir, csv), 'rb') as f:
+            result = chardet.detect(f.read())
+        dfRead = pd.read_csv('{}{}'.format(self.cohortdir, csv), na_values='null', sep=self.cohortsep, dtype=str, 
+                            encoding=result['encoding'])
         dfHeaders = dfRead.reindex(columns=fixedColumns)
         dfMeasures = dfRead.reindex(columns=measurementsColumns)  
 
@@ -71,4 +75,4 @@ class CSVTransformer(object):
     def __validateMappers(self, fixedColumns, measurementsColumns):
         for fixedColumnsKey in fixedColumns.keys():
             if fixedColumnsKey not in measurementsColumns.keys():
-                raise Exception("The mapper files does not match, key: " + fixedColumnsKey)
+                raise Exception("The mapper files does not match in headers or measures, key: ",fixedColumnsKey)
