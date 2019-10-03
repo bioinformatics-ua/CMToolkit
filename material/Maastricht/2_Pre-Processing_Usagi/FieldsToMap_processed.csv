@@ -1,0 +1,315 @@
+Table,Value
+PIN,Subject ID
+NOB_VOLGNR,Meet moment
+MAA_NR,other subject ID
+Gebdag,day of birth
+Gebmnd,month of birth
+Gebjr,year of birth
+Sex,sex
+testdag,day of testing
+testmnd,month of testing
+testjr,year of testing
+lft,age at testing
+CBSOPL,Education in categories
+VRHGOPL,Verhage education level
+MEANDER,visuoconstruction meander
+KUBUS_9,visuoconstruction 9-legged cube
+HONINGRAAT,visuoconstruction honeycomb
+KUBUS_12,visuoconstruction 12-legged cube
+TMTVERS,version Trail Making Test
+TMTA,TMTA (sec)
+TMTAF,TMTA mistakes
+TMTB,TMTB (sec)
+TMTBF,TMTB mistakes
+TMTC,TMTC (sec)
+TMTCF,TMTC mistakes
+STROOP_VERS,Stroop version
+STR1,Stroop 1 (sec)
+STR1F,Stroop 1 mistakes
+STR1C,Stroop 1 corr.
+STR2,Stroop 2 (sec)
+STR2F,Stroop 2 mistakes
+STR2C,Stroop 2 corr.
+STR3,Stroop 3 (sec)
+STR3F,Stroop 3 mistakes
+STR3C,Stroop 3 corr.
+DIGSPANVW,Digit span forward
+DIGSPANAW,Digit span backwards
+DIGSPAN_SORT,Digit span sorting
+CYFRKS_WAISVERS,Number series version
+CYFRKSVW,Number series forward
+CYFRKSAW,Figure series backwards
+CYFRKS_SORT,Number series sorting
+CYFRKSTOT,Number series total score
+WLTN,WLT number of words
+WLTMOD,WLT modus
+WLTVERS,WLT version
+WLT1,Number correct
+WLT1F,Mistakes
+WLT1D,doubles
+WLT2,Number correct
+WLT2F,Mistakes
+WLT2D,doubles
+WLT3,Number correct
+WLT3F,Mistakes
+WLT3D,doubles
+WLT4,Number correct
+WLT4F,Mistakes
+WLT4D,doubles
+WLT5,Number correct
+WLT5F,Mistakes
+WLT5D,doubles
+WLTTOT,Total correct
+WLTTOTF,Total mistakes
+WLTTOTD,Total double
+WLTDR,Delayed recall total
+WLTDRF,Delayed recall mistakes
+WLTDRD,Delayed recall doubles
+WLTGPOS,Recognition gpos
+WLTFPOS,Recognition fpos
+VERHAAL_VERS,Story recall test version
+VERHAAL_ONM,Story recall immediate
+VERHAAL_UITG,Story recall delayed
+GITIQ,GIT IQ
+GITVERS,GIT version
+WLIJST,GIT wordlist raw
+LEGK,GIT legkaart ruwe score
+VAAR,GIT vaaropdrachten ruwe score
+SORT,GIT sorteren ruwe score
+FIG,GIT figuurontdekken ruwe score
+CIJF,GIT cijferen ruwe score
+DRAAI,GIT draai ruwe score
+MATR,GIT matrijzen ruwe score
+WMOD1,GIT fluency1 categorie
+WTOT1,GIT fluency1 totaal aantal
+WGOED1,GIT fluency1 correct
+WMOD2,GIT fluency2 categorie
+WTOT2,GIT fluency2 totaal aantal
+WGOED2,GIT fluency2 correct
+CSTA,CSTA (sec)
+CSTAF,CSTA mistakes
+CSTB,CSTB (sec)
+CSTBF,CSTB mistakes
+CSTC,CSTC (sec)
+CSTCF,CSTC mistakes
+CST01,CST0 (sec)
+CST02,CST0 (sec)
+CST03,CST0 (sec)
+LDST_SDMT,LDST or SDMT performed
+SDMT30S,30 sec writing
+SDMT30SF,30 sec writing mistakes
+SDMT60S,60 sec writing
+SDMT60SF,60 sec writing mistakes
+SDMT90S,90 sec writing
+SDMT90SF,90 sec writing mistakes
+SDMT30L,30 sec reading
+SDMT30LF,30 sec reading mistakes
+SDMT60L,60 sec reading
+SDMT60LF,60 sec reading mistakes
+SDMT90L,90 sec reading
+SDMT90LF,90 sec reading mistakes
+SCL90_ANG,Questionnaire SCL90 
+SCL90_AGO,Questionnaire SCL90 
+SCL90_DEP,Questionnaire SCL90 
+SCL90_SOM,Questionnaire SCL90 
+SCL90_IN,Questionnaire SCL90 
+SCL90_SEN,Questionnaire SCL90 
+SCL90_HOS,Questionnaire SCL90 
+SCL90_SLA,Questionnaire SCL90 
+SCL90_OVER,Questionnaire SCL90 
+SCL90_PSN,Questionnaire SCL90 
+NPV_VERS,version NPV
+NPV_IN,NPV
+NPV_SI,NPV
+NPV_RG,NPV
+NPV_VE,NPV
+NPV_ZE,NPV
+NPV_DO,NPV
+NPV_ZW,NPV
+UCL_ACT,Questionnaire UCL
+UCL_PAL,Questionnaire UCL
+UCL_VER,Questionnaire UCL
+UCL_SOC,Questionnaire UCL
+UCL_PAS,Questionnaire UCL
+UCL_EXP,Questionnaire UCL
+UCL_GER,Questionnaire UCL
+NVM_NEG,
+NVM_SOM,
+NVM_VERL,
+NVM_PSY,
+NVM_EX,
+RBMT_VERS,RBMT version
+RBMT_VAO,RBMT immediate A / C reproduction
+RBMT_VAU,RBMT deferred reproduction A / C
+RBMT_VBO,RBMT immediate B / D reproduction
+RBMT_VBU,RBMT deferred reproduction B / D
+RBMT_OR_TOT,RBMT orientation total
+RBMT_OR_MAX,RBMT orientation max
+RBMT_OR_DAT,RBMT orientation date
+VATvorm,VAT: Short / long
+VAT1,
+VAT2,
+VATtot,VAT totalscore
+VOSP_INCLT,Incomplete letters
+VOSP_DOTC,Dot counting
+FLUDIER,Fluency animals (number)
+FLUDIERF,Fluency animals mistakes
+FLUDIERD,fluency animals doubles
+FLUBER,Fluency professions
+FLUBERF,Fluency professions mistakes
+FLUBERD,Fluency professins doubles
+QCOMPLETED4,Questionnaire administered? (NPI)
+NPIW,Delusions
+NPIWf,Frequency delusions
+NPIWe,Seriousness delusions
+FEW,Frequency x Ernst delusions
+NPIWb,Tax for the social worker
+NPIH,Hallucinations
+NPIHf,Frequency hallucinations
+NPIHe,Severity hallucinations
+FEH,Frequency x severity of hallucinations
+NPIHb,Tax for the social worker
+NPIAA,Agitation Aggression
+NPIAAf,Frequency agitation aggression
+NPIAAe,Severity agitation aggression
+FEAA,Frequency x Severity agitation aggression
+NPIAAb,Tax for the social worker
+NPIDS,Depression Gloom
+NPIDSf,Frequency depression gloominess
+NPIDSe,Severity depression depression
+FED,Frequency x Ernst depression
+NPIDSb,Tax for the social worker
+NPIA,Fear
+NPIAf,Frequency anxiety
+NPIAe,Severity fear
+FEA,Frequency x severity anxiety
+NPIAb,Tax for the social worker
+NPIUE,Exuberance Euphoria
+NPIUEf,Euphoria frequency exuberance
+NPIUEe,Severity euphoria
+FEUE,Frequency x Severity
+NPIUEb,Tax for the social worker
+NPIAO,Apathy Indifference
+NPIAOf,Frequency apathy indifference
+NPIAOe,Severity apathy indifference
+FEAO,Frequency x Severity apathy indifference
+NPIAOb,Tax for the social worker
+NPIO,Inhibition
+NPIOf,Frequency inhibition
+NPIOe,Serious inhibition
+FEO,Frequency x Serious inhibition
+NPIOb,Tax for the social worker
+NPIPL,Irritability Lability
+NPIPLf,Frequency irritability Lability
+NPIPLe,Severity irritability Lability
+FEPL,Frequency x Severely irritable lability
+NPIPLb,Tax for the social worker
+NPIB,Motion restlessness
+NPIBf,Frequency of movement unrest
+NPIBe,Severity of movement disorder
+FEB,Frequency x severity movement agitation
+NPIBb,Tax for the social worker
+NPISO,Sleep Unrest at night
+NPISOf,Frequency sleep unrest at night
+NPISOe,Ernst sleep restlessness at night
+FESO,Frequency x severity sleep restlessness
+NPISOb,Tax for the social worker
+NPIEE,Appetite Eating disorders
+NPIEEf,Frequency appetite eating disorders
+NPIEEe,Severity appetite eating disorders
+FEEE,Frequency x Severity appetite eating disorder
+NPIEEb,Tax for the social worker
+NPI_TOT,NPI Totalscore
+QCOMPLETED5,DAD Questionnaire administered?
+DADTOTPERCENT,DAD totaal (%)
+IADL_QTOT,IADL totaalscore
+TOBACO,Smoking
+TOBACOTYP1,Smoke type cigar
+TOBACOTYP2,Smoke type cigarette
+TOBACOTYP3,Smoke type pipe tobacco
+TOBACOTYPNLFL,Smoke type missing
+TOBACO2,Number of tobacco products per day
+TOBACO2_TXT,Open text 
+ALCOH,Does patient drink alcohol?
+ALCOH2,Number of units (per week)
+ALCOH2_TXT,open text 
+LENGTE,Length (cm)
+GEWICHT,weight (kg)
+BLDPRYN,Bloodpressure measured?
+VSNSBP,Systolische bloodpressure (mmHg)
+VSNDBP,Diastolic blood pressure (mmHg)
+CARDIOVASCYN,Cardiovasculair Disorders?
+HYPERT,Hypertension
+ANGP,Angina pectoris
+MYOC,Myocard infarct
+DOTT,Dotter/stent
+CORB,Coronaire bypass operation?
+CAROT,Carotis stenose
+CAVDO,Other
+CAVD7,Cardiovasculaire diagnose
+CEREDIAGYN,Cerebrovasculair disorders?
+TIA,TIA
+CEREBI,Infarct
+CEREBB,Bleedin
+RIND,RIND
+CEVDO,Other
+CEVD3,Cerebrovasculaire diagnose
+ENDODIAGYN,Endocrine disorders?
+DIABML,Diabetes mellitus
+HYPOTF,Hypothyreoidie
+HYPETF,Hyperthyreoidie
+ENDDO,Other
+ENDD4,Endocriene diagnose
+PSYCHDIAGYN,Psychiatric disorders?
+DEPDS,Depression
+PSYCHOS,Psychosis
+DELIR,Delirium
+PSYDO,Other
+PSYD4,Psychiatrische diagnose
+SOMYN,Somatic disorders
+COPD,COPD
+KIDNEY,Kidneydisorders
+LIVER,Liver disorders
+SOMDO,other
+SOMD4,Somatische diagnose
+MEDYN,Medication use
+CSFQ,Has CSF been drawn? 
+CSFN,Reason no CSF
+CSFday,Day of CSF assessment
+CSFmon,Month of CSF assessment
+CSFyr,Year of CSF assessment
+CSF_Klin_Lab,
+CSF_Klin_Methode,
+MRI,Is there and MRI? 
+MRIDTSday,Day of MRI
+MRIDTSmon,Month of MRI
+MRIDTSyr,Year of MRI
+QCOMPLETED,Questionnaire administered? (GDS)
+GDSSCORE,Totaal score Geriatric Depression Scale
+QCOMPLETED15,Questionnaire administered? (HDRS)
+HDRSTOT,HDRS totoaalscore
+QCOMPLETED1,Questionnaire administered (CDR)?
+CDR01,Memory
+CDR02,Orientation
+CDR03,Judgement and problem solving
+CDR04,Home and Hobbies
+CDR05,Personal Care
+CDR06,Community affairs
+CDRTOT,CDR totaal score
+QCOMPLETED3,MMSE Questionnaire administered?
+MMSETOT,MMSE totalscore (0-30)
+MMSEMAX,MMSEMAX (maximaal aantal punten haalbaar)
+CSF_Klin_Total_TAU,CSF t-tau
+CSF_Klin_AmyloidBeta42_1,CSF amyloid
+CSF_Klin_Phospor_TAU,CSF p-tau
+edu_years,education in years
+DIAG,diagnose
+ad,if DIAG=3 then this variable show whether it is Alzheimer disease (ad)
+VaD,if DIAG=3 then this variable shows whether it is vasculair dementia
+otherdem,if DIAG=3 then this variable shows the type of other dementia
+MTA_L,Medial temporal lobe atrophy links
+MTA_R,Medial temporal lobe atrophy rechts
+mtalr,medial temporal lobe atrophy bilateral
+lacinf,lacunaire infarcten
+GCA,global cortical atrophy
+APOE_genotype,APOE 
