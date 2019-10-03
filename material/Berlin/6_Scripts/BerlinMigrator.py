@@ -33,14 +33,14 @@ class Harmonizer(object):
 
 	def __calculateCutOffValues(self, row):
 		'''
-		    CSF date before 03.12.2014:
-		        Cutoffs not available
-		    CSF date between 03.12.2014 and 31.12.2016:
-		        Cutoff: amyloid <600, cutoff t-tau >300, cutoff p-tau >60
-		    CSF date between 31.12.2016 and 28.11.2018:
-		        Cutoff amyloid <1000, cutoff t-tau >400, cutoff p-tau >62
-		    CSF date after 28.11.2018:
-		        Cutoff amyloid <680, cutoff t-tau >400, cutoff p-tau >62.
+			CSF date before 03.12.2014:
+				Cutoffs not available
+			CSF date between 03.12.2014 and 31.12.2016:
+				Cutoff: amyloid <600, cutoff t-tau >300, cutoff p-tau >60
+			CSF date between 31.12.2016 and 28.11.2018:
+				Cutoff amyloid <1000, cutoff t-tau >400, cutoff p-tau >62
+			CSF date after 28.11.2018:
+				Cutoff amyloid <680, cutoff t-tau >400, cutoff p-tau >62.
 		'''
 		try:
 			date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
@@ -170,11 +170,11 @@ class Harmonizer(object):
 	def __dealWithCSFAssay(self, row):
 		'''
 		CSF date before 03.12.2014:
-		    Assay: Innotest
+			Assay: Innotest
 		CSF date between 03.12.2014 and 31.12.2016:
-		    Assay: MSD
+			Assay: MSD
 		CSF date after 31.12.2016:
-		    Assay: Luminex
+			Assay: Luminex
 		'''
 		try:
 			date = datetime.datetime.strptime(row['Date of puncture (Liquor)'], '%d-%M-%Y')
@@ -277,7 +277,7 @@ class Harmonizer(object):
 		return results
 
 	def __processDiagnosisAndEtiology(self):
-		''' Isabelle email (3/9/2019)         
+		''' Isabelle email (3/9/2019)		 
 			If the column “Diagnosis” in the Berlin dataset =10, Diagnosis on transmart should be “MCI”, 
 				independent of the collum “Etiology” in the Berlin dataset. This applies to n=60 patients
 			If “Diagnosis” is 1, Diagnosis on transmart should be “SCI”. This applies to n=25 patients. 
@@ -379,6 +379,14 @@ class Harmonizer(object):
 		gender_map = {1:8507, 0:8532}
 		return value.map(gender_map)
 
+	def set_person_year_of_birth(self, value):
+		return pd.DatetimeIndex(value).year
+
+	def set_person_month_of_birth(self, value):
+		return pd.DatetimeIndex(value).month
+
+	def set_person_day_of_birth(self, value):
+		return pd.DatetimeIndex(value).day
 	#Observation
 	#def set_observation_observation_type_concept_id(self, value):
 	#	return pd.Series("2000000260", index=Observation.ObservationIDSet)

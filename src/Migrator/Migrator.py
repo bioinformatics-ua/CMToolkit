@@ -31,6 +31,7 @@ class Migrator():
 		self.observations 		= observations
 		self.fileManager    	= FileManager()
 		self.result 			= {}
+		self.args 				= MigratorArgs()
 
 	def setAdHocClass(self, adHocClass):
 		self.adHocHarmonization = adHocClass()
@@ -49,10 +50,17 @@ class Migrator():
 			result = glob.glob('{}*.{}'.format(self.observations, "csv"))
 			observationResult = []
 			for obs in result:
+				#Load initial data
 				cohortData = self.fileManager.readCohort(obs)
 				conceptToSearch = obs.split(Harmonizer.MARK)[1] 
+				patientIDLabel = self.args.settings["patient_ids"][conceptToSearch.replace(" ", "_")]
+				patientIDLabel = patientIDLabel.lstrip('\"').rstrip('\"')
+
+				#Columns
 				columns, dictOfMappingColumns = self.fileManager.getColumnsMappingBySourceCodeAndDomain(conceptToSearch, table)
 				columns	+= ["Variable", "Measure", "VariableConcept", "MeasureConcept", "MeasureString", "MeasureNumber", "VisitConcept"]
+				
+				#Mapp columns
 				dictOfMappingColumns["observation_source_value"] =  "Variable"
 				dictOfMappingColumns["qualifier_source_value"] =  "Measure"
 				dictOfMappingColumns["observation_concept_id"] = "VariableConcept" 
@@ -61,11 +69,15 @@ class Migrator():
 				dictOfMappingColumns["value_as_number"] = "MeasureNumber" 
 				dictOfMappingColumns["observation_type_concept_id"] = "VisitConcept"
 
+				#Process last things
 				cohortData = self.__calculateVisitConcepts(cohortData, dictOfMappingColumns)
 				cohortData = cohortData.reindex(columns=columns)
+				
+				#Migrate
 				migration = Observation(cohort 	     	= cohortData,
 						       			harmonizerAdHoc	= self.adHocHarmonization,
-						       			columnMapper 	= dictOfMappingColumns)
+						       			columnMapper 	= dictOfMappingColumns, 
+						       			patientIDLabel	= patientIDLabel)
 				observationResult += [migration.getMapping()]
 			self.result[table] = pd.concat(observationResult)
 			return None

@@ -78,12 +78,3 @@ class Person(BaseTable):
             person_dict = {i[1]:i[0] for i in person_dict.items()}
             Person.pesondIdDict = person_dict
             return value.map(person_dict)
-
-        def set_person_year_of_birth(self, value):
-            return pd.DatetimeIndex(value).year
-
-        def set_person_month_of_birth(self, value):
-            return pd.DatetimeIndex(value).month
-
-        def set_person_day_of_birth(self, value):
-            return pd.DatetimeIndex(value).day

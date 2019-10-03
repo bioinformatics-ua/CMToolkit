@@ -4,9 +4,12 @@ from MigratorArgs import MigratorArgs
 from CSVTransformer import CSVTransformer
 from Harmonizer import Harmonizer
 
-def main(adHoc=None):
+def loadArgs():
     argsParsed = MigratorArgs.help()
-    args = MigratorArgs(argsParsed)
+    return MigratorArgs(argsParsed)
+
+def main(adHoc=None):
+    args = loadArgs()
 
     if not args.transformcsv and not args.migrate and not args.harmonize:
         print("Nothing to do, please select the execution mode")

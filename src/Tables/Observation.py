@@ -11,7 +11,7 @@ class Observation(BaseTable):
     '''
     Constructor arguments: See BaseTable
     '''
-    def __init__(self, cohort, harmonizerAdHoc, columnMapper):
+    def __init__(self, cohort, harmonizerAdHoc, columnMapper, patientIDLabel):
         columns = [
             'observation_id',
             'person_id',
@@ -31,6 +31,7 @@ class Observation(BaseTable):
             'unit_source_value',
             'qualifier_source_value'
         ]
+        self.patientIDLabel = patientIDLabel
         cohortFiltered = self.__filterCohort(cohort          = cohort, 
                                              table           = "observation",
                                              harmonizerAdHoc = harmonizerAdHoc)
@@ -48,7 +49,7 @@ class Observation(BaseTable):
                                                 table           = table,
                                                 harmonizerAdHoc = harmonizerAdHoc)
         cohortFiltered = self.__removeUnmappedConcepts(cohortFiltered)
-        return cohortFiltered[pd.notnull(cohortFiltered["Patient ID"].map(Person.pesondIdDict))].reset_index(drop=True)
+        return cohortFiltered[pd.notnull(cohortFiltered[self.patientIDLabel].map(Person.pesondIdDict))].reset_index(drop=True)
 
     def __removeUnmappedConcepts(self, cohortFiltered):
         return cohortFiltered[pd.notnull(cohortFiltered["VariableConcept"])]
