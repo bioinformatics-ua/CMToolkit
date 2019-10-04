@@ -71,9 +71,25 @@ class Harmonizer(object):
 	#	raise
 	#	return value
 
+#The Usagi files for this cohort were built using a different input
 def prepareUsagiFiles(args):
-	print(args)
-
-
+	mappingFiles = [args.settings["cohort_mappings"]["columnsmapping_original"]]
+	mappingFiles += [args.settings["cohort_mappings"]["contentmapping_original"]]
+	for file in mappingFiles:
+		location = "/".join(file.split("/")[:-1])
+		fileName = file.split("/")[-1].split(".")[0] + "_processed.csv"
+		fw = open("{}/{}".format(location, fileName), "w")
+		firstLine = True
+		with open(file) as fp:
+			for line in fp:
+				row = line.split(",")
+				if firstLine:
+					fw.write(row[0]+","+row[1]+",translate,"+",".join(row[2:]))
+					firstLine = False
+				else:
+					fw.write("AD Switchbox Maastricht Original data file.csv,"+",".join(row)) 
+		fp.close() 
+		fw.close()
+	
 prepareUsagiFiles(Baseline.loadArgs())
 Baseline.main(Harmonizer)
