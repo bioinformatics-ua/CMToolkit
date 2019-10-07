@@ -88,7 +88,7 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if row['Measure'] != "":
 			SAHGlobalVariables.dateOfDiagnosis[patientID] = row['Measure']
 		if len(SAHGlobalVariables.birthdayDate) > 0:
-			self.__calculateAge(patientID)
+			self.__calculateAge(row, patientID)
 
 	def __loadYearsOfEducation(self, row, patientID):
 		if row['Measure'] != "":
@@ -98,7 +98,7 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if row['Measure'] != "":
 			SAHGlobalVariables.birthdayDate[patientID] = row['Measure']
 		if len(SAHGlobalVariables.dateOfDiagnosis) > 0:
-			self.__calculateAge(patientID)
+			self.__calculateAge(row, patientID)
 
 	def __loadGender(self, row, patientID):
 		if row['MeasureConcept'] != "":
@@ -108,18 +108,19 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if row['Measure'] != "":
 			self.bodyLength[patientID] = row['MeasureNumber']
 		if len(self.weight) > 0:
-			self.__calculateBodyMassIndex(patientID)
+			self.__calculateBodyMassIndex(row, patientID)
 
 	def __loadWeight(self, row, patientID):
 		if row['Measure'] != "":
 			self.weight[patientID] = row['MeasureNumber']
 		if len(self.bodyLength) > 0:
-			self.__calculateBodyMassIndex(patientID)
+			self.__calculateBodyMassIndex(row, patientID)
 
 	def __addCardiovascularDisorders(self, row, patientID):
+		print(row)
 		if row["MeasureConcept"] == YES:
 			if len(list(filter(lambda line: line[self.patientIDLabel] == patientID, self.cardiovascularDisordersYes))) == 0:
-				self.cardiovascularDisordersYes += [{
+				self.cardiovascularDisordersYes += [self.__mergeDictionaries(row, {
 					self.patientIDLabel:patientID,
 					#add observation date to do
 					'Variable': 'Ontology rule (Cardiovascular Disorders - Yes)', 
@@ -127,12 +128,12 @@ class StandardAdHoc(object, metaclass=Singleton):
 					'MeasureNumber': None, 
 					'VariableConcept': "2000000637",
 					'MeasureConcept': YES
-				}]
+				})]
 				self.__addComorbidity(row, patientID)
 
 	def __addComorbidity(self, row, patientID):
 		if len(list(filter(lambda line: line[self.patientIDLabel] == patientID, self.comorbidityYes))) == 0:
-			self.comorbidityYes += [{
+			self.comorbidityYes += [self.__mergeDictionaries(row, {
 				self.patientIDLabel:patientID,
 				#add observation date to do
 				'Variable': 'Ontology rule (Comorbidity - Yes)', 
@@ -140,15 +141,15 @@ class StandardAdHoc(object, metaclass=Singleton):
 				'MeasureNumber': None, 
 				'VariableConcept': "2000000526",
 				'MeasureConcept': YES
-			}]
+			})]
 
-	def __calculateAge(self, patientID):
+	def __calculateAge(self, row, patientID):
 		try:
 			delta = self.__compareDates(SAHGlobalVariables.dateOfDiagnosis[patientID], SAHGlobalVariables.birthdayDate[patientID], '%d-%M-%Y')
 			if delta:
 				age = int(delta.days/365)
 				SAHGlobalVariables.age[patientID] = age
-				self.ageMeasurement += [{
+				self.ageMeasurement += [self.__mergeDictionaries(row, {
 					self.patientIDLabel:patientID,
 					#add observation date to do
 					'Age':age,
@@ -157,26 +158,30 @@ class StandardAdHoc(object, metaclass=Singleton):
 					'MeasureNumber': age, 
 					'VariableConcept': '2000000488', 
 					'MeasureConcept': None
-				}]
+				})]
 		except:
 			pass
 
-	def __calculateBodyMassIndex(self, patientID):
+	def __calculateBodyMassIndex(self, row, patientID):
 		try:
 			bmi = self.weight[patientID]/((self.bodyLength[patientID]/100)*(self.bodyLength[patientID]/100))
-			self.bodyMass += [{
+			self.bodyMass += [self.__mergeDictionaries(row, {
 				self.patientIDLabel:patientID,
-				#add observation date to do
 				'Body Mass Index':bmi,
 				'Variable': 'Calculated bmi', 
 				'Measure': "",
 				'MeasureNumber': bmi, 
 				'VariableConcept': '2000000339', 
 				'MeasureConcept': None
-			}]
+			})]
 		except Exception as ex:
 			print('Body Mass Index not calculated for user id:', ex)
 
+	def __mergeDictionaries(self, row, newData):
+		for key in row:
+			if key not in newData:
+				newData[key] = row[key]
+		return newData
 	#########################
 	#	Validation stage 	#
 	#########################
