@@ -3,6 +3,7 @@ from Migrator import Migrator
 from MigratorArgs import MigratorArgs
 from CSVTransformer import CSVTransformer
 from Harmonizer import Harmonizer
+from Logger import Logger
 
 def loadArgs():
     argsParsed = MigratorArgs.help()
@@ -10,11 +11,12 @@ def loadArgs():
 
 def main(adHoc=None):
     args = loadArgs()
+    log = Logger(args)
 
     if not args.transformcsv and not args.migrate and not args.harmonize:
         print("Nothing to do, please select the execution mode")
         MigratorArgs.help(show=True)
-
+    
     fm = FileManager(args)
 
     if args.transformcsv:
@@ -24,7 +26,7 @@ def main(adHoc=None):
                                         cohortdest  = args.cohortdest, 
                                         cohortsep   = args.cohortsep)
         csvTransformer.transform()
-        print("Csv transformation completed!")
+        log.info("Csv transformation completed!", verbose=True)
 
     if args.harmonize:
         harmonizer = Harmonizer(cohortOrigin = args.cohortdest, 
@@ -34,7 +36,7 @@ def main(adHoc=None):
         if (adHoc):
             harmonizer.setAdHocClass(adHoc)
         harmonizer.harmonize()
-        print("Csv harmonization completed!")
+        log.info("Csv harmonization completed!", verbose=True)
 
     if args.migrate:
         etl = Migrator(cohortDir        = args.cohortdest,
@@ -48,7 +50,7 @@ def main(adHoc=None):
         results = etl.getMigrationResults()
         dbConfig = args.getDBConfigs()
         fm.writeResults(results, dbConfig)
-        print("Migration completed!")
+        log.info("Migration completed!", verbose=True)
         
 if __name__ == "__main__":
     main()

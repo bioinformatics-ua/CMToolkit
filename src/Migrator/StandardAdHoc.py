@@ -2,6 +2,7 @@ from Singleton import Singleton
 from ZcoreCalculator import ZcoreCalculator
 from CutOffCalculator import CutOffCalculator
 from SAHGlobalVariables import SAHGlobalVariables
+from Logger import *
 from datetime import date
 import datetime
 
@@ -10,6 +11,7 @@ YES 	= 2000000238
 
 class StandardAdHoc(object, metaclass=Singleton):
 	def __init__(self, cutOffs):
+		self.logger				= Logger()
 		self.patientIDLabel 	= None
 		self.zcoreCalculator 	= ZcoreCalculator()
 		self.cutOffsCalculator	= None
@@ -117,7 +119,6 @@ class StandardAdHoc(object, metaclass=Singleton):
 			self.__calculateBodyMassIndex(row, patientID)
 
 	def __addCardiovascularDisorders(self, row, patientID):
-		print(row)
 		if row["MeasureConcept"] == YES:
 			if len(list(filter(lambda line: line[self.patientIDLabel] == patientID, self.cardiovascularDisordersYes))) == 0:
 				self.cardiovascularDisordersYes += [self.__mergeDictionaries(row, {
@@ -175,7 +176,15 @@ class StandardAdHoc(object, metaclass=Singleton):
 				'MeasureConcept': None
 			})]
 		except Exception as ex:
-			print('Body Mass Index not calculated for user id:', ex)
+			var = "Body Mass Index"
+			if patientID not in self.weight:
+				var = "Weight"
+			elif patientID not in self.bodyLength:
+				var = "Length"
+			self.logger.warn(warnType	= MISSING_VALUE, 
+							 patientID 	= patientID, 
+							 variable 	= var, 
+							 msg 		= "Body Mass Index not calculated due to missing variable")
 
 	def __mergeDictionaries(self, row, newData):
 		for key in row:
@@ -209,8 +218,15 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if measure.isdigit():
 			if minimum <= float(measure) <= maximum:
 				return True
-			print("[AUTO OFF RANGE] The variable concept", variableConcept, "for the patient id", patientID, "is out of range. Value:", str(measure))
-		print("[WRONG TYPE] The variable concept", variableConcept, "for the patient id", patientID, "is a string. Value:", measure)
+			self.logger.warn(warnType	= OUT_OF_RANGE, 
+							 patientID 	= patientID, 
+							 variable 	= variableConcept, 
+							 measure 	= measure,
+							 msg 		= "The range of values defined for this variable are {}-{}".format(minimum, maximum))
+		self.logger.warn(warnType	= WRONG_TYPE, 
+						 patientID 	= patientID, 
+						 variable 	= variableConcept, 
+						 measure 	= measure)
 		return False
 
 	#########################
@@ -236,10 +252,19 @@ class StandardAdHoc(object, metaclass=Singleton):
 					row["MeasureString"] = None
 					return row
 				else:
-					print("The difference of dates on the patient", str(patientID), "is incorrect! Value:", str(round(delta.days/365, 5)),\
-						"Diagnosis date:", SAHGlobalVariables.dateOfDiagnosis[patientID], row["Measure"], "\t", row)
+					self.logger.warn(warnType	= INVALID_DATE, 
+									 patientID 	= patientID, 
+									 variable 	= row["Variable"], 
+									 measure 	= round(delta.days/365, 5),
+									 msg 		= "The difference of dates is too big (more than 15 years)")
 		except Exception as e:
-			pass
+			var = row["Variable"]
+			if patientID not in SAHGlobalVariables.dateOfDiagnosis:
+				var = "Date Of Diagnosis"
+			self.logger.warn(warnType	= MISSING_VALUE, 
+							 patientID 	= patientID, 
+							 variable 	= var, 
+							 msg 		= "Missing date to calculate the difference of dates")
 		return []
 
 	def __compareDates(self, initalDate, finalDate, formatDate):

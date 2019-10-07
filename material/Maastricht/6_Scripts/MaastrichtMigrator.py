@@ -6,13 +6,15 @@ sys.path.insert(0, '../../../src/Utils')
 sys.path.insert(0, '../../../src/Vocabularies')
 
 import Baseline
-from Observation import Observation
 import pandas as pd
-from datetime import date
 import datetime
+from Observation import Observation
+from Logger import *
+from datetime import date
 
 class Harmonizer(object):
 	def __init__(self):
+		self.logger = Logger()
 		#Variables calculated based on other variables
 		self.ceradWLRounds = []
 		self.ceradWLRecognition = []
@@ -112,13 +114,22 @@ class Harmonizer(object):
 		elif row["Measure"] == '1':
 			row["MeasureConcept"] = 2000000238#YES
 		else:
-			print("[WRONG TYPE] The variable was not one of the expected", row["Measure"])
+			self.logger.warn(warnType	= WRONG_VALUE, 
+							 patientID 	= row["PIN"], 
+							 variable 	= row["Variable"], 
+							 measure 	= row["Measure"],
+							 msg 		= "The variable was not one of the expected! For this variable, the '0' means 'No' and the '1' means 'Yes'.")
 			return[]
 		return row
 
 	def __cleanTrashInNumericVariables(self, row):
 		if isinstance(row["Measure"], float):
 			return row
+		self.logger.warn(warnType	= WRONG_VALUE, 
+						 patientID 	= row["PIN"], 
+						 variable 	= row["Variable"], 
+						 measure 	= row["Measure"],
+						 msg 		= "The variable was not one of the expected! For this variable, is expected a numeric value.")
 		return ""
 		
 	#######################################

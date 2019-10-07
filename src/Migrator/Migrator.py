@@ -124,7 +124,11 @@ class Migrator():
 			if months >= 0 and months <= 40:
 				row["VisitConcept"] = "21000000" + str(months).zfill(2)
 			else:
-				print("Patient", patientID, "Difference of months superior to 90! Months (rounded) from this records:", months*6)
+				self.logger.warn(warnType	= OUT_OF_RANGE, 
+								 patientID 	= patientID, 
+								 variable 	= "Visit Concept", 
+								 measure 	= months*6,
+								 msg 		= "Difference of follow up months superior to 90 (rounded)")
 				continue
 			outputDataDict += [row]
 		return pd.DataFrame(outputDataDict, columns = cohortData.columns.values)
