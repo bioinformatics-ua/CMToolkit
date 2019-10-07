@@ -11,8 +11,9 @@ import TranSMARTMap
 class Harmonizer(object):
 	##Patient ID
 	def patient_id(self, value):
-		return value#value.split(".")[0]
+		return value.split(".")[0]
 
+	'''
 	##Change fields
 	def set_2000000013(self, value):
 		#if value == "2/2" or value == "2/3" or value == "3/3":
@@ -95,6 +96,7 @@ class Harmonizer(object):
 		if isinstance(value, float):
 			return value
 		return ""
+	'''
 		
 
 

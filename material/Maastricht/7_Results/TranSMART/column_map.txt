@@ -187,580 +187,409 @@ Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Ham
 Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_96	186	HDS			
 Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_108	187	HDS			
 Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Hamilton_Depression_Scale+Month_120	188	HDS			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Baseline	189	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_12	190	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_24	191	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_36	192	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_48	193	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_60	194	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_72	195	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_84	196	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_96	197	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_108	198	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_120	199	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_132	200	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_144	201	IADL			
-Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Instrumental_Activities_of_Daily_Living+Month_168	202	IADL			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	203	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_12	204	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_24	205	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_36	206	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_48	207	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_60	208	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_72	209	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_84	210	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_96	211	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_108	212	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_120	213	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_132	214	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_144	215	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_168	216	MMSE Total Score			
-Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_192	217	MMSE Total Score			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Baseline	218	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_12	219	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_24	220	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_36	221	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_48	222	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_60	223	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_72	224	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_84	225	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_96	226	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_108	227	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_120	228	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_132	229	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_144	230	NPI Total			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_168	231	NPI Total			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	232	Story Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_24	233	Story Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_36	234	Story Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_60	235	Story Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_72	236	Story Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_120	237	Story Delayed			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	238	Story Immediate			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_24	239	Story Immediate			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_36	240	Story Immediate			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_60	241	Story Immediate			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_72	242	Story Immediate			
-Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_120	243	Story Immediate			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	244	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_12	245	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_24	246	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_36	247	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_48	248	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_60	249	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_72	250	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_84	251	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_96	252	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_108	253	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_120	254	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_132	255	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_144	256	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_168	257	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_192	258	TMT-A			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	259	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_12	260	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_24	261	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_36	262	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_48	263	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_60	264	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_72	265	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_84	266	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_96	267	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_108	268	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_120	269	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_132	270	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_144	271	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_168	272	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_192	273	TMT-B			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Baseline	274	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_12	275	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_24	276	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_36	277	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_48	278	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_60	279	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_72	280	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_84	281	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_96	282	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_108	283	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_120	284	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_132	285	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_144	286	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_168	287	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_192	288	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_216	289	VAT-12			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Baseline	290	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_12	291	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_24	292	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_36	293	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_48	294	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_60	295	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_72	296	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_84	297	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_96	298	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_108	299	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_120	300	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_132	301	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_144	302	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_168	303	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_192	304	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Memory+Visual_Memory+Visual_Association_Test+Month_216	305	VAT-24			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Baseline	322	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_12	323	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_24	324	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_36	325	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_48	326	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_60	327	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_72	328	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_84	329	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_96	330	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_108	331	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_120	332	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_132	333	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_144	334	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_168	335	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_192	336	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_216	337	Stroop Part 1			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Baseline	338	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_12	339	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_24	340	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_36	341	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_48	342	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_60	343	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_72	344	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_84	345	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_96	346	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_108	347	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_120	348	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_144	349	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_168	350	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_192	351	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_216	352	Stroop Part 2			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Baseline	353	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_12	354	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_24	355	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_36	356	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_48	357	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_60	358	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_72	359	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_84	360	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_96	361	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_108	362	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_120	363	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_144	364	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_168	365	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_192	366	Stroop Part 3			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_216	367	Stroop Part 3			
-Transmart.tsv	Pharmacogenetics_Findings	368	ApoE Allele 1			
-Transmart.tsv	Pharmacogenetics_Findings	369	ApoE Allele 2			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Baseline	370	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_12	371	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_24	372	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_36	373	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_48	374	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_60	375	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_72	376	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_84	377	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_96	378	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_108	379	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_120	380	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_132	381	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_144	382	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_168	383	Alcohol			
-Transmart.tsv	Clinical_Information+Alcohol_Use+Month_192	384	Alcohol			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Baseline	385	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_12	386	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_24	387	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_36	388	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_48	389	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_60	390	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_72	391	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_84	392	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_96	393	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_144	394	Angina Pectoris			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Baseline	395	Bleeding			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_12	396	Bleeding			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_24	397	Bleeding			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_36	398	Bleeding			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_96	399	Bleeding			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_168	400	Bleeding			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	401	Body Mass Index			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Baseline	402	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_12	403	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_24	404	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_36	405	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_48	406	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_60	407	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_72	408	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_84	409	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_96	410	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_108	411	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_120	412	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_132	413	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_144	414	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_168	415	COPD			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Baseline	416	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_12	417	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_24	418	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_36	419	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_48	420	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_60	421	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_72	422	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_84	423	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_96	424	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_144	425	Carotid Stenosis			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Baseline	426	Diabetes Mellitus			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_12	427	Diabetes Mellitus			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_24	428	Diabetes Mellitus			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_36	429	Diabetes Mellitus			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_48	430	Diabetes Mellitus			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_60	431	Diabetes Mellitus			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_96	432	Diabetes Mellitus			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Baseline	433	Hypertension			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_12	434	Hypertension			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_24	435	Hypertension			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_36	436	Hypertension			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_48	437	Hypertension			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_72	438	Hypertension			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_96	439	Hypertension			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_108	440	Hypertension			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Baseline	441	Hyperthyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_12	442	Hyperthyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_24	443	Hyperthyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_36	444	Hyperthyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_48	445	Hyperthyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_60	446	Hyperthyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_96	447	Hyperthyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Baseline	448	Hypothyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_12	449	Hypothyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_24	450	Hypothyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_36	451	Hypothyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_48	452	Hypothyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_60	453	Hypothyroid Function			
-Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_96	454	Hypothyroid Function			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	455	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	456	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	457	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	458	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	459	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	460	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	461	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	462	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	463	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	464	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	465	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	466	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_144	467	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	468	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_192	469	Body Length (cm)			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Baseline	470	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_12	471	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_24	472	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_36	473	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_48	474	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_60	475	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_72	476	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_84	477	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_96	478	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_144	479	Myocardial Infarction			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Baseline	480	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_12	481	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_24	482	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_36	483	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_48	484	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_60	485	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_72	486	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_84	487	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_96	488	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_108	489	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_120	490	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_132	491	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_144	492	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_168	493	Smoking			
-Transmart.tsv	Clinical_Information+Smoking_Habits+Month_192	494	Smoking			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Baseline	495	TIA			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_12	496	TIA			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_24	497	TIA			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_36	498	TIA			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_96	499	TIA			
-Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_168	500	TIA			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	501	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	502	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	503	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	504	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	505	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	506	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	507	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	508	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	509	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	510	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	511	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	512	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_144	513	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	514	Weight (kg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_192	515	Weight (kg)			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Baseline	516	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_12	517	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_24	518	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_36	519	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_48	520	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_60	521	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_72	522	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_84	523	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_96	524	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_108	525	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_120	526	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_132	527	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_144	528	Delirium			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Baseline	529	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_12	530	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_24	531	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_36	532	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_48	533	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_60	534	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_72	535	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_84	536	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_96	537	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_108	538	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_120	539	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_132	540	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_144	541	Depression			
-Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_168	542	Depression			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Baseline	543	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_12	544	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_24	545	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_36	546	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_60	547	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_84	548	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_96	549	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_108	550	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_132	551	Date MRI			
-Transmart.tsv	Imaging+MRI+MRI_Dates+Month_168	552	Date MRI			
-Transmart.tsv	Demographics	553	Birth Year			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	554	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	555	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	556	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	557	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	558	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	559	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	560	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	561	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	562	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	563	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	564	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	565	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_144	566	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	567	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_192	568	DBP (mmHg)			
-Transmart.tsv	Clinical_Information+Baseline	569	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_12	570	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_24	571	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_36	572	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_48	573	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_60	574	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_72	575	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_84	576	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_96	577	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_108	578	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_120	579	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_132	580	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_144	581	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_168	582	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_192	583	Diagnoses			
-Transmart.tsv	Clinical_Information+Month_216	584	Diagnoses			
-Transmart.tsv	Demographics	585	Ethnic Group			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Baseline	586	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_12	587	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_24	588	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_36	589	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_48	590	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_60	591	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_72	592	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_84	593	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_96	594	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_108	595	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_120	596	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_132	597	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_144	598	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_168	599	Geriatric Depression Scale			
-Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_192	600	Geriatric Depression Scale			
-Transmart.tsv	Study_Information	601	In 1000 Cohort			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Baseline	602	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Month_24	603	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Month_36	604	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Month_60	605	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Month_84	606	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Month_96	607	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Month_108	608	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Month_132	609	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Imaging+MRI+MRI_Measures+Month_168	610	Medial Temporal Lobe Atrophy			
-Transmart.tsv	Clinical_Information+Baseline	611	Medication Use			
-Transmart.tsv	Clinical_Information+Month_12	612	Medication Use			
-Transmart.tsv	Clinical_Information+Month_24	613	Medication Use			
-Transmart.tsv	Clinical_Information+Month_36	614	Medication Use			
-Transmart.tsv	Clinical_Information+Month_48	615	Medication Use			
-Transmart.tsv	Clinical_Information+Month_60	616	Medication Use			
-Transmart.tsv	Clinical_Information+Month_72	617	Medication Use			
-Transmart.tsv	Clinical_Information+Month_84	618	Medication Use			
-Transmart.tsv	Clinical_Information+Month_96	619	Medication Use			
-Transmart.tsv	Clinical_Information+Month_108	620	Medication Use			
-Transmart.tsv	Clinical_Information+Month_120	621	Medication Use			
-Transmart.tsv	Clinical_Information+Month_132	622	Medication Use			
-Transmart.tsv	Clinical_Information+Month_144	623	Medication Use			
-Transmart.tsv	Clinical_Information+Month_168	624	Medication Use			
-Transmart.tsv	Clinical_Information+Month_192	625	Medication Use			
-Transmart.tsv	Neuropsychological_Examination+Baseline	626	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_12	627	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_24	628	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_36	629	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_48	630	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_60	631	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_72	632	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_84	633	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_96	634	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_108	635	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_120	636	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_132	637	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_144	638	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_168	639	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_192	640	Memory			
-Transmart.tsv	Neuropsychological_Examination+Month_216	641	Memory			
-Transmart.tsv	Demographics	642	Race			
-Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	643	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	644	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	645	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	646	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	647	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	648	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	649	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	650	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	651	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	652	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	653	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	654	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_144	655	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	656	SBP (mmHg)			
-Transmart.tsv	Clinical_Information+Vital_Signs+Month_192	657	SBP (mmHg)			
-Transmart.tsv	Demographics	658	Sex			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Baseline	659	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_12	660	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_24	661	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_36	662	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_48	663	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_60	664	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_72	665	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_96	666	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_108	667	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_120	668	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_132	669	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_144	670	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_168	671	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_192	672	Story Recall Test			
-Transmart.tsv	Neuropsychological_Examination+Memory+Story_Recall+Month_216	673	Story Recall Test			
-Transmart.tsv	Study_Information	674	Study Name			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Baseline	675	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_12	676	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_24	677	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_36	678	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_48	679	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_60	680	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_72	681	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_84	682	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_96	683	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_108	684	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_120	685	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_132	686	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_144	687	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_168	688	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_192	689	Trail Making Test			
-Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Month_216	690	Trail Making Test			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Baseline	691	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_12	692	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_24	693	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_36	694	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_48	695	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_60	696	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_72	697	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_84	698	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_96	699	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_108	700	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_120	701	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_132	702	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_144	703	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_168	704	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_192	705	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_216	706	Year of Baseline Visit			
-Transmart.tsv	Clinical_Information+Comorbidity+Baseline	707	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_12	708	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_24	709	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_36	710	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_48	711	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_60	712	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_72	713	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_84	714	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_96	715	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_108	716	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_120	717	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_132	718	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_144	719	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_168	720	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_192	721	Cardiovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Baseline	722	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_12	723	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_24	724	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_36	725	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_48	726	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_60	727	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_72	728	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_84	729	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_96	730	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_108	731	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_120	732	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_132	733	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_144	734	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_168	735	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_192	736	Cerebrovascular Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Baseline	737	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_12	738	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_24	739	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_36	740	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_48	741	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_60	742	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_72	743	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_84	744	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_96	745	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_108	746	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_120	747	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_132	748	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_144	749	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_168	750	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_192	751	Endocrine Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Baseline	752	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_12	753	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_24	754	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_36	755	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_48	756	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_60	757	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_72	758	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_84	759	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_96	760	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_108	761	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_120	762	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_132	763	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_144	764	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_168	765	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_192	766	Psychiatric Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Baseline	767	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_12	768	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_24	769	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_36	770	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_48	771	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_60	772	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_72	773	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_84	774	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_96	775	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_108	776	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_120	777	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_132	778	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_144	779	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_168	780	Somatic Disorders			
-Transmart.tsv	Clinical_Information+Comorbidity+Month_192	781	Somatic Disorders			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	189	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_12	190	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_24	191	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_36	192	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_48	193	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_60	194	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_72	195	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_84	196	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_96	197	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_108	198	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_120	199	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_132	200	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_144	201	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_168	202	MMSE Total Score			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Month_192	203	MMSE Total Score			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Baseline	204	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_12	205	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_24	206	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_36	207	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_48	208	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_60	209	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_72	210	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_84	211	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_96	212	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_108	213	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_120	214	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_132	215	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_144	216	NPI Total			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Neuropsychiatric_Inventory+Month_168	217	NPI Total			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	218	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_24	219	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_36	220	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_60	221	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_72	222	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_120	223	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	224	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_24	225	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_36	226	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_60	227	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_72	228	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Month_120	229	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	230	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_12	231	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_24	232	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_36	233	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_48	234	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_60	235	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_72	236	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_84	237	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_96	238	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_108	239	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_120	240	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_132	241	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_144	242	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_168	243	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_192	244	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	245	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_12	246	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_24	247	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_36	248	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_48	249	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_60	250	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_72	251	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_84	252	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_96	253	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_108	254	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_120	255	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_132	256	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_144	257	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_168	258	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Month_192	259	TMT-B			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Baseline	276	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_12	277	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_24	278	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_36	279	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_48	280	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_60	281	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_72	282	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_84	283	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_96	284	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_108	285	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_120	286	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_132	287	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_144	288	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_168	289	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_192	290	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_216	291	Stroop Part 1			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Baseline	292	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_12	293	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_24	294	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_36	295	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_48	296	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_60	297	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_72	298	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_84	299	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_96	300	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_108	301	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_120	302	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_144	303	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_168	304	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_192	305	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_216	306	Stroop Part 2			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Baseline	307	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_12	308	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_24	309	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_36	310	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_48	311	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_60	312	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_72	313	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_84	314	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_96	315	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_108	316	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_120	317	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_144	318	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_168	319	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_192	320	Stroop Part 3			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Stroop_Test+Month_216	321	Stroop Part 3			
+Transmart.tsv	Pharmacogenetics_Findings	322	ApoE Allele 1			
+Transmart.tsv	Pharmacogenetics_Findings	323	ApoE Allele 2			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Baseline	324	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_12	325	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_24	326	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_36	327	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_48	328	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_60	329	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_72	330	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_84	331	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_96	332	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_108	333	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_120	334	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_132	335	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_144	336	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_168	337	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_192	338	Alcohol			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Baseline	339	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_12	340	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_24	341	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_36	342	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_48	343	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_60	344	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_84	345	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_96	346	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_108	347	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_120	348	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_132	349	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_144	350	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_168	351	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Alcohol_Use+Month_192	352	Alcohol Amount			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Baseline	353	Angina Pectoris			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_12	354	Angina Pectoris			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_24	355	Angina Pectoris			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_36	356	Angina Pectoris			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_48	357	Angina Pectoris			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_60	358	Angina Pectoris			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_72	359	Angina Pectoris			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_84	360	Angina Pectoris			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Baseline	361	Bleeding			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_12	362	Bleeding			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_24	363	Bleeding			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_36	364	Bleeding			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_96	365	Bleeding			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_168	366	Bleeding			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	367	Body Mass Index			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Baseline	368	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_12	369	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_24	370	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_36	371	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_48	372	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_60	373	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_72	374	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_84	375	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_96	376	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_108	377	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_120	378	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_132	379	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_144	380	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Somatic_Disorders+Month_168	381	COPD			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Baseline	382	Carotid Stenosis			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_12	383	Carotid Stenosis			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_24	384	Carotid Stenosis			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_36	385	Carotid Stenosis			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_48	386	Carotid Stenosis			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_60	387	Carotid Stenosis			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_72	388	Carotid Stenosis			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_84	389	Carotid Stenosis			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Baseline	390	Diabetes Mellitus			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_12	391	Diabetes Mellitus			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_24	392	Diabetes Mellitus			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_36	393	Diabetes Mellitus			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_48	394	Diabetes Mellitus			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_60	395	Diabetes Mellitus			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_96	396	Diabetes Mellitus			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Baseline	397	Hypertension			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_12	398	Hypertension			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_24	399	Hypertension			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_36	400	Hypertension			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_48	401	Hypertension			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_72	402	Hypertension			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_96	403	Hypertension			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Risk_Factors+Month_108	404	Hypertension			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Baseline	405	Hyperthyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_12	406	Hyperthyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_24	407	Hyperthyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_36	408	Hyperthyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_48	409	Hyperthyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_60	410	Hyperthyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_96	411	Hyperthyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Baseline	412	Hypothyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_12	413	Hypothyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_24	414	Hypothyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_36	415	Hypothyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_48	416	Hypothyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_60	417	Hypothyroid Function			
+Transmart.tsv	Clinical_Information+Comorbidity+Endocrine_Disorders+Month_96	418	Hypothyroid Function			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	419	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	420	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	421	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	422	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	423	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	424	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	425	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	426	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	427	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	428	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	429	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	430	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_144	431	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	432	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_192	433	Body Length (cm)			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Baseline	434	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_12	435	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_24	436	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_36	437	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_48	438	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_60	439	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_72	440	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_84	441	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cardiovascular_Disorders+Month_96	442	Myocardial Infarction			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Baseline	443	TIA			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_12	444	TIA			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_24	445	TIA			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_36	446	TIA			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_96	447	TIA			
+Transmart.tsv	Clinical_Information+Comorbidity+Cerebrovascular_Disorders+Month_168	448	TIA			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	449	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	450	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	451	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	452	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	453	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	454	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	455	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	456	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	457	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	458	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	459	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	460	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_144	461	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	462	Weight (kg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_192	463	Weight (kg)			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Baseline	464	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_12	465	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_24	466	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_36	467	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_48	468	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_60	469	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_72	470	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_84	471	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_96	472	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_108	473	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_120	474	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_132	475	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_144	476	Delirium			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Baseline	477	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_12	478	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_24	479	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_36	480	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_48	481	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_60	482	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_72	483	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_84	484	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_96	485	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_108	486	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_120	487	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_132	488	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_144	489	Depression			
+Transmart.tsv	Clinical_Information+Comorbidity+Psychiatric_Disorders+Month_168	490	Depression			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Baseline	491	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_12	492	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_24	493	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_36	494	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_60	495	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_84	496	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_96	497	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_108	498	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_132	499	Date MRI			
+Transmart.tsv	Imaging+MRI+MRI_Dates+Month_168	500	Date MRI			
+Transmart.tsv	Demographics	501	Birth Year			
+Transmart.tsv	Clinical_Information+Baseline	502	Comorbidity			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	503	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	504	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	505	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	506	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	507	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	508	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	509	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	510	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	511	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	512	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	513	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	514	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_144	515	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	516	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_192	517	DBP (mmHg)			
+Transmart.tsv	Clinical_Information+Baseline	518	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_12	519	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_24	520	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_36	521	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_48	522	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_60	523	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_72	524	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_84	525	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_96	526	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_108	527	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_120	528	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_132	529	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_144	530	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_168	531	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_192	532	Diagnoses			
+Transmart.tsv	Clinical_Information+Month_216	533	Diagnoses			
+Transmart.tsv	Demographics	534	Ethnic Group			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Baseline	535	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_12	536	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_24	537	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_36	538	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_48	539	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_60	540	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_72	541	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_84	542	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_96	543	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_108	544	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_120	545	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_132	546	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_144	547	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_168	548	Geriatric Depression Scale			
+Transmart.tsv	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales+Month_192	549	Geriatric Depression Scale			
+Transmart.tsv	Study_Information	550	In 1000 Cohort			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Baseline	551	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Month_24	552	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Month_36	553	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Month_60	554	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Month_84	555	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Month_96	556	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Month_108	557	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Month_132	558	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Imaging+MRI+MRI_Measures+Month_168	559	Medial Temporal Lobe Atrophy			
+Transmart.tsv	Neuropsychological_Examination+Baseline	560	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_12	561	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_24	562	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_36	563	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_48	564	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_60	565	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_72	566	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_84	567	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_96	568	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_108	569	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_120	570	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_132	571	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_144	572	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_168	573	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_192	574	Memory			
+Transmart.tsv	Neuropsychological_Examination+Month_216	575	Memory			
+Transmart.tsv	Demographics	576	Race			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	577	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_12	578	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_24	579	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_36	580	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_48	581	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_60	582	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_72	583	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_84	584	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_96	585	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_108	586	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_120	587	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_132	588	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_144	589	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_168	590	SBP (mmHg)			
+Transmart.tsv	Clinical_Information+Vital_Signs+Month_192	591	SBP (mmHg)			
+Transmart.tsv	Demographics	592	Sex			
+Transmart.tsv	Study_Information	593	Study Name			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Baseline	594	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_12	595	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_24	596	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_36	597	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_48	598	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_60	599	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_72	600	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_84	601	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_96	602	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_108	603	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_120	604	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_132	605	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_144	606	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_168	607	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_192	608	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Clinical_Visits_Dates+Month_216	609	Year of Baseline Visit			
+Transmart.tsv	Clinical_Information+Comorbidity+Baseline	610	Cardiovascular Disorders			

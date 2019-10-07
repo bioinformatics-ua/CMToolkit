@@ -51,7 +51,7 @@ class Harmonizer(object):
 			return row
 
 		if "2000000642" in variableConcept:
-			print(row)
+			#print(row)
 			return ""
 
 		#Yes or No conversion
