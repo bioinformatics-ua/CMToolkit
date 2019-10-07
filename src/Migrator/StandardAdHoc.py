@@ -5,6 +5,9 @@ from SAHGlobalVariables import SAHGlobalVariables
 from datetime import date
 import datetime
 
+NO 		= 2000000239
+YES 	= 2000000238
+
 class StandardAdHoc(object, metaclass=Singleton):
 	def __init__(self, cutOffs):
 		self.patientIDLabel 	= None
@@ -15,12 +18,14 @@ class StandardAdHoc(object, metaclass=Singleton):
 		
 		#Base variables
 		self.bodyLength = {}
-		self.weight = {}
+		self.weight 	= {}
 
 		#Temporary variables calculated based on other variables
-		self.ageMeasurement = [] 
-		self.bodyMass		= []
-	
+		self.ageMeasurement 			= [] 
+		self.bodyMass					= []
+		self.cardiovascularDisordersYes	= []
+		self.comorbidityYes				= []
+
 	def definePatientIDLabel(self, patientIDLabel):
 		self.patientIDLabel = patientIDLabel
 
@@ -33,21 +38,22 @@ class StandardAdHoc(object, metaclass=Singleton):
 		outputDataDict = []
 		for row in dataDict:
 			variableConcept = str(row["VariableConcept"])
-			data = self.__processRow(row, str(row[self.patientIDLabel]), variableConcept)
-			if isinstance(data, list):
-				outputDataDict += data
-			else:
-				outputDataDict += [data]
+			if (self.__validateMeasureContent(row, str(row[self.patientIDLabel]), variableConcept)):
+				data = self.__processRow(row, str(row[self.patientIDLabel]), variableConcept)
+				if isinstance(data, list):
+					outputDataDict += data
+				else:
+					outputDataDict += [data]
 
-			zcore = self.zcoreCalculator.calculate(row, self.patientIDLabel, variableConcept)
-			if isinstance(zcore, list):
-				outputDataDict += zcore
-			else:
-				outputDataDict += [zcore]
+				zcore = self.zcoreCalculator.calculate(row, self.patientIDLabel, variableConcept)
+				if isinstance(zcore, list):
+					outputDataDict += zcore
+				else:
+					outputDataDict += [zcore]
 
-			if self.cutOffsCalculator != None:
-				cutOff = self.cutOffsCalculator.calculate(row, variableConcept)
-				outputDataDict += cutOff
+				if self.cutOffsCalculator != None:
+					cutOff = self.cutOffsCalculator.calculate(row, variableConcept)
+					outputDataDict += cutOff
 
 		outputDataDict += self.__addNewMeasurements()
 
@@ -69,6 +75,14 @@ class StandardAdHoc(object, metaclass=Singleton):
 			self.__loadBodyLength(row, patientID)
 		if "2000000462" in variableConcept:
 			self.__loadWeight(row, patientID)
+
+		#Cardiovascular Disorders (Yes)
+		listOfCardiovascularDisorders = ["2000000326", "2000000341", "2000000357", "2000000360", 
+			"2000000367", "2000000390", "2000000400"]
+		for variable in listOfCardiovascularDisorders:
+			if variable in variableConcept:
+				return self.__addCardiovascularDisorders(row, patientID)
+
 
 	def __loadDateOfDiagnosis(self, row, patientID):
 		if row['Measure'] != "":
@@ -101,6 +115,32 @@ class StandardAdHoc(object, metaclass=Singleton):
 			self.weight[patientID] = row['MeasureNumber']
 		if len(self.bodyLength) > 0:
 			self.__calculateBodyMassIndex(patientID)
+
+	def __addCardiovascularDisorders(self, row, patientID):
+		if row["MeasureConcept"] == YES:
+			if len(list(filter(lambda line: line[self.patientIDLabel] == patientID, self.cardiovascularDisordersYes))) == 0:
+				self.cardiovascularDisordersYes += [{
+					self.patientIDLabel:patientID,
+					#add observation date to do
+					'Variable': 'Ontology rule (Cardiovascular Disorders - Yes)', 
+					'Measure': "",
+					'MeasureNumber': None, 
+					'VariableConcept': "2000000637",
+					'MeasureConcept': YES
+				}]
+				self.__addComorbidity(row, patientID)
+
+	def __addComorbidity(self, row, patientID):
+		if len(list(filter(lambda line: line[self.patientIDLabel] == patientID, self.comorbidityYes))) == 0:
+			self.comorbidityYes += [{
+				self.patientIDLabel:patientID,
+				#add observation date to do
+				'Variable': 'Ontology rule (Comorbidity - Yes)', 
+				'Measure': "",
+				'MeasureNumber': None, 
+				'VariableConcept': "2000000526",
+				'MeasureConcept': YES
+			}]
 
 	def __calculateAge(self, patientID):
 		try:
@@ -136,6 +176,38 @@ class StandardAdHoc(object, metaclass=Singleton):
 			}]
 		except Exception as ex:
 			print('Body Mass Index not calculated for user id:', ex)
+
+	#########################
+	#	Validation stage 	#
+	#########################
+	def __validateMeasureContent(self, row, patientID, variableConcept):
+		''' Validate measures. This is a work in process. 
+		Default is True because we considered everything valid until something wrong happen.'''
+		
+		#other validation by variableConcept
+		#if "xxxxxxxxxx" in variableConcept:
+		#	self.__xxx(row, ...)
+
+		listOfRanges = {
+			"2000000173":{"min":0, "max":144},
+			}
+		for variable in listOfRanges:
+			if variable in variableConcept:
+				return self.__isVariableInNumericRange(variableConcept=variableConcept, 
+													   patientID=patientID,
+													   measure=row["Measure"], 
+													   minimum=listOfRanges[variable]["min"], 
+													   maximum=listOfRanges[variable]["max"])
+		return True
+
+	def __isVariableInNumericRange(self, variableConcept, patientID, measure, minimum, maximum):
+		if measure.isdigit():
+			if minimum <= float(measure) <= maximum:
+				return True
+			print("[AUTO OFF RANGE] The variable concept", variableConcept, "for the patient id", patientID, "is out of range. Value:", str(measure))
+		print("[WRONG TYPE] The variable concept", variableConcept, "for the patient id", patientID, "is a string. Value:", measure)
+		return False
+
 	#########################
 	#	Processing stage 	#
 	#########################
@@ -189,7 +261,9 @@ class StandardAdHoc(object, metaclass=Singleton):
 		newMeasurements = []
 		newMeasurements += self.__addMeasurement(self.ageMeasurement)
 		newMeasurements += self.__addMeasurement(self.bodyMass)
-		#missingRows += self.__addMeasurement...
+		newMeasurements += self.__addMeasurement(self.cardiovascularDisordersYes)
+		newMeasurements += self.__addMeasurement(self.comorbidityYes)
+		#newMeasurements += self.__addMeasurement...
 		#....
 		return newMeasurements
 
