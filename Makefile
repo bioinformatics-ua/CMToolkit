@@ -1,3 +1,7 @@
+Build-Ontology:
+	cd src/TranSMART && python3 OntologyCreator.py ../../root-ontology.owl -o ../../protege_output.txt -i ../../visit_independent_output.txt
+
+
 Berlin-Migrate:
 	cd material/Berlin/6_Scripts && python3 BerlinMigrator.py -t -H -m -a -w
 
