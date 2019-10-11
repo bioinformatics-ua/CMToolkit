@@ -13,17 +13,18 @@ class Harmonizer(object):
 	def patient_id(self, value):
 		return value.split(".")[0]
 
-	'''
+	
 	##Change fields
 	def set_2000000013(self, value):
-		#if value == "2/2" or value == "2/3" or value == "3/3":
-		#	return "Non-carrier"
-		#if value == "3/4" or value == "2/4":
-		#	return "Heterozygote"
-		#if value == "4/4":
-		#	return "Homozygote"
+		if value == "2/2" or value == "2/3" or value == "3/3":
+			return "Non-carrier"
+		if value == "3/4" or value == "2/4":
+			return "Heterozygote"
+		if value == "4/4":
+			return "Homozygote"
 		return value
 
+	'''
 	def set_2000000642(self, value):
 		return ""
 

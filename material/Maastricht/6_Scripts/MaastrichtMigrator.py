@@ -28,6 +28,8 @@ class Harmonizer(object):
 		cutOffs = "cutOffId":{"conditionalMethod": method()}
 		'''
 		self.cutOff = {
+			"2000000168":{"value":2, "operator": ">"},
+			"2000000121":{"value":7, "operator": ">"},
 			}
 
 
@@ -37,35 +39,39 @@ class Harmonizer(object):
 	def harmonizer(self, rawData):
 		row = self.__dealWithDate(rawData)
 		variableConcept = str(row["VariableConcept"])
-		#if "2000000049" in variableConcept:
-		#	return self.__readCeradWLRounds(row)
+		if "2000000540" in variableConcept:
+			return self.__dealWithDiagnosisDate(row)
+		if "2000000488" in variableConcept:
+			return self.__dealWithAge(row)
+
 		if "2000000323" in variableConcept:
 			return self.__dealWithAlcohol(row)
-
 		if "2000000013" in variableConcept:
-			self.__dealWithApoE(row)
-			#if value == "2/2" or value == "2/3" or value == "3/3":
-			#	return "Non-carrier"
-			#if value == "3/4" or value == "2/4":
-			#	return "Heterozygote"
-			#if value == "4/4":
-			#	return "Homozygote"
-			return row
+			return self.__dealWithApoE(row)
 
 		if "2000000642" in variableConcept:
 			#print(row)
 			return ""
 
-		#Yes or No conversion
-		listOfNumericVariablesToConvertToYesOrNo = ["2000000326", "2000000357", "2000000390"]
+		#1 - Yes or 0 - No conversion 
+		#listOfNumericVariablesToConvertToYesOrNo = []
+		#for variable in listOfNumericVariablesToConvertToYesOrNo:
+		#	if variable in variableConcept:
+		#		return self.__covertNumericVariablesToYesOrNo(row, yes='1', no='0')
+
+		#1 - Yes or 2 - No conversion Not all used, just to save work i added all of the comorbidities
+		listOfNumericVariablesToConvertToYesOrNo = ["2000000640", "2000000326", "2000000357", "2000000390", "2000000639", "2000000643",
+			"2000000383", "2000000337", "2000000441","2000000341",  "2000000360", "2000000367",  "2000000400", "2000000381", "2000000382", 
+			"2000000396", "2000000402", "2000000403", "2000000438", "2000000363", "2000000384", "2000000385", "2000000405", "2000000378", 
+			"2000000408", "2000000416", "2000000434", "2000000334", "2000000379", "2000000415", "2000000331", "2000000469", "2000000470", 
+			"2000000410", "2000000343", "2000000432", "2000000433", "2000000412"]
 		for variable in listOfNumericVariablesToConvertToYesOrNo:
 			if variable in variableConcept:
-				return self.__covertNumericVariablesToYesOrNo(row)
+				return self.__covertNumericVariablesToYesOrNo(row, yes='1', no='2')
 
 		#Last cleaning	
 		listOfNumericVariablesToClean = ["2000000617", "2000000625", "2000000215", "2000000216", "2000000138",
-			"2000000435", "2000000637", "2000000639", "2000000640", "2000000643", "2000000323", "2000000582", 
-			"2000000215", "2000000216"]
+			"2000000435", "2000000637", "2000000323", "2000000582"]
 		for variable in listOfNumericVariablesToClean:
 			if variable in variableConcept:
 				return self.__cleanTrashInNumericVariables(row)
@@ -86,44 +92,63 @@ class Harmonizer(object):
 		#row['Gebdag'] = str(row['Gebdag']) + "-" + str(row['Gebmnd']) + "-" + str(row['Gebjr'])
 		return row
 
+	def __dealWithDiagnosisDate(self, row):
+		row["Measure"] = row["testdag"]
+		row['MeasureNumber'] = None
+		return row
+
+	def __dealWithAge(self, row):
+		row["Measure"] = row["testdag"]
+		row['MeasureNumber'] = None
+		return row
+
 	def __dealWithAlcohol(self, row):
 		row["MeasureNumber"] = None
 		if row["Measure"] == '0':
 			row["MeasureConcept"] = 2000000239#No
-		if row["Measure"] == '1':
+		elif row["Measure"] == '1':
 			row["MeasureConcept"] = 2000000238#YES
-		if row["Measure"] == '2':
+		elif row["Measure"] == '2':
 			print("FIX FIX FIX PAST")
-			row["MeasureString"] = "Past"#YES
+			row["MeasureString"] = "Past"#Add concept
+		else:
+			self.logger.warn(warnType	= WRONG_VALUE, 
+						 	patientID 	= row["PIN"], 
+						 	variable 	= row["Variable"], 
+						 	measure 	= row["Measure"],
+						 	msg 		= "The variable was not one of the expected!")
+			return []
 		return row
 
 	def __dealWithApoE(self, row):
-		#if value == "2/2" or value == "2/3" or value == "3/3":
-		#	return "Non-carrier"
-		#if value == "3/4" or value == "2/4":
-		#	return "Heterozygote"
-		#if value == "4/4":
-		#	return "Homozygote"
-		print("todo")
-		return row
+		value = row['Measure'].split("E")
+		if len(value) == 3:
+			row['MeasureString'] = "{}/{}".format(value[1],value[2])
+			return row
+		self.logger.warn(warnType	= WRONG_VALUE, 
+						 patientID 	= row["PIN"], 
+						 variable 	= row["Variable"], 
+						 measure 	= row["Measure"],
+						 msg 		= "The variable was not one of the expected! For this variable in this cohort we are expecting the following format 'E<value>E<value>'.")
+		return[]
 	
-	def __covertNumericVariablesToYesOrNo(self, row):
+	def __covertNumericVariablesToYesOrNo(self, row, yes, no):
 		row["MeasureNumber"] = None
-		if row["Measure"] == '0':
+		if row["Measure"] == no:
 			row["MeasureConcept"] = 2000000239#No
-		elif row["Measure"] == '1':
+		elif row["Measure"] == yes:
 			row["MeasureConcept"] = 2000000238#YES
 		else:
 			self.logger.warn(warnType	= WRONG_VALUE, 
 							 patientID 	= row["PIN"], 
 							 variable 	= row["Variable"], 
 							 measure 	= row["Measure"],
-							 msg 		= "The variable was not one of the expected! For this variable, the '0' means 'No' and the '1' means 'Yes'.")
+							 msg 		= "The variable was not one of the expected! For this variable, the '{}' means 'No' and the '{}' means 'Yes'.".format(no, yes))
 			return[]
 		return row
 
 	def __cleanTrashInNumericVariables(self, row):
-		if isinstance(row["Measure"], float):
+		if row["Measure"].isdigit():
 			return row
 		self.logger.warn(warnType	= WRONG_VALUE, 
 						 patientID 	= row["PIN"], 
