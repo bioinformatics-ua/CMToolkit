@@ -21,6 +21,7 @@ class RDFObject(object):
         self.label              = label
         self.namespace          = self._get_name_space()
         self.visit_independent  = False 
+        self.timer_root         = False 
 
     def _get_name_space(self):
         if len(str(self.id).split("#")) > 1:
@@ -66,6 +67,8 @@ def get_label_children(parent, path, result, object_list):
     result[parent.label] = (parent.vocCode ,cleaned_path)
     if len(children) != 0:
         path += parent.label+"+"
+        if parent.timer_root:
+            path += "TIMERROOT+"
         for child in children:
             result = get_label_children(child, path, result, object_list)
     return result
@@ -117,6 +120,15 @@ def get_objects(graph):
         else:
             print("False?")
 
+    for subject, predicate, boolean in graph.triples((None, rdflib.URIRef("http://webprotege.stanford.edu/Rqd74Nsjs0u6XGDDg2dp1R"),None)):
+        if subject not in object_diction:
+            print("Wtf")
+            continue
+        if str(boolean) == "true":
+            object_diction[subject].timer_root = True
+        else:
+            print("False?")
+
     #To load the conceptCodes (ex: 200000512)
     for subject, predicate, label in graph.triples((None, rdflib.URIRef("http://www.w3.org/2000/01/rdf-schema#conceptCode"), None)):
     #for subject, predicate, label in graph.triples((None, rdflib.URIRef("http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#Range_or_Possible_Values"), None)):
@@ -140,7 +152,7 @@ def get_label_path_diction(object_list, graph, extra_top_nodes=None):
     
     end = list()
     for top_node in top_nodes:
-        print(top_node.label)
+        print("Top node: ", top_node.label)
         #using recursion get all the children
         end.append(get_label_children(top_node, "", {}, object_list))
 

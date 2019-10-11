@@ -140,19 +140,24 @@ class TranSMARTMap():
 				if variableName in self.visitIndependent:
 					for column in self.observationsDict:
 						if code == column:
-							print(code)
+							print("Independent:", code)
 							protegeOutput[code] = (variableName, path)
 				else: #With Baseline or months 
 					for column in self.observationsDict:
 						col = column.split("+")
 						if len(col) == 2:
 							if code == col[0]:
-								protegeOutput[column] = (variableName, path+"+"+TranSMARTConstants.Months[col[1]])
+								protegeOutput[column] = (variableName, self.__buildPath(path, TranSMARTConstants.Months[col[1]]))#path+"+"+TranSMARTConstants.Months[col[1]])
 						else:
 							if code == column:
-								protegeOutput[code] = (variableName, path+"+Baseline")
+								protegeOutput[code] = (variableName, self.__buildPath(path, "Baseline"))#path+"+Baseline")
 		fp.close()
 		return protegeOutput
+
+	def __buildPath(self, path, timer):
+		if "TIMERROOT" in path:
+			return path.replace("TIMERROOT", timer)
+		return "{}+{}".format(path, timer)
 
 	def __writeColumnMap(self, protegeOutput):
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "column_map.txt"), "w")
