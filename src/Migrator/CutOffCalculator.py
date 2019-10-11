@@ -9,7 +9,11 @@ Relation = {
 	"2000000073":{"cutOff"	:"2000000463", "cutOffName"		:"Phosphorylated Tau Cut-off", 
 				  "abnormal":"2000000074", "abnormalName"	:"Phosphorylated Tau Abnormal"},
 	"2000000075":{"cutOff"	:"2000000298", "cutOffName"		:"Total Tau Cut-off", 
-				  "abnormal":"2000000076", "abnormalName"	:"Total Tau Abnormal"}
+				  "abnormal":"2000000076", "abnormalName"	:"Total Tau Abnormal"},
+	"2000000168":{"cutOff"	:"2000000310", "cutOffName"		:"MTA Bilateral Abnormal Cut-off", 
+				  "abnormal":"2000000169", "abnormalName"	:"MTA Bilateral Abnormal"},
+	"2000000121":{"cutOff"	:"", "cutOffName"		:"", 
+				  "abnormal":"2000000122", "abnormalName"	:"HDS Abnormal"}
 }
 
 class CutOffCalculator():	

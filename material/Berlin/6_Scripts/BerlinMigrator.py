@@ -118,7 +118,7 @@ class Harmonizer(object):
 		missingRows += self.__processCeradWLRounds()
 		missingRows += self.__processCeralWLRecognition()
 		missingRows += self.__processDiagnosisAndEtiology()
-		missingRows += self.__processApoE()
+		#missingRows += self.__processApoE()
 		#missingRows += self.__process...
 		#....
 		return missingRows
@@ -330,6 +330,7 @@ class Harmonizer(object):
 		return results
 
 	def __processApoE(self):
+		print("Check and remove this shit, because now we have a standard ad hoc method for this")
 		results = []
 		if len(self.apoE) > 0:
 			for row in self.apoE:

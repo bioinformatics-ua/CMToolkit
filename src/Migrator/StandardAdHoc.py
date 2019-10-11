@@ -2,6 +2,7 @@ from Singleton import Singleton
 from ZcoreCalculator import ZcoreCalculator
 from CutOffCalculator import CutOffCalculator
 from SAHGlobalVariables import SAHGlobalVariables
+from MigratorArgs import MigratorArgs
 from Logger import *
 from datetime import date
 import datetime
@@ -12,6 +13,7 @@ YES 	= 2000000238
 class StandardAdHoc(object, metaclass=Singleton):
 	def __init__(self, cutOffs):
 		self.logger				= Logger()
+		self.formatDate			= MigratorArgs().formatdate
 		self.patientIDLabel 	= None
 		self.zcoreCalculator 	= ZcoreCalculator()
 		self.cutOffsCalculator	= None
@@ -25,8 +27,9 @@ class StandardAdHoc(object, metaclass=Singleton):
 		#Temporary variables calculated based on other variables
 		self.ageMeasurement 			= [] 
 		self.bodyMass					= []
-		self.cardiovascularDisordersYes	= []
+		self.comorbidities				= {}
 		self.comorbidityYes				= []
+		self.apoE						= []
 
 	def definePatientIDLabel(self, patientIDLabel):
 		self.patientIDLabel = patientIDLabel
@@ -77,14 +80,48 @@ class StandardAdHoc(object, metaclass=Singleton):
 			self.__loadBodyLength(row, patientID)
 		if "2000000462" in variableConcept:
 			self.__loadWeight(row, patientID)
+		if "2000000013" in variableConcept:
+			self.__loadExtraApoE(row, patientID)
 
-		#Cardiovascular Disorders (Yes)
-		listOfCardiovascularDisorders = ["2000000326", "2000000341", "2000000357", "2000000360", 
-			"2000000367", "2000000390", "2000000400"]
-		for variable in listOfCardiovascularDisorders:
-			if variable in variableConcept:
-				return self.__addCardiovascularDisorders(row, patientID)
-
+		#Comorbidities to calculate yes
+		allComorbidities = {
+			"2000000637":{
+				"name":"Cardiovascular Disorders",
+				"concepts":["2000000326", "2000000341", "2000000357", "2000000360", "2000000367", "2000000390", "2000000400"]
+			},
+			"2000000638":{
+				"name":"Cardiovascular Risk Factors",
+				"concepts":["2000000381", "2000000382", "2000000383", "2000000396", "2000000402"]
+			},
+			"2000000639":{
+				"name":"Cerebrovascular Disorders",
+				"concepts":["2000000337", "2000000403", "2000000438", "2000000441"]
+			},
+			"2000000640":{
+				"name":"Endocrine Disorders",
+				"concepts":["2000000363", "2000000384", "2000000385", "2000000405"]
+			},
+			"2000000641":{
+				"name":"Neurological Disorders",
+				"concepts":["2000000378", "2000000408", "2000000416", "2000000434"]
+			},
+			"2000000473":{
+				"name":"Other Cardiac Diseases",
+				"concepts":["2000000334", "2000000379", "2000000415"]
+			},
+			"2000000642":{
+				"name":"Psychiatric Disorders",
+				"concepts":["2000000331", "2000000469", "2000000470", "2000000410"]
+			},
+			"2000000643":{
+				"name":"Somatic Disorders",
+				"concepts":["2000000343", "2000000432", "2000000433", "2000000412"]
+			}
+		}
+		for comorbidity in allComorbidities:
+			for variable in allComorbidities[comorbidity]["concepts"]:
+				if variable in variableConcept:
+					return self.__addComorbiditiesSubClass(row, patientID, allComorbidities[comorbidity]["name"], comorbidity)
 
 	def __loadDateOfDiagnosis(self, row, patientID):
 		if row['Measure'] != "":
@@ -118,16 +155,55 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if len(self.bodyLength) > 0:
 			self.__calculateBodyMassIndex(row, patientID)
 
-	def __addCardiovascularDisorders(self, row, patientID):
-		if row["MeasureConcept"] == YES:
-			if len(list(filter(lambda line: line[self.patientIDLabel] == patientID, self.cardiovascularDisordersYes))) == 0:
-				self.cardiovascularDisordersYes += [self.__mergeDictionaries(row, {
+	def __loadExtraApoE(self, row, patientID):
+		measures = row['MeasureString'].split("/")
+		if len(measures) == 2:
+			self.apoE += [
+				self.__mergeDictionaries(row, {
 					self.patientIDLabel:patientID,
-					#add observation date to do
-					'Variable': 'Ontology rule (Cardiovascular Disorders - Yes)', 
+					'Variable': row['Variable'],
+					'Measure': row['Measure'],
+					'VariableConcept': '2000000320', #ApoE Allele 1
+					'MeasureConcept': None,
+					'MeasureNumber': None,
+					'MeasureString': measures[0]
+					}), 
+				self.__mergeDictionaries(row, {
+					self.patientIDLabel:patientID,
+					'Variable': row['Variable'],
+					'Measure': row['Measure'],
+					'VariableConcept': '2000000321', #ApoE Allele 2
+					'MeasureConcept': None,
+					'MeasureNumber': None,
+					'MeasureString': measures[1]
+					}),
+				self.__mergeDictionaries(row, {
+					self.patientIDLabel:patientID,
+					'Variable': row['Variable'],
+					'Measure': row['Measure'],
+					'VariableConcept': '2000000014', #ApoE4 Carrier
+					'MeasureConcept': YES if measures[0] == "4" or measures[1] == "4" else NO,
+					'MeasureNumber': None,
+					'MeasureString': None
+					})]
+		else:
+			self.logger.warn(warnType	= WRONG_VALUE, 
+							 patientID 	= patientID, 
+							 variable 	= row['Variable'], 
+							 measure 	= row['Measure'],
+							 msg 		= "This method was not able to split the measure by /")
+
+	def __addComorbiditiesSubClass(self, row, patientID, variable, conceptID):
+		if row["MeasureConcept"] == YES:
+			if variable not in self.comorbidities:
+				self.comorbidities[variable] = []
+			if len(list(filter(lambda line: line[self.patientIDLabel] == patientID, self.comorbidities[variable]))) == 0:
+				self.comorbidities[variable] += [self.__mergeDictionaries(row, {
+					self.patientIDLabel:patientID,
+					'Variable': "Ontology rule " + variable, 
 					'Measure': "",
 					'MeasureNumber': None, 
-					'VariableConcept': "2000000637",
+					'VariableConcept': conceptID,
 					'MeasureConcept': YES
 				})]
 				self.__addComorbidity(row, patientID)
@@ -136,23 +212,21 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if len(list(filter(lambda line: line[self.patientIDLabel] == patientID, self.comorbidityYes))) == 0:
 			self.comorbidityYes += [self.__mergeDictionaries(row, {
 				self.patientIDLabel:patientID,
-				#add observation date to do
 				'Variable': 'Ontology rule (Comorbidity - Yes)', 
 				'Measure': "",
 				'MeasureNumber': None, 
-				'VariableConcept': "2000000526",
+				'VariableConcept': "2000000525",
 				'MeasureConcept': YES
 			})]
 
 	def __calculateAge(self, row, patientID):
 		try:
-			delta = self.__compareDates(SAHGlobalVariables.dateOfDiagnosis[patientID], SAHGlobalVariables.birthdayDate[patientID], '%d-%M-%Y')
+			delta = self.__compareDates(SAHGlobalVariables.dateOfDiagnosis[patientID], SAHGlobalVariables.birthdayDate[patientID])
 			if delta:
 				age = int(delta.days/365)
 				SAHGlobalVariables.age[patientID] = age
 				self.ageMeasurement += [self.__mergeDictionaries(row, {
 					self.patientIDLabel:patientID,
-					#add observation date to do
 					'Age':age,
 					'Variable': 'Calculated age', 
 					'Measure': "",
@@ -161,11 +235,26 @@ class StandardAdHoc(object, metaclass=Singleton):
 					'MeasureConcept': None
 				})]
 		except:
-			pass
+			var = "Calculated age"
+			msg = "Age not calculated due to missing variable."
+			if patientID not in SAHGlobalVariables.dateOfDiagnosis:
+				var = "Date of Diagnosis"
+			elif patientID not in SAHGlobalVariables.birthdayDate:
+				var = "Birthday Date"
+			else:
+				msg = "Age calculation fail maybe due to the date format."
+			self.logger.warn(warnType	= MISSING_VALUE, 
+							 patientID 	= patientID, 
+							 variable 	= var, 
+							 msg 		= msg)
 
 	def __calculateBodyMassIndex(self, row, patientID):
 		try:
 			bmi = self.weight[patientID]/((self.bodyLength[patientID]/100)*(self.bodyLength[patientID]/100))
+			if bmi > 30:
+				value = YES
+			else:
+				value = NO
 			self.bodyMass += [self.__mergeDictionaries(row, {
 				self.patientIDLabel:patientID,
 				'Body Mass Index':bmi,
@@ -174,7 +263,15 @@ class StandardAdHoc(object, metaclass=Singleton):
 				'MeasureNumber': bmi, 
 				'VariableConcept': '2000000339', 
 				'MeasureConcept': None
+			}), self.__mergeDictionaries(row, {
+				self.patientIDLabel:patientID,
+				'Variable': 'Calculated obesity', 
+				'Measure': "",
+				'MeasureNumber': None, 
+				'VariableConcept': '2000000396', 
+				'MeasureConcept': value
 			})]
+
 		except Exception as ex:
 			var = "Body Mass Index"
 			if patientID not in self.weight:
@@ -204,6 +301,10 @@ class StandardAdHoc(object, metaclass=Singleton):
 
 		listOfRanges = {
 			"2000000173":{"min":0, "max":144},
+			"2000000170":{"min":0, "max":4},
+			"2000000171":{"min":0, "max":4},
+			"2000000168":{"min":0, "max":8},
+			"2000000121":{"min":0, "max":52},
 			}
 		for variable in listOfRanges:
 			if variable in variableConcept:
@@ -245,7 +346,7 @@ class StandardAdHoc(object, metaclass=Singleton):
 
 	def __dealWithDatesDifferencesInDays(self, row, patientID):
 		try:
-			delta = self.__compareDates(SAHGlobalVariables.dateOfDiagnosis[patientID], row["Measure"], '%d-%M-%Y')
+			delta = self.__compareDates(SAHGlobalVariables.dateOfDiagnosis[patientID], row["Measure"])
 			if delta:
 				if round(delta.days/365, 5) > -15 and round(delta.days/365, 5) < 15:
 					row["MeasureNumber"] = round(delta.days/365, 5)
@@ -267,10 +368,10 @@ class StandardAdHoc(object, metaclass=Singleton):
 							 msg 		= "Missing date to calculate the difference of dates")
 		return []
 
-	def __compareDates(self, initalDate, finalDate, formatDate):
+	def __compareDates(self, initalDate, finalDate):
 		try:
-			d0 = datetime.datetime.strptime(initalDate, formatDate)
-			d1 = datetime.datetime.strptime(finalDate, formatDate)
+			d0 = datetime.datetime.strptime(initalDate, self.formatDate)
+			d1 = datetime.datetime.strptime(finalDate, self.formatDate)
 			return (d0 - d1)
 		except:
 			return None
@@ -291,8 +392,10 @@ class StandardAdHoc(object, metaclass=Singleton):
 		newMeasurements = []
 		newMeasurements += self.__addMeasurement(self.ageMeasurement)
 		newMeasurements += self.__addMeasurement(self.bodyMass)
-		newMeasurements += self.__addMeasurement(self.cardiovascularDisordersYes)
+		for comorbidity in self.comorbidities:
+			newMeasurements += self.__addMeasurement(self.comorbidities[comorbidity])
 		newMeasurements += self.__addMeasurement(self.comorbidityYes)
+		newMeasurements += self.__addMeasurement(self.apoE)
 		#newMeasurements += self.__addMeasurement...
 		#....
 		return newMeasurements

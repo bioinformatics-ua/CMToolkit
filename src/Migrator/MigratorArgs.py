@@ -31,6 +31,7 @@ class MigratorArgs(Args):
 		self.results 			= super().argAsDir(self.__defineArg(args, "results"))
 		self.log 				= self.__defineArg(args, "log")
 		self.cohortname 		= self.__defineArg(args, "cohortname")
+		self.formatdate 		= self.__defineArg(args, "formatdate")
 		sep 					= self.__defineArg(args, "cohortsep")
 		self.cohortsep 			= '\t' if sep == "\\t" else sep
 		sep 					= self.__defineArg(args, "usagisep")
