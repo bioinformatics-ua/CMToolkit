@@ -1,22 +1,22 @@
-Family History of Dementia	True
-Center	True
-Sex	True
-Race	True
+Second Degree Relatives	True
 Type of Dementia Father	True
-In 1000 Cohort	True
+Race	True
+Employment Status	True
+Center	True
+ApoE Allele 1	True
+Family History of Dementia	True
+Dementia Mother	True
+Sex	True
+Education Level (yr)	True
+Type of Dementia Mother	True
+Country	True
+ApoE4 Carrier	True
+ApoE Genotype	True
+Study Name	True
 ApoE Allele 2	True
 First Degree Relatives	True
-ApoE Genotype	True
-Country	True
-Dementia Father	True
-Education Category	True
-Second Degree Relatives	True
-ApoE4 Carrier	True
-Employment Status	True
-Type of Dementia Mother	True
-Dementia Mother	True
-Education Level (yr)	True
-Ethnic Group	True
+In 1000 Cohort	True
 Birth Year	True
-Study Name	True
-ApoE Allele 1	True
+Education Category	True
+Dementia Father	True
+Ethnic Group	True
