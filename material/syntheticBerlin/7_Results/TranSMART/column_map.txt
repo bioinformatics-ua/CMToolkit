@@ -1,0 +1,47 @@
+Filename	Category_Code (tranSMART)	Column	DataLabel	data_label_src	ControlVocab_cd	Data_type
+Transmart.tsv		1	SUBJ_ID			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Baseline	2	Animals Fluency 1 min			
+Transmart.tsv	Neuropsychological_Examination+Language+Fluency+Category_Fluency+Baseline	3	Animals Fluency 1 min Z-score			
+Transmart.tsv	Pharmacogenetics_Findings	4	ApoE Genotype			
+Transmart.tsv	Pharmacogenetics_Findings	5	ApoE4 Carrier			
+Transmart.tsv	Rating_Scales+Dementia_Rating_Scales+Functional_Impairment_Scale+Bayer_Activities_of_Daily_Living_Scale+Baseline	6	BADL			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	7	CERAD Figures			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	8	CERAD WL Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	9	CERAD WL Immediate			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+CERAD_Word_List+Baseline	10	CERAD WL Recognition			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+Clock_Drawing_Test+Baseline	11	Clock Drawing-On Command			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	12	Amyloid Beta 1-40 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	13	Amyloid Beta 1-42 (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	14	Amyloid Beta 1-42 Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	15	Phosphorylated Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	16	Phosphorylated Tau Abnormal			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	17	Total Tau (pg/mL)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	18	Total Tau Abnormal			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	19	MMSE Total Score			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	20	Story Delayed			
+Transmart.tsv	Neuropsychological_Examination+Memory+Word_List+Selective_Reminding_Test+Baseline	21	Story Immediate			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	22	TMT-A			
+Transmart.tsv	Neuropsychological_Examination+Attention_and_Executive_Function+Trail_Making_Test+Baseline	23	TMT-B			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Protocol+Baseline	24	CSF Assay			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	25	Amyloid Beta 1-42 Cut-off			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	26	Total Tau Cut-off			
+Transmart.tsv	Pharmacogenetics_Findings	27	ApoE Allele 1			
+Transmart.tsv	Pharmacogenetics_Findings	28	ApoE Allele 2			
+Transmart.tsv	Clinical_Information+Vital_Signs+Baseline	29	Weight (kg)			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Measures+Baseline	30	Phosphorylated Tau Cut-off			
+Transmart.tsv	Clinical_Information	31	Family History of Dementia			
+Transmart.tsv	Neuropsychological_Examination+Dates_Neuropsychological_Examination+Baseline	32	Date of Neuropsychological Examination			
+Transmart.tsv	Cognitive_Screening_Tests+Mini_Mental_State_Exam+Baseline	33	Date MMSE			
+Transmart.tsv	Laboratory_Test_Results+Blood+Blood_Dates+Baseline	34	Date Blood Collection			
+Transmart.tsv	Laboratory_Test_Results+CSF+CSF_Dates+Baseline	35	Date CSF Collection			
+Transmart.tsv	Demographics+Baseline	36	Age			
+Transmart.tsv	Demographics	37	Birth Year			
+Transmart.tsv	Neuropsychological_Examination+Language+Baseline	38	Boston Naming Test			
+Transmart.tsv	Subject_Characteristics	39	Education Level (yr)			
+Transmart.tsv	Demographics	40	Ethnic Group			
+Transmart.tsv	Study_Information	41	In 1000 Cohort			
+Transmart.tsv	Demographics	42	Race			
+Transmart.tsv	Demographics	43	Sex			
+Transmart.tsv	Study_Information	44	Study Name			
+Transmart.tsv	Neuropsychological_Examination+Visuoconstruction+CERAD_Figures_Test+Baseline	45	CERAD Figures Delayed			
+Transmart.tsv	Rating_Scales+Sleep_Rating_Scales+Baseline	46	Insomnia Severity Index			
