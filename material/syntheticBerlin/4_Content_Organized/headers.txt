@@ -1,0 +1,5 @@
+Patient Data.csv=Patient ID	Sex	Date of birth	Date of Admission
+Blood and CSF.csv=Patient ID	Date of puncture (Liquor)
+Diagnosis.csv=Patient ID	Number of Visit	Date of Diagnosis
+Neuropsychology.csv=Patient ID	Date of neuropsychological testing
+Sleep.csv=Patient ID	Date of 

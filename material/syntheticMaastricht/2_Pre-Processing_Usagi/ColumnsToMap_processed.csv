@@ -1,0 +1,11 @@
+Table,Value
+PIN,Subject ID
+NOB_VOLGNR,Meet moment
+MAA_NR,other subject ID
+Gebdag,day of birth
+Gebmnd,month of birth
+Gebjr,year of birth
+Sex,sex
+testdag,day of testing
+testmnd,month of testing
+testjr,year of testing

@@ -1,0 +1,14 @@
+Table,Value
+Blood and CSF.csv,Date of puncture (Liquor)
+Blood and CSF.csv,Patient ID
+Diagnosis.csv,Patient ID
+Diagnosis.csv,Number of Visit
+Neuropsychology.csv,Date of neuropsychological testing
+Neuropsychology.csv,Patient ID
+Patient Data.csv,Sex
+Patient Data.csv,Date of birth
+Patient Data.csv,Date of Admission
+Patient Data.csv,Years of Education
+Patient Data.csv,Patient ID
+Sleep.csv,Date of 
+Sleep.csv,Patient ID

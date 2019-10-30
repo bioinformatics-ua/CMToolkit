@@ -1,0 +1,95 @@
+Table,Field
+Blood and CSF.csv,Patient ID
+Blood and CSF.csv,Date of puncture (Liquor)
+Blood and CSF.csv,CSF t-tau
+Blood and CSF.csv,CSF alpha Synuclein
+Blood and CSF.csv,CSF beta 42 inno
+Blood and CSF.csv,CSF beta 42 MSD
+Blood and CSF.csv,CSF beta 40
+Blood and CSF.csv,CSF beta 38
+Blood and CSF.csv,CSF p-tau
+Blood and CSF.csv,CSF Liquor - cell count
+Blood and CSF.csv,CSF Liquor - erythrocytes
+Blood and CSF.csv,CSF Liqour - protein
+Blood and CSF.csv,CSF Liqour - lactate
+Blood and CSF.csv,CSF Liqour - glucosis
+Blood and CSF.csv,CSF Liqour - haemoglobin
+Blood and CSF.csv,CSF_GesProt
+Blood and CSF.csv,CSF Albumin in Liquor
+Blood and CSF.csv,CSF IgG in Liquor
+Blood and CSF.csv,CSF IgA in Liquor 
+Blood and CSF.csv,CSF IgM in Liquor 
+Blood and CSF.csv,CSF Albumin in Serum
+Blood and CSF.csv,CSF IgG in Serum 
+Blood and CSF.csv,CSF IgA in Serum 
+Blood and CSF.csv,CSF IgM in Serum 
+Blood and CSF.csv,CSF Albumin ratio L/S
+Blood and CSF.csv,CSF IgG ratio L/S
+Blood and CSF.csv,CSF IgA ratio L/S
+Blood and CSF.csv,CSF IgM ratio L/S 
+Blood and CSF.csv,Apo-E
+Blood and CSF.csv,CRP
+Blood and CSF.csv,Hb1Ac
+Blood and CSF.csv,TSH
+Blood and CSF.csv,Vitamin B12
+Blood and CSF.csv,Cholesterin
+Blood and CSF.csv,Triglyceride
+Blood and CSF.csv,Folsäure
+Blood and CSF.csv,Date of blood sample
+,
+Diagnosis.csv,Patient ID
+Diagnosis.csv,Onset of Symptoms
+Diagnosis.csv,Diagnosis
+Diagnosis.csv,Etiology
+Diagnosis.csv,ICD-10 / DSM-V
+Diagnosis.csv,Height
+Diagnosis.csv,Weight
+Diagnosis.csv,Blood Pressure
+Diagnosis.csv,Heart Rate
+Diagnosis.csv,Date of Diagnosis
+Diagnosis.csv,Number of Visit
+,
+Neuropsychology.csv,Patient ID
+Neuropsychology.csv,Date of neuropsychological testing
+Neuropsychology.csv,MMSE Total Score
+Neuropsychology.csv,MMSE Orientation Score
+Neuropsychology.csv,B-ADL
+Neuropsychology.csv,CDR
+Neuropsychology.csv,FBI
+Neuropsychology.csv,HDRS - 17
+Neuropsychology.csv,GDS - 30
+Neuropsychology.csv,Clock Drawing Test
+Neuropsychology.csv,Anmial Fluency 1 min
+Neuropsychology.csv,Boston Naming Test 
+Neuropsychology.csv,TMT Part A
+Neuropsychology.csv,TMT Part B
+Neuropsychology.csv,WMS-R Story A Immediate 
+Neuropsychology.csv,WMS-R Story A Delayed
+Neuropsychology.csv,WMS-R Story B Immediate
+Neuropsychology.csv,WMS-R Story B Delayed 
+Neuropsychology.csv,Cerad WL round 1
+Neuropsychology.csv,Cerad WL round 2
+Neuropsychology.csv,Cerad WL round 3
+Neuropsychology.csv,Cerad WL round 1 intrusions
+Neuropsychology.csv,Cerad WL round 2 intrusions 
+Neuropsychology.csv,Cerad WL round 3 intrusions
+Neuropsychology.csv,Cerad WL delayed 
+Neuropsychology.csv,Cerad WL delayed intrusions 
+Neuropsychology.csv,Cerad WL recognition yes
+Neuropsychology.csv,Cerad WL recognition no
+Neuropsychology.csv,Cerad Figures new
+Neuropsychology.csv,Cerad Figures delayed
+,
+Patient Data.csv,Patient ID
+Patient Data.csv,Sex
+Patient Data.csv,Date of birth
+Patient Data.csv,Date of Admission
+Patient Data.csv,Years of Education
+Patient Data.csv,Family history Alzheimers 
+Patient Data.csv,Family history Dementia
+,
+Sleep.csv,Patient ID
+Sleep.csv,Date of 
+Sleep.csv,Insomnia Severity Index (ISI)
+Sleep.csv,Epworth Sleepiness Scale (ESS)
+Sleep.csv,RBDSQ total 
