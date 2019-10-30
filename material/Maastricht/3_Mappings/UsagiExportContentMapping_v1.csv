@@ -64,7 +64,7 @@ CDR05,Personal Care,-1,,0.8329384326934814,2000000042,CDR Personal Care,Concept 
 CSF_Klin_Phospor_TAU,CSF p-tau,-1,,0.3271140158176422,2000000073,Phosphorylated Tau (pg/mL),Concept Class,Laboratory Test Results,S,0,0,Concept Class,2000000073,2019-01-01,2099-12-31,
 WLTTOT,Total correct,-1,,0.475190132856369,2000000017,AVLT Immediate,Concept Class,Neuropsychological Examination,S,0,0,Concept Class,2000000017,2019-01-01,2099-12-31,
 CDR06,Community affairs,-1,,0.9165294170379639,2000000037,CDR Community Affairs,Concept Class,Rating Scales,S,0,0,Concept Class,2000000037,2019-01-01,2099-12-31,
-edu_years,education in years,-1,,0.4043813943862915,2000000094,Education Category,Concept Class,Subject Characteristics,S,0,0,Concept Class,2000000094,2019-01-01,2099-12-31,
+edu_years,education in years,-1,,0.4043813943862915,2000000554,Education Level (yr),Concept Class,Subject Characteristics,S,0,0,Concept Class,2000000554,2019-01-01,2099-12-31,
 Gebjr,year of birth,-1,,0.5383967161178589,2000000503,Birth Year,Concept Class,Demographics,S,0,0,Concept Class,2000000503,2019-01-01,2099-12-31,
 WGOED1,GIT fluency1 correct,-1,,0.46021416783332825,2000000009,Animals Fluency 1 min,Concept Class,Neuropsychological Examination,S,0,0,Concept Class,2000000009,2019-01-01,2099-12-31,
 CDRTOT,CDR totaal score,-1,,0.6962801218032837,2000000044,CDR Total,Concept Class,Rating Scales,S,0,0,Concept Class,2000000044,2019-01-01,2099-12-31,

@@ -10,7 +10,7 @@ from ObservationPeriod import ObservationPeriod
 from VisitOccurrence import VisitOccurrence
 from Harmonizer import Harmonizer
 from FileManager import FileManager
-
+from Logger import *
 from MigratorArgs import MigratorArgs
 
 class Migrator():    
@@ -32,6 +32,8 @@ class Migrator():
 		self.fileManager    	= FileManager()
 		self.result 			= {}
 		self.args 				= MigratorArgs()
+		self.logger				= Logger()
+		self.formatDate			= self.args.formatdate
 
 	def setAdHocClass(self, adHocClass):
 		self.adHocHarmonization = adHocClass()
@@ -100,8 +102,8 @@ class Migrator():
 				if math.isnan(date):
 					continue
 			if patientID in patientVisits:
-				d0 = datetime.datetime.strptime(patientVisits[patientID], '%d-%M-%Y')
-				d1 = datetime.datetime.strptime(date, '%d-%M-%Y')
+				d0 = datetime.datetime.strptime(patientVisits[patientID], self.formatDate)
+				d1 = datetime.datetime.strptime(date, self.formatDate)
 				r = relativedelta.relativedelta(d1, d0)
 				if (((r.years*12) + r.months)) < 0:
 					patientVisits[patientID] = date
@@ -116,8 +118,8 @@ class Migrator():
 					row["VisitConcept"] = "2100000000" #Baseline
 					outputDataDict += [row]
 					continue
-			d0 = datetime.datetime.strptime(patientVisits[patientID], '%d-%M-%Y')
-			d1 = datetime.datetime.strptime(date, '%d-%M-%Y')
+			d0 = datetime.datetime.strptime(patientVisits[patientID], self.formatDate)
+			d1 = datetime.datetime.strptime(date, self.formatDate)
 			r = relativedelta.relativedelta(d1, d0)
 			months = round((((r.years*12) + r.months))/6)
 

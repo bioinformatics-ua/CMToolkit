@@ -131,7 +131,7 @@ class StandardAdHoc(object, metaclass=Singleton):
 
 	def __loadYearsOfEducation(self, row, patientID):
 		if row['Measure'] != "":
-			SAHGlobalVariables.yearsOfEducation[patientID] = int(row['Measure'])
+			SAHGlobalVariables.yearsOfEducation[patientID] = int(float(row['Measure']))
 	
 	def __loadBirthdayDate(self, row, patientID):
 		if row['Measure'] != "":
@@ -156,42 +156,49 @@ class StandardAdHoc(object, metaclass=Singleton):
 			self.__calculateBodyMassIndex(row, patientID)
 
 	def __loadExtraApoE(self, row, patientID):
-		measures = row['MeasureString'].split("/")
-		if len(measures) == 2:
-			self.apoE += [
-				self.__mergeDictionaries(row, {
-					self.patientIDLabel:patientID,
-					'Variable': row['Variable'],
-					'Measure': row['Measure'],
-					'VariableConcept': '2000000320', #ApoE Allele 1
-					'MeasureConcept': None,
-					'MeasureNumber': None,
-					'MeasureString': measures[0]
-					}), 
-				self.__mergeDictionaries(row, {
-					self.patientIDLabel:patientID,
-					'Variable': row['Variable'],
-					'Measure': row['Measure'],
-					'VariableConcept': '2000000321', #ApoE Allele 2
-					'MeasureConcept': None,
-					'MeasureNumber': None,
-					'MeasureString': measures[1]
-					}),
-				self.__mergeDictionaries(row, {
-					self.patientIDLabel:patientID,
-					'Variable': row['Variable'],
-					'Measure': row['Measure'],
-					'VariableConcept': '2000000014', #ApoE4 Carrier
-					'MeasureConcept': YES if measures[0] == "4" or measures[1] == "4" else NO,
-					'MeasureNumber': None,
-					'MeasureString': None
-					})]
+		if row['MeasureString'] == row['MeasureString']:#Verify if is NaN
+			measures = row['MeasureString'].split("/")
+			if len(measures) == 2:
+				self.apoE += [
+					self.__mergeDictionaries(row, {
+						self.patientIDLabel:patientID,
+						'Variable': row['Variable'],
+						'Measure': row['Measure'],
+						'VariableConcept': '2000000320', #ApoE Allele 1
+						'MeasureConcept': None,
+						'MeasureNumber': None,
+						'MeasureString': measures[0]
+						}), 
+					self.__mergeDictionaries(row, {
+						self.patientIDLabel:patientID,
+						'Variable': row['Variable'],
+						'Measure': row['Measure'],
+						'VariableConcept': '2000000321', #ApoE Allele 2
+						'MeasureConcept': None,
+						'MeasureNumber': None,
+						'MeasureString': measures[1]
+						}),
+					self.__mergeDictionaries(row, {
+						self.patientIDLabel:patientID,
+						'Variable': row['Variable'],
+						'Measure': row['Measure'],
+						'VariableConcept': '2000000014', #ApoE4 Carrier
+						'MeasureConcept': YES if measures[0] == "4" or measures[1] == "4" else NO,
+						'MeasureNumber': None,
+						'MeasureString': None
+						})]
+			else:
+				self.logger.warn(warnType	= WRONG_VALUE, 
+								 patientID 	= patientID, 
+								 variable 	= row['Variable'], 
+								 measure 	= row['Measure'],
+								 msg 		= "This method was not able to split the measure by /")
 		else:
-			self.logger.warn(warnType	= WRONG_VALUE, 
+			self.logger.warn(warnType	= MISSING_VALUE, 
 							 patientID 	= patientID, 
 							 variable 	= row['Variable'], 
 							 measure 	= row['Measure'],
-							 msg 		= "This method was not able to split the measure by /")
+							 msg 		= "This method was not able to split the measure by / because the measure is NaN")
 
 	def __addComorbiditiesSubClass(self, row, patientID, variable, conceptID):
 		if row["MeasureConcept"] == YES:

@@ -8,7 +8,6 @@ class ZcoreCalculator():
 		row = dict(rowData)
 		patientID = str(row[patientIDLabel])
 		res = None
-
 		if "2000000210" in variableConcept: 
 			res = self.__calculateZCoreTMTA(patientID, row['MeasureNumber'])
 			row['Variable'] 		= "TMT-A Z-score"

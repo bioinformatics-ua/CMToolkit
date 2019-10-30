@@ -38,6 +38,9 @@ class Harmonizer(object):
 	###################################################
 	def harmonizer(self, rawData):
 		row = self.__dealWithDate(rawData)
+		if len(row) == 0:
+			return []
+			
 		variableConcept = str(row["VariableConcept"])
 		if "2000000540" in variableConcept:
 			return self.__dealWithDiagnosisDate(row)
@@ -87,9 +90,28 @@ class Harmonizer(object):
 	#	Private	  #
 	###############
 	def __dealWithDate(self, rawData):
+		import datetime
 		row = dict(rawData)
 		row['testdag'] = str(row['testdag']) + "-" + str(row['testmnd']) + "-" + str(row['testjr'])
-		#row['Gebdag'] = str(row['Gebdag']) + "-" + str(row['Gebmnd']) + "-" + str(row['Gebjr'])
+		row['Gebdag'] = str(row['Gebdag']) + "-" + str(row['Gebmnd']) + "-" + str(row['Gebjr'])
+		try:
+			date = datetime.datetime.strptime(row['testdag'], '%d-%m-%Y')
+		except ValueError:
+			self.logger.error(errorType	= INVALID_DATE, 
+						 	  patientID = row["PIN"], 
+						 	  variable 	= "testdag/testmnd/testjr", 
+						 	  measure 	= row['testdag'],
+						 	  msg 		= "One of this three variables has a invalid value leading to a invalid date!")
+			return []
+		try:
+			date = datetime.datetime.strptime(row['Gebdag'], '%d-%m-%Y')
+		except ValueError:
+			self.logger.error(errorType	= INVALID_DATE, 
+						 	  patientID = row["PIN"], 
+						 	  variable 	= "Gebdag/Gebmnd/Gebjr", 
+						 	  measure 	= row['Gebdag'],
+						 	  msg 		= "One of this three variables has a invalid value leading to a invalid date!")
+			return []
 		return row
 
 	def __dealWithDiagnosisDate(self, row):
@@ -168,6 +190,10 @@ class Harmonizer(object):
 	def set_person_gender_concept_id(self, value):
 		gender_map = {"M":8507, "V":8532}
 		return value.map(gender_map)
+
+	def set_person_day_of_birth(self, value):
+		return value.str.split('-').str[0]
+
 
 	#def set_person_birth_datetime(self, value):
 	#	#todo
