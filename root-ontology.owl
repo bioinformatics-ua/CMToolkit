@@ -376,6 +376,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R4C4g48xQX9wVTHVwgRk4B">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000669</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000669</rdfs:conceptCode>
         <rdfs:label>Asian</rdfs:label>
     </owl:Class>
@@ -395,6 +396,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R69TsbuoxK0FLqRWOzbGL5">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>8507</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8507</rdfs:conceptCode>
         <rdfs:label>Male</rdfs:label>
     </owl:Class>
@@ -415,6 +417,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R6h9TYxkg9BFOjVjsUMsss">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000700</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000700</rdfs:conceptCode>
         <rdfs:label>Other</rdfs:label>
     </owl:Class>
@@ -435,6 +438,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R79HcyBVXGzjNjztb647lAp">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000667</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000667</rdfs:conceptCode>
         <rdfs:label>Vascular</rdfs:label>
     </owl:Class>
@@ -450,10 +454,35 @@
     
 
 
+    <!-- http://webprotege.stanford.edu/R7IakNtqpWjuETRIMwUm393 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7IakNtqpWjuETRIMwUm393">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX"/>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Script to calculate CST-C Z-score with additional variables (csta_correct, csta_sqrt, csta_predict, csta_sd) needed for the calculation. These variables can be deleted afterwards. 
+
+csta_sd is depended on cstb_predict
+
+
+compute cstb_correct = CST-C – CST-0.
+compute cstc_sqrt = sqrt(cstc_correct).
+compute cstc_predict = (5.056 + (0.034 * age) + (0.0003 * age * age) + (0.576 * edu_low) + (-0.308 * edu_high)).
+if (cstc_predict &lt;= 4.636) cstc_sd = 0.658.
+if (cstc_predict &gt;= 4.636 and cstc_predict &lt;= 5.274) cstc_sd = 0.789.
+if (cstc_predict &gt;= 5.274 and cstc_predict &lt;= 5.881) cstc_sd = 0.938.
+if (cstc_predict &gt;= 5.881) cstc_sd = 1.124.
+compute cstc_zs = -((cstc_sqrt - cstc_predict)/cstc_sd).
+compute cstc_predict = cstc_predict * cstc_predict.</rdfs:Description>
+        <rdfs:conceptCode>2000000714</rdfs:conceptCode>
+        <rdfs:label>CST-C Z-score</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/R7MRUlFtZCpv6driYy4F5Y9 -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R7MRUlFtZCpv6driYy4F5Y9">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000239</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000239</rdfs:conceptCode>
         <rdfs:label>No</rdfs:label>
     </owl:Class>
@@ -474,6 +503,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R7St2aRhAWjlzGE4DO9ikYX">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000677</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000677</rdfs:conceptCode>
         <rdfs:label>X-MAP</rdfs:label>
     </owl:Class>
@@ -505,6 +535,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R7aY8YACv3SxKW4hXmB2eqS">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000689</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000689</rdfs:conceptCode>
         <rdfs:label>PNFA</rdfs:label>
     </owl:Class>
@@ -515,6 +546,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R7kOeZ0buP7oqAIVjMXqdxG">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/MRIMeasures"/>
+        <rdfs:conceptCode>2000000733</rdfs:conceptCode>
         <rdfs:label>Normal Appearing White Matter</rdfs:label>
     </owl:Class>
     
@@ -524,6 +556,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R7xPmdyKXD9smn30LyAPQlZ">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000687</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000687</rdfs:conceptCode>
         <rdfs:label>CBS</rdfs:label>
     </owl:Class>
@@ -534,6 +567,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R7xlxUEQ2lh0M4a4iJkd0Hp">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000701</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000701</rdfs:conceptCode>
         <rdfs:label>Mixed dementia</rdfs:label>
     </owl:Class>
@@ -544,6 +578,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R81cHl95NgnvI07MvV5u3fW">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000681</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000681</rdfs:conceptCode>
         <rdfs:label>Moderate</rdfs:label>
     </owl:Class>
@@ -582,6 +617,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R8NaBDfUfKworN1QDBM57EV">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000685</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000685</rdfs:conceptCode>
         <rdfs:label>VAD</rdfs:label>
     </owl:Class>
@@ -592,6 +628,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R8QmIUcDDH2RFASbAx1rDzk">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000256</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000256</rdfs:conceptCode>
         <rdfs:label>SCI</rdfs:label>
     </owl:Class>
@@ -602,6 +639,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R8TD3ru852sFjdjaX9vJ2Yf">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000671</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000671</rdfs:conceptCode>
         <rdfs:label>Native Hawaiian or Other Pacific Islander</rdfs:label>
     </owl:Class>
@@ -614,6 +652,7 @@
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCXfZ1cmFYyGjuhAsqsHJwM"/>
         <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0-4</Range_or_Possible_Values>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fazekas rating scale to rate severity of white matter hyper intensities</rdfs:Description>
+        <rdfs:conceptCode>2000000745</rdfs:conceptCode>
         <rdfs:label>WMH Fazekas</rdfs:label>
     </owl:Class>
     
@@ -633,6 +672,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R8dVQg89MkiJdp0hLqBLxo">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000255</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000255</rdfs:conceptCode>
         <rdfs:label>AD</rdfs:label>
     </owl:Class>
@@ -644,6 +684,7 @@
     <owl:Class rdf:about="http://webprotege.stanford.edu/R8g99qZrajz5YOP3wP2NbVe">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/SmokingHabits"/>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is calculated by multiplying the number of packs of cigarettes smoked per day by the number of years the person has smoked.</rdfs:Description>
+        <rdfs:conceptCode>2000000735</rdfs:conceptCode>
         <rdfs:label>Packyears</rdfs:label>
     </owl:Class>
     
@@ -653,8 +694,21 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R8ljDrlb8SVVrk4ZiJdaZ1Z">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000176</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000176</rdfs:conceptCode>
         <rdfs:label>PET SUVR</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8njVUN4myqiRTAgsSvD34b -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8njVUN4myqiRTAgsSvD34b">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX"/>
+        <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;0</Range_or_Possible_Values>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cross out as quickly as possible the letters in alphabetical order. Value is time (in seconds) how long the task takes.</rdfs:Description>
+        <rdfs:conceptCode>2000000711</rdfs:conceptCode>
+        <rdfs:label>CST-B</rdfs:label>
     </owl:Class>
     
 
@@ -672,6 +726,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R8pToBJObRpOOO57MmPls6S">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000686</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000686</rdfs:conceptCode>
         <rdfs:label>SD</rdfs:label>
     </owl:Class>
@@ -697,10 +752,23 @@
     
 
 
+    <!-- http://webprotege.stanford.edu/R8wANnlc1AkdnfPv5fUK6Ay -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8wANnlc1AkdnfPv5fUK6Ay">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX"/>
+        <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;0</Range_or_Possible_Values>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">participants have to cross out as quickly as possible the digits in numerical order. Value is time (in seconds) how long the task takes. CST-A is comparable to TMT-A.</rdfs:Description>
+        <rdfs:conceptCode>2000000709</rdfs:conceptCode>
+        <rdfs:label>CST-A</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/R8xNEjfsBRpqARrWqRZ6mDB -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R8xNEjfsBRpqARrWqRZ6mDB">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R85zWbXoxcHLwxEn5ubSqVA"/>
+        <rdfs:conceptCode>2000000729</rdfs:conceptCode>
         <rdfs:label>MRI Software</rdfs:label>
     </owl:Class>
     
@@ -715,10 +783,47 @@
     
 
 
+    <!-- http://webprotege.stanford.edu/R9ApsPcZ6IFmEdC57Wk5Xpu -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9ApsPcZ6IFmEdC57Wk5Xpu">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX"/>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Script to calculate CST-B Z-score with additional variables (csta_correct, csta_sqrt, csta_predict, csta_sd) needed for the calculation. These variables can be deleted afterwards. 
+
+csta_sd is depended on cstb_predict
+
+
+compute cstb_correct = CST-B – CST-0.
+compute cstb_sqrt = sqrt(cstb_correct).
+compute cstb_predict = (4.154 + (0.023 * age) + (0.0001 * age * age) + (0.136 * geslacht) + (0.365 * edu_low) + (-0.146 * edu_high)).
+if (cstb_predict &lt;= 3.952) cstb_sd = 0.496.
+if (cstb_predict &gt;= 3.952 and cstb_predict &lt;= 4.384) cstb_sd = 0.607.
+if (cstb_predict &gt;= 4.384 and cstb_predict &lt;= 4.803) cstb_sd = 0.653.
+if (cstb_predict &gt;= 4.803) cstb_sd = 0.770.
+compute cstb_zs = -((cstb_sqrt - cstb_predict)/cstb_sd).
+compute cstb_predict = cstb_predict * cstb_predict.</rdfs:Description>
+        <rdfs:conceptCode>2000000712</rdfs:conceptCode>
+        <rdfs:label>CST-B Z-score</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9GGbZ1lWqmTQmGIDjRiYEo -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9GGbZ1lWqmTQmGIDjRiYEo">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX"/>
+        <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;0</Range_or_Possible_Values>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cross out as quickly as possible the digits and letters in alternating order. Value is time (in seconds) how long the task takes.</rdfs:Description>
+        <rdfs:conceptCode>2000000713</rdfs:conceptCode>
+        <rdfs:label>CST-C</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/R9HiJDe64wue0INybPH6CFy -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R9HiJDe64wue0INybPH6CFy">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/MRIMeasures"/>
+        <rdfs:conceptCode>2000000723</rdfs:conceptCode>
         <rdfs:label>Gray Matter Volume</rdfs:label>
     </owl:Class>
     
@@ -738,6 +843,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R9LZTENs3yGfpJD446zrAcS">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000699</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000699</rdfs:conceptCode>
         <rdfs:label>Other dementia</rdfs:label>
     </owl:Class>
@@ -777,7 +883,19 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R9ZyKZ1aJPHgLijVjK55GX3">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/MRIMeasures"/>
+        <rdfs:conceptCode>2000000726</rdfs:conceptCode>
         <rdfs:label>Infacts</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#AttentionandExecutiveFunction"/>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Concept Shifting Test (CST) is a newly developed Trail Making Type test that measures concept shifting and executive functioning. Has three parts: part A, part B and part C</rdfs:Description>
+        <rdfs:conceptCode>2000000715</rdfs:conceptCode>
+        <rdfs:label>Concept Shifting Task</rdfs:label>
     </owl:Class>
     
 
@@ -786,6 +904,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R9oJpmW5R0Y42aSCAGB3K2D">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000666</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000666</rdfs:conceptCode>
         <rdfs:label>LBD</rdfs:label>
     </owl:Class>
@@ -796,8 +915,19 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R9sDRyE97RIRq0dX72srb4T">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000683</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000683</rdfs:conceptCode>
         <rdfs:label>NL</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RB0MnLn1lxf4IDeoZM1okAA -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RB0MnLn1lxf4IDeoZM1okAA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/VisualObjectAndSpacePerception"/>
+        <rdfs:conceptCode>2000000744</rdfs:conceptCode>
+        <rdfs:label>VOSP Dot Counting</rdfs:label>
     </owl:Class>
     
 
@@ -806,6 +936,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RBAmqU3usSaYZWSxyu5I15g">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000684</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000684</rdfs:conceptCode>
         <rdfs:label>PD</rdfs:label>
     </owl:Class>
@@ -834,6 +965,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RBJnzUYQFiRbu9XDBz2r2ER">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000678</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000678</rdfs:conceptCode>
         <rdfs:label>None</rdfs:label>
     </owl:Class>
@@ -863,6 +995,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RBScWC5DcB8qAAeaffiaInJ">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCXfZ1cmFYyGjuhAsqsHJwM"/>
+        <rdfs:conceptCode>2000000746</rdfs:conceptCode>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WMH Volume</rdfs:label>
     </owl:Class>
     
@@ -888,10 +1021,36 @@
     
 
 
+    <!-- http://webprotege.stanford.edu/RBhz8nMZRu6N73PMdEwkS79 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBhz8nMZRu6N73PMdEwkS79">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX"/>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Script to calculate CST-A Z-score with additional variables (csta_correct, csta_sqrt, csta_predict, csta_sd) needed for the calculation. These variables can be deleted afterwards. 
+
+csta_sd is depended on csta_predict
+
+
+compute csta_correct = CST-A – CST-0.
+compute csta_sqrt = sqrt(CST-A_correct).
+compute csta_predict = (3.668 + (0.023 * age) + (0.0002 * age * age) + (0.143 * sex) + (0.188 * edu_low) - (0.092 * edu_high)).
+execute.
+if (csta_predict &lt;= 3.479) csta_sd = 0.462.
+if (csta_predict &gt;= 3.479 and csta_predict &lt;= 3.828) csta_sd = 0.510.
+if (csta_predict &gt;= 3.828 and csta_predict &lt;= 4.236) csta_sd = 0.564.
+if (csta_predict &gt;= 4.236) csta_sd = 0.667.
+compute csta_predict = csta_predict * csta_predict.
+compute CST-A Z-score = -((csta_sqrt - csta_predict)/csta_sd).</rdfs:Description>
+        <rdfs:conceptCode>2000000710</rdfs:conceptCode>
+        <rdfs:label>CST-A Z-score</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/RBpsRoUAMGE43lJoR9xWDmz -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RBpsRoUAMGE43lJoR9xWDmz">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000679</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000679</rdfs:conceptCode>
         <rdfs:label>Questionable</rdfs:label>
     </owl:Class>
@@ -902,6 +1061,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RBuQUyJQsOoDwEjgfHvcRet">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000682</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000682</rdfs:conceptCode>
         <rdfs:label>Severe</rdfs:label>
     </owl:Class>
@@ -912,8 +1072,19 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RBwoAZr7RLMUPl7e67l6Lr4">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000691</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000691</rdfs:conceptCode>
         <rdfs:label>LEAP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RC1gnrVtKwdXEgeVZvduk2M -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RC1gnrVtKwdXEgeVZvduk2M">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/MRIMeasures"/>
+        <rdfs:conceptCode>2000000721</rdfs:conceptCode>
+        <rdfs:label>Global Cortical Atrophy</rdfs:label>
     </owl:Class>
     
 
@@ -922,6 +1093,7 @@
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RC2KfU9sFdU4lyxkQRmEK7c">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000668</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000668</rdfs:conceptCode>
         <rdfs:label>American Indian or Alaska Native</rdfs:label>
     </owl:Class>
@@ -934,6 +1106,7 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#SubjectCharacteristics"/>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">if Education Level (yr) &lt;7 edulow=1
 if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
+        <rdfs:conceptCode>2000000719</rdfs:conceptCode>
         <rdfs:label>Edulow</rdfs:label>
     </owl:Class>
     
@@ -943,6 +1116,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RC7lNMYe400COMo2y8cnItD">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000676</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000676</rdfs:conceptCode>
         <rdfs:label>ELISA</rdfs:label>
     </owl:Class>
@@ -961,6 +1135,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RC9f1nf5DwVhV89GVbuXj7L">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000670</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000670</rdfs:conceptCode>
         <rdfs:label>Black or African American</rdfs:label>
     </owl:Class>
@@ -981,6 +1156,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RCOZTlCBBPl7fSbu0ur75aC">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000665</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000665</rdfs:conceptCode>
         <rdfs:label>FTD</rdfs:label>
     </owl:Class>
@@ -991,6 +1167,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RCPnTCuRSZBm67GiJLMk8sy">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000692</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000692</rdfs:conceptCode>
         <rdfs:label>CERAD Wordlist</rdfs:label>
     </owl:Class>
@@ -1001,6 +1178,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RCSDFBbEhbVMq4tpasVNapC">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000693</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000693</rdfs:conceptCode>
         <rdfs:label>MCBP</rdfs:label>
     </owl:Class>
@@ -1011,6 +1189,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RCXfZ1cmFYyGjuhAsqsHJwM">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/MRIMeasures"/>
+        <rdfs:conceptCode>2000000747</rdfs:conceptCode>
         <rdfs:label>White Matter Hyperintensities</rdfs:label>
     </owl:Class>
     
@@ -1020,6 +1199,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RCYd8cobDAXVfj3UAZ5tfla">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/DepressionScale"/>
+        <rdfs:conceptCode>2000000736</rdfs:conceptCode>
         <rdfs:label>Patient Health Questionnaire</rdfs:label>
     </owl:Class>
     
@@ -1029,6 +1209,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RCjTOM0Qr1cIemfGiBrcXYW">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/DepressionScale"/>
+        <rdfs:conceptCode>2000000742</rdfs:conceptCode>
         <rdfs:label>Short Form Health Survey</rdfs:label>
     </owl:Class>
     
@@ -1038,6 +1219,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RClah10AShuHRQlASy851nU">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/AnxietyRatingScales"/>
+        <rdfs:conceptCode>2000000728</rdfs:conceptCode>
         <rdfs:label>MINI Anxiety Interview</rdfs:label>
     </owl:Class>
     
@@ -1048,6 +1230,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
     <owl:Class rdf:about="http://webprotege.stanford.edu/RCrx09GkTcljxawvl6ceOiN">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#SubjectCharacteristics"/>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Average yearly income</rdfs:Description>
+        <rdfs:conceptCode>2000000725</rdfs:conceptCode>
         <rdfs:label>Income</rdfs:label>
     </owl:Class>
     
@@ -1089,6 +1272,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RDFnplSp89rQImbGw6TA5Lk">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R88YPE3gidvXMla3rjwRzVF"/>
+        <rdfs:conceptCode>2000000703</rdfs:conceptCode>
         <rdfs:label>Amyloid Beta 42/40</rdfs:label>
     </owl:Class>
     
@@ -1098,6 +1282,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RDG833q32a3ckkrFt87o50f">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000688</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000688</rdfs:conceptCode>
         <rdfs:label>CJD</rdfs:label>
     </owl:Class>
@@ -1119,6 +1304,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
     <owl:Class rdf:about="http://webprotege.stanford.edu/RDPqj3lUzEsj0pOEAkm0rVD">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RlMrltoIidJSaKakdWwBGL"/>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Number of microbleeds</rdfs:Description>
+        <rdfs:conceptCode>2000000731</rdfs:conceptCode>
         <rdfs:label>Microbleeds count</rdfs:label>
     </owl:Class>
     
@@ -1138,6 +1324,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RDRmYAazuE7EqxTnobOAuzG">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RodIwnFZjjs8dMSGoinDuy"/>
+        <rdfs:conceptCode>2000000705</rdfs:conceptCode>
         <rdfs:label>Big F</rdfs:label>
     </owl:Class>
     
@@ -1148,6 +1335,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
     <owl:Class rdf:about="http://webprotege.stanford.edu/RDTMciBmCidqUYX9ZozAJbv">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C-reactive protein</rdfs:Description>
+        <rdfs:conceptCode>2000000707</rdfs:conceptCode>
         <rdfs:label>CRP</rdfs:label>
     </owl:Class>
     
@@ -1167,6 +1355,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RDUbP6yuGlwh38gUkp13b7x">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/MRIMeasures"/>
+        <rdfs:conceptCode>2000000737</rdfs:conceptCode>
         <rdfs:label>Perivascular Spaces</rdfs:label>
     </owl:Class>
     
@@ -1176,6 +1365,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RDezqc6ENoYq1kLe9CEPhPW">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCjTOM0Qr1cIemfGiBrcXYW"/>
+        <rdfs:conceptCode>2000000740</rdfs:conceptCode>
         <rdfs:label>SF-36</rdfs:label>
     </owl:Class>
     
@@ -1185,6 +1375,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RDljj4bOWqtVDZGakNCv8e">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000254</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000254</rdfs:conceptCode>
         <rdfs:label>MCI</rdfs:label>
     </owl:Class>
@@ -1197,6 +1388,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCXfZ1cmFYyGjuhAsqsHJwM"/>
         <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0-30</Range_or_Possible_Values>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Age related white matter changes rating scale</rdfs:Description>
+        <rdfs:conceptCode>2000000748</rdfs:conceptCode>
         <rdfs:label>ARWMC</rdfs:label>
     </owl:Class>
     
@@ -1206,6 +1398,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RETOtgJI7nLfLz9SzwWXAA">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCYd8cobDAXVfj3UAZ5tfla"/>
+        <rdfs:conceptCode>2000000734</rdfs:conceptCode>
         <rdfs:label>PHQ-9</rdfs:label>
     </owl:Class>
     
@@ -1215,8 +1408,20 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/REc4FcdJRArR2pGRX3kXGU">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000674</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000674</rdfs:conceptCode>
         <rdfs:label>Neuropsychological tests</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RFY291A4Vn9H93OQI1Ps9f -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RFY291A4Vn9H93OQI1Ps9f">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9ZyKZ1aJPHgLijVjK55GX3"/>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Visual rating of number of lacunar infarcts</rdfs:Description>
+        <rdfs:conceptCode>2000000727</rdfs:conceptCode>
+        <rdfs:label>Lacunar infartcs</rdfs:label>
     </owl:Class>
     
 
@@ -1245,6 +1450,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RJGKHLxUn81J6fCCFfpDIo">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RrM13gm9TPZlXvCMvNvxDB"/>
+        <rdfs:conceptCode>2000000696</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000696</rdfs:conceptCode>
         <rdfs:label>Insomnia Severity Index</rdfs:label>
     </owl:Class>
@@ -1257,6 +1463,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#SubjectCharacteristics"/>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">if Education Level (yr) &lt;7 eduhigh=0
 if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
+        <rdfs:conceptCode>2000000718</rdfs:conceptCode>
         <rdfs:label>Eduhigh</rdfs:label>
     </owl:Class>
     
@@ -1266,6 +1473,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RKy8Zf1oRWbGy9WlhO23Iy">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000673</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000673</rdfs:conceptCode>
         <rdfs:label>Clinical</rdfs:label>
     </owl:Class>
@@ -1286,6 +1494,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/Rf1WBu8uimhbajFA46FiX1">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/AlcoholUse"/>
+        <rdfs:conceptCode>2000000724</rdfs:conceptCode>
         <rdfs:label>History of Alcohol Abuse</rdfs:label>
     </owl:Class>
     
@@ -1305,6 +1514,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RiSDnzvJI9EzTuJBfCBfdR">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/AnxietyRatingScales"/>
+        <rdfs:conceptCode>2000000704</rdfs:conceptCode>
         <rdfs:label>BECK Anxiety</rdfs:label>
     </owl:Class>
     
@@ -1314,6 +1524,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RighnoSVzRXhNBMVdgxb67">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000698</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000698</rdfs:conceptCode>
         <rdfs:label>Substance misuse</rdfs:label>
     </owl:Class>
@@ -1325,6 +1536,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
     <owl:Class rdf:about="http://webprotege.stanford.edu/RlMrltoIidJSaKakdWwBGL">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/MRIMeasures"/>
         <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yes, no</Range_or_Possible_Values>
+        <rdfs:conceptCode>2000000730</rdfs:conceptCode>
         <rdfs:label>Microbleeds</rdfs:label>
     </owl:Class>
     
@@ -1334,6 +1546,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RodIwnFZjjs8dMSGoinDuy">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#RatingScales"/>
+        <rdfs:conceptCode>2000000738</rdfs:conceptCode>
         <rdfs:label>Personality Rating Scales</rdfs:label>
     </owl:Class>
     
@@ -1343,6 +1556,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RqXw9KU3xy4IBDChATAuSz">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/MRIMeasures"/>
+        <rdfs:conceptCode>2000000743</rdfs:conceptCode>
         <rdfs:label>Total Brain Volume</rdfs:label>
     </owl:Class>
     
@@ -1352,6 +1566,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/Rr1Wg0LD8Y2outzx9DW8p3">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000672</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000672</rdfs:conceptCode>
         <rdfs:label>White</rdfs:label>
     </owl:Class>
@@ -1362,6 +1577,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RrM13gm9TPZlXvCMvNvxDB">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#RatingScales"/>
+        <rdfs:conceptCode>2000000697</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000697</rdfs:conceptCode>
         <rdfs:label>Sleep Rating Scales</rdfs:label>
     </owl:Class>
@@ -1372,6 +1588,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/Ru4FZQ2ufZYTBoQhOGXQzy">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>8532</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8532</rdfs:conceptCode>
         <rdfs:label>Female</rdfs:label>
     </owl:Class>
@@ -1382,6 +1599,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RwLKHdX8mx5y7WtXbArI9C">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/CERADFiguresTest"/>
+        <rdfs:conceptCode>2000000695</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000695</rdfs:conceptCode>
         <rdfs:label>CERAD Figures Delayed</rdfs:label>
     </owl:Class>
@@ -1392,6 +1610,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/Rwy6F58ql0rmygCBk3k1M5">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000238</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000238</rdfs:conceptCode>
         <rdfs:label>Yes</rdfs:label>
     </owl:Class>
@@ -1402,8 +1621,21 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RxGlcF4sGZsuc8Bu7egfCg">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000680</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000680</rdfs:conceptCode>
         <rdfs:label>Mild</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RyE5wQ69cgo6GPC8TN4Jyx -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RyE5wQ69cgo6GPC8TN4Jyx">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9bnHv6a0kVVaLsLpuqzamX"/>
+        <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;0</Range_or_Possible_Values>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The CST zero condition in which the participants are required to cross out the empty circles as fast as possible in a clockwise fashion (CST zero). The CST zero trial is done twice or three times and serves as a correction for basic motor speed for CST Parts A, B, and C, so that the test performance in these trials can be related more unequivocally to the cognitive processes involved in the task rather than to the motor components. The avarege of the 2 or 3 trials is taken.</rdfs:Description>
+        <rdfs:conceptCode>2000000708</rdfs:conceptCode>
+        <rdfs:label>CST-0</rdfs:label>
     </owl:Class>
     
 
@@ -1412,6 +1644,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/Rzp4iKyz8vUqaCmoG1Qnsn">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91bj5Ta0SvvmlkUT7fDXDw"/>
+        <rdfs:conceptCode>2000000675</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000675</rdfs:conceptCode>
         <rdfs:label>CDR</rdfs:label>
     </owl:Class>
@@ -1799,6 +2032,7 @@ if sex=1 and eduy gt 12 and age gt 79.99 CERADfizscore=(CERADfig- 10.5)/0.8.</rd
 
     <owl:Class rdf:about="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#DNA">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000716</rdfs:conceptCode>
     </owl:Class>
     
 
@@ -2291,6 +2525,7 @@ Goldman score between 1 and 4 as per Goldman et al. (2005) where 1 is an autosom
 
     <owl:Class rdf:about="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#RNA">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000739</rdfs:conceptCode>
     </owl:Class>
     
 
@@ -2358,6 +2593,7 @@ Goldman score between 1 and 4 as per Goldman et al. (2005) where 1 is an autosom
 
     <owl:Class rdf:about="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#Serum">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000741</rdfs:conceptCode>
     </owl:Class>
     
 
@@ -4854,6 +5090,7 @@ Total cholesterol =&gt; 5.0 mmol/l = Yes</rdfs:Description>
 
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH">
         <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7SsKVE63hbDW7fkdE7eVPY"/>
+        <rdfs:conceptCode>2000000706</rdfs:conceptCode>
         <rdfs:label>Blood Measures</rdfs:label>
     </owl:Class>
     
@@ -4982,7 +5219,7 @@ Total cholesterol =&gt; 5.0 mmol/l = Yes</rdfs:Description>
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/R86RTk12Cr7qSNEUj2oIdcp">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/Comorbidity"/>
         <Range_or_Possible_Values>no, yes</Range_or_Possible_Values>
-        <rdfs:Description>If value =yes, then variable &quot;Comorbidity&quot; =yes</rdfs:Description>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If value =yes, then variable &quot;Comorbidities&quot; =yes</rdfs:Description>
         <rdfs:conceptCode>2000000639</rdfs:conceptCode>
         <rdfs:label>Cerebrovascular Disorders</rdfs:label>
     </owl:Class>
@@ -5261,7 +5498,7 @@ if gender=Male and eduy gt 12 and age gt 79.99 --&gt; TMT-A z =(59.6-tmtar)/12.2
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/R8t51TWVtAl57WO78XjwFyK">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/Comorbidity"/>
         <Range_or_Possible_Values>no, yes</Range_or_Possible_Values>
-        <rdfs:Description>If value =yes, then variable &quot;Comorbidity&quot; = yes</rdfs:Description>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If value =yes, then variable &quot;Comorbidities&quot; = yes</rdfs:Description>
         <rdfs:conceptCode>2000000640</rdfs:conceptCode>
         <rdfs:label>Endocrine Disorders</rdfs:label>
     </owl:Class>
@@ -5400,7 +5637,7 @@ fdrwlr = CERAD word list delayed recall raw score</rdfs:comment>
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/R9OVYDdTenYiXKx7NyWwq1U">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/Comorbidity"/>
         <Range_or_Possible_Values>no, yes</Range_or_Possible_Values>
-        <rdfs:Description>If value =yes, then variable &quot;Comorbidity&quot; = yes</rdfs:Description>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If value =yes, then variable &quot;Comorbidities&quot; = yes</rdfs:Description>
         <rdfs:conceptCode>2000000473</rdfs:conceptCode>
         <rdfs:label>Other Cardiac Diseases</rdfs:label>
     </owl:Class>
@@ -5589,7 +5826,7 @@ fdrwlr = CERAD word list delayed recall raw score</rdfs:comment>
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/R9tylsLyd6fxbnKWxpqVSFZ">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/Comorbidity"/>
         <Range_or_Possible_Values>yes, no</Range_or_Possible_Values>
-        <rdfs:Description>If value =yes, then variable &quot;Comorbidity&quot; =yes</rdfs:Description>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If value =yes, then variable &quot;Comorbidities&quot; =yes</rdfs:Description>
         <rdfs:conceptCode>2000000638</rdfs:conceptCode>
         <rdfs:label>Cardiovascular Risk Factors</rdfs:label>
     </owl:Class>
@@ -5776,7 +6013,7 @@ if gender=Male and eduy gt 12 and age gt 79.99 then TMTB z=(124.6-TMTB)/34.2</rd
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/RBAeWfczQOKh5zSxIGQiSCJ">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/Comorbidity"/>
         <Range_or_Possible_Values>no, yes</Range_or_Possible_Values>
-        <rdfs:Description>If value =yes, then variable &quot;Comorbidity&quot; = yes</rdfs:Description>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If value =yes, then variable &quot;Comorbidities&quot; = yes</rdfs:Description>
         <rdfs:conceptCode>2000000642</rdfs:conceptCode>
         <rdfs:label>Psychiatric Disorders</rdfs:label>
     </owl:Class>
@@ -6489,7 +6726,7 @@ if Age gt 75 and SDST_raw gt 50 sdstz1=3.</rdfs:Description>
     <owl:Class rdf:about="http://www.semanticweb.org/emif/ontologies/2015/AD/RDVoto51BYEKK5MakdG7dB3">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/Comorbidity"/>
         <Range_or_Possible_Values>no, yes</Range_or_Possible_Values>
-        <rdfs:Description>If value =yes, then variable &quot;Comorbidity&quot; = yes</rdfs:Description>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If value =yes, then variable &quot;Comorbidities&quot; = yes</rdfs:Description>
         <rdfs:conceptCode>2000000641</rdfs:conceptCode>
         <rdfs:label>Neurological Disorders</rdfs:label>
     </owl:Class>
@@ -7999,6 +8236,7 @@ verhage=7 eduyears=17</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
         <Abbreviation>ALB</Abbreviation>
         <rdfs:Description>A measurement of the albumin protein in a biological specimen. (CDISC)</rdfs:Description>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000702</rdfs:conceptCode>
     </owl:Class>
     
 
@@ -8007,6 +8245,7 @@ verhage=7 eduyears=17</rdfs:comment>
 
     <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#FastedGlucose">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
+        <rdfs:conceptCode>2000000720</rdfs:conceptCode>
         <rdfs:label>Fasted Glucose</rdfs:label>
     </owl:Class>
     
@@ -8036,6 +8275,7 @@ verhage=7 eduyears=17</rdfs:comment>
 
     <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#Glucose">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
+        <rdfs:conceptCode>2000000722</rdfs:conceptCode>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glucose</rdfs:label>
     </owl:Class>
     
@@ -8069,6 +8309,7 @@ verhage=7 eduyears=17</rdfs:comment>
 
     <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#Non-fastedGlucoseLevels">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
+        <rdfs:conceptCode>2000000732</rdfs:conceptCode>
         <rdfs:label>Non-fasted Glucose Levels</rdfs:label>
     </owl:Class>
     
@@ -8079,6 +8320,7 @@ verhage=7 eduyears=17</rdfs:comment>
     <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#Thyroid-stimulatingHormone">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
         <Abbreviation>TSH</Abbreviation>
+        <rdfs:conceptCode>2000000694</rdfs:conceptCode>
         <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000694</rdfs:conceptCode>
         <rdfs:label>Thyroid-stimulating Hormone</rdfs:label>
     </owl:Class>
@@ -8134,6 +8376,7 @@ verhage=7 eduyears=17</rdfs:comment>
 
     <owl:Class rdf:about="http://www.w3.org/2003/11/swrl#ERK/pJNK">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/emif/ontologies/2015/AD/R7U2fQQJ7SMIPibltLfKWLH"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000717</rdfs:conceptCode>
     </owl:Class>
     
 

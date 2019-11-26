@@ -660,3 +660,50 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2100000038	Month 228	Dates	Concept Class	Concept Class	S	2100000038	2019-01-01	2099-12-31	
 2100000039	Month 234	Dates	Concept Class	Concept Class	S	2100000039	2019-01-01	2099-12-31	
 2100000040	Month 240	Dates	Concept Class	Concept Class	S	2100000040	2019-01-01	2099-12-31	
+2000000702	Albumin	Laboratory Test Results	Concept Class	Concept Class	S	2000000702	2019-01-01	2099-12-31	
+2000000703	Amyloid Beta 42/40	Laboratory Test Results	Concept Class	Concept Class	S	2000000703	2019-01-01	2099-12-31	
+2000000704	BECK Anxiety	Rating Scales	Concept Class	Concept Class	S	2000000704	2019-01-01	2099-12-31	
+2000000705	Big F	Rating Scales	Concept Class	Concept Class	S	2000000705	2019-01-01	2099-12-31	
+2000000706	Blood Measures	Laboratory Test Results	Concept Class	Concept Class	S	2000000706	2019-01-01	2099-12-31	
+2000000707	CRP	Laboratory Test Results	Concept Class	Concept Class	S	2000000707	2019-01-01	2099-12-31	
+2000000708	CST-0	Neuropsychological Examination	Concept Class	Concept Class	S	2000000708	2019-01-01	2099-12-31	
+2000000709	CST-A	Neuropsychological Examination	Concept Class	Concept Class	S	2000000709	2019-01-01	2099-12-31	
+2000000710	CST-A Z-score	Neuropsychological Examination	Concept Class	Concept Class	S	2000000710	2019-01-01	2099-12-31	
+2000000711	CST-B	Neuropsychological Examination	Concept Class	Concept Class	S	2000000711	2019-01-01	2099-12-31	
+2000000712	CST-B Z-score	Neuropsychological Examination	Concept Class	Concept Class	S	2000000712	2019-01-01	2099-12-31	
+2000000713	CST-C	Neuropsychological Examination	Concept Class	Concept Class	S	2000000713	2019-01-01	2099-12-31	
+2000000714	CST-C Z-score	Neuropsychological Examination	Concept Class	Concept Class	S	2000000714	2019-01-01	2099-12-31	
+2000000715	Concept Shifting Task	Neuropsychological Examination	Concept Class	Concept Class	S	2000000715	2019-01-01	2099-12-31	
+2000000716	DNA	Laboratory Test Results	Concept Class	Concept Class	S	2000000716	2019-01-01	2099-12-31	
+2000000717	ERK/pJNK	Laboratory Test Results	Concept Class	Concept Class	S	2000000717	2019-01-01	2099-12-31	
+2000000718	Eduhigh	Subject Characteristics	Concept Class	Concept Class	S	2000000718	2019-01-01	2099-12-31	
+2000000719	Edulow	Subject Characteristics	Concept Class	Concept Class	S	2000000719	2019-01-01	2099-12-31	
+2000000720	Fasted Glucose	Laboratory Test Results	Concept Class	Concept Class	S	2000000720	2019-01-01	2099-12-31	
+2000000721	Global Cortical Atrophy	Imaging	Concept Class	Concept Class	S	2000000721	2019-01-01	2099-12-31	
+2000000722	Glucose	Laboratory Test Results	Concept Class	Concept Class	S	2000000722	2019-01-01	2099-12-31	
+2000000723	Gray Matter Volume	Imaging	Concept Class	Concept Class	S	2000000723	2019-01-01	2099-12-31	
+2000000724	History of Alcohol Abuse	Clinical Information	Concept Class	Concept Class	S	2000000724	2019-01-01	2099-12-31	
+2000000725	Income	Subject Characteristics	Concept Class	Concept Class	S	2000000725	2019-01-01	2099-12-31	
+2000000726	Infacts	Imaging	Concept Class	Concept Class	S	2000000726	2019-01-01	2099-12-31	
+2000000727	Lacunar infartcs	Imaging	Concept Class	Concept Class	S	2000000727	2019-01-01	2099-12-31	
+2000000728	MINI Anxiety Interview	Rating Scales	Concept Class	Concept Class	S	2000000728	2019-01-01	2099-12-31	
+2000000729	MRI Software	Imaging	Concept Class	Concept Class	S	2000000729	2019-01-01	2099-12-31	
+2000000730	Microbleeds	Imaging	Concept Class	Concept Class	S	2000000730	2019-01-01	2099-12-31	
+2000000731	Microbleeds count	Imaging	Concept Class	Concept Class	S	2000000731	2019-01-01	2099-12-31	
+2000000732	Non-fasted Glucose Levels	Laboratory Test Results	Concept Class	Concept Class	S	2000000732	2019-01-01	2099-12-31	
+2000000733	Normal Appearing White Matter	Imaging	Concept Class	Concept Class	S	2000000733	2019-01-01	2099-12-31	
+2000000734	PHQ-9	Rating Scales	Concept Class	Concept Class	S	2000000734	2019-01-01	2099-12-31	
+2000000735	Packyears	Clinical Information	Concept Class	Concept Class	S	2000000735	2019-01-01	2099-12-31	
+2000000736	Patient Health Questionnaire	Rating Scales	Concept Class	Concept Class	S	2000000736	2019-01-01	2099-12-31	
+2000000737	Perivascular Spaces	Imaging	Concept Class	Concept Class	S	2000000737	2019-01-01	2099-12-31	
+2000000738	Personality Rating Scales	Rating Scales	Concept Class	Concept Class	S	2000000738	2019-01-01	2099-12-31	
+2000000739	RNA	Laboratory Test Results	Concept Class	Concept Class	S	2000000739	2019-01-01	2099-12-31	
+2000000740	SF-36	Rating Scales	Concept Class	Concept Class	S	2000000740	2019-01-01	2099-12-31	
+2000000741	Serum	Laboratory Test Results	Concept Class	Concept Class	S	2000000741	2019-01-01	2099-12-31	
+2000000742	Short Form Health Survey	Rating Scales	Concept Class	Concept Class	S	2000000742	2019-01-01	2099-12-31	
+2000000743	Total Brain Volume	Imaging	Concept Class	Concept Class	S	2000000743	2019-01-01	2099-12-31	
+2000000744	VOSP Dot Counting	Neuropsychological Examination	Concept Class	Concept Class	S	2000000744	2019-01-01	2099-12-31	
+2000000745	WMH Fazekas	Imaging	Concept Class	Concept Class	S	2000000745	2019-01-01	2099-12-31	
+2000000746	WMH Volume	Imaging	Concept Class	Concept Class	S	2000000746	2019-01-01	2099-12-31	
+2000000747	White Matter Hyperintensities	Imaging	Concept Class	Concept Class	S	2000000747	2019-01-01	2099-12-31	
+2000000748	ARWMC	Imaging	Concept Class	Concept Class	S	2000000748	2019-01-01	2099-12-31	
