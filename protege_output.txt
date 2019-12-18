@@ -196,6 +196,7 @@ Concept Shifting Task	Neuropsychological_Examination+Attention_and_Executive_Fun
 Cornell Scale for Depression	Rating_Scales+Neuropsychiatric_Scales+Depression_Rating_Scales	2000000528
 Coronary Bypass Surgery	Clinical_Information+Comorbidity+TIMERROOT+Cardiovascular_Disorders	2000000360
 Country	Demographics	2000000065
+DAD Total	Rating_Scales+Dementia_Rating_Scales+Disability_Assessment_of_Dementia_Scale	2000000749
 DBP (mmHg)	Clinical_Information+Vital_Signs	2000000544
 DNA	Laboratory_Test_Results+Blood+Blood_Measures	2000000716
 DO 80 Picture Naming	Neuropsychological_Examination+Language+DO_80_Picture_Naming_Test	2000000362
@@ -222,6 +223,7 @@ Dementia Mother	Clinical_Information+Family_History_of_Dementia	2000000080
 Dementia Quality of Life Instrument	Rating_Scales+Quality_of_Life	2000000546
 Dementia Rating Scales	Rating_Scales	2000000547
 Demographics		2000000548
+Depression	Clinical_Information+Comorbidity+TIMERROOT+Psychiatric_Disorders	2000000470
 Depression Rating Scales	Rating_Scales+Neuropsychiatric_Scales	2000000549
 Diabetes Mellitus	Clinical_Information+Comorbidity+TIMERROOT+Endocrine_Disorders	2000000363
 Diagnoses	Clinical_Information	2000000550
@@ -235,6 +237,7 @@ Digit Span Forward Z-score	Neuropsychological_Examination+Attention_and_Executiv
 Digit Span Total	Neuropsychological_Examination+Attention_and_Executive_Function+Digit_Span	2000000086
 Digit Span Total Z-score	Neuropsychological_Examination+Attention_and_Executive_Function+Digit_Span	2000000087
 Digoxine	Clinical_Information+Medication_Use+Cardiovascular_Drugs	2000000365
+Disability Assessment of Dementia Scale	Rating_Scales+Dementia_Rating_Scales	None
 Diuretics	Clinical_Information+Medication_Use+Cardiovascular_Drugs+Anti-Hypertensive_Drugs	2000000366
 Dotter/stent Placement	Clinical_Information+Comorbidity+TIMERROOT+Cardiovascular_Disorders	2000000367
 ERK/pJNK	Laboratory_Test_Results+Blood+Blood_Measures	2000000717
