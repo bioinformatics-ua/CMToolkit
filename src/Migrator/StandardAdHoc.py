@@ -73,7 +73,7 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if "2000000554" in variableConcept:
 			self.__loadYearsOfEducation(row, patientID)
 		if "2000000488" in variableConcept:
-			self.__loadBirthdayDate(row, patientID)
+			self.__dealWithAge(row, patientID)
 		if "2000000609" in variableConcept:
 			self.__loadGender(row, patientID)
 		if "2000000388" in variableConcept:
@@ -123,11 +123,19 @@ class StandardAdHoc(object, metaclass=Singleton):
 				if variable in variableConcept:
 					return self.__addComorbiditiesSubClass(row, patientID, allComorbidities[comorbidity]["name"], comorbidity)
 
+	def __dealWithAge(self, row, patientID):#refactor this
+		if(row['Measure'].isdigit()):
+			self.ageMeasurement.append(row)
+			SAHGlobalVariables.age[patientID] = int(row['Measure'])
+		else:
+			self.__loadBirthdayDate(row, patientID)
+
 	def __loadDateOfDiagnosis(self, row, patientID):
 		if row['Measure'] != "":
 			SAHGlobalVariables.dateOfDiagnosis[patientID] = row['Measure']
 		if len(SAHGlobalVariables.birthdayDate) > 0:
-			self.__calculateAge(row, patientID)
+			if patientID in SAHGlobalVariables.birthdayDate:
+				self.__calculateAge(row, patientID)
 
 	def __loadYearsOfEducation(self, row, patientID):
 		if row['Measure'] != "":
@@ -137,7 +145,8 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if row['Measure'] != "":
 			SAHGlobalVariables.birthdayDate[patientID] = row['Measure']
 		if len(SAHGlobalVariables.dateOfDiagnosis) > 0:
-			self.__calculateAge(row, patientID)
+			if patientID in SAHGlobalVariables.dateOfDiagnosis:
+				self.__calculateAge(row, patientID)
 
 	def __loadGender(self, row, patientID):
 		if row['MeasureConcept'] != "":

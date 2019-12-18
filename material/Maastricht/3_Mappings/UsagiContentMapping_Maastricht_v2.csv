@@ -5,26 +5,26 @@ lacinf,lacunaire infarcten,-1,,0.39651480317115784,APPROVED,2000000727,Has been 
 CST03,CST0 (sec),-1,,0.09175530076026917,APPROVED,2000000708,Has been added to webprotege. CST0 is the avarage of CST01/CST02 & CST03
 NPIHb,Tax for the social worker,-1,,0.21435268223285675,APPROVED,0,if DIAG=3 then this variable shows the type of other dementia
 otherdem,if DIAG=3 then this variable shows the type of other dementia,-1,,0.4066680371761322,APPROVED,0,if DIAG=3 then this variable shows the type of other dementia. Using coding in codebook
-CEVD3,Cerebrovasculaire diagnose,-1,,0.6578267216682434,APPROVED,2000000639,If something is mentioned Other Cerebrovascular Disorders should be yes
-CAVD7,Cardiovasculaire diagnose,-1,,0.5987737774848938,APPROVED,2000000637,"If there is text in CAVD7, Other Cardiovascular Disorders should be Yes"
+CEVD3,Cerebrovasculaire diagnose,-1,,0.6578267216682434,APPROVED,2000000403,If something is mentioned Other Cerebrovascular Disorders should be yes
+CAVD7,Cardiovasculaire diagnose,-1,,0.5987737774848938,APPROVED,2000000400,"If there is text in CAVD7, Other Cardiovascular Disorders should be Yes"
 SOMD4,Somatische diagnose,-1,,0.5386455655097961,APPROVED,2000000412,If there is text in this variable Somatic Disorders=Yes
-TMTC,TMTC (sec),-1,,0.2404145896434784,APPROVED,0,If TMTVERS = ABC then TMTC = TMT-B. TMTB doens't need to be uploaded 
+TMTC,TMTC (sec),-1,,0.2404145896434784,APPROVED,2000000212,If TMTVERS = ABC then TMTC = TMT-B. TMTB doens't need to be uploaded 
 PSYCHOS,Psychosis,-1,,0.43290039896965027,APPROVED,2000000410,If yes then Other Psychiatric Disorder should be yes
-CARDIOVASCYN,Cardiovasculair Disorders?,-1,,0.8350533246994019,APPROVED,2000000637,"JA: I need help to know what means 1, 2 and NASK"
+CARDIOVASCYN,Cardiovasculair Disorders?,-1,,0.8350533246994019,APPROVED,2000000400,"JA: I need help to know what means 1, 2 and NASK"
 WGOED1,GIT fluency1 correct,-1,,0.46021416783332825,APPROVED,0,JA: if wmod1 = 'dieren'
 WGOED2,GIT fluency2 correct,-1,,0.46256840229034424,APPROVED,0,JA: if wmod2 = 'dieren'
 ALCOH2,Number of units (per week),-1,,0.2136678397655487,APPROVED,2000000324,JA: Needs clarification
-VATvorm,VAT: Short / long,-1,,0.254441499710083,APPROVED,0,JA: use this to choose vat-12 or 24 for vattot
-VATvorm,VAT: Short / long,-1,,0.254441499710083,APPROVED,0,JA: use this to choose vat-12 or 24 for vattot
-VATtot,VAT totalscore,-1,,0.4264907240867615,APPROVED,0,JA: use vatvorm to choose vat-12 or 24
-VATtot,VAT totalscore,-1,,0.4264907240867615,APPROVED,0,JA: use vatvorm to choose vat-12 or 24
+VATvorm,VAT: Short / long,-1,,0.254441499710083,APPROVED,2000000215,JA: use this to choose vat-12 or 24 for vattot
+VATvorm,VAT: Short / long,-1,,0.254441499710083,APPROVED,2000000216,JA: use this to choose vat-12 or 24 for vattot
+VATtot,VAT totalscore,-1,,0.4264907240867615,APPROVED,2000000215,JA: use vatvorm to choose vat-12 or 24
+VATtot,VAT totalscore,-1,,0.4264907240867615,APPROVED,2000000216,JA: use vatvorm to choose vat-12 or 24
 CSTA,CSTA (sec),-1,,0.14325959980487823,APPROVED,2000000709,Needs to be added to webprotege
 CSTB,CSTB (sec),-1,,0.07835384458303452,APPROVED,2000000711,Needs to be added to webprotege
 RBMT_VAO,RBMT immediate A / C reproduction,-1,,0.34496569633483887,APPROVED,2000000613,RBMT_VAO + RBMT_VBO = SRT_Immediate
-RBMT_VAU,RBMT deferred reproduction A / C,-1,,0.15339751541614532,APPROVED,2000000094,RBMT_VAU + RBMT_VBU = SRT_Delayed
+RBMT_VAU,RBMT deferred reproduction A / C,-1,,0.15339751541614532,APPROVED,2000000611,RBMT_VAU + RBMT_VBU = SRT_Delayed
 RBMT_VBO,RBMT immediate B / D reproduction,-1,,0.33909720182418823,APPROVED,2000000613,RBMT_VBO + RBMT_VAO = Story_Recall_Immediate
-RBMT_VBU,RBMT deferred reproduction B / D,-1,,0.14228792488574982,APPROVED,2000000094,RBMT_VBU + RBMT_VAU = SRT_Delayed
-DADTOTPERCENT,DAD totaal (%),-1,,0.19814585149288177,APPROVED,0,Should be added to Webprotege
+RBMT_VBU,RBMT deferred reproduction B / D,-1,,0.14228792488574982,APPROVED,2000000611,RBMT_VBU + RBMT_VAU = SRT_Delayed
+DADTOTPERCENT,DAD totaal (%),-1,,0.19814585149288177,APPROVED,2000000749,Should be added to Webprotege
 MAA_NR,other subject ID,-1,,0.4419800639152527,APPROVED,0,SubjectID
 CSTC,CSTC (sec),-1,,0.0800849124789238,APPROVED,2000000713,Test has been added to webprotege --> Concept Shifting Task
 CST01,CST0 (sec),-1,,0.09175530076026917,APPROVED,2000000708,Test has been added to webprotege --> Neuropsychological Examination>Attention/Executive Functioning> Concept Shifting Test
@@ -235,7 +235,6 @@ DIGSPANAW,Digit span backwards,-1,,0.9572976231575012,APPROVED,2000000082,
 DIGSPANVW,Digit span forward,-1,,1.0,APPROVED,2000000084,
 CYFRKSVW,Number series forward,-1,,0.43055132031440735,APPROVED,2000000084,
 CYFRKSTOT,Number series total score,-1,,0.41642528772354126,APPROVED,2000000086,
-CBSOPL,Education in categories,-1,,0.8327969312667847,APPROVED,2000000094,
 HDRSTOT,HDRS totoaalscore,-1,,0.2257409542798996,APPROVED,2000000121,
 IADL_QTOT,IADL totaalscore,-1,,0.5092611312866211,APPROVED,2000000138,
 MMSETOT,MMSE totalscore (0-30),-1,,0.49260982871055603,APPROVED,2000000166,
@@ -294,6 +293,7 @@ testjr,year of testing,-1,,0.3965849280357361,APPROVED,2000000540,
 VSNDBP,Diastolic blood pressure (mmHg),-1,,0.4003828763961792,APPROVED,2000000544,
 DIAG,diagnose,-1,,0.930472731590271,APPROVED,2000000551,
 edu_years,education in years,-1,,0.4043813943862915,APPROVED,2000000554,
+edu_years,education in years,-1,,0.4043813943862915,APPROVED,2000000094,
 GDSSCORE,Totaal score Geriatric Depression Scale,-1,,0.7943065762519836,APPROVED,2000000564,
 MEDYN,Medication use,-1,,1.0,APPROVED,2000000582,
 VSNSBP,Systolische bloodpressure (mmHg),-1,,0.3725906312465668,APPROVED,2000000608,
@@ -301,20 +301,20 @@ Sex,sex,-1,,1.0,APPROVED,2000000609,
 VERHAAL_VERS,Story recall test version,-1,,0.7910008430480957,APPROVED,2000000617,
 TMTVERS,version Trail Making Test,-1,,0.8639361262321472,APPROVED,2000000625,
 testjr,year of testing,-1,,0.3965849280357361,APPROVED,2000000626,
-CEREDIAGYN,Cerebrovasculair disorders?,-1,,0.8579764366149902,APPROVED,2000000639,
-ENDODIAGYN,Endocrine disorders?,-1,,0.9405816793441772,APPROVED,2000000640,
-PSYCHDIAGYN,Psychiatric disorders?,-1,,0.9382681846618652,APPROVED,2000000642,
-PSYD4,Psychiatrische diagnose,-1,,0.5093908905982971,APPROVED,2000000642,
+CEREDIAGYN,Cerebrovasculair disorders?,-1,,0.8579764366149902,APPROVED,2000000403,
+ENDODIAGYN,Endocrine disorders?,-1,,0.9405816793441772,APPROVED,2000000405,
+PSYCHDIAGYN,Psychiatric disorders?,-1,,0.9382681846618652,APPROVED,2000000410,
+PSYD4,Psychiatrische diagnose,-1,,0.5093908905982971,APPROVED,2000000410,
 SOMYN,Somatic disorders,-1,,1.0,APPROVED,2000000412,
 NPISOf,Frequency sleep unrest at night,-1,,0.2886708974838257,INVALID_TARGET,0,
 NPISOe,Ernst sleep restlessness at night,-1,,0.3571026921272278,INVALID_TARGET,0,
 FESO,Frequency x severity sleep restlessness,-1,,0.3689289391040802,INVALID_TARGET,0,
-SOMDO,other,-1,,0.514582097530365,INVALID_TARGET,0,
-PSYDO,Other,-1,,0.514582097530365,INVALID_TARGET,0,
-CAVDO,Other,-1,,0.514582097530365,INVALID_TARGET,0,
-VaD,if DIAG=3 then this variable shows whether it is vasculair dementia,-1,,0.30020397901535034,INVALID_TARGET,0,
+SOMDO,other,-1,,0.514582097530365,INVALID_TARGET,2000000412,"If there is a 1, Other Somatic Disorders should be Yes. "
+PSYDO,Other,-1,,0.514582097530365,INVALID_TARGET,2000000410,"If there is a 1, Other Psychiatric Disorders should be Yes. "
+CAVDO,Other,-1,,0.514582097530365,INVALID_TARGET,2000000400,"If there is a 1, Other Cardiovascular Disorders should be Yes. "
+VaD,if DIAG=3 then this variable shows whether it is vasculair dementia,-1,,0.30020397901535034,INVALID_TARGET,0,"if DIAG=3 then this variable shows whether it is vasculair dementia. 0=no VaD, 1=VaD"
 CSTAF,CSTA mistakes,-1,,0.18237847089767456,INVALID_TARGET,0,
 CSTBF,CSTB mistakes,-1,,0.1500866711139679,INVALID_TARGET,0,
 CSTCF,CSTC mistakes,-1,,0.15460136532783508,INVALID_TARGET,0,
-CEVDO,Other,-1,,0.514582097530365,INVALID_TARGET,0,
+CEVDO,Other,-1,,0.514582097530365,INVALID_TARGET,2000000403," If there is a 1, Other Cerebrovascular Disorders should Yes. "
 VAT1,,-1,,0.0,UNCHECKED,0,This variable doesn't need to be uploaded

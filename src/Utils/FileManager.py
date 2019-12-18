@@ -62,7 +62,7 @@ class FileManager(object, metaclass=Singleton):
 
 		if self.args.writeindb or self.args.appendindb:
 			engine = create_engine(self.args.db["datatype"]+"://"+self.args.db["user"]+":"+self.args.db["password"]+"@"+self.args.db["server"]+":"+self.args.db["port"]+"/"+self.args.db["database"])
-			
+	
 			if not self.args.appendindb:
 				for cls in BaseTable.__subclasses__():
 					try:
