@@ -141,7 +141,10 @@ class TranSMARTMap():
 					for column in self.observationsDict:
 						if code == column:
 							print("Independent:", code)
-							protegeOutput[code] = (variableName, path)
+							if variableName == "Age":
+								protegeOutput[code] = (variableName, self.__buildPath(path, "Baseline"))#path+"+Baseline")
+							else:
+								protegeOutput[code] = (variableName, path)
 				else: #With Baseline or months 
 					for column in self.observationsDict:
 						col = column.split("+")
@@ -159,6 +162,17 @@ class TranSMARTMap():
 			return path.replace("TIMERROOT", timer)
 		return "{}+{}".format(path, timer)
 
+	def __buildRow(self, path, columnIndex, variableName):
+		listCategoricalVariables = [
+			"Priority Visuoconstruction",
+			"Smoking Amount",
+			"Alcohol Amount",
+		]
+		for var in listCategoricalVariables:
+			if variableName == var:
+				return self.args.cohortoutputfile + "\t" + path + "\t" + columnIndex + "\t" + variableName + "\t\t\tCATEGORICAL\n"
+		return self.args.cohortoutputfile + "\t" + path + "\t" + columnIndex + "\t" + variableName + "\t\t\t\n"
+
 	def __writeColumnMap(self, protegeOutput):
 		foutput = open('{}{}'.format(self.args.transmartdstdir, "column_map.txt"), "w")
 		foutput.write("Filename\tCategory_Code (tranSMART)\tColumn\tDataLabel\tdata_label_src\tControlVocab_cd\tData_type\n")
@@ -168,7 +182,7 @@ class TranSMARTMap():
 			columnIndex = str(self.observationsDict.index(line)+2)
 			path = row[1]
 			variableName = row[0]
-			rowToWrite  = self.args.cohortoutputfile + "\t" + path + "\t" + columnIndex + "\t" + variableName + "\t\t\t\n"
+			rowToWrite = self.__buildRow(path, columnIndex, variableName)
 			foutput.write(rowToWrite)
 		foutput.close()
 

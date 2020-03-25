@@ -216,7 +216,7 @@ NPV_SI,NPV,-1,,0.15917067229747772,APPROVED,0,This variable doesn't need to be u
 NVM_VERL,,-1,,0.0,APPROVED,0,This variable doesn't need to be uploaded
 STROOP_VERS,Stroop version,-1,,0.5229401588439941,APPROVED,2000000618,This variable doesn't need to be uploaded. Only upload Stroop scores when Stroop version = 10
 VOSP_DOTC,Dot counting,-1,,0.5068719387054443,APPROVED,2000000744,Variable has been added to webprotege 
-GCA,global cortical atrophy,-1,,0.5328596234321594,APPROVED,2000000721,Variable has been added to webprotege: MRI>MRI Measures
+GCA,global cortical atrophy,-1,,0.5328596234321594,APPROVED,2000000750,Variable has been added to webprotege: MRI>MRI Measures
 FLUDIER,Fluency animals (number),-1,,0.495524138212204,APPROVED,2000000009,
 APOE_genotype,APOE ,-1,,0.590316116809845,APPROVED,2000000013,
 WLTDR,Delayed recall total,-1,,0.5067211389541626,APPROVED,2000000015,
@@ -295,7 +295,7 @@ DIAG,diagnose,-1,,0.930472731590271,APPROVED,2000000551,
 edu_years,education in years,-1,,0.4043813943862915,APPROVED,2000000554,
 edu_years,education in years,-1,,0.4043813943862915,APPROVED,2000000094,
 GDSSCORE,Totaal score Geriatric Depression Scale,-1,,0.7943065762519836,APPROVED,2000000564,
-MEDYN,Medication use,-1,,1.0,APPROVED,2000000582,
+MEDYN,Medication use,-1,,1.0,APPROVED,2000000581,
 VSNSBP,Systolische bloodpressure (mmHg),-1,,0.3725906312465668,APPROVED,2000000608,
 Sex,sex,-1,,1.0,APPROVED,2000000609,
 VERHAAL_VERS,Story recall test version,-1,,0.7910008430480957,APPROVED,2000000617,

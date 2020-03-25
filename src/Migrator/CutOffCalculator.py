@@ -12,7 +12,7 @@ Relation = {
 				  "abnormal":"2000000076", "abnormalName"	:"Total Tau Abnormal"},
 	"2000000168":{"cutOff"	:"2000000310", "cutOffName"		:"MTA Bilateral Abnormal Cut-off", 
 				  "abnormal":"2000000169", "abnormalName"	:"MTA Bilateral Abnormal"},
-	"2000000121":{"cutOff"	:"", "cutOffName"		:"", 
+	"2000000121":{"cutOff"	:"", 		   "cutOffName"		:"", 
 				  "abnormal":"2000000122", "abnormalName"	:"HDS Abnormal"}
 }
 
@@ -39,6 +39,11 @@ class CutOffCalculator():
 				cutOffResult = self.__cutOffBuilder(dict(rowData), variableConcept, operator, value)
 				abdnormalResult = self.__abnormalBuilder(dict(rowData), variableConcept, operator, value)
 				return [cutOffResult, abdnormalResult]
+			elif Relation[variableConcept]["abnormal"] in self.cutOffs:#special cases like HDS with abnormal but without cut off
+				operator = self.cutOffs[Relation[variableConcept]["abnormal"]]["operator"]
+				value = self.cutOffs[Relation[variableConcept]["abnormal"]]["value"]
+				abdnormalResult = self.__abnormalBuilder(dict(rowData), variableConcept, operator, value)
+				return [abdnormalResult]
 		return [] 
 
 	def __cutOffBuilder(self, row, variableConcept, operator, value):

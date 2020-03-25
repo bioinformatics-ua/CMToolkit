@@ -42,9 +42,9 @@ class Harmonizer(object):
 		or
 		cutOffs = "cutOffId":{"conditionalMethod": method()}
 		'''
-		self.cutOff = {
-			"2000000168":{"value":2, "operator": ">"},	#MTA Bilateral
-			"2000000121":{"value":7, "operator": ">"},	#HDS
+		self.cutOff = {#ATENTION: use the cutOffIds instead of the value IDs 
+			"2000000310":{"value":2, "operator": ">"},	#MTA Bilateral
+			"2000000122":{"value":7, "operator": ">"},	#HDS
 			"2000000297":{"value":551, "operator": "<"},#Amyloid beta 1-42
 			"2000000463":{"value":52, "operator": ">"},	#p-tau
 			"2000000298":{"value":375, "operator": ">"}	#t-tau
@@ -122,7 +122,7 @@ class Harmonizer(object):
 			"2000000383", "2000000337", "2000000441","2000000341",  "2000000360", "2000000367",  "2000000400", "2000000381", "2000000382", 
 			"2000000396", "2000000402", "2000000403", "2000000438", "2000000363", "2000000384", "2000000385", "2000000378", 
 			"2000000408", "2000000416", "2000000434", "2000000334", "2000000379", "2000000415", "2000000331", "2000000469", "2000000470", 
-			"2000000410", "2000000343", "2000000432", "2000000433"
+			"2000000410", "2000000343", "2000000432", "2000000433", "2000000581"
 			]
 		for variable in listOfNumericVariablesToConvertToYesOrNo:
 			if variable in variableConcept:
@@ -479,16 +479,32 @@ class Harmonizer(object):
 
 		if row["Variable"] == "ad" and row["Measure"] == "1": #has AD
 			row["MeasureNumber"] = None
-			row["VariableConcept"] =2000000551 #Diagnosis
+			row["VariableConcept"] = 2000000551 #Diagnosis
 			row["MeasureConcept"] = 2000000255 #AD
 			return row
 		return []
 
 	def __processStroops(self):
 		results = []
+		stroopsForInterference = {}
 		for row in self.stroops:
 			if row["PIN"] in self.patientWithStroopV10:
 				results.append(row)
+				#This part could be a standard ad hoc method
+				if row["PIN"] not in stroopsForInterference:
+					stroopsForInterference[row["PIN"]] = {}
+					stroopsForInterference[row["PIN"]]["row"] = row
+				stroopsForInterference[row["PIN"]][row["Variable"]] = row["MeasureNumber"]
+
+		stroopsForInterference = {}#SOLVE THIS
+		for row in stroopsForInterference:
+			newRow = stroopsForInterference[row]["row"]
+			newRow["Variable"] = "STR Interference - Calculated"
+			newRow["Measure"] = str(stroopsForInterference[row]["STR3"])+" - "+str(stroopsForInterference[row]["STR2"])
+			newRow["VariableConcept"] = "2000000439"
+			#For this cohort i didn't need a exception here, but in the future i may need
+			newRow["MeasureNumber"] = stroopsForInterference[row]["STR3"]-stroopsForInterference[row]["STR2"]
+			results.append(newRow)
 		return results
 
 	def __processCST0X(self):

@@ -708,3 +708,4 @@ concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concep
 2000000747	White Matter Hyperintensities	Imaging	Concept Class	Concept Class	S	2000000747	2019-01-01	2099-12-31	
 2000000748	ARWMC	Imaging	Concept Class	Concept Class	S	2000000748	2019-01-01	2099-12-31	
 2000000749	DAD Total	Rating Scales	Concept Class	Concept Class	S	2000000749	2019-01-01	2099-12-31	
+2000000750	GCA	Imaging	Concept Class	Concept Class	S	2000000750	2019-01-01	2099-12-31	

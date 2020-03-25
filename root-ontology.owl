@@ -552,6 +552,15 @@ compute cstc_predict = cstc_predict * cstc_predict.</rdfs:Description>
     
 
 
+    <!-- http://webprotege.stanford.edu/R7uXDaJv5HSZ5ont5gibe63 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7uXDaJv5HSZ5ont5gibe63">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#DementiaRatingScales"/>
+        <rdfs:label>Disability Assessment of Dementia Scale</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/R7xPmdyKXD9smn30LyAPQlZ -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/R7xPmdyKXD9smn30LyAPQlZ">
@@ -922,6 +931,28 @@ compute cstb_predict = cstb_predict * cstb_predict.</rdfs:Description>
     
 
 
+    <!-- http://webprotege.stanford.edu/R9srRcHifEmYu8SP3nTZc8 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9srRcHifEmYu8SP3nTZc8">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7uXDaJv5HSZ5ont5gibe63"/>
+        <Range_or_Possible_Values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0-100</Range_or_Possible_Values>
+        <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Higher scores on the DAD scale represent fewer disabilities in performing ADLs, and lower values indicate increased disabilities in performing these activities. Total scores range from 0 (most severe) to 100 (without disabilities).</rdfs:Description>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000749</rdfs:conceptCode>
+        <rdfs:label>DAD Total</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9xtKY8tEfP3j5tLwRSB5Z1 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9xtKY8tEfP3j5tLwRSB5Z1">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RC1gnrVtKwdXEgeVZvduk2M"/>
+        <rdfs:conceptCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000000750</rdfs:conceptCode>
+        <rdfs:label>GCA</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://webprotege.stanford.edu/RB0MnLn1lxf4IDeoZM1okAA -->
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RB0MnLn1lxf4IDeoZM1okAA">
@@ -1104,6 +1135,7 @@ compute CST-A Z-score = -((csta_sqrt - csta_predict)/csta_sd).</rdfs:Description
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RC4T0hdnSTQP3BVOQDhCfFg">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#SubjectCharacteristics"/>
+        <AD:isVisitIndependent rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</AD:isVisitIndependent>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">if Education Level (yr) &lt;7 edulow=1
 if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
         <rdfs:conceptCode>2000000719</rdfs:conceptCode>
@@ -1461,6 +1493,7 @@ if Education Level (yr) &gt;=7 eduwlow=0</rdfs:Description>
 
     <owl:Class rdf:about="http://webprotege.stanford.edu/RKW0ZRrgYWyYyT8mpL9S3w">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/acortesc/ontologies/2014/6/untitled-ontology-18#SubjectCharacteristics"/>
+        <AD:isVisitIndependent rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</AD:isVisitIndependent>
         <rdfs:Description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">if Education Level (yr) &lt;7 eduhigh=0
 if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
         <rdfs:conceptCode>2000000718</rdfs:conceptCode>
@@ -1658,6 +1691,7 @@ if Education Level (yr) &gt;=7 eduhigh=1</rdfs:Description>
         <Abbreviation>Age</Abbreviation>
         <Range_or_Possible_Values>GE 0</Range_or_Possible_Values>
         <AD:DefinedinCDISC>Yes</AD:DefinedinCDISC>
+        <AD:isVisitIndependent rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</AD:isVisitIndependent>
         <rdfs:Description>Age at baseline clinical assessment in years (no fractions). Use date of screening visit if no baseline data are available.</rdfs:Description>
         <rdfs:comment>Do not add units &quot;Age (years)&quot; but use variable name &quot;Age&quot; in tranSMART to make sure the variable is recognized in summary stats calculations.</rdfs:comment>
         <rdfs:conceptCode>2000000488</rdfs:conceptCode>

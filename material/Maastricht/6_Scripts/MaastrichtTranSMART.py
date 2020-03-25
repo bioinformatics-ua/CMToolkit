@@ -23,80 +23,15 @@ class Harmonizer(object):
 			return "Homozygote"
 		return value
 
-	'''
-	def set_2000000642(self, value):
-		return ""
-
-	def set_2000000617(self, value):
-		if isinstance(value, float):
-			return value
-		if "-" in value:
-			return ""
+	def set_2000000324(self, value):#Alcohol amount
 		return value
 
-	def set_2000000625(self, value):
-		if isinstance(value, float):
-			return value
-		if "-" in value:
-			return ""
+	def set_2000000436(self, value):#Smoking amount
 		return value
 
-	def set_2000000215(self, value):
-		if isinstance(value, float):
-			return value
-		if "-" in value:
-			return ""
-		return value
+	#def set_2000000xxx(self, value):
+	#	return ""
 
-	def set_2000000216(self, value):
-		if isinstance(value, float):
-			return value
-		if "-" in value:
-			return ""
-		return value
-
-	def set_2000000435(self, value):
-		if isinstance(value, float):
-			return value
-		return ""	
-
-	def set_2000000637(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	def set_2000000639(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	def set_2000000640(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	def set_2000000643(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	def set_2000000323(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	def set_2000000582(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	def set_2000000215(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	def set_2000000216(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	def set_2000000138(self, value):
-		if isinstance(value, float):
-			return value
-		return ""
-	'''
 		
 
 
