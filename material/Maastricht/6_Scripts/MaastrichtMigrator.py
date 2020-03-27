@@ -250,7 +250,7 @@ class Harmonizer(object):
 		if row["Measure"] == '1':
 			row["MeasureConcept"] = 2000000239#No
 		elif row["Measure"] == '2':
-			print("fix past concept missing in CONCEPT.CSV")
+			#print("fix past concept missing in CONCEPT.CSV")
 			row["MeasureString"] = "Past"
 			#row["MeasureConcept"] = todo
 		elif row["Measure"] == '3':

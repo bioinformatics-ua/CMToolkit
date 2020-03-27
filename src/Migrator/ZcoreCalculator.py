@@ -4,6 +4,14 @@ MALE 	= 8507
 FEMALE 	= 8532
 
 class ZcoreCalculator():
+	''' Class variable to store all calculated values to be used in other situations.
+	For instance, in the priority domains
+	dict = { "variable concept": {
+		patientID: row, ...
+	}}
+	'''
+	#allCalculatedZScores = {}
+
 	def calculate(self, rowData, patientIDLabel, variableConcept):
 		row = dict(rowData)
 		patientID = str(row[patientIDLabel])
@@ -76,6 +84,11 @@ class ZcoreCalculator():
 		if res != None:
 			row['Measure'] 			= "Calculated automatically"
 			row['MeasureNumber'] 	= res
+
+			#if variableConcept not in ZcoreCalculator.allCalculatedZScores:
+			#	ZcoreCalculator.allCalculatedZScores[variableConcept] = {}
+			#ZcoreCalculator.allCalculatedZScores[variableConcept][patientID] = row
+
 			return row
 		return [] #zcore entry
 
@@ -157,7 +170,6 @@ class ZcoreCalculator():
 		elif eduy > 12: 
 			eduhigh=1
 			edulow=0
-		print("Confirm edulow and eduhigh")
 		return (measure-(30.24+(-0.124*age)+(-11.42*edulow)+(5.861*eduhigh)+0.135*(age*edulow)-0.0404*(age*eduhigh)))/5.604
 
 	def __calculateZCoreCERADFigures(self, patientID, measure):
@@ -202,7 +214,6 @@ class ZcoreCalculator():
 			eduhigh=1
 			edulow=0
 		sex = 1 if gender == MALE else 0
-		print("Confirm edulow and eduhigh")
 		return (measure - (10.924 + (-0.073 * (age - 50)) + (-0.0009 * (age - 50)**2) + (-1.197 * sex) + (-0.844 * edulow) + (0.424 * eduhigh)))/2.496
 
 	def __calculateZCoreAVLTImmediate(self, patientID, measure):
@@ -219,7 +230,6 @@ class ZcoreCalculator():
 			eduhigh=1
 			edulow=0
 		sex = 1 if gender == MALE else 0
-		print("Confirm edulow and eduhigh")
 		return (measure - (49.672 + (-0.247 * (age - 50)) + (-0.0033 * (age - 50)**2) + (-4.227 * gender) + (-3.055 * edulow) + (2.496 * eduhigh)))/7.826
 
 	def __calculateZCoreStroopPart1(self, patientID, measure):
@@ -235,11 +245,10 @@ class ZcoreCalculator():
 		elif eduy > 12: 
 			eduhigh=1
 			edulow=0
-		print("Confirm edulow and eduhigh")
 		return ((1/measure)-(0.01566 + 0.000315*age + -0.00112*edulow + 0.001465*eduhigh + (-0.0000032 * age * age)))/0.0034
 
 	def __calculateZCoreStroopPart2(self, patientID, measure):
-		print("Asked to Isabelle")
+		#Not implementd
 		return None
 
 	def __calculateZCoreStroopPart3(self, patientID, measure):
@@ -256,7 +265,6 @@ class ZcoreCalculator():
 			eduhigh=1
 			edulow=0
 		sex = 1 if gender == MALE else 0
-		print("Confirm edulow and eduhigh")
 		return ((1/measure)-(0.001926 + 0.000348*age + 0.0002244*sex + -0.0006982*edulow + 0.001015*eduhigh + -0.000003522*age**2))/0.002
 
 	def __calculateZCoreSDST(self, patientID, measure):

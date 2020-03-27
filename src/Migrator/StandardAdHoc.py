@@ -25,11 +25,80 @@ class StandardAdHoc(object, metaclass=Singleton):
 		self.weight 	= {}
 
 		#Temporary variables calculated based on other variables
-		self.ageMeasurement 			= [] 
-		self.bodyMass					= []
-		self.comorbidities				= {}
-		self.comorbidityYes				= []
-		self.apoE						= []
+		self.ageMeasurement  	= [] 
+		self.bodyMass		 	= []
+		self.comorbidities	 	= {}
+		self.comorbidityYes	 	= []
+		self.apoE			 	= []
+
+		#Variables to create the Priority <domain> (Attention, Executive Functioning, Language, Immediate and Delayed Memory)
+		self.priorityDomains 	= {}
+		self.memorySourceList 	= []	  
+		self.priorityDomainsIDs = { #IDs sorted by priority
+			"Attention":{ #Priority Attention Type
+				"source":["2000000210", "2000000276", "2000000278", "2000000424"],
+				"targetValue":"2000000180", "targetType":"2000000282", "zscore":"2000000181"
+				}, 	
+			"Executive":{ #Priority Executive Type
+				"source":["2000000212", "2000000280"],		
+				"targetValue":"2000000182", "targetType":"2000000283", "zscore":"2000000183"
+				},					 	
+			"Language":	{ #Priority Language Type
+				"source":["2000000009",       "2000000144", "2000000146", "2000000011"    ], 
+				"targetValue":"2000000184", "targetType":"2000000284", "zscore":"2000000185"
+				},					 	
+			"MemoryDelayed":	{ #Priority Memory Type
+				"source":self.memorySourceList, 
+				"targetValue":"2000000186", "targetType":"2000000285", "zscore":"2000000187"
+				},						 	
+			"MemoryImmediate":	{ #Priority Memory Type
+				"source":self.memorySourceList, 
+				"targetValue":"2000000188", "zscore":"2000000189"
+				},					 	
+			"Visuoconstruction":	{ #Priority Visuoconstruction Type
+				"source":["2000000054", "2000000045", "2000000062"     ], 
+				"targetValue":"2000000419", "targetType":"2000000657", "zscore":"2000000420"
+				},	
+			#...
+			}
+		self.conceptNames = {#This dictionary was created to simplify the method for Pirority domain, consider refactor this
+			"2000000210":"Trail Making Test A",
+			"2000000276":"Stroop 1",
+			"2000000278":"Stroop 2",
+			"2000000424":"Symbol Digit Substitution Task",
+
+			"2000000212":"Trail Making Test B", 
+			"2000000280":"Stroop 3",
+
+			"2000000009":"Animal Fluency 1 min", 
+			#"Category Fluency 1 min"
+			"2000000144":"Letter Fluency 1 min", 
+			"2000000146":"Letter Fluency 2 min", 
+			"2000000011":"Animal Fluency 2 min", 
+			#"Boston Naming Test (15/30/60 items)"
+			#"Any picture naming test"
+			
+			#Priority List of primary memory tests:
+			#1=RAVLT
+			#2=CERAD
+			#3=Grober-Buschke FCSRT
+			#4=Story recall test
+			#5=Logical memory
+			#6=Hopkins
+			#7=VAT
+			#8=Story recall Brescia
+			#9=Recall Rey figure
+			#10=MMSE
+			#11=ADAS-Cog
+			#12=10 word list
+			#13=immediate recall 10 word list
+
+			#Priority list Visuoconstruction:
+			"2000000054":"Rey complex Figure copy",
+			"2000000045":"Copy of CERAD Figures",
+			"2000000062":"Clock Drawing",
+			#4. Any other copying task- Qual
+		}
 
 	def definePatientIDLabel(self, patientIDLabel):
 		self.patientIDLabel = patientIDLabel
@@ -59,7 +128,6 @@ class StandardAdHoc(object, metaclass=Singleton):
 				if self.cutOffsCalculator != None:
 					cutOff = self.cutOffsCalculator.calculate(row, variableConcept)
 					outputDataDict += cutOff
-
 		outputDataDict += self.__addNewMeasurements()
 
 		return outputDataDict
@@ -82,6 +150,11 @@ class StandardAdHoc(object, metaclass=Singleton):
 			self.__loadWeight(row, patientID)
 		if "2000000013" in variableConcept:
 			self.__loadExtraApoE(row, patientID)
+
+		for domain in self.priorityDomainsIDs:
+			for variable in self.priorityDomainsIDs[domain]["source"]:
+				if variable in variableConcept:
+					self.__loadPriorityDomains(row, variableConcept)
 
 		#Comorbidities to calculate yes
 		allComorbidities = {
@@ -208,6 +281,11 @@ class StandardAdHoc(object, metaclass=Singleton):
 							 variable 	= row['Variable'], 
 							 measure 	= row['Measure'],
 							 msg 		= "This method was not able to split the measure by / because the measure is NaN")
+	
+	def __loadPriorityDomains(self, row, variableConcept):
+		if variableConcept not in self.priorityDomains:
+			self.priorityDomains[variableConcept] = []
+		self.priorityDomains[variableConcept].append(row)
 
 	def __addComorbiditiesSubClass(self, row, patientID, variable, conceptID):
 		if row["MeasureConcept"] == YES:
@@ -340,10 +418,11 @@ class StandardAdHoc(object, metaclass=Singleton):
 							 variable 	= variableConcept, 
 							 measure 	= measure,
 							 msg 		= "The range of values defined for this variable are {}-{}".format(minimum, maximum))
-		self.logger.warn(warnType	= WRONG_TYPE, 
-						 patientID 	= patientID, 
-						 variable 	= variableConcept, 
-						 measure 	= measure)
+		else:
+			self.logger.warn(warnType	= WRONG_TYPE, 
+							 patientID 	= patientID, 
+							 variable 	= variableConcept, 
+							 measure 	= measure)
 		return False
 
 	#########################
@@ -412,6 +491,8 @@ class StandardAdHoc(object, metaclass=Singleton):
 			newMeasurements += self.__addMeasurement(self.comorbidities[comorbidity])
 		newMeasurements += self.__addMeasurement(self.comorbidityYes)
 		newMeasurements += self.__addMeasurement(self.apoE)
+		#Priority Domains
+		newMeasurements += self.__addPriorityDomains()
 		#newMeasurements += self.__addMeasurement...
 		#....
 		return newMeasurements
@@ -421,4 +502,83 @@ class StandardAdHoc(object, metaclass=Singleton):
 		if len(listOfMeasurements) > 0:
 			results = listOfMeasurements.copy()
 			listOfMeasurements.clear()
+		return results
+
+	def __addPriorityDomains(self):
+		results = []
+		for domain in self.priorityDomainsIDs:
+			tmpResults = []
+			for conceptID in self.priorityDomainsIDs[domain]["source"]:
+				if conceptID in self.priorityDomains:
+					for row in self.priorityDomains[conceptID]:
+						if conceptID in row['VariableConcept']:
+							#Entry with value
+							newRow = row.copy()
+							newRow['VariableConcept'] = self.priorityDomainsIDs[domain]["targetValue"]
+							tmpResults.append(newRow)
+
+							#Entry with type
+							if "targetType" in self.priorityDomainsIDs[domain]:
+								newRow = row.copy()
+								newRow['VariableConcept'] = self.priorityDomainsIDs[domain]["targetType"]
+								newRow['Measure'] = self.conceptNames[conceptID]
+								newRow['MeasureConcept'] = None
+								newRow['MeasureNumber'] = None
+								newRow['MeasureString'] = self.conceptNames[conceptID]
+								tmpResults.append(newRow)
+
+							#Entry with Z-Score
+							zcore = self.zcoreCalculator.calculate(row, self.patientIDLabel, conceptID)
+							if isinstance(zcore, list):
+								for entry in zcore:
+									entry['VariableConcept'] = self.priorityDomainsIDs[domain]["zscore"]
+									tmpResults.append(entry)
+							else:
+								zcore['VariableConcept'] = self.priorityDomainsIDs[domain]["zscore"]
+								tmpResults.append(zcore)
+
+				if len(tmpResults) > 0:
+					results += tmpResults
+					break
+		#What is missing:
+		#ZcoreCalculator.allCalculatedZScores
+		#Priority list Attention tests:
+		# "2000000210" 1. Trail Making Test A
+		# "2000000276" 2. Stroop 1
+		# "2000000278" 3. Stroop 2
+		# "2000000424" 4. Symbol Digit Substitution Task
+
+		#Priority list Executive functioning:
+		# "2000000212" 1. Trail Making Test B
+		# "2000000280" 2. Stroop 3
+
+		#Priority list language tests:
+		# "2000000009" 1. Animal Fluency 1 min
+		# ?????????? 2. Category Fluency 1 min - Não existe
+		# "2000000144" 3. Letter Fluency 1 min
+		# "2000000146" 4. Any type of fluency 2 min
+		# "2000000011" 
+		# ?????????? 5. Boston Naming Test (15/30/60 items) - Quais?
+		# ?????????? 6. Any picture naming test - DO 80 Picture Naming?
+
+		#Priority List of primary memory tests:
+		#1=RAVLT
+		#2=CERAD
+		#3=Grober-Buschke FCSRT
+		#4=Story recall test
+		#5=Logical memory
+		#6=Hopkins
+		#7=VAT
+		#8=Story recall Brescia
+		#9=Recall Rey figure
+		#10=MMSE
+		#11=ADAS-Cog
+		#12=10 word list
+		#13=immediate recall 10 word list
+
+		#Priority list Visuoconstruction:
+		#1. Rey complex Figure copy
+		#2. Copy of CERAD Figures
+		#3. Clock Drawing
+		#4. Any other copying task
 		return results
