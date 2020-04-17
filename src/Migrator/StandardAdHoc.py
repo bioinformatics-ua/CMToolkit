@@ -32,8 +32,7 @@ class StandardAdHoc(object, metaclass=Singleton):
 		self.apoE			 	= []
 
 		#Variables to create the Priority <domain> (Attention, Executive Functioning, Language, Immediate and Delayed Memory)
-		self.priorityDomains 	= {}
-		self.memorySourceList 	= []	  
+		self.priorityDomains 	= {}  
 		self.priorityDomainsIDs = { #IDs sorted by priority
 			"Attention":{ #Priority Attention Type
 				"source":["2000000210", "2000000276", "2000000278", "2000000424"],
@@ -48,11 +47,39 @@ class StandardAdHoc(object, metaclass=Singleton):
 				"targetValue":"2000000184", "targetType":"2000000284", "zscore":"2000000185"
 				},					 	
 			"MemoryDelayed":	{ #Priority Memory Type
-				"source":self.memorySourceList, 
+				"source":[
+					"2000000015",#1=RAVLT
+					"2000000047",#2=CERAD
+					#3=Grober-Buschke FCSRT
+					"2000000611",#4=Story recall test
+					"2000000152",#5=Logical memory
+					"2000000134",#6=Hopkins
+					#7=VAT
+					#8=Story recall Brescia
+					#9=Recall Rey figure
+					#10=MMSE
+					#11=ADAS-Cog
+					#12=10 word list
+					#13=immediate recall 10 word list
+				],  
 				"targetValue":"2000000186", "targetType":"2000000285", "zscore":"2000000187"
 				},						 	
 			"MemoryImmediate":	{ #Priority Memory Type
-				"source":self.memorySourceList, 
+				"source":[
+					"2000000017",#1=RAVLT
+					"2000000049",#2=CERAD
+						#3=Grober-Buschke FCSRT Cued or Free?
+					"2000000613",#4=Story recall test
+					"2000000578",#5=Logical memory
+					"2000000136",#6=Hopkins
+						#7=VAT - SO tem vat-12 e vat-14, como proceder?
+						#8=Story recall Brescia - Is it the same as Story Recall Test?
+						#9=Recall Rey figure - What test is this one?
+						#10=MMSE - Does not differ from delay and immediate, How should we proceed?
+						#11=ADAS-Cog - There are only the ADASCog-11 Total and ADASCog-13 Total available. No reference to Delay or Immediate. How should we proceed? 
+						#12=10 word list - What test is this one?
+						#13=immediate recall 10 word list - What do you mean?
+				], 
 				"targetValue":"2000000188", "zscore":"2000000189"
 				},					 	
 			"Visuoconstruction":	{ #Priority Visuoconstruction Type
@@ -78,13 +105,12 @@ class StandardAdHoc(object, metaclass=Singleton):
 			#"Boston Naming Test (15/30/60 items)"
 			#"Any picture naming test"
 			
-			#Priority List of primary memory tests:
-			#1=RAVLT
-			#2=CERAD
+			"2000000015":"RAVLT Delayed",
+			"2000000047":"CERAD Delayed",
 			#3=Grober-Buschke FCSRT
-			#4=Story recall test
-			#5=Logical memory
-			#6=Hopkins
+			"2000000611":"Story recall test Delayed",
+			"2000000152":"Logical memory  Delayed",
+			"2000000134":"Hopkins Delayed",
 			#7=VAT
 			#8=Story recall Brescia
 			#9=Recall Rey figure
@@ -93,11 +119,26 @@ class StandardAdHoc(object, metaclass=Singleton):
 			#12=10 word list
 			#13=immediate recall 10 word list
 
+			#Priority List of primary memory tests:
+			"2000000017":"RAVLT Immediate",#1=
+			"2000000049":"CERAD Immediate",
+			#3=Grober-Buschke FCSRT Cued or Free?
+			"2000000613":"Story recall test Immediate",
+			"2000000578":"Logical memory Immediate",
+			"2000000136":"Hopkins Immediate",
+			#7=VAT - SO tem vat-12 e vat-14, como proceder?
+			#8=Story recall Brescia - Is it the same as Story Recall Test?
+			#9=Recall Rey figure - What test is this one?
+			#10=MMSE - Does not differ from delay and immediate, How should we proceed?
+			#11=ADAS-Cog - There are only the ADASCog-11 Total and ADASCog-13 Total available. No reference to Delay or Immediate. How should we proceed? 
+			#12=10 word list - What test is this one?
+			#13=immediate recall 10 word list - What do you mean?
+
 			#Priority list Visuoconstruction:
 			"2000000054":"Rey complex Figure copy",
 			"2000000045":"Copy of CERAD Figures",
 			"2000000062":"Clock Drawing",
-			#4. Any other copying task- Qual
+			#4. Any other copying task- Quais?
 		}
 
 	def definePatientIDLabel(self, patientIDLabel):
