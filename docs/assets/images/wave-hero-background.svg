@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1300px"
+   height="499px"
+   viewBox="0 0 1300 499"
+   version="1.1"
+   id="svg56"
+   sodipodi:docname="wave-hero-background.svg"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview58"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:lockguides="false"
+     inkscape:zoom="0.87076923"
+     inkscape:cx="509.31979"
+     inkscape:cy="249.77915"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg56" />
+  <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title31">wave_background</title>
+  <desc
+     id="desc33">Created with Sketch.</desc>
+  <defs
+     id="defs48">
+    <radialGradient
+       cx="-1087.421"
+       cy="1363.3082"
+       fx="-1087.421"
+       fy="1363.3082"
+       r="1150.3904"
+       gradientTransform="matrix(-0.00304883,-0.42027483,1.1383202,-0.00825556,-253.1967,-17.093974)"
+       id="radialGradient-1"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#0069FF"
+         offset="0%"
+         id="stop35"
+         style="stop-color:#cccccc;stop-opacity:1" />
+      <stop
+         stop-color="#0269FD"
+         offset="0.02"
+         id="stop37"
+         style="stop-color:#cccccc;stop-opacity:1" />
+      <stop
+         stop-color="#0369FC"
+         offset="4.5053357%"
+         id="stop39"
+         style="stop-color:#cccccc;stop-opacity:1" />
+      <stop
+         stop-color="#0468FB"
+         offset="6.00516035%"
+         id="stop41"
+         style="stop-color:#cccccc;stop-opacity:1" />
+      <stop
+         stop-color="#1165EF"
+         offset="25.4821693%"
+         id="stop43"
+         style="stop-color:#b3b3b3;stop-opacity:1" />
+      <stop
+         stop-color="#4457C0"
+         offset="100%"
+         id="stop45"
+         style="stop-color:#999999;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <g
+     id="Ressource"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="wave_background">
+      <g
+         id="Group-4">
+        <path
+           d="M0,1.89326617e-29 L1300,-2.84217094e-14 C1299.84369,99.0658466 1299.84369,259.045733 1300,479.93966 C939.379367,522.288692 978.893507,439.694844 650,450.952014 C321.106493,462.209185 306.589562,511.200484 0,450.952014 C1,327.508342 1,177.191004 0,1.89326617e-29 Z"
+           id="Wave"
+           fill="#C4C4C4"
+           opacity="0.15" />
+        <path
+           d="M1.00076864,0 L925.701255,0 L1302,0 C1302,223.960943 1302,366.849893 1302,428.66685 C1221.6052,416.744841 1147.81368,399.334739 958.281774,416.744841 C768.749863,434.154944 701.824308,503.789515 426.321989,437.77475 C242.653776,393.764907 100.880036,397.003272 1.00076864,447.489845 L1.00076864,0 Z"
+           id="path51"
+           fill="url(#radialGradient-1)"
+           transform="translate(651.500384, 232.828869) scale(-1, 1) translate(-651.500384, -232.828869) "
+           style="fill-opacity:1;fill:url(#radialGradient-1)" />
+      </g>
+    </g>
+  </g>
+</svg>
