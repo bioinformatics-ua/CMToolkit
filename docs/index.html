@@ -19,7 +19,7 @@
   <link href="" rel="stylesheet">
 
 
-  <title>GTO 2: The genomics-proteomics toolkit</title>
+  <title>Cohort Migration Toolkit</title>
 
 <link href="./main.550dcf66.css" rel="stylesheet"></head>
 
@@ -35,13 +35,7 @@
           <li><a href="./index.html" title="">Home</a></li>
           <li><a href="#about" title="">About</a></li>
           <li><a href="#installation" title="">Installation</a></li>
-          <li><a href="#programs" title="">Programs</a></li>
-          <li><a href="#team" title="">Team</a></li>
-          <li>
-            <p>
-              <a href="./book/index.html" class="btn btn-default navbar-btn" title="">Documentation</a>
-            </p>
-          </li>
+          <li><a href="#features" title="">Features</a></li>
         </ul>
       </div> 
     </div>
@@ -53,8 +47,8 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <img src="./assets/images/logo_inv.png" style="width: 15vw;" alt="">
-          <p><strong>The genomics-proteomics toolkit</strong></p>
+          <img src="./assets/images/logo.png" style="width: 15vw;" alt="">
+          <p><strong>The Cohort Migrator Toolkit</strong></p>
         </div>
       </div>
     </div>
@@ -65,12 +59,10 @@
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <div class="text-center">
-            <h2>About GTO2</h2>
+            <h2>About CMToolkit</h2>
             </div>
             <div>
-            <p>GTO2 is an improved version of GTO, which is a toolkit created for genomics and proteomics, namely for FASTQ, FASTA and SEQ formats. The toolkit is for Unix-based systems, built for ultra-fast computations. GTO2 supports pipes for easy integration with the sub-programs belonging to GTO as well as external tools. GTO2 works as LEGOs, since it allows the construction of multiple pipelines with many combinations. GTO2 is also available in the Conda package manager for easy use in the different operating systems.
-            <br/>
-            GTO2 includes tools for information display, randomisation, edition, conversion, extraction, search, calculation, compression, simulation and visualisation. GTO2 is prepared to deal with very large datasets, typically in the scale of Gigabytes or Terabytes (but not limited). The complete toolkit is an optimised command-line version, using the prefix "gto2_" followed by the suffix with the respective name of the program. GTO2 is implemented in C language and it is available, under the MIT license.</p>
+            <p>CMToolkit is a python-based application designed to migrate and harmonize clinical cohorts from CSV format into the OHDSI OMOP CDM schema. This procedure increases the interoperability of the data by allowing the exportation of several cohorts into a new system reusing the same scripts.</p>
           </div>
        </div>
       </div>
@@ -85,118 +77,13 @@
             <h2>Installation</h2>
           </div>
           <div>
-            <p>GTO2 can be installed using the Cobilab channel from Conda:</p>
-            <code>conda install -c cobilab gto2 --yes</code>    
-            <br/><br/>     
-            <p>Or through the GitHub repository:</p>
-            <code>
-              git clone https://github.com/cobilab/gto.git <br/>
-              cd gto/src/ <br/>
-              make 
-            </code>   
+            <p>This toolkit has some dependencies defined in the requirements.pip file and it is required to have a relational database management system installed (for instance, PostgreSQL) to run the pipeline from CSV into TranSMART batch. During the concept mappings, it was used the Usagi and WhiteRabbit tools (available at OHDSI repository or in the bin directory).</p>
           </div>
        </div>
       </div>
     </div>
   </div>
   
-  <div id="programs" class="section-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <div class="text-center">
-            <h2>Programs</h2>
-          </div>
-          <div>
-            <p>The GTO2 provides pipe support for easy integration with the majority of the tools. These include programs to shuffle, transform, simulate, compress, vizualize, among others. The GTO2 includes the following tools, divided by genomic data format type.</p>
-          </div>
-          <br/>
-       </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-4">
-          <img src="./assets/images/fasta.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <div class="text-center">
-            <h3>FASTA</h3>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <img src="./assets/images/fastq.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <div class="text-center">
-            <h3>FASTQ</h3>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <img src="./assets/images/seq.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <div class="text-center">
-            <h3>SEQ</h3>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <img src="./assets/images/amino_acid.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <div class="text-center">
-            <h3>Amino Acid</h3>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <img src="./assets/images/tools.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <div class="text-center">
-            <h3>General Purpose</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="section-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <div class="text-center">
-            <h2>Documentation</h2>
-          </div>
-          <div>
-            <p>All the tools in GTO2 were documented. The documentation contains examples of how to use each tool. This documentation is available <a href="./book/index.html" title="">here</a>.</p> 
-          </div>
-       </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="team" class="section-container">
-    <div class="container text-center">
-      <div class="row section-container-spacer">
-        <div class="col-xs-12 col-md-12">
-          <h2>Team</h2>
-          <p>Praesent at feugiat est, at faucibus ipsum. Aenean condimentum mauris vel malesuada pulvinar. <br>Vestibulum sit amet hendrerit leo, quis vehicula mi.</p>
-        </div>  
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-3">
-          <img src="./assets/images/JA.jpg" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <h3>João R. Almeida</h3>
-          <h4>Researcher</h4>
-        </div>
-        <div class="col-xs-12 col-md-3">
-          <img src="./assets/images/AP.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <h3>Armando J. Pinho</h3>
-          <h4>Full professor</h4>
-        </div>
-        <div class="col-xs-12 col-md-3">
-          <img src="./assets/images/jlo.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <h3>José L. Oliveira</h3>
-          <h4>Full professor</h4>
-        </div>
-        <div class="col-xs-12 col-md-3">
-          <img src="./assets/images/DP.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
-          <h3>Diogo Pratas</h3>
-          <h4>Researcher</h4>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 <script>
