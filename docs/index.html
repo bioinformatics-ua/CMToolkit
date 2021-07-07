@@ -34,8 +34,8 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="./index.html" title="" style="color: #3498db">Home</a></li>
           <li><a href="#about" title="" style="color: #3498db">About</a></li>
-          <li><a href="#installation" title="" style="color: #3498db">Installation</a></li>
-          <li><a href="#contribute" title="" style="color: #3498db">Contribute</a></li>
+          <li><a href="#features" title="" style="color: #3498db">Features</a></li>
+          <li><a href="#team" title="" style="color: #3498db">Team</a></li>
         </ul>
       </div> 
     </div>
@@ -48,7 +48,10 @@
       <div class="row">
         <div class="col-xs-12">
           <img src="./assets/images/logo.png" style="width: 15vw;" alt="">
-          <p style="color: #838383"><strong>The Cohort Migrator Toolkit</strong></p>
+          <p style="color: #838383"><strong>The Cohort Migrator Toolkit</strong>
+            <br/>
+          A methodology to harmonise different cohorts into a standard data schema, helping the research community to generate evidence from a wider variety of data sources.</p>
+          <p style="color: #838383">The implementation of this methodology is  available,  under  the  MIT  license, <a style="color: #838383" href="https://github.com/bioinformatics-ua/CMToolkit" title="">here</a>.</p>
         </div>
       </div>
     </div>
@@ -63,39 +66,57 @@
             </div>
             <div>
             <p>CMToolkit is a python-based application designed to migrate and harmonize clinical cohorts from CSV format into the OHDSI OMOP CDM schema. This procedure increases the interoperability of the data by allowing the exportation of several cohorts into a new system reusing the same scripts.</p>
-            <img src="./assets/images/overview.png" style="width: 30vw; text-align: center; display: block; margin-left: auto; margin-right: auto;" alt="">
+            <br/><img src="./assets/images/overview.png" style="width: 30vw; text-align: center; display: block; margin-left: auto; margin-right: auto;" alt="">
           </div>
        </div>
       </div>
     </div>
   </div>
 
-  <div id="installation" class="section-container">
+
+  <div id="features" class="section-container">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <div class="text-center">
-            <h2>Installation</h2>
+            <h2>Why CMToolkit?</h2>
           </div>
           <div>
-            <p>This toolkit has some dependencies defined in the requirements.pip file and it is required to have a relational database management system installed (for instance, PostgreSQL) to run the pipeline from CSV into TranSMART batch. During the concept mappings, it was used the Usagi and WhiteRabbit tools (available at OHDSI repository or in the bin directory).</p>
+            <ul>
+              <li>The CMToolkit proposes a strategy for semi-automatic harmonisation of large amounts of medical concepts in clinical studies.</li><br/>
+              <li>It creates new opportunities for the study of rare conditions, where typically isolated cohorts do not provide enough statistical evidence.</li><br/>
+              <li>The results can augment clinical knowledge by automatically computing new patient information during the migration stage.</li>
+            </ul>
           </div>
        </div>
       </div>
     </div>
   </div>
-  
-  <div id="contribute" class="section-container">
-    <div class="container">
+
+  <div id="team" class="section-container">
+    <div class="container text-center">
+      <div class="row section-container-spacer">
+        <div class="col-xs-12 col-md-12">
+          <h2>Core Team</h2>
+          <p>This methodology was validated by the cohort data owners and developed by the following team members:</p>
+        </div>  
+      </div>
       <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <div class="text-center">
-            <h2>How to contribute?</h2>
-          </div>
-          <div>
-            <p>You can contribute to this project <a href="https://github.com/bioinformatics-ua/CMToolkit" title="">here</a>.</p>
-          </div>
-       </div>
+        <div class="col-xs-12 col-md-4">
+          <img src="./assets/images/JA.jpg" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
+          <h3>João R. Almeida</h3>
+          <h4>Researcher at University of Aveiro</h4>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <img src="./assets/images/bastiao.jpg" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
+          <h3>Luís B. Silva</h3>
+          <h4>CTO at BMD-Software</h4>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <img src="./assets/images/jlo.png" style="height: 10vw;" alt="" class="reveal img-responsive reveal-content image-center">
+          <h3>José L. Oliveira</h3>
+          <h4>Full professor at University of Aveiro</h4>
+        </div>
       </div>
     </div>
   </div>
